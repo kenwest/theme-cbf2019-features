@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the cbf2019 theme features feature.
+ */
+
+include_once 'theme_cbf2019_features.features.inc';
