@@ -24,7 +24,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['css_class'] = 'bg-gray-view-content cbf-merge-events';
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['use_more_text'] = 'All events';
+  $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -140,10 +143,11 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['link_url'] = 'events';
   $translatables['local_civicrm_event_slider'] = array(
     t('Master'),
     t('<none>'),
-    t('more'),
+    t('All events'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
@@ -156,6 +160,7 @@ function theme_cbf2019_features_views_default_views() {
     t('.'),
     t('All'),
     t('Block'),
+    t('more'),
   );
   $export['local_civicrm_event_slider'] = $view;
 
