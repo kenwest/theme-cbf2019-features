@@ -54,21 +54,6 @@ function theme_cbf2019_features_default_fe_block_boxes() {
 [/row]
 [/nd_container]
 [/nd_div]
-[nd_div vertical_align="0" different_values="0"]
-[nd_container different_values="0"]
-[row different_values="0"]
-[col desktop="8" different_values="0"]
-[nd_title title="Upcoming events" size="h4" alignment=" align-left" styled="1" uppercase="1" color="black" different_values="0"]
-[/nd_title]
-[/col]
-[col desktop="4" different_values="0"]
-[html format="2" different_values="0" text_align="right"]<p>All events</p>[/html]
-[/col]
-[/row]
-[/nd_container]
-[nd_view admin_url="admin/structure/views/view/local_civicrm_event_slider/edit/block" different_values="0"]
-[/nd_view]
-[/nd_div]
  ';
 
   $export['cbf2019_theme_home_top'] = $fe_block_boxes;
