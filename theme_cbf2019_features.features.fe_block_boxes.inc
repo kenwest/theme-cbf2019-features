@@ -49,7 +49,7 @@ function theme_cbf2019_features_default_fe_block_boxes() {
 [html format="2" different_values="0"]<p>City Bible forum creates the spaces and opportunities in the workplace to talk about the big issues you care about. Join our public forums and professional networks or browse our extensive library of resources to explore the bigger questions about life, faith and purpose.</p>[/html]
 [/col]
 [col desktop="4" different_values="0" text_align="left"]
-[html format="2" different_values="0"]<p>From CEOs to new graduates, our highly trained and experienced staff and volunteers are explaining the Bible to people every day, in every way.Together we engage thousands of city workers from every worldview, in every major city of Australia, every year.</p>[/html]
+[html format="2" different_values="0"]<p>From CEOs to new graduates, our highly trained and experienced staff and volunteers are explaining the Bible to people every day, in every way. Together we engage thousands of city workers from every worldview, in every major city of Australia, every year.</p>[/html]
 [/col]
 [/row]
 [/nd_container]
