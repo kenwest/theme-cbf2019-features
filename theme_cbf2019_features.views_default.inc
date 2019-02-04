@@ -202,11 +202,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Recent resources';
   $handler->display->display_options['header']['area']['format'] = '3';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['label'] = 'Author';
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
@@ -303,7 +298,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('Title'),
     t('Recent resources'),
-    t('Author'),
     t('[field_speakers] | [field_episode_date]'),
     t('READ MORE'),
     t('Block'),
