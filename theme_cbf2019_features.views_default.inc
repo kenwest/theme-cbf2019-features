@@ -220,6 +220,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Resource type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
   /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
