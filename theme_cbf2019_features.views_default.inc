@@ -162,7 +162,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_recent_library';
-  $view->description = 'Blog view for the cbf2019 theme';
+  $view->description = 'Recent library view for the cbf2019 theme';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 recent library';
@@ -176,7 +176,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['css_class'] = 'bg-gray-view-content container-view-content';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['use_more_text'] = 'All news in our blog';
+  $handler->display->display_options['use_more_text'] = 'Our library';
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -200,7 +200,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Blog';
+  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
   $handler->display->display_options['header']['area']['format'] = '3';
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -291,18 +291,18 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['link_url'] = 'library';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
-    t('All news in our blog'),
+    t('Our library'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
     t('Title'),
-    t('Blog'),
+    t('Recent resources'),
     t('Author'),
     t('[field_speakers] | [field_episode_date]'),
     t('READ MORE'),
