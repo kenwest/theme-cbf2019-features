@@ -38,7 +38,7 @@ function theme_cbf2019_features_default_fe_block_boxes() {
 [/nd_title]
 [/col]
 [col different_values="0" phone="4"]
-[html format="2" different_values="0" extra_classes="h5 align-right uppercase"]<p><a href="/node/13">About us »</a></p>[/html]
+[html format="2" different_values="0" extra_classes="h5 align-right uppercase"]<p><a href="/node/13">About us ›</a></p>[/html]
 [/col]
 [/row]
 [row different_values="0"]
