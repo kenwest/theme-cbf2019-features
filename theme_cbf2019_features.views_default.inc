@@ -316,7 +316,7 @@ function theme_cbf2019_features_views_default_views() {
   $view = new view();
   $view->name = 'local_civicrm_event_slider';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'default, slider';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 local event slider';
   $view->core = 7;
