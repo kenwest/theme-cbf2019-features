@@ -318,7 +318,7 @@ function theme_cbf2019_features_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'civicrm_event';
-  $view->human_name = 'Local CiviCRM Event slider';
+  $view->human_name = 'cbf2019 local event slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
