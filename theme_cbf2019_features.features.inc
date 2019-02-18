@@ -51,7 +51,10 @@ function theme_cbf2019_features_default_entityform_type() {
       },
       "resubmit_action" : "new",
       "redirect_path" : "",
-      "instruction_pre" : { "value" : "", "format" : "2" }
+      "instruction_pre" : {
+        "value" : "\\u003Cp\\u003EUse this form to make a Ministry Team from CiviCRM visible on the website. Nominate the team and the domains on which it should appear.\\u003C\\/p\\u003E\\r\\n",
+        "format" : "2"
+      }
     },
     "weight" : "0",
     "paths" : []
