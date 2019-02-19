@@ -352,7 +352,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['state_province_1']['relationship'] = 'id_2';
   $handler->display->display_options['fields']['state_province_1']['label'] = 'Address';
   $handler->display->display_options['fields']['state_province_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['state_province_1']['alter']['text'] = '[supplemental_address_1]<span class="new-line">[street_address]</span><span class="new-line">[city]</span>';
+  $handler->display->display_options['fields']['state_province_1']['alter']['text'] = '[supplemental_address_1]<div>[street_address]</div><div>[city]</div>';
   $handler->display->display_options['fields']['state_province_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['state_province_1']['location_type'] = '0';
   $handler->display->display_options['fields']['state_province_1']['location_op'] = '0';
@@ -407,7 +407,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['postal_code']['relationship'] = 'id_3';
   $handler->display->display_options['fields']['postal_code']['label'] = 'Post';
   $handler->display->display_options['fields']['postal_code']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['postal_code']['alter']['text'] = '[street_address_1]<span class="new-line">[city_1] [state_province] [postal_code]</span>';
+  $handler->display->display_options['fields']['postal_code']['alter']['text'] = '[street_address_1]<div>[city_1] [state_province] [postal_code]</div>';
   $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['postal_code']['location_type'] = '0';
   $handler->display->display_options['fields']['postal_code']['location_op'] = '0';
@@ -498,10 +498,10 @@ function theme_cbf2019_features_views_default_views() {
     t('Call us'),
     t('<i class="fa fa-fw fa-map-marker"></i>'),
     t('Address'),
-    t('[supplemental_address_1]<span class="new-line">[street_address]</span><span class="new-line">[city]</span>'),
+    t('[supplemental_address_1]<div>[street_address]</div><div>[city]</div>'),
     t('<i class="fa fa-fw fa-file-text-o"></i>'),
     t('Post'),
-    t('[street_address_1]<span class="new-line">[city_1] [state_province] [postal_code]</span>'),
+    t('[street_address_1]<div>[city_1] [state_province] [postal_code]</div>'),
     t('<i class="fa fa-fw fa-envelope-o"></i>'),
     t('Block'),
   );
