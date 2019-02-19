@@ -272,39 +272,6 @@ function theme_cbf2019_features_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-office-field_organisation_contact'.
-  $field_instances['taxonomy_term-office-field_organisation_contact'] = array(
-    'bundle' => 'office',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_organisation_contact',
-    'label' => 'Organisation contact',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'civicrm_contact_ref',
-      'settings' => array(
-        'autocomplete_path' => 'civicrm_contact_ref/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'civicrm_contact_ref_autocomplete',
-      'weight' => 41,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Domain');
@@ -312,7 +279,6 @@ function theme_cbf2019_features_field_default_field_instances() {
   t('Ministry team');
   t('Office');
   t('Office contact');
-  t('Organisation contact');
   t('Sort order for offices');
   t('Title');
   t('Weight');
