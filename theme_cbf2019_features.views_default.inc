@@ -226,22 +226,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Find us';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class = "clearfix">
-  <div  class = "google-map">
-    <div id="map-canvas"
-      style="height: 410px;"
-      data-zoom="14"
-      data-address="[street_address], [city], Australia"
-      data-type="roadmap">
-    </div>
-  </div>
-</div>';
-  $handler->display->display_options['footer']['area']['format'] = 'raw_html';
-  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   /* Relationship: Entityform Submission: Office contact (field_organisation_contact) */
   $handler->display->display_options['relationships']['field_organisation_contact_contact_id']['id'] = 'field_organisation_contact_contact_id';
   $handler->display->display_options['relationships']['field_organisation_contact_contact_id']['table'] = 'field_data_field_organisation_contact';
@@ -467,6 +451,26 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Block with map */
+  $handler = $view->new_display('block', 'Block with map', 'block_1');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div class = "clearfix">
+  <div  class = "google-map">
+    <div id="map-canvas"
+      style="height: 410px;"
+      data-zoom="14"
+      data-address="[street_address], [city], Australia"
+      data-type="roadmap">
+    </div>
+  </div>
+</div>';
+  $handler->display->display_options['footer']['area']['format'] = 'raw_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $translatables['cbf2019_local_office'] = array(
     t('Master'),
     t('<none>'),
@@ -479,16 +483,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('Find us'),
-    t('<div class = "clearfix">
-  <div  class = "google-map">
-    <div id="map-canvas"
-      style="height: 410px;"
-      data-zoom="14"
-      data-address="[street_address], [city], Australia"
-      data-type="roadmap">
-    </div>
-  </div>
-</div>'),
     t('Office contact'),
     t('Email Address'),
     t('Phone'),
@@ -504,6 +498,17 @@ function theme_cbf2019_features_views_default_views() {
     t('[street_address_1]<div>[city_1] [state_province] [postal_code]</div>'),
     t('<i class="fa fa-fw fa-envelope-o"></i>'),
     t('Block'),
+    t('Block with map'),
+    t('<div class = "clearfix">
+  <div  class = "google-map">
+    <div id="map-canvas"
+      style="height: 410px;"
+      data-zoom="14"
+      data-address="[street_address], [city], Australia"
+      data-type="roadmap">
+    </div>
+  </div>
+</div>'),
   );
   $export['cbf2019_local_office'] = $view;
 
