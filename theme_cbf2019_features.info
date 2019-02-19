@@ -23,6 +23,7 @@ features[entityform_type][] = ministry_team
 features[entityform_type][] = office
 features[fe_block_boxes][] = cbf2019_theme_home_top
 features[fe_block_boxes][] = cbf_2019_theme_home_footer
+features[fe_block_boxes][] = cbf_2019_theme_home_plus
 features[features_api][] = api:2
 features[field_base][] = domain_entityform
 features[field_base][] = field_ministry_team
