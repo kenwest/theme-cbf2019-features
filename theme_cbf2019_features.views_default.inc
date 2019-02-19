@@ -226,6 +226,22 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Find us';
   $handler->display->display_options['header']['area']['format'] = '2';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div class = "clearfix">
+  <div  class = "google-map">
+    <div id="map-canvas"
+      style="height: 410px;"
+      data-zoom="14"
+      data-address="[street_address], [city], Australia"
+      data-type="roadmap">
+    </div>
+  </div>
+</div>';
+  $handler->display->display_options['footer']['area']['format'] = 'raw_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   /* Relationship: Entityform Submission: Office contact (field_organisation_contact) */
   $handler->display->display_options['relationships']['field_organisation_contact_contact_id']['id'] = 'field_organisation_contact_contact_id';
   $handler->display->display_options['relationships']['field_organisation_contact_contact_id']['table'] = 'field_data_field_organisation_contact';
@@ -324,8 +340,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['supplemental_address_1']['relationship'] = 'id_2';
   $handler->display->display_options['fields']['supplemental_address_1']['label'] = '';
   $handler->display->display_options['fields']['supplemental_address_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['supplemental_address_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['supplemental_address_1']['alter']['text'] = '[supplemental_address_1]<br/>';
   $handler->display->display_options['fields']['supplemental_address_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['supplemental_address_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['supplemental_address_1']['location_type'] = '0';
@@ -338,8 +352,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['street_address']['relationship'] = 'id_2';
   $handler->display->display_options['fields']['street_address']['label'] = '';
   $handler->display->display_options['fields']['street_address']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['street_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['street_address']['alter']['text'] = '[street_address]<br/>';
   $handler->display->display_options['fields']['street_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['street_address']['location_type'] = '0';
   $handler->display->display_options['fields']['street_address']['location_op'] = '0';
@@ -349,13 +361,25 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['table'] = 'civicrm_address';
   $handler->display->display_options['fields']['city']['field'] = 'city';
   $handler->display->display_options['fields']['city']['relationship'] = 'id_2';
-  $handler->display->display_options['fields']['city']['label'] = 'Address';
-  $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['city']['alter']['text'] = '[supplemental_address_1][street_address][city]';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
+  /* Field: CiviCRM Address: State/Province */
+  $handler->display->display_options['fields']['state_province_1']['id'] = 'state_province_1';
+  $handler->display->display_options['fields']['state_province_1']['table'] = 'civicrm_address';
+  $handler->display->display_options['fields']['state_province_1']['field'] = 'state_province';
+  $handler->display->display_options['fields']['state_province_1']['relationship'] = 'id_2';
+  $handler->display->display_options['fields']['state_province_1']['label'] = 'Address';
+  $handler->display->display_options['fields']['state_province_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['state_province_1']['alter']['text'] = '[supplemental_address_1]<span class="new-line">[street_address]</span><span class="new-line">[city]</span>';
+  $handler->display->display_options['fields']['state_province_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['state_province_1']['location_type'] = '0';
+  $handler->display->display_options['fields']['state_province_1']['location_op'] = '0';
+  $handler->display->display_options['fields']['state_province_1']['is_primary'] = 0;
+  $handler->display->display_options['fields']['state_province_1']['prov_display'] = '1';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
@@ -371,8 +395,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['street_address_1']['relationship'] = 'id_3';
   $handler->display->display_options['fields']['street_address_1']['label'] = '';
   $handler->display->display_options['fields']['street_address_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['street_address_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['street_address_1']['alter']['text'] = '[street_address_1]<br/>';
   $handler->display->display_options['fields']['street_address_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['street_address_1']['location_type'] = '0';
   $handler->display->display_options['fields']['street_address_1']['location_op'] = '0';
@@ -407,7 +429,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['postal_code']['relationship'] = 'id_3';
   $handler->display->display_options['fields']['postal_code']['label'] = 'Post';
   $handler->display->display_options['fields']['postal_code']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['postal_code']['alter']['text'] = '[street_address_1][city_1] [state_province] [postal_code]';
+  $handler->display->display_options['fields']['postal_code']['alter']['text'] = '[street_address_1]<span class="new-line">[city_1] [state_province] [postal_code]</span>';
   $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['postal_code']['location_type'] = '0';
   $handler->display->display_options['fields']['postal_code']['location_op'] = '0';
@@ -479,6 +501,16 @@ function theme_cbf2019_features_views_default_views() {
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('Find us'),
+    t('<div class = "clearfix">
+  <div  class = "google-map">
+    <div id="map-canvas"
+      style="height: 410px;"
+      data-zoom="14"
+      data-address="[street_address], [city], Australia"
+      data-type="roadmap">
+    </div>
+  </div>
+</div>'),
     t('Office contact'),
     t('Email Address'),
     t('Phone'),
@@ -487,14 +519,11 @@ function theme_cbf2019_features_views_default_views() {
     t('<i class="fa fa-fw fa-phone"></i>'),
     t('Call us'),
     t('<i class="fa fa-fw fa-map-marker"></i>'),
-    t('[supplemental_address_1]<br/>'),
-    t('[street_address]<br/>'),
     t('Address'),
-    t('[supplemental_address_1][street_address][city]'),
+    t('[supplemental_address_1]<span class="new-line">[street_address]</span><span class="new-line">[city]</span>'),
     t('<i class="fa fa-fw fa-file-text-o"></i>'),
-    t('[street_address_1]<br/>'),
     t('Post'),
-    t('[street_address_1][city_1] [state_province] [postal_code]'),
+    t('[street_address_1]<span class="new-line">[city_1] [state_province] [postal_code]</span>'),
     t('<i class="fa fa-fw fa-envelope-o"></i>'),
     t('Block'),
   );
