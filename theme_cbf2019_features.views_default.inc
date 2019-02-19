@@ -311,28 +311,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<i class="fa fa-fw fa-map-marker"></i>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'view-icon';
-  /* Field: CiviCRM Address: Latitude */
-  $handler->display->display_options['fields']['geo_code_1']['id'] = 'geo_code_1';
-  $handler->display->display_options['fields']['geo_code_1']['table'] = 'civicrm_address';
-  $handler->display->display_options['fields']['geo_code_1']['field'] = 'geo_code_1';
-  $handler->display->display_options['fields']['geo_code_1']['relationship'] = 'id_2';
-  $handler->display->display_options['fields']['geo_code_1']['label'] = '';
-  $handler->display->display_options['fields']['geo_code_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['geo_code_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['geo_code_1']['location_type'] = '0';
-  $handler->display->display_options['fields']['geo_code_1']['location_op'] = '0';
-  $handler->display->display_options['fields']['geo_code_1']['is_primary'] = 0;
-  /* Field: CiviCRM Address: Longitude */
-  $handler->display->display_options['fields']['geo_code_2']['id'] = 'geo_code_2';
-  $handler->display->display_options['fields']['geo_code_2']['table'] = 'civicrm_address';
-  $handler->display->display_options['fields']['geo_code_2']['field'] = 'geo_code_2';
-  $handler->display->display_options['fields']['geo_code_2']['relationship'] = 'id_2';
-  $handler->display->display_options['fields']['geo_code_2']['label'] = '';
-  $handler->display->display_options['fields']['geo_code_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['geo_code_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['geo_code_2']['location_type'] = '0';
-  $handler->display->display_options['fields']['geo_code_2']['location_op'] = '0';
-  $handler->display->display_options['fields']['geo_code_2']['is_primary'] = 0;
   /* Field: CiviCRM Address: Supplemental Street Address */
   $handler->display->display_options['fields']['supplemental_address_1']['id'] = 'supplemental_address_1';
   $handler->display->display_options['fields']['supplemental_address_1']['table'] = 'civicrm_address';
