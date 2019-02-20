@@ -17,5 +17,13 @@ function theme_cbf2019_features_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'staff_group' => array(
+      'name' => 'Staff group',
+      'machine_name' => 'staff_group',
+      'description' => 'The grouping into which City Bible Forum can be placed',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }
