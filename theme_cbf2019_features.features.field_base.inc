@@ -115,6 +115,82 @@ function theme_cbf2019_features_field_default_field_bases() {
     'type' => 'civicrm_contact_ref_contact',
   );
 
+  // Exported field_base: 'field_staff_contact'.
+  $field_bases['field_staff_contact'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_staff_contact',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'civicrm_contact_ref',
+    'settings' => array(
+      'allowed_values' => array(
+        'Individual' => array(
+          'Individual' => 'Individual',
+        ),
+        'Household' => array(
+          'Archived_team' => 0,
+          'Household' => 0,
+          'Team' => 0,
+        ),
+        'Organization' => array(
+          'Organization' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'civicrm_contact_ref_contact',
+  );
+
+  // Exported field_base: 'field_staff_groups'.
+  $field_bases['field_staff_groups'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_staff_groups',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'staff_group',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_subtitle'.
+  $field_bases['field_subtitle'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_subtitle',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 128,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_title'.
   $field_bases['field_title'] = array(
     'active' => 1,
