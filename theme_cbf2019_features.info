@@ -63,6 +63,7 @@ features[taxonomy][] = staff_group
 features[views_view][] = cbf2019_blog
 features[views_view][] = cbf2019_local_office
 features[views_view][] = cbf2019_recent_library
+features[views_view][] = cbf2019_staff_slider
 features[views_view][] = local_civicrm_event_slider
 features_exclude[dependencies][ctools] = ctools
 features_exclude[taxonomy][vocabulary_1] = vocabulary_1
