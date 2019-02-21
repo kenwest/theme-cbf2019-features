@@ -461,8 +461,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class = "clearfix">
   <div  class = "google-map">
-    <div id="map-canvas"
-      style="height: 410px;"
+    <div class="map-canvas-view"
       data-zoom="14"
       data-address="[street_address], [city], Australia"
       data-type="roadmap">
@@ -501,8 +500,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Block with map'),
     t('<div class = "clearfix">
   <div  class = "google-map">
-    <div id="map-canvas"
-      style="height: 410px;"
+    <div class="map-canvas-view"
       data-zoom="14"
       data-address="[street_address], [city], Australia"
       data-type="roadmap">
