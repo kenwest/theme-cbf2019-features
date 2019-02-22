@@ -732,12 +732,22 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
+  /* Field: Entityform Submission: Summary */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<div class="overlaid-image">[field_image]</div><div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_summary']['element_wrapper_class'] = 'image-plus-overlay';
   /* Field: Entityform Submission: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
@@ -795,6 +805,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Advanced options'),
     t('All'),
     t('Our team'),
+    t('<div class="overlaid-image">[field_image]</div><div class="image-overlay">[field_summary]</div>'),
     t('Block'),
   );
   $export['cbf2019_staff_slider'] = $view;
