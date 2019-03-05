@@ -607,6 +607,18 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
