@@ -32,6 +32,7 @@ features[menu_links][] = menu-cbf-2019-main-menu_blog:<front>
 features[menu_links][] = menu-cbf-2019-main-menu_events:<front>
 features[menu_links][] = menu-cbf-2019-main-menu_resources:<front>
 features[views_view][] = cbf2019_blog
+features[views_view][] = cbf2019_local_events
 features[views_view][] = cbf2019_local_office
 features[views_view][] = cbf2019_page_header
 features[views_view][] = cbf2019_page_header_node
