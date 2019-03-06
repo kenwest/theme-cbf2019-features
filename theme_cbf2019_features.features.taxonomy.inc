@@ -9,18 +9,18 @@
  */
 function theme_cbf2019_features_taxonomy_default_vocabularies() {
   return array(
-    'office' => array(
-      'name' => 'Office',
-      'machine_name' => 'office',
-      'description' => 'The offices of the City Bible Forum',
+    'regularity' => array(
+      'name' => 'Regularity',
+      'machine_name' => 'regularity',
+      'description' => 'How often events happen or groups meet',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),
-    'staff_group' => array(
-      'name' => 'Staff group',
-      'machine_name' => 'staff_group',
-      'description' => 'The grouping into which City Bible Forum can be placed',
+    'time_of_day' => array(
+      'name' => 'Time of day',
+      'machine_name' => 'time_of_day',
+      'description' => 'When do activities typically happen',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
