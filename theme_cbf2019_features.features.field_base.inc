@@ -31,27 +31,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     'type' => 'domain_entity',
   );
 
-  // Exported field_base: 'field_day'.
-  $field_bases['field_day'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_day',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 64,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_in_activity'.
   $field_bases['field_in_activity'] = array(
     'active' => 1,
@@ -89,96 +68,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_location'.
-  $field_bases['field_location'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_location',
-    'indexes' => array(
-      'lid' => array(
-        0 => 'lid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'location_cck',
-    'settings' => array(
-      'gmap_macro' => '[gmap ]',
-      'gmap_marker' => 'drupal',
-      'location_settings' => array(
-        'display' => array(
-          'hide' => array(
-            'additional' => 'additional',
-            'city' => 0,
-            'coords' => 'coords',
-            'country' => 'country',
-            'country_name' => 'country_name',
-            'locpick' => 'locpick',
-            'map_link' => 'map_link',
-            'name' => 0,
-            'phone' => 'phone',
-            'postal_code' => 'postal_code',
-            'province' => 'province',
-            'province_name' => 'province_name',
-            'street' => 0,
-          ),
-        ),
-        'form' => array(
-          'fields' => array(
-            'additional' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => -98,
-            ),
-            'city' => array(
-              'collect' => 2,
-              'default' => '',
-              'weight' => -97,
-            ),
-            'country' => array(
-              'collect' => 4,
-              'default' => 'au',
-              'weight' => -94,
-            ),
-            'locpick' => array(
-              'collect' => 1,
-              'weight' => -93,
-            ),
-            'name' => array(
-              'collect' => 1,
-              'default' => '',
-              'weight' => -100,
-            ),
-            'phone' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => -92,
-            ),
-            'postal_code' => array(
-              'collect' => 2,
-              'default' => '',
-              'weight' => -95,
-            ),
-            'province' => array(
-              'collect' => 2,
-              'default' => '',
-              'weight' => -96,
-              'widget' => 'autocomplete',
-            ),
-            'street' => array(
-              'collect' => 2,
-              'default' => '',
-              'weight' => -99,
-            ),
-          ),
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'location',
-  );
-
   // Exported field_base: 'field_logo'.
   $field_bases['field_logo'] = array(
     'active' => 1,
@@ -200,58 +89,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'file',
-  );
-
-  // Exported field_base: 'field_map_marker'.
-  $field_bases['field_map_marker'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_map_marker',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'map_marker',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_region'.
-  $field_bases['field_region'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_region',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'region',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_regularity'.
@@ -383,27 +220,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_time'.
-  $field_bases['field_time'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_time',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 64,
     ),
     'translatable' => 0,
     'type' => 'text',
