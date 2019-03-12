@@ -68,7 +68,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['label'] = '';
   $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_title']['type'] = 'text_plain';
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['empty'] = '[field_title]';
   /* Field: Location: Street */
   $handler->display->display_options['fields']['street']['id'] = 'street';
   $handler->display->display_options['fields']['street']['table'] = 'location';
@@ -106,7 +114,7 @@ function theme_cbf2019_features_views_default_views() {
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/libraries/gmap_markers/cbf.png">
-        <strong>[field_title]</strong><br/>
+        <strong>[name]</strong><br/>
         [street], [city] [field_summary]
       </div>
 ';
@@ -142,12 +150,13 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('Activity'),
     t('Location'),
+    t('[field_title]'),
     t('<br/><em>[field_summary]</em>'),
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/libraries/gmap_markers/cbf.png">
-        <strong>[field_title]</strong><br/>
+        <strong>[name]</strong><br/>
         [street], [city] [field_summary]
       </div>
 '),
