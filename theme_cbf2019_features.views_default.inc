@@ -1321,7 +1321,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Entityform Submission: Summary */
+  /* Field: Entityform Submission: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
