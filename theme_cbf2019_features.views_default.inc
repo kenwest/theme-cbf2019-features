@@ -113,7 +113,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
-        data-icon="https://citybibleforum.org/sites/all/libraries/gmap_markers/cbf.png">
+        data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
         <strong>[name]</strong><br/>
         [street], [city] [field_summary]
       </div>
@@ -155,7 +155,7 @@ function theme_cbf2019_features_views_default_views() {
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
-        data-icon="https://citybibleforum.org/sites/all/libraries/gmap_markers/cbf.png">
+        data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
         <strong>[name]</strong><br/>
         [street], [city] [field_summary]
       </div>
@@ -491,7 +491,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => 'content',
   );
-  /* Field: Content: Title image */
+  /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -744,7 +744,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => 'content',
   );
-  /* Field: Content: Title image */
+  /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -1545,7 +1545,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Title image */
+  /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -1660,7 +1660,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Content: Speaker(s) */
+  /* Field: Field: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
