@@ -727,6 +727,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['description']['relationship'] = 'field_speakers_tid';
   $handler->display->display_options['fields']['description']['label'] = '';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -740,6 +750,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('Speaker'),
     t('[field_image]'),
+    t('All'),
     t('Block'),
   );
   $export['cbf2019_event_speakers'] = $view;
