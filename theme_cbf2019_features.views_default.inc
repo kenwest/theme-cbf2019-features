@@ -700,16 +700,16 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Content: Title image */
-  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['relationship'] = 'field_speakers_tid';
-  $handler->display->display_options['fields']['field_title_image']['label'] = '';
-  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_title_image']['empty'] = '[field_image]';
-  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['relationship'] = 'field_speakers_tid';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['empty'] = '[field_image]';
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
