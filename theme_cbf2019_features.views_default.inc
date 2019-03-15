@@ -743,6 +743,9 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: For Activity */
   $handler = $view->new_display('block', 'For Activity', 'for_activity');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Field: Speaker(s) (field_speakers) */
   $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
