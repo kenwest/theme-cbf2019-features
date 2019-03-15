@@ -738,8 +738,43 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: For CiviCRM Event */
+  $handler = $view->new_display('block', 'For CiviCRM Event', 'for_civicrm_event');
+
+  /* Display: For Activity */
+  $handler = $view->new_display('block', 'For Activity', 'for_activity');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Speaker(s) (field_speakers) */
+  $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
+  $handler->display->display_options['relationships']['field_speakers_tid']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['relationships']['field_speakers_tid']['field'] = 'field_speakers_tid';
+  $handler->display->display_options['relationships']['field_speakers_tid']['label'] = 'Speaker';
+  $handler->display->display_options['relationships']['field_speakers_tid']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $translatables['cbf2019_event_speakers'] = array(
     t('Master'),
     t('more'),
@@ -751,7 +786,9 @@ function theme_cbf2019_features_views_default_views() {
     t('Speaker'),
     t('[field_image]'),
     t('All'),
-    t('Block'),
+    t('For CiviCRM Event'),
+    t('For Activity'),
+    t('Activity'),
   );
   $export['cbf2019_event_speakers'] = $view;
 
