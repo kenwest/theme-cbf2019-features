@@ -491,7 +491,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => 'content',
   );
-  /* Field: Field: Title image */
+  /* Field: Content: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -662,6 +662,89 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_city_activities'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_event_speakers';
+  $view->description = 'Slider showing speaker';
+  $view->tag = 'slider, autoplay';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event speakers';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Field: Speaker(s) (field_speakers) */
+  $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
+  $handler->display->display_options['relationships']['field_speakers_tid']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['relationships']['field_speakers_tid']['field'] = 'field_speakers_tid';
+  $handler->display->display_options['relationships']['field_speakers_tid']['label'] = 'Speaker';
+  $handler->display->display_options['relationships']['field_speakers_tid']['required'] = TRUE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_speakers_tid';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'person_360x438',
+    'image_link' => '',
+  );
+  /* Field: Content: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['relationship'] = 'field_speakers_tid';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['empty'] = '[field_image]';
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_speakers_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['relationship'] = 'field_speakers_tid';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_event_speakers'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Speaker'),
+    t('[field_image]'),
+    t('Block'),
+  );
+  $export['cbf2019_event_speakers'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_local_activities';
   $view->description = '';
   $view->tag = 'default';
@@ -744,7 +827,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => 'content',
   );
-  /* Field: Field: Title image */
+  /* Field: Content: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -1545,7 +1628,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Title image */
+  /* Field: Content: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
