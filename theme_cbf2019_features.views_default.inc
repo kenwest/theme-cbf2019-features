@@ -1792,11 +1792,11 @@ function theme_cbf2019_features_views_default_views() {
     'image_link' => '',
   );
   /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['label'] = '';
-  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
