@@ -1386,7 +1386,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_order_url']['label'] = '';
   $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = '<br/>Contact [field_order_url]';
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = '<br/>Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
@@ -1494,7 +1494,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Location'),
     t('[field_title]'),
     t('<br/><em>[field_summary]</em>'),
-    t('<br/>Contact [field_order_url]'),
+    t('<br/>Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>'),
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
