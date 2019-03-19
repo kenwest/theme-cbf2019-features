@@ -1379,6 +1379,17 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<br/><em>[field_summary]</em>';
   $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
+  /* Field: Field: Contact link */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = '<br/>Contact [field_order_url]';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
@@ -1390,7 +1401,7 @@ function theme_cbf2019_features_views_default_views() {
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
         <strong>[name]</strong><br/>
-        [street], [city] [field_summary]
+        [street], [city] [field_summary] [field_order_url]
       </div>
 ';
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
@@ -1483,12 +1494,13 @@ function theme_cbf2019_features_views_default_views() {
     t('Location'),
     t('[field_title]'),
     t('<br/><em>[field_summary]</em>'),
+    t('<br/>Contact [field_order_url]'),
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
         <strong>[name]</strong><br/>
-        [street], [city] [field_summary]
+        [street], [city] [field_summary] [field_order_url]
       </div>
 '),
     t('.'),
