@@ -1581,6 +1581,92 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_page_header'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_page_header_civicrm_event';
+  $view->description = 'Page header for all CiviCRM Event pages';
+  $view->tag = 'page-header';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 page header - CiviCRM Event';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '518400';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  /* Field: CiviCRM Events: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  /* Field: Activity title image */
+  $handler->display->display_options['fields']['field_title_image_1']['id'] = 'field_title_image_1';
+  $handler->display->display_options['fields']['field_title_image_1']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image_1']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image_1']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['field_title_image_1']['ui_name'] = 'Activity title image';
+  $handler->display->display_options['fields']['field_title_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image_1']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_page_header_civicrm_event'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Activity'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_page_header_civicrm_event'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_page_header_node';
   $view->description = 'Page header for all node pages';
   $view->tag = 'page-header';
