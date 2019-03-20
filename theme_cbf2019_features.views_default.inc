@@ -335,7 +335,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => 'content',
   );
-  /* Field: Content: Title image */
+  /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -588,7 +588,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => 'content',
   );
-  /* Field: Content: Title image */
+  /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
@@ -1379,7 +1379,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<br/><em>[field_summary]</em>';
   $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
-  /* Field: Field: Contact link */
+  /* Field: Field: Order URL */
   $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
   $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
   $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
@@ -1613,7 +1613,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Title image */
+  /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
