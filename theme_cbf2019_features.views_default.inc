@@ -1605,6 +1605,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1621,6 +1626,19 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  /* Field: Activity title image */
+  $handler->display->display_options['fields']['field_title_image_1']['id'] = 'field_title_image_1';
+  $handler->display->display_options['fields']['field_title_image_1']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image_1']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image_1']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['field_title_image_1']['ui_name'] = 'Activity title image';
+  $handler->display->display_options['fields']['field_title_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image_1']['settings'] = array(
     'image_style' => 'title',
     'image_link' => '',
   );
@@ -1656,6 +1674,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Activity'),
     t('All'),
     t('Block'),
   );
