@@ -506,6 +506,445 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_city_activities'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_event_details';
+  $view->description = 'Details of this event such as when, where and cost';
+  $view->tag = 'default';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event details';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['css_class'] = 'venue';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: CiviCRM Address: Address */
+  $handler->display->display_options['relationships']['id']['id'] = 'id';
+  $handler->display->display_options['relationships']['id']['table'] = 'civicrm_address';
+  $handler->display->display_options['relationships']['id']['field'] = 'id';
+  $handler->display->display_options['relationships']['id']['label'] = 'Address';
+  $handler->display->display_options['relationships']['id']['location_type'] = '0';
+  $handler->display->display_options['relationships']['id']['location_op'] = '0';
+  $handler->display->display_options['relationships']['id']['is_primary'] = 1;
+  /* Field: Field: Date text */
+  $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['label'] = 'When';
+  $handler->display->display_options['fields']['field_date_text']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Address: Supplemental Street Address */
+  $handler->display->display_options['fields']['supplemental_address_1']['id'] = 'supplemental_address_1';
+  $handler->display->display_options['fields']['supplemental_address_1']['table'] = 'civicrm_address';
+  $handler->display->display_options['fields']['supplemental_address_1']['field'] = 'supplemental_address_1';
+  $handler->display->display_options['fields']['supplemental_address_1']['label'] = '';
+  $handler->display->display_options['fields']['supplemental_address_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['supplemental_address_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['supplemental_address_1']['alter']['text'] = '[supplemental_address_1]<br/>';
+  $handler->display->display_options['fields']['supplemental_address_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['supplemental_address_1']['location_type'] = '0';
+  $handler->display->display_options['fields']['supplemental_address_1']['location_op'] = '0';
+  $handler->display->display_options['fields']['supplemental_address_1']['is_primary'] = 0;
+  /* Field: CiviCRM Address: Full Street Address */
+  $handler->display->display_options['fields']['street_address']['id'] = 'street_address';
+  $handler->display->display_options['fields']['street_address']['table'] = 'civicrm_address';
+  $handler->display->display_options['fields']['street_address']['field'] = 'street_address';
+  $handler->display->display_options['fields']['street_address']['relationship'] = 'id';
+  $handler->display->display_options['fields']['street_address']['label'] = '';
+  $handler->display->display_options['fields']['street_address']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street_address']['location_type'] = '0';
+  $handler->display->display_options['fields']['street_address']['location_op'] = '0';
+  $handler->display->display_options['fields']['street_address']['is_primary'] = 0;
+  /* Field: CiviCRM Address: City / Suburb */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'civicrm_address';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['relationship'] = 'id';
+  $handler->display->display_options['fields']['city']['label'] = 'Where';
+  $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['city']['alter']['text'] = '[supplemental_address_1] [street_address] [city]';
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['location_type'] = '0';
+  $handler->display->display_options['fields']['city']['location_op'] = '0';
+  $handler->display->display_options['fields']['city']['is_primary'] = 0;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = 'Cost';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_event_price';
+  $handler->display->display_options['fields']['view']['display'] = 'block';
+  $handler->display->display_options['fields']['view']['arguments'] = '!1';
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_event_details'] = array(
+    t('Master'),
+    t('<none>'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Address'),
+    t('When'),
+    t('[supplemental_address_1]<br/>'),
+    t('Where'),
+    t('[supplemental_address_1] [street_address] [city]'),
+    t('Cost'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_event_details'] = $view;
+
+  $view = new view();
+  $view->name = 'cbf2019_event_price';
+  $view->description = '';
+  $view->tag = 'event-price';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event price';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['css_class'] = 'event-price';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'nothing',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: CiviCRM Price Set Entities: Price Set */
+  $handler->display->display_options['relationships']['price_set']['id'] = 'price_set';
+  $handler->display->display_options['relationships']['price_set']['table'] = 'civicrm_price_set_entity';
+  $handler->display->display_options['relationships']['price_set']['field'] = 'price_set';
+  /* Relationship: Price Field: Price Field */
+  $handler->display->display_options['relationships']['civicrm_price_field']['id'] = 'civicrm_price_field';
+  $handler->display->display_options['relationships']['civicrm_price_field']['table'] = 'civicrm_price_set';
+  $handler->display->display_options['relationships']['civicrm_price_field']['field'] = 'civicrm_price_field';
+  $handler->display->display_options['relationships']['civicrm_price_field']['relationship'] = 'price_set';
+  /* Relationship: CiviCRM Price Fields: Price Field Value */
+  $handler->display->display_options['relationships']['civicrm_price_field_value']['id'] = 'civicrm_price_field_value';
+  $handler->display->display_options['relationships']['civicrm_price_field_value']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['relationships']['civicrm_price_field_value']['field'] = 'civicrm_price_field_value';
+  $handler->display->display_options['relationships']['civicrm_price_field_value']['relationship'] = 'civicrm_price_field';
+  /* Field: CiviCRM Events: Event ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: CiviCRM Price Fields: Label */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Price Fields: HTML Type */
+  $handler->display->display_options['fields']['html_type']['id'] = 'html_type';
+  $handler->display->display_options['fields']['html_type']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['fields']['html_type']['field'] = 'html_type';
+  $handler->display->display_options['fields']['html_type']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['fields']['html_type']['label'] = '';
+  $handler->display->display_options['fields']['html_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['html_type']['element_label_colon'] = FALSE;
+  /* Field: Price field label */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Price field label';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="[html_type]">[label]</span>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Price Field Values: Label */
+  $handler->display->display_options['fields']['label_1']['id'] = 'label_1';
+  $handler->display->display_options['fields']['label_1']['table'] = 'civicrm_price_field_value';
+  $handler->display->display_options['fields']['label_1']['field'] = 'label';
+  $handler->display->display_options['fields']['label_1']['relationship'] = 'civicrm_price_field_value';
+  $handler->display->display_options['fields']['label_1']['label'] = '';
+  $handler->display->display_options['fields']['label_1']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Price Field Values: Amount */
+  $handler->display->display_options['fields']['amount']['id'] = 'amount';
+  $handler->display->display_options['fields']['amount']['table'] = 'civicrm_price_field_value';
+  $handler->display->display_options['fields']['amount']['field'] = 'amount';
+  $handler->display->display_options['fields']['amount']['relationship'] = 'civicrm_price_field_value';
+  $handler->display->display_options['fields']['amount']['label'] = '';
+  $handler->display->display_options['fields']['amount']['element_label_colon'] = FALSE;
+  /* Sort criterion: CiviCRM Price Fields: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'civicrm_price_field';
+  /* Sort criterion: CiviCRM Price Field Values: Weight */
+  $handler->display->display_options['sorts']['weight_1']['id'] = 'weight_1';
+  $handler->display->display_options['sorts']['weight_1']['table'] = 'civicrm_price_field_value';
+  $handler->display->display_options['sorts']['weight_1']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight_1']['relationship'] = 'civicrm_price_field_value';
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    3 => 'OR',
+    2 => 'OR',
+  );
+  /* Filter criterion: CiviCRM Events: Is Online Registration On */
+  $handler->display->display_options['filters']['is_online_registration']['id'] = 'is_online_registration';
+  $handler->display->display_options['filters']['is_online_registration']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_online_registration']['field'] = 'is_online_registration';
+  $handler->display->display_options['filters']['is_online_registration']['value'] = '1';
+  $handler->display->display_options['filters']['is_online_registration']['group'] = 1;
+  /* Filter criterion: CiviCRM Price Fields: Visibility */
+  $handler->display->display_options['filters']['visibility']['id'] = 'visibility';
+  $handler->display->display_options['filters']['visibility']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['visibility']['field'] = 'visibility';
+  $handler->display->display_options['filters']['visibility']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['visibility']['value'] = '1';
+  $handler->display->display_options['filters']['visibility']['group'] = 1;
+  $handler->display->display_options['filters']['visibility']['expose']['operator_id'] = 'visibility_op';
+  $handler->display->display_options['filters']['visibility']['expose']['label'] = 'Visibility';
+  $handler->display->display_options['filters']['visibility']['expose']['operator'] = 'visibility_op';
+  $handler->display->display_options['filters']['visibility']['expose']['identifier'] = 'visibility';
+  /* Filter criterion: CiviCRM Price Fields: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  $handler->display->display_options['filters']['is_active']['group'] = 1;
+  /* Filter criterion: CiviCRM Price Field Values: Is Active */
+  $handler->display->display_options['filters']['is_active_1']['id'] = 'is_active_1';
+  $handler->display->display_options['filters']['is_active_1']['table'] = 'civicrm_price_field_value';
+  $handler->display->display_options['filters']['is_active_1']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active_1']['relationship'] = 'civicrm_price_field_value';
+  $handler->display->display_options['filters']['is_active_1']['value'] = '1';
+  $handler->display->display_options['filters']['is_active_1']['group'] = 1;
+  /* Filter criterion: CiviCRM Price Fields: Expire On */
+  $handler->display->display_options['filters']['expire_on_1']['id'] = 'expire_on_1';
+  $handler->display->display_options['filters']['expire_on_1']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['expire_on_1']['field'] = 'expire_on';
+  $handler->display->display_options['filters']['expire_on_1']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['expire_on_1']['operator'] = '>=';
+  $handler->display->display_options['filters']['expire_on_1']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['expire_on_1']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['expire_on_1']['group'] = 3;
+  /* Filter criterion: CiviCRM Price Fields: Expire On */
+  $handler->display->display_options['filters']['expire_on']['id'] = 'expire_on';
+  $handler->display->display_options['filters']['expire_on']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['expire_on']['field'] = 'expire_on';
+  $handler->display->display_options['filters']['expire_on']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['expire_on']['operator'] = 'empty';
+  $handler->display->display_options['filters']['expire_on']['group'] = 3;
+  /* Filter criterion: CiviCRM Price Fields: Active On */
+  $handler->display->display_options['filters']['active_on_1']['id'] = 'active_on_1';
+  $handler->display->display_options['filters']['active_on_1']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['active_on_1']['field'] = 'active_on';
+  $handler->display->display_options['filters']['active_on_1']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['active_on_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['active_on_1']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['active_on_1']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['active_on_1']['group'] = 2;
+  /* Filter criterion: CiviCRM Price Fields: Active On */
+  $handler->display->display_options['filters']['active_on']['id'] = 'active_on';
+  $handler->display->display_options['filters']['active_on']['table'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['active_on']['field'] = 'active_on';
+  $handler->display->display_options['filters']['active_on']['relationship'] = 'civicrm_price_field';
+  $handler->display->display_options['filters']['active_on']['operator'] = 'empty';
+  $handler->display->display_options['filters']['active_on']['group'] = 2;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_event_price'] = array(
+    t('Master'),
+    t('<none>'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Price Set'),
+    t('Price Field'),
+    t('Price Field Value'),
+    t('.'),
+    t('<span class="[html_type]">[label]</span>'),
+    t('All'),
+    t('Visibility'),
+    t('Block'),
+  );
+  $export['cbf2019_event_price'] = $view;
+
+  $view = new view();
+  $view->name = 'cbf2019_event_registration';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event registration';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'amount' => 'amount',
+    'label' => 'label',
+  );
+  /* Field: CiviCRM Events: Event ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['id']['alter']['text'] = 'REGISTER NOW';
+  $handler->display->display_options['fields']['id']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['id']['alter']['path'] = '/civicrm/event/register?reset=1&id=[id]';
+  $handler->display->display_options['fields']['id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    3 => 'OR',
+    2 => 'OR',
+  );
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  $handler->display->display_options['filters']['is_active']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Is Online Registration On */
+  $handler->display->display_options['filters']['is_online_registration']['id'] = 'is_online_registration';
+  $handler->display->display_options['filters']['is_online_registration']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_online_registration']['field'] = 'is_online_registration';
+  $handler->display->display_options['filters']['is_online_registration']['value'] = '1';
+  $handler->display->display_options['filters']['is_online_registration']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
+  $handler->display->display_options['filters']['is_public']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Start Date */
+  $handler->display->display_options['filters']['start_date']['id'] = 'start_date';
+  $handler->display->display_options['filters']['start_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['start_date']['field'] = 'start_date';
+  $handler->display->display_options['filters']['start_date']['operator'] = '>=';
+  $handler->display->display_options['filters']['start_date']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['start_date']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['start_date']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Registration End Date */
+  $handler->display->display_options['filters']['registration_end_date']['id'] = 'registration_end_date';
+  $handler->display->display_options['filters']['registration_end_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['registration_end_date']['field'] = 'registration_end_date';
+  $handler->display->display_options['filters']['registration_end_date']['operator'] = '>';
+  $handler->display->display_options['filters']['registration_end_date']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['registration_end_date']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['registration_end_date']['group'] = 3;
+  /* Filter criterion: CiviCRM Events: Registration End Date */
+  $handler->display->display_options['filters']['registration_end_date_1']['id'] = 'registration_end_date_1';
+  $handler->display->display_options['filters']['registration_end_date_1']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['registration_end_date_1']['field'] = 'registration_end_date';
+  $handler->display->display_options['filters']['registration_end_date_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['registration_end_date_1']['group'] = 3;
+  /* Filter criterion: CiviCRM Events: Registration Start Date */
+  $handler->display->display_options['filters']['registration_start_date']['id'] = 'registration_start_date';
+  $handler->display->display_options['filters']['registration_start_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['registration_start_date']['field'] = 'registration_start_date';
+  $handler->display->display_options['filters']['registration_start_date']['operator'] = '<';
+  $handler->display->display_options['filters']['registration_start_date']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['registration_start_date']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['registration_start_date']['group'] = 2;
+  /* Filter criterion: CiviCRM Events: Registration Start Date */
+  $handler->display->display_options['filters']['registration_start_date_1']['id'] = 'registration_start_date_1';
+  $handler->display->display_options['filters']['registration_start_date_1']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['registration_start_date_1']['field'] = 'registration_start_date';
+  $handler->display->display_options['filters']['registration_start_date_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['registration_start_date_1']['group'] = 2;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_event_registration'] = array(
+    t('Master'),
+    t('<none>'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('REGISTER NOW'),
+    t('.'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_event_registration'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_local_activities';
   $view->description = '';
   $view->tag = 'default';
