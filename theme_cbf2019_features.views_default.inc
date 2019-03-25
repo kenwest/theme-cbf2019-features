@@ -1493,7 +1493,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fa fa-fw fa-phone"></i>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fal fa-fw fa-phone"></i>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'view-icon';
   /* Field: CiviCRM Phone Details: Phone */
@@ -1512,7 +1512,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<i class="fa fa-fw fa-map-marker"></i>';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<i class="fal fa-fw fa-map-marker-alt"></i>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'view-icon';
   /* Field: CiviCRM Address: Supplemental Street Address */
@@ -1567,7 +1567,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<i class="fa fa-fw fa-file-text-o"></i>';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<i class="fal fa-fw fa-envelope-open-text"></i>';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'view-icon';
   /* Field: CiviCRM Address: Full Street Address */
@@ -1621,7 +1621,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '<i class="fa fa-fw fa-envelope-o"></i>';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '<i class="fal fa-fw fa-at"></i>';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'view-icon';
   /* Field: CiviCRM Email: Email Address */
@@ -1707,15 +1707,15 @@ function theme_cbf2019_features_views_default_views() {
     t('Phone'),
     t('Physical address'),
     t('Postal address'),
-    t('<i class="fa fa-fw fa-phone"></i>'),
+    t('<i class="fal fa-fw fa-phone"></i>'),
     t('Call us'),
-    t('<i class="fa fa-fw fa-map-marker"></i>'),
+    t('<i class="fal fa-fw fa-map-marker-alt"></i>'),
     t('Address'),
     t('[supplemental_address_1]<div>[street_address]</div><div>[city]</div>'),
-    t('<i class="fa fa-fw fa-file-text-o"></i>'),
+    t('<i class="fal fa-fw fa-envelope-open-text"></i>'),
     t('Post'),
     t('[street_address_1]<div>[city_1] [state_province] [postal_code]</div>'),
-    t('<i class="fa fa-fw fa-envelope-o"></i>'),
+    t('<i class="fal fa-fw fa-at"></i>'),
     t('Block'),
     t('Block with map'),
     t('<div class = "clearfix">
