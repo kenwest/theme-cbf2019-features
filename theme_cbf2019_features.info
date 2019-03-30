@@ -40,6 +40,7 @@ features[taxonomy][] = time_of_day
 features[views_view][] = cbf2019_activity_regular_venue_list
 features[views_view][] = cbf2019_blog
 features[views_view][] = cbf2019_city_activities
+features[views_view][] = cbf2019_content_details_table
 features[views_view][] = cbf2019_content_highlight_slider
 features[views_view][] = cbf2019_event_details
 features[views_view][] = cbf2019_event_highlight_slider
