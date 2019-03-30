@@ -907,6 +907,81 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_event_details'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_event_details_table';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event details table';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Details */
+  $handler->display->display_options['fields']['field_details']['id'] = 'field_details';
+  $handler->display->display_options['fields']['field_details']['table'] = 'field_data_field_details';
+  $handler->display->display_options['fields']['field_details']['field'] = 'field_details';
+  $handler->display->display_options['fields']['field_details']['label'] = '';
+  $handler->display->display_options['fields']['field_details']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_details']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_details']['settings'] = array(
+    'header_orientation' => 'Horizontal',
+    'sticky_header' => 0,
+    'striping' => 1,
+    'sortable' => FALSE,
+    'hide_header' => 0,
+    'hide_cols_skip_head' => 0,
+    'trim_trailing_cols' => 0,
+    'trim_trailing_rows' => 0,
+    'hide_empty_rows' => 0,
+    'hide_empty_cols' => 0,
+    'export_csv' => 0,
+  );
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+
+  /* Display: For CiviCRM Event */
+  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_1');
+  $handler->display->display_options['display_description'] = 'Details table for a CiviCRM Event';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+  $translatables['cbf2019_event_details_table'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('For CiviCRM Event'),
+    t('Details table for a CiviCRM Event'),
+    t('All'),
+  );
+  $export['cbf2019_event_details_table'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_event_highlight_slider';
   $view->description = 'Slider showing highlights for CiviCRM Events and Activities';
   $view->tag = 'slider, fieldwise';
