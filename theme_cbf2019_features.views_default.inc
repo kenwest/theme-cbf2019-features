@@ -506,6 +506,200 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_city_activities'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_content_highlight_slider';
+  $view->description = 'Slider showing highlights for nodes';
+  $view->tag = 'slider, fieldwise';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 content highlight slider';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+
+  /* Display: For Activity */
+  $handler = $view->new_display('block', 'For Activity', 'block_1');
+  $handler->display->display_options['display_description'] = 'Highlights for an Activity and its CiviCRM Events';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
+  $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['field_highlight_video_1']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight_1']['id'] = 'field_highlight_1';
+  $handler->display->display_options['fields']['field_highlight_1']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight_1']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['field_highlight_1']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight_1']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid_1']['id'] = 'field_highlight_fid_1';
+  $handler->display->display_options['filters']['field_highlight_fid_1']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid_1']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['field_highlight_fid_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid_1']['group'] = 2;
+  $translatables['cbf2019_content_highlight_slider'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('For Activity'),
+    t('Highlights for an Activity and its CiviCRM Events'),
+    t('CiviCRM Event'),
+  );
+  $export['cbf2019_content_highlight_slider'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_event_details';
   $view->description = 'Details of this event such as when, where and cost';
   $view->tag = 'default';
