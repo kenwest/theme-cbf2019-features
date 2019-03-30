@@ -2805,6 +2805,39 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'For home page', 'block_1');
   $handler->display->display_options['display_description'] = 'Recent library resources for the home page';
   $handler->display->display_options['link_url'] = 'library';
+
+  /* Display: For Activity */
+  $handler = $view->new_display('block', 'For Activity', 'block_2');
+  $handler->display->display_options['display_description'] = 'Recent library resources for an activity';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'next ›';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '‹ previous';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
@@ -2823,6 +2856,17 @@ function theme_cbf2019_features_views_default_views() {
     t('more'),
     t('For home page'),
     t('Recent library resources for the home page'),
+    t('For Activity'),
+    t('Recent library resources for an activity'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('next ›'),
+    t('‹ previous'),
+    t('last »'),
+    t('Activity'),
+    t('All'),
   );
   $export['cbf2019_recent_library'] = $view;
 
