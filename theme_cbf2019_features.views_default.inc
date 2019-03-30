@@ -891,28 +891,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
-
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_2');
-  $handler->display->display_options['display_description'] = 'Highlights for an Activity';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_event_highlight_slider'] = array(
     t('Master'),
     t('more'),
@@ -926,9 +904,6 @@ function theme_cbf2019_features_views_default_views() {
     t('For CiviCRM Event'),
     t('Highlights for a CiviCRM Event'),
     t('All'),
-    t('For Activity'),
-    t('Highlights for an Activity'),
-    t('Activity'),
   );
   $export['cbf2019_event_highlight_slider'] = $view;
 
