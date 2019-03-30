@@ -635,6 +635,12 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
+  $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
+  $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
+  $handler->display->display_options['sorts']['field_sort_order_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
