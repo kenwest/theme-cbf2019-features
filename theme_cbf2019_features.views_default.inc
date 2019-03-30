@@ -2800,6 +2800,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'library';
+
+  /* Display: For home page */
+  $handler = $view->new_display('block', 'For home page', 'block_1');
+  $handler->display->display_options['display_description'] = 'Recent library resources for the home page';
+  $handler->display->display_options['link_url'] = 'library';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
@@ -2816,6 +2821,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('more'),
+    t('For home page'),
+    t('Recent library resources for the home page'),
   );
   $export['cbf2019_recent_library'] = $view;
 
