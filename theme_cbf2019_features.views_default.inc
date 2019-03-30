@@ -2796,8 +2796,9 @@ function theme_cbf2019_features_views_default_views() {
     'episode' => 'episode',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'library';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
@@ -2812,7 +2813,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Recent resources'),
     t('[field_speakers] | [field_episode_date]'),
     t('READ MORE'),
-    t('Block'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
     t('more'),
   );
   $export['cbf2019_recent_library'] = $view;
