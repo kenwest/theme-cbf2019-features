@@ -2852,7 +2852,7 @@ function theme_cbf2019_features_views_default_views() {
   $view = new view();
   $view->name = 'cbf2019_recent_library';
   $view->description = 'Recent library view for the cbf2019 theme';
-  $view->tag = 'default';
+  $view->tag = 'right-to-left';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 recent library';
   $view->core = 7;
