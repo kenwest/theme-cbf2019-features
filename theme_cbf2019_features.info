@@ -37,6 +37,7 @@ features[taxonomy][] = map_marker
 features[taxonomy][] = region
 features[taxonomy][] = regularity
 features[taxonomy][] = time_of_day
+features[views_view][] = cbf2019_activity_logo
 features[views_view][] = cbf2019_activity_regular_venue_list
 features[views_view][] = cbf2019_blog
 features[views_view][] = cbf2019_city_activities
