@@ -3130,7 +3130,7 @@ function theme_cbf2019_features_views_default_views() {
         'bef_collapsible' => 0,
         'autosubmit' => 0,
         'is_secondary' => 0,
-        'any_label' => '',
+        'any_label' => 'All',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
