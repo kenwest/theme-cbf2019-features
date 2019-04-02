@@ -3431,19 +3431,24 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_resource_type_value']['group_info']['identifier'] = 'field_resource_type_value';
   $handler->display->display_options['filters']['field_resource_type_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'Audio',
-      'operator' => '=',
-      'value' => 'audio',
+      'title' => 'Order hardcopy',
+      'operator' => 'contains',
+      'value' => 'o',
     ),
     2 => array(
       'title' => 'Video',
-      'operator' => '=',
-      'value' => 'video',
+      'operator' => 'contains',
+      'value' => 'v',
     ),
     3 => array(
-      'title' => 'Document',
-      'operator' => '=',
-      'value' => 'text',
+      'title' => 'Audio',
+      'operator' => 'contains',
+      'value' => 'a',
+    ),
+    4 => array(
+      'title' => 'Download PDF',
+      'operator' => 'contains',
+      'value' => 'd',
     ),
   );
   $handler->display->display_options['path'] = 'home/library';
