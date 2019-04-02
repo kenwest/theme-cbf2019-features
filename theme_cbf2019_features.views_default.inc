@@ -3024,8 +3024,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  /* Display: Resource library */
+  $handler = $view->new_display('page', 'Resource library', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Resource library';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
