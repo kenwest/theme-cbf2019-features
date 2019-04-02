@@ -2877,9 +2877,9 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
   $handler->display->display_options['style_options']['columns_vertical'] = '4';
   $handler->display->display_options['style_options']['columns_xs'] = '12';
-  $handler->display->display_options['style_options']['columns_sm'] = '6';
-  $handler->display->display_options['style_options']['columns_md'] = '3';
-  $handler->display->display_options['style_options']['columns_lg'] = '3';
+  $handler->display->display_options['style_options']['columns_sm'] = '0';
+  $handler->display->display_options['style_options']['columns_md'] = '0';
+  $handler->display->display_options['style_options']['columns_lg'] = '0';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Header: Global: Text area */
