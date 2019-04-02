@@ -3266,6 +3266,35 @@ function theme_cbf2019_features_views_default_views() {
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Content: Resource type (field_resource_type) */
+  $handler->display->display_options['filters']['field_resource_type_value']['id'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['filters']['field_resource_type_value']['field'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator_id'] = 'field_resource_type_value_op';
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['label'] = 'Resource type (field_resource_type)';
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator'] = 'field_resource_type_value_op';
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['identifier'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['identifier'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Audio',
+      'operator' => '=',
+      'value' => 'audio',
+    ),
+    2 => array(
+      'title' => 'Video',
+      'operator' => '=',
+      'value' => 'video',
+    ),
+    3 => array(
+      'title' => 'Document',
+      'operator' => '=',
+      'value' => 'text',
+    ),
+  );
   $handler->display->display_options['path'] = 'home/library';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
@@ -3301,6 +3330,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Topics'),
     t('Speaker'),
     t('City'),
+    t('Resource type (field_resource_type)'),
+    t('Type'),
   );
   $export['cbf2019_recent_library'] = $view;
 
