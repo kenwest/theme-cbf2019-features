@@ -3755,6 +3755,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>';
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'person_360x438',
@@ -3826,6 +3827,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Advanced options'),
     t('All'),
     t('Our team'),
+    t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('<div class="overlaid-image">[field_image]</div><div class="image-overlay">[field_summary]</div>'),
     t('Block'),
   );
