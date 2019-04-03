@@ -3314,18 +3314,17 @@ function theme_cbf2019_features_views_default_views() {
     10 => 0,
     9 => 0,
   );
-  /* Filter criterion: Content: Keyword(s) (field_topics) */
-  $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
-  $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
-  $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
-  $handler->display->display_options['filters']['field_topics_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_topics_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_topics_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_topics_tid']['expose']['operator_id'] = 'field_topics_tid_op';
-  $handler->display->display_options['filters']['field_topics_tid']['expose']['label'] = 'Topics';
-  $handler->display->display_options['filters']['field_topics_tid']['expose']['operator'] = 'field_topics_tid_op';
-  $handler->display->display_options['filters']['field_topics_tid']['expose']['identifier'] = 'field_topics_tid';
-  $handler->display->display_options['filters']['field_topics_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Topic(s) (field_topic) */
+  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['label'] = 'Topics';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['identifier'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     5 => 0,
@@ -3337,7 +3336,9 @@ function theme_cbf2019_features_views_default_views() {
     10 => 0,
     9 => 0,
   );
-  $handler->display->display_options['filters']['field_topics_tid']['vocabulary'] = 'keyword';
+  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
+  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
   /* Filter criterion: Field: Speaker(s) (field_speakers) */
   $handler->display->display_options['filters']['field_speakers_tid']['id'] = 'field_speakers_tid';
   $handler->display->display_options['filters']['field_speakers_tid']['table'] = 'field_data_field_speakers';
@@ -3421,6 +3422,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_resource_type_value']['id'] = 'field_resource_type_value';
   $handler->display->display_options['filters']['field_resource_type_value']['table'] = 'field_data_field_resource_type';
   $handler->display->display_options['filters']['field_resource_type_value']['field'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['group'] = 1;
   $handler->display->display_options['filters']['field_resource_type_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator_id'] = 'field_resource_type_value_op';
   $handler->display->display_options['filters']['field_resource_type_value']['expose']['label'] = 'Resource type (field_resource_type)';
