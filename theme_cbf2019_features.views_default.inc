@@ -3314,6 +3314,13 @@ function theme_cbf2019_features_views_default_views() {
     10 => 0,
     9 => 0,
   );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Topic(s) (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
