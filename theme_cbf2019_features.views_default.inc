@@ -3523,6 +3523,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Speaker';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -3672,6 +3678,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Speaker'),
     t('[field_image]'),
     t('Defaults'),
     t('For CiviCRM Event'),
