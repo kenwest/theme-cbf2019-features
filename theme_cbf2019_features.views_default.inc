@@ -2785,6 +2785,76 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_page_header_node'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_page_header_paths';
+  $view->description = 'Page header for specific paths';
+  $view->tag = 'page-header';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 page header - paths';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '518400';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
+  $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = 'return parse_url(request_uri())["path"];';
+  $handler->display->display_options['arguments']['field_synopsis_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_synopsis_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_synopsis_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_synopsis_value']['limit'] = '0';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'title_header' => 'title_header',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_page_header_paths'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_page_header_paths'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_recent_library';
   $view->description = 'Recent library view for the cbf2019 theme';
   $view->tag = 'right-to-left';
