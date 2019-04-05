@@ -3536,6 +3536,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '<div class="landscape-image-placeholder"><i class="fal fa-user"></i></div>';
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'person_360x438',
@@ -3565,10 +3566,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['description']['field'] = 'description';
   $handler->display->display_options['fields']['description']['label'] = '';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -3584,18 +3581,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
   $handler->display->display_options['filters']['description']['value'] = '0';
   $handler->display->display_options['filters']['description']['group'] = 1;
-  /* Filter criterion: Field: Image (field_image:fid) */
-  $handler->display->display_options['filters']['field_image_fid']['id'] = 'field_image_fid';
-  $handler->display->display_options['filters']['field_image_fid']['table'] = 'field_data_field_image';
-  $handler->display->display_options['filters']['field_image_fid']['field'] = 'field_image_fid';
-  $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -3679,6 +3664,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Speaker'),
+    t('<div class="landscape-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('[field_image]'),
     t('Defaults'),
     t('For CiviCRM Event'),
