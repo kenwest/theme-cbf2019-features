@@ -251,13 +251,23 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
   /* Field: Field: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['label'] = '';
   $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[name] | [field_episode_date]';
+  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
   $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
     'format_type' => 'custom',
