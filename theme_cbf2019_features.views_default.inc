@@ -316,25 +316,112 @@ function theme_cbf2019_features_views_default_views() {
     'blog' => 'blog',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'articles';
+
+  /* Display: For home page */
+  $handler = $view->new_display('block', 'For home page', 'block_1');
+  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Blog';
+  $handler->display->display_options['header']['area']['format'] = '2';
+
+  /* Display: Blog */
+  $handler = $view->new_display('page', 'Blog', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Blog';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'All news in our blog';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'next ›';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '‹ previous';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  $handler->display->display_options['path'] = 'home/articles';
   $translatables['cbf2019_blog'] = array(
     t('Master'),
     t('<none>'),
     t('All news in our blog'),
-    t('Apply'),
+    t('Search'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Title'),
-    t('Blog'),
     t('Author'),
-    t('[name] | [field_episode_date]'),
+    t('[name]'),
+    t('[field_speakers] | [field_episode_date]'),
     t('READ MORE'),
-    t('Block'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
     t('more'),
+    t('For home page'),
+    t('Blog'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('next ›'),
+    t('‹ previous'),
+    t('last »'),
+    t('Title'),
   );
   $export['cbf2019_blog'] = $view;
 
