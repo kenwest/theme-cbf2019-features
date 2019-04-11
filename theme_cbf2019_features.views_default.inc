@@ -3117,9 +3117,9 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
   $handler->display->display_options['style_options']['columns_vertical'] = '4';
   $handler->display->display_options['style_options']['columns_xs'] = '12';
-  $handler->display->display_options['style_options']['columns_sm'] = '0';
-  $handler->display->display_options['style_options']['columns_md'] = '0';
-  $handler->display->display_options['style_options']['columns_lg'] = '0';
+  $handler->display->display_options['style_options']['columns_sm'] = '6';
+  $handler->display->display_options['style_options']['columns_md'] = '3';
+  $handler->display->display_options['style_options']['columns_lg'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Header: Global: Text area */
@@ -3254,8 +3254,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'next ›';
-  $handler->display->display_options['pager']['options']['tags']['next'] = '‹ previous';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
@@ -3499,8 +3497,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'next ›';
-  $handler->display->display_options['pager']['options']['tags']['next'] = '‹ previous';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -3798,8 +3794,8 @@ function theme_cbf2019_features_views_default_views() {
     t('- All -'),
     t('Offset'),
     t('« first'),
-    t('next ›'),
     t('‹ previous'),
+    t('next ›'),
     t('last »'),
     t('All'),
     t('Resource library'),
