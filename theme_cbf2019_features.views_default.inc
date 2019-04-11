@@ -348,8 +348,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'next ›';
-  $handler->display->display_options['pager']['options']['tags']['next'] = '‹ previous';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -418,8 +416,8 @@ function theme_cbf2019_features_views_default_views() {
     t('- All -'),
     t('Offset'),
     t('« first'),
-    t('next ›'),
     t('‹ previous'),
+    t('next ›'),
     t('last »'),
     t('Title'),
   );
