@@ -2781,6 +2781,15 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'title',
     'image_link' => '',
   );
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_page_header_no_results_image';
+  $handler->display->display_options['fields']['view']['display'] = 'block_1';
+  $handler->display->display_options['fields']['view']['arguments'] = 'civicrm-event';
   /* Contextual filter: CiviCRM Events: Event ID */
   $handler->display->display_options['arguments']['id']['id'] = 'id';
   $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
