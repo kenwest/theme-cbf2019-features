@@ -1278,6 +1278,13 @@ function theme_cbf2019_features_views_default_views() {
     ),
   );
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Nil';
+  $handler->display->display_options['empty']['area']['format'] = '2';
   /* Relationship: CiviCRM Price Set Entities: Price Set */
   $handler->display->display_options['relationships']['price_set']['id'] = 'price_set';
   $handler->display->display_options['relationships']['price_set']['table'] = 'civicrm_price_set_entity';
@@ -1439,6 +1446,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Nil'),
     t('Price Set'),
     t('Price Field'),
     t('Price Field Value'),
