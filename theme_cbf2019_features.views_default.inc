@@ -3023,10 +3023,10 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_page_header_paths';
-  $view->description = 'Page header for specific paths';
+  $view->description = 'Page header for specific cases';
   $view->tag = 'page-header';
   $view->base_table = 'entityform';
-  $view->human_name = 'cbf2019 page header - paths';
+  $view->human_name = 'cbf2019 page header - special';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -3076,8 +3076,8 @@ function theme_cbf2019_features_views_default_views() {
     'title_header' => 'title_header',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Path */
+  $handler = $view->new_display('block', 'Path', 'block');
   $translatables['cbf2019_page_header_paths'] = array(
     t('Master'),
     t('more'),
@@ -3087,14 +3087,14 @@ function theme_cbf2019_features_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('All'),
-    t('Block'),
+    t('Path'),
   );
   $export['cbf2019_page_header_paths'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_recent_library';
   $view->description = 'Recent library view for the cbf2019 theme';
-  $view->tag = 'right-to-left';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 recent library';
   $view->core = 7;
