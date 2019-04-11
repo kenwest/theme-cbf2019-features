@@ -2201,6 +2201,38 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['state_province_1']['location_op'] = '0';
   $handler->display->display_options['fields']['state_province_1']['is_primary'] = 0;
   $handler->display->display_options['fields']['state_province_1']['prov_display'] = '1';
+  /* Field: CiviCRM Address: Latitude */
+  $handler->display->display_options['fields']['geo_code_1']['id'] = 'geo_code_1';
+  $handler->display->display_options['fields']['geo_code_1']['table'] = 'civicrm_address';
+  $handler->display->display_options['fields']['geo_code_1']['field'] = 'geo_code_1';
+  $handler->display->display_options['fields']['geo_code_1']['relationship'] = 'id_2';
+  $handler->display->display_options['fields']['geo_code_1']['label'] = '';
+  $handler->display->display_options['fields']['geo_code_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['geo_code_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['geo_code_1']['location_type'] = '0';
+  $handler->display->display_options['fields']['geo_code_1']['location_op'] = '0';
+  $handler->display->display_options['fields']['geo_code_1']['is_primary'] = 0;
+  /* Field: CiviCRM Address: Longitude */
+  $handler->display->display_options['fields']['geo_code_2']['id'] = 'geo_code_2';
+  $handler->display->display_options['fields']['geo_code_2']['table'] = 'civicrm_address';
+  $handler->display->display_options['fields']['geo_code_2']['field'] = 'geo_code_2';
+  $handler->display->display_options['fields']['geo_code_2']['relationship'] = 'id_2';
+  $handler->display->display_options['fields']['geo_code_2']['label'] = '';
+  $handler->display->display_options['fields']['geo_code_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['geo_code_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['geo_code_2']['alter']['text'] = '<div class = "clearfix">
+  <div  class = "google-map">
+    <div class="map-canvas-view"
+      data-zoom="14"
+      data-address="[street_address], [city], Australia"
+      data-type="roadmap">
+    </div>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['geo_code_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['geo_code_2']['location_type'] = '0';
+  $handler->display->display_options['fields']['geo_code_2']['location_op'] = '0';
+  $handler->display->display_options['fields']['geo_code_2']['is_primary'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
@@ -2318,15 +2350,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class = "clearfix">
-  <div  class = "google-map">
-    <div class="map-canvas-view"
-      data-zoom="14"
-      data-address="[street_address], [city], Australia"
-      data-type="roadmap">
-    </div>
-  </div>
-</div>';
+  $handler->display->display_options['footer']['area']['content'] = '[geo_code_2]';
   $handler->display->display_options['footer']['area']['format'] = 'raw_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $translatables['cbf2019_local_office'] = array(
@@ -2351,12 +2375,6 @@ function theme_cbf2019_features_views_default_views() {
     t('<i class="fal fa-fw fa-map-marker-alt"></i>'),
     t('Address'),
     t('[supplemental_address_1]<div>[street_address]</div><div>[city]</div>'),
-    t('<i class="fal fa-fw fa-envelope-open-text"></i>'),
-    t('Post'),
-    t('[street_address_1]<div>[city_1] [state_province] [postal_code]</div>'),
-    t('<i class="fal fa-fw fa-at"></i>'),
-    t('Block'),
-    t('Block with map'),
     t('<div class = "clearfix">
   <div  class = "google-map">
     <div class="map-canvas-view"
@@ -2366,6 +2384,13 @@ function theme_cbf2019_features_views_default_views() {
     </div>
   </div>
 </div>'),
+    t('<i class="fal fa-fw fa-envelope-open-text"></i>'),
+    t('Post'),
+    t('[street_address_1]<div>[city_1] [state_province] [postal_code]</div>'),
+    t('<i class="fal fa-fw fa-at"></i>'),
+    t('Block'),
+    t('Block with map'),
+    t('[geo_code_2]'),
   );
   $export['cbf2019_local_office'] = $view;
 
