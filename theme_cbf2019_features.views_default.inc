@@ -3294,7 +3294,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_in_activity_target_id';
   $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_1']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
