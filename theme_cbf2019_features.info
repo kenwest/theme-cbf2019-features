@@ -48,6 +48,7 @@ features[views_view][] = cbf2019_event_details_table
 features[views_view][] = cbf2019_event_highlight_slider
 features[views_view][] = cbf2019_event_price
 features[views_view][] = cbf2019_event_registration
+features[views_view][] = cbf2019_key_dates
 features[views_view][] = cbf2019_local_activities
 features[views_view][] = cbf2019_local_events
 features[views_view][] = cbf2019_local_office
