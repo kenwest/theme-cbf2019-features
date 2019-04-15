@@ -2061,7 +2061,7 @@ function theme_cbf2019_features_views_default_views() {
   $view = new view();
   $view->name = 'cbf2019_local_events';
   $view->description = 'Upcoming events, localised to the visitor if possible';
-  $view->tag = 'merge-events';
+  $view->tag = 'default';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 local events';
   $view->core = 7;
@@ -2221,8 +2221,45 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+
+  /* Display: For What's On */
+  $handler = $view->new_display('block', 'For What\'s On', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'cbf-merge-events show-8-items';
+  $handler->display->display_options['display_description'] = 'Local events for the What\'s on page';
+
+  /* Display: For Activity */
+  $handler = $view->new_display('block', 'For Activity', 'block_2');
+  $handler->display->display_options['display_description'] = 'Local events for an Activity page';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: CiviCRM Address: Address */
+  $handler->display->display_options['relationships']['id']['id'] = 'id';
+  $handler->display->display_options['relationships']['id']['table'] = 'civicrm_address';
+  $handler->display->display_options['relationships']['id']['field'] = 'id';
+  $handler->display->display_options['relationships']['id']['label'] = 'Address';
+  $handler->display->display_options['relationships']['id']['location_type'] = '0';
+  $handler->display->display_options['relationships']['id']['location_op'] = '0';
+  $handler->display->display_options['relationships']['id']['is_primary'] = 0;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_local_events'] = array(
     t('Master'),
     t('more'),
@@ -2237,7 +2274,13 @@ function theme_cbf2019_features_views_default_views() {
     t('Address'),
     t('.'),
     t('[field_date_text] | [city]'),
-    t('Block'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('For What\'s On'),
+    t('Local events for the What\'s on page'),
+    t('For Activity'),
+    t('Local events for an Activity page'),
+    t('Activity'),
   );
   $export['cbf2019_local_events'] = $view;
 
