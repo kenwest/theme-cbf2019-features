@@ -4422,6 +4422,30 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'speaker' => 'speaker',
+  );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
+  $handler->display->display_options['filters']['description']['value'] = '0';
+  $handler->display->display_options['filters']['description']['group'] = 1;
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
 
   /* Display: For Library resources */
   $handler = $view->new_display('block', 'For Library resources', 'block_3');
