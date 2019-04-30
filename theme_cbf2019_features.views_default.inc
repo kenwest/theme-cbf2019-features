@@ -3160,7 +3160,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -3361,7 +3361,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
