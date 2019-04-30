@@ -217,29 +217,6 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_plus:<front>.
-  $menu_links['menu-cbf-2019-plus-menu_plus:<front>'] = array(
-    'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Plus',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-cbf-2019-plus-menu_plus:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -45,
-    'customized' => 1,
-  );
   // Exported menu link: menu-cbf-2019-plus-menu_resources:home/library.
   $menu_links['menu-cbf-2019-plus-menu_resources:home/library'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
@@ -270,7 +247,6 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Activities');
   t('Blog');
   t('Events');
-  t('Plus');
   t('Resources');
 
   return $menu_links;

@@ -38,7 +38,6 @@ features[menu_links][] = menu-cbf-2019-plus-menu_about-us:node/3670
 features[menu_links][] = menu-cbf-2019-plus-menu_activities:node/3686
 features[menu_links][] = menu-cbf-2019-plus-menu_blog:home/articles
 features[menu_links][] = menu-cbf-2019-plus-menu_events:node/3686
-features[menu_links][] = menu-cbf-2019-plus-menu_plus:<front>
 features[menu_links][] = menu-cbf-2019-plus-menu_resources:home/library
 features[taxonomy][] = map_marker
 features[taxonomy][] = region
