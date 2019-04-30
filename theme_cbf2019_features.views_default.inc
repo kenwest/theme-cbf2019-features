@@ -4629,6 +4629,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Sort criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
+  /* Sort criterion: Entityform Submission: Title (field_title) */
+  $handler->display->display_options['sorts']['field_title_value']['id'] = 'field_title_value';
+  $handler->display->display_options['sorts']['field_title_value']['table'] = 'field_data_field_title';
+  $handler->display->display_options['sorts']['field_title_value']['field'] = 'field_title_value';
   /* Filter criterion: Entityform Submission: Entityform Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'entityform';
