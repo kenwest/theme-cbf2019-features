@@ -2276,6 +2276,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'cbf-merge-events show-8-items';
   $handler->display->display_options['display_description'] = 'Local events for the What\'s on page';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Events';
+  $handler->display->display_options['header']['area']['format'] = '2';
 
   /* Display: For Activity */
   $handler = $view->new_display('block', 'For Activity', 'block_2');
@@ -2324,6 +2331,7 @@ function theme_cbf2019_features_views_default_views() {
     t('This display contains the defaults - don\'t use'),
     t('For What\'s On'),
     t('Local events for the What\'s on page'),
+    t('Events'),
     t('For Activity'),
     t('Local events for an Activity page'),
     t('Activity'),
