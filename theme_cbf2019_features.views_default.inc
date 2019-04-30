@@ -593,6 +593,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Activities';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -781,6 +787,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('All'),
+    t('Activities'),
     t('[field_highlight]'),
     t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
     t('All cities'),
