@@ -3538,6 +3538,19 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -3552,6 +3565,26 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'episode' => 'episode',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    48 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Domain Access: Domain ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['gid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['gid']['group'] = 2;
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -3671,6 +3704,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 
   /* Display: Resource library */
   $handler = $view->new_display('page', 'Resource library', 'page_1');
@@ -3826,6 +3868,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -4011,6 +4057,25 @@ function theme_cbf2019_features_views_default_views() {
       'value' => 'd',
     ),
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    48 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Domain Access: Domain ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['gid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['gid']['group'] = 2;
   $handler->display->display_options['path'] = 'home/library';
 
   /* Display: For Node's activity */
@@ -4048,6 +4113,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
@@ -4061,6 +4135,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Recent resources'),
     t('Activity'),
     t('[field_speakers] | [field_episode_date]'),
+    t('All'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('more'),
@@ -4075,7 +4150,6 @@ function theme_cbf2019_features_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('All'),
     t('Resource library'),
     t('Search'),
     t('Select any filter and click on Apply to see results'),
