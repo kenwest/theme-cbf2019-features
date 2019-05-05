@@ -1325,7 +1325,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_event_highlight_slider';
-  $view->description = 'Slider showing highlights for CiviCRM Events and Activities';
+  $view->description = 'Slider showing highlights for CiviCRM Events';
   $view->tag = 'slider, fieldwise';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 event highlight slider';
