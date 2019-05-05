@@ -632,8 +632,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
@@ -716,6 +718,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -772,6 +778,24 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
   $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
+  /* Filter criterion: Content: Logo (field_logo:fid) */
+  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
+  /* Filter criterion: Field: Title image (field_title_image:fid) */
+  $handler->display->display_options['filters']['field_title_image_fid']['id'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['filters']['field_title_image_fid']['field'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_title_image_fid']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
