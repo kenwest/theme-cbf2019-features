@@ -1072,6 +1072,42 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+
+  /* Display: For Activity with no upcoming events */
+  $handler = $view->new_display('block', 'For Activity with no upcoming events', 'block_2');
+  $handler->display->display_options['display_description'] = 'Highlights for an Activity';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
   $translatables['cbf2019_content_highlight_slider'] = array(
     t('Master'),
     t('more'),
@@ -1086,6 +1122,8 @@ function theme_cbf2019_features_views_default_views() {
     t('For Activity'),
     t('Highlights for an Activity and its CiviCRM Events'),
     t('CiviCRM Event'),
+    t('For Activity with no upcoming events'),
+    t('Highlights for an Activity'),
   );
   $export['cbf2019_content_highlight_slider'] = $view;
 
