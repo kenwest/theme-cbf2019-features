@@ -963,6 +963,14 @@ function theme_cbf2019_features_views_default_views() {
   /* Display: For Activity */
   $handler = $view->new_display('block', 'For Activity', 'block_1');
   $handler->display->display_options['display_description'] = 'Highlights for an Activity and its CiviCRM Events';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: View area */
+  $handler->display->display_options['empty']['view']['id'] = 'view';
+  $handler->display->display_options['empty']['view']['table'] = 'views';
+  $handler->display->display_options['empty']['view']['field'] = 'view';
+  $handler->display->display_options['empty']['view']['empty'] = TRUE;
+  $handler->display->display_options['empty']['view']['view_to_insert'] = 'cbf2019_content_highlight_slider:block_2';
+  $handler->display->display_options['empty']['view']['inherit_arguments'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
