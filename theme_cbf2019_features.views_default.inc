@@ -4914,7 +4914,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['id']['alter']['text'] = 'MORE INFO & TICKETS';
+  $handler->display->display_options['fields']['id']['alter']['text'] = 'More info';
   $handler->display->display_options['fields']['id']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['path'] = 'civicrm-event/[id]';
   $handler->display->display_options['fields']['id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
@@ -4994,7 +4994,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Title'),
     t('Upcoming events'),
     t('[field_date_text] | [city]'),
-    t('MORE INFO & TICKETS'),
+    t('More info'),
     t('.'),
     t('All'),
     t('Block'),
