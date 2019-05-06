@@ -2274,6 +2274,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'civicrm_event';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'civicrm-event/[id]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Field: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
