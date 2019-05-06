@@ -646,7 +646,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_highlight']['settings'] = array(
     'image_style' => 'portfolio_653x368',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
