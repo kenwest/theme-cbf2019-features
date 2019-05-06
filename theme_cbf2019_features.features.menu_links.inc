@@ -49,7 +49,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
       ),
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
@@ -79,29 +79,6 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-main-menu_events:node/3686.
-  $menu_links['menu-cbf-2019-main-menu_events:node/3686'] = array(
-    'menu_name' => 'menu-cbf-2019-main-menu',
-    'link_path' => 'node/3686',
-    'router_path' => 'node/%',
-    'link_title' => 'Events',
-    'options' => array(
-      'identifier' => 'menu-cbf-2019-main-menu_events:node/3686',
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
   // Exported menu link: menu-cbf-2019-main-menu_resources:home/library.
   $menu_links['menu-cbf-2019-main-menu_resources:home/library'] = array(
     'menu_name' => 'menu-cbf-2019-main-menu',
@@ -123,6 +100,29 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_whats-on:node/3686.
+  $menu_links['menu-cbf-2019-main-menu_whats-on:node/3686'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'node/3686',
+    'router_path' => 'node/%',
+    'link_title' => 'What\'s on',
+    'options' => array(
+      'identifier' => 'menu-cbf-2019-main-menu_whats-on:node/3686',
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_about-us:node/3670.
@@ -155,16 +155,16 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'router_path' => 'node/%',
     'link_title' => 'Activities',
     'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_activities:node/3686',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-cbf-2019-plus-menu_activities:node/3686',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
@@ -194,29 +194,6 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_events:node/3686.
-  $menu_links['menu-cbf-2019-plus-menu_events:node/3686'] = array(
-    'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'node/3686',
-    'router_path' => 'node/%',
-    'link_title' => 'Events',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-cbf-2019-plus-menu_events:node/3686',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
   // Exported menu link: menu-cbf-2019-plus-menu_resources:home/library.
   $menu_links['menu-cbf-2019-plus-menu_resources:home/library'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
@@ -240,14 +217,37 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
+  // Exported menu link: menu-cbf-2019-plus-menu_whats-on:node/3686.
+  $menu_links['menu-cbf-2019-plus-menu_whats-on:node/3686'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/3686',
+    'router_path' => 'node/%',
+    'link_title' => 'What\'s on',
+    'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_whats-on:node/3686',
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('About us');
   t('Activities');
   t('Blog');
-  t('Events');
   t('Resources');
+  t('What\'s on');
 
   return $menu_links;
 }
