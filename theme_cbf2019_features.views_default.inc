@@ -4303,9 +4303,20 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '[field_speakers] <div class="field-rewrite-half-separator"></div>';
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Date text */
+  $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['label'] = '';
+  $handler->display->display_options['fields']['field_date_text']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_text']['alter']['text'] = '[field_speakers] <div class="field-rewrite-half-separator"></div> [field_date_text]';
+  $handler->display->display_options['fields']['field_date_text']['element_label_colon'] = FALSE;
   /* Field: Field: Subtitle */
   $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
@@ -4408,6 +4419,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Related content'),
     t('Activity'),
     t('Referencing content'),
+    t('[field_speakers] <div class="field-rewrite-half-separator"></div>'),
+    t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_date_text]'),
     t('All'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
