@@ -2238,6 +2238,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Events';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: CiviCRM Address: Address */
