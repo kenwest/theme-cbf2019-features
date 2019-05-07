@@ -145,7 +145,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_activities:node/3686.
@@ -192,6 +192,29 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_get-involved:node/3786.
+  $menu_links['menu-cbf-2019-plus-menu_get-involved:node/3786'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/3786',
+    'router_path' => 'node/%',
+    'link_title' => 'Get involved',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_get-involved:node/3786',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_resources:home/library.
@@ -246,6 +269,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('About us');
   t('Activities');
   t('Blog');
+  t('Get involved');
   t('Resources');
   t('What\'s on');
 
