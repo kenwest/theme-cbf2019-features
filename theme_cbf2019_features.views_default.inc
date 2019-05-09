@@ -2212,7 +2212,7 @@ function theme_cbf2019_features_views_default_views() {
   $view = new view();
   $view->name = 'cbf2019_local_events';
   $view->description = 'Upcoming events, localised to the visitor if possible';
-  $view->tag = 'default';
+  $view->tag = 'merge-events';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 local events';
   $view->core = 7;
@@ -2398,13 +2398,21 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: For What's On */
   $handler = $view->new_display('block', 'For What\'s On', 'block_1');
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'cbf-merge-events show-8-items';
   $handler->display->display_options['display_description'] = 'Local events for the What\'s on page';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>There are no events scheduled for your city at this time.</p>
+<p>Please come back soon or contact us to find out what’s coming up.</p>';
+  $handler->display->display_options['empty']['area']['format'] = '2';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_2');
-  $handler->display->display_options['display_description'] = 'Local events for an Activity page';
+  /* Display: For Activity - warning - will merge events */
+  $handler = $view->new_display('block', 'For Activity - warning - will merge events', 'block_2');
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Local events for an Activity page - should be in a separate view to not merge events';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: CiviCRM Address: Address */
   $handler->display->display_options['relationships']['id']['id'] = 'id';
@@ -2459,8 +2467,10 @@ function theme_cbf2019_features_views_default_views() {
     t('This display contains the defaults - don\'t use'),
     t('For What\'s On'),
     t('Local events for the What\'s on page'),
-    t('For Activity'),
-    t('Local events for an Activity page'),
+    t('<p>There are no events scheduled for your city at this time.</p>
+<p>Please come back soon or contact us to find out what’s coming up.</p>'),
+    t('For Activity - warning - will merge events'),
+    t('Local events for an Activity page - should be in a separate view to not merge events'),
     t('Activity'),
   );
   $export['cbf2019_local_events'] = $view;
