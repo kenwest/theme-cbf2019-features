@@ -1084,6 +1084,14 @@ function theme_cbf2019_features_views_default_views() {
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+  $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
   /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
@@ -1117,13 +1125,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_highlight_fid_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['filters']['field_highlight_fid_1']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_fid_1']['group'] = 2;
-  /* Filter criterion: Field: Next action (field_next_action) */
-  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
-  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
-  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
-  $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
-  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
 
   /* Display: For Activity with no upcoming events */
   $handler = $view->new_display('block', 'For Activity with no upcoming events', 'block_2');
