@@ -479,7 +479,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-  $handler->display->display_options['path'] = 'home/articles';
+  $handler->display->display_options['path'] = 'articles';
 
   /* Display: For Activity */
   $handler = $view->new_display('block', 'For Activity', 'block_2');
@@ -4226,7 +4226,7 @@ function theme_cbf2019_features_views_default_views() {
       'value' => 'd',
     ),
   );
-  $handler->display->display_options['path'] = 'home/library';
+  $handler->display->display_options['path'] = 'library';
 
   /* Display: For Node's activity */
   $handler = $view->new_display('block', 'For Node\'s activity', 'block_3');

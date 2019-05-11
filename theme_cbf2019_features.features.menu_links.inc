@@ -56,14 +56,14 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-main-menu_blog:home/articles.
-  $menu_links['menu-cbf-2019-main-menu_blog:home/articles'] = array(
+  // Exported menu link: menu-cbf-2019-main-menu_blog:articles.
+  $menu_links['menu-cbf-2019-main-menu_blog:articles'] = array(
     'menu_name' => 'menu-cbf-2019-main-menu',
-    'link_path' => 'home/articles',
-    'router_path' => 'home/articles',
+    'link_path' => 'articles',
+    'router_path' => 'articles',
     'link_title' => 'Blog',
     'options' => array(
-      'identifier' => 'menu-cbf-2019-main-menu_blog:home/articles',
+      'identifier' => 'menu-cbf-2019-main-menu_blog:articles',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
@@ -79,14 +79,14 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-main-menu_resources:home/library.
-  $menu_links['menu-cbf-2019-main-menu_resources:home/library'] = array(
+  // Exported menu link: menu-cbf-2019-main-menu_resources:library.
+  $menu_links['menu-cbf-2019-main-menu_resources:library'] = array(
     'menu_name' => 'menu-cbf-2019-main-menu',
-    'link_path' => 'home/library',
-    'router_path' => 'home/library',
+    'link_path' => 'library',
+    'router_path' => 'library',
     'link_title' => 'Resources',
     'options' => array(
-      'identifier' => 'menu-cbf-2019-main-menu_resources:home/library',
+      'identifier' => 'menu-cbf-2019-main-menu_resources:library',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
@@ -171,20 +171,20 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_blog:home/articles.
-  $menu_links['menu-cbf-2019-plus-menu_blog:home/articles'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_blog:articles.
+  $menu_links['menu-cbf-2019-plus-menu_blog:articles'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'home/articles',
-    'router_path' => 'home/articles',
+    'link_path' => 'articles',
+    'router_path' => 'articles',
     'link_title' => 'Blog',
     'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_blog:articles',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-cbf-2019-plus-menu_blog:home/articles',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -217,20 +217,20 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_resources:home/library.
-  $menu_links['menu-cbf-2019-plus-menu_resources:home/library'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_resources:library.
+  $menu_links['menu-cbf-2019-plus-menu_resources:library'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'home/library',
-    'router_path' => 'home/library',
+    'link_path' => 'library',
+    'router_path' => 'library',
     'link_title' => 'Resources',
     'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_resources:library',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-cbf-2019-plus-menu_resources:home/library',
     ),
     'module' => 'menu',
     'hidden' => 0,
