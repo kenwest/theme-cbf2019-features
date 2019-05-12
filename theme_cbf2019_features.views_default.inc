@@ -1410,8 +1410,6 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
-  $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_image']['multi_type'] = 'ol';
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
