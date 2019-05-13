@@ -935,18 +935,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -973,12 +961,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -1024,19 +1006,6 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight_1']['id'] = 'field_highlight_1';
-  $handler->display->display_options['fields']['field_highlight_1']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight_1']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['field_highlight_1']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight_1']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
   /* Field: Field: Highlight video */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
@@ -1045,18 +1014,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -1098,12 +1055,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
   /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
@@ -1118,13 +1069,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_image_fid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid_1']['id'] = 'field_highlight_fid_1';
-  $handler->display->display_options['filters']['field_highlight_fid_1']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid_1']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['filters']['field_highlight_fid_1']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid_1']['group'] = 2;
 
   /* Display: For Activity with no upcoming events */
   $handler = $view->new_display('block', 'For Activity with no upcoming events', 'block_2');
@@ -1148,12 +1092,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -1410,18 +1348,6 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
@@ -1429,12 +1355,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'OR',
   );
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 1;
   /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
