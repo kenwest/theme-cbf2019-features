@@ -907,10 +907,10 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_content_highlight_slider';
-  $view->description = 'Slider showing highlights for nodes';
+  $view->description = 'Slider showing promotional material for nodes';
   $view->tag = 'slider, fieldwise';
   $view->base_table = 'node';
-  $view->human_name = 'cbf2019 content highlight slider';
+  $view->human_name = 'cbf2019 content promotional slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1308,10 +1308,10 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_event_highlight_slider';
-  $view->description = 'Slider showing highlights for CiviCRM Events';
+  $view->description = 'Slider showing promotional material for CiviCRM Events';
   $view->tag = 'slider, fieldwise';
   $view->base_table = 'civicrm_event';
-  $view->human_name = 'cbf2019 event highlight slider';
+  $view->human_name = 'cbf2019 event promotional slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
