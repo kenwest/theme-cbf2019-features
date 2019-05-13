@@ -5148,7 +5148,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['link_url'] = 'events';
+  $handler->display->display_options['link_url'] = 'whats-on';
   $translatables['local_civicrm_event_slider'] = array(
     t('Master'),
     t('<none>'),
