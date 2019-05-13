@@ -984,6 +984,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CiviCRM Events: Event ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: Field: Highlight video */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
@@ -999,6 +1008,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'civicrm-event/[id]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
@@ -1113,6 +1124,7 @@ function theme_cbf2019_features_views_default_views() {
     t('For Activity'),
     t('Highlights for an Activity and its CiviCRM Events'),
     t('CiviCRM Event'),
+    t('.'),
     t('For Activity with no upcoming events'),
     t('Highlights for an Activity'),
   );
