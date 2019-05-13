@@ -3553,6 +3553,12 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Path */
   $handler = $view->new_display('block', 'Path', 'block');
+
+  /* Display: Path which should not be cached */
+  $handler = $view->new_display('block', 'Path which should not be cached', 'block_1');
+  $handler->display->display_options['display_description'] = ' Eg civicrm/event/register?reset=1&id=1979 -- the title varies for each event';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
   $translatables['cbf2019_page_header_paths'] = array(
     t('Master'),
     t('more'),
@@ -3563,6 +3569,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('All'),
     t('Path'),
+    t('Path which should not be cached'),
+    t(' Eg civicrm/event/register?reset=1&id=1979 -- the title varies for each event'),
   );
   $export['cbf2019_page_header_paths'] = $view;
 
