@@ -67,6 +67,7 @@ features[views_view][] = cbf2019_page_header_node
 features[views_view][] = cbf2019_page_header_paths
 features[views_view][] = cbf2019_recent_library
 features[views_view][] = cbf2019_related_content
+features[views_view][] = cbf2019_speaker_admin_view
 features[views_view][] = cbf2019_speakers
 features[views_view][] = cbf2019_staff_slider
 features[views_view][] = local_civicrm_event_slider

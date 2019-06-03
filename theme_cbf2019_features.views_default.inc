@@ -5069,6 +5069,487 @@ To create a new CiviCRM Event
   $export['cbf2019_related_content'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_speaker_admin_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 speaker admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'cbf2019 speaker admin view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'name' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'description' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_highlight_fid' => array(
+      'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '99999',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+      ),
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_image_fid' => array(
+      'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '99999',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+      ),
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'nid' => 'nid',
+    'id' => 'id',
+    'description' => 'description',
+    'field_highlight' => 'field_highlight',
+    'field_image' => 'field_image',
+    'edit_term' => 'edit_term',
+  );
+  $handler->display->display_options['style_options']['default'] = 'name';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'id' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'description' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_highlight' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_image' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_term' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['field'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['label'] = 'CiviCRM Event';
+  /* Relationship: Taxonomy term: Content using Speaker(s) */
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Content';
+  /* Field: Bulk operations: Taxonomy term */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_taxonomy_term';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'log' => 0,
+      ),
+    ),
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['nid']['label'] = 'Articles';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: COUNT(DISTINCT CiviCRM Events: Event ID) */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['fields']['id']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['id']['label'] = 'Events';
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = 'Description';
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '64';
+  $handler->display->display_options['fields']['description']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = 'Landscape image';
+  $handler->display->display_options['fields']['field_highlight']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight']['alter']['text'] = '[field_highlight-fid]';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_highlight']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_highlight']['group_columns'] = array(
+    'fid' => 'fid',
+  );
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = 'Portrait image';
+  $handler->display->display_options['fields']['field_image']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['text'] = '[field_image-fid]';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_image']['group_columns'] = array(
+    'fid' => 'fid',
+  );
+  /* Field: Taxonomy term: Term edit link */
+  $handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['label'] = 'Operations';
+  $handler->display->display_options['fields']['edit_term']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_term']['text'] = 'Edit';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'speaker' => 'speaker',
+  );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['group'] = 1;
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name contains';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_field'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['operator'] = 'contains';
+  $handler->display->display_options['filters']['description']['group'] = 1;
+  $handler->display->display_options['filters']['description']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['description']['expose']['operator_id'] = 'description_op';
+  $handler->display->display_options['filters']['description']['expose']['label'] = 'Description contains';
+  $handler->display->display_options['filters']['description']['expose']['operator'] = 'description_op';
+  $handler->display->display_options['filters']['description']['expose']['identifier'] = 'description';
+  $handler->display->display_options['filters']['description']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_field'] = 'description';
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 1;
+  $handler->display->display_options['filters']['field_highlight_fid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_highlight_fid']['expose']['operator_id'] = 'field_highlight_fid_op';
+  $handler->display->display_options['filters']['field_highlight_fid']['expose']['label'] = 'Highlight (field_highlight:fid)';
+  $handler->display->display_options['filters']['field_highlight_fid']['expose']['operator'] = 'field_highlight_fid_op';
+  $handler->display->display_options['filters']['field_highlight_fid']['expose']['identifier'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_highlight_fid']['group_info']['label'] = 'Has landscape image';
+  $handler->display->display_options['filters']['field_highlight_fid']['group_info']['identifier'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'No',
+      'operator' => 'empty',
+      'value' => array(
+        'value' => '0',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'Yes',
+      'operator' => 'not empty',
+      'value' => array(
+        'value' => '0',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+  );
+  /* Filter criterion: Field: Image (field_image:fid) */
+  $handler->display->display_options['filters']['field_image_fid']['id'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['table'] = 'field_data_field_image';
+  $handler->display->display_options['filters']['field_image_fid']['field'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['group'] = 1;
+  $handler->display->display_options['filters']['field_image_fid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_image_fid']['expose']['operator_id'] = 'field_image_fid_op';
+  $handler->display->display_options['filters']['field_image_fid']['expose']['label'] = 'Image (field_image:fid)';
+  $handler->display->display_options['filters']['field_image_fid']['expose']['operator'] = 'field_image_fid_op';
+  $handler->display->display_options['filters']['field_image_fid']['expose']['identifier'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_image_fid']['group_info']['label'] = 'Has portrait image';
+  $handler->display->display_options['filters']['field_image_fid']['group_info']['identifier'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'No',
+      'operator' => 'empty',
+      'value' => array(
+        'value' => '0',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'Yes',
+      'operator' => 'not empty',
+      'value' => array(
+        'value' => '0',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/speakers';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Speakers';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $translatables['cbf2019_speaker_admin_view'] = array(
+    t('Master'),
+    t('cbf2019 speaker admin view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('CiviCRM Event'),
+    t('Content'),
+    t('Select'),
+    t('- Choose an operation -'),
+    t('Name'),
+    t('Articles'),
+    t('Events'),
+    t('.'),
+    t('Description'),
+    t('Landscape image'),
+    t('[field_highlight-fid]'),
+    t('Portrait image'),
+    t('[field_image-fid]'),
+    t('Operations'),
+    t('Edit'),
+    t('Name contains'),
+    t('Description contains'),
+    t('Highlight (field_highlight:fid)'),
+    t('Has landscape image'),
+    t('Image (field_image:fid)'),
+    t('Has portrait image'),
+    t('Page'),
+  );
+  $export['cbf2019_speaker_admin_view'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_speakers';
   $view->description = 'Slider showing speakers for Activities, CiviCRM Events and Resources';
   $view->tag = 'slider, autoplay';
