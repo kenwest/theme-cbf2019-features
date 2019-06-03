@@ -1131,6 +1131,552 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_content_highlight_slider'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_event_admin_view';
+  $view->description = 'Allow admin access to CiviCRM Events';
+  $view->tag = 'default';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Website events';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'title' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'start_date' => array(
+      'bef_format' => 'bef_datepicker',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+        'datepicker_options' => 'dateFormat: "yy-mm-dd"',
+      ),
+    ),
+    'taxonomy_vocabulary_3_tid_1' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'taxonomy_vocabulary_1_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'title_1' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'display_name' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'start_date' => 'start_date',
+    'taxonomy_vocabulary_1' => 'taxonomy_vocabulary_1',
+    'taxonomy_vocabulary_3' => 'taxonomy_vocabulary_3',
+    'field_in_activity' => 'field_in_activity',
+    'field_staff_contact' => 'field_staff_contact',
+    'id' => 'id',
+  );
+  $handler->display->display_options['style_options']['default'] = 'start_date';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'start_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'taxonomy_vocabulary_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'taxonomy_vocabulary_3' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_in_activity' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_staff_contact' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['style_options']['empty_table'] = TRUE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'These are CiviCRM Events that have been marked up for display on the website.
+
+To create a new CiviCRM Event
+
+<ol>
+<li>Go to <em>CiviCRM > Events > Manage Events</em> and click <em>Add Event</em></li>
+<li>Create the event as you normally would</li>
+<li>When you\'re ready to put the event on the website, click <em>Event links > View event on website</em></li>
+<li>Click on <em>Edit</em> to add the website content to the event</li>
+</ol>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  /* Relationship: Field: Staff contact (field_staff_contact) */
+  $handler->display->display_options['relationships']['field_staff_contact_contact_id']['id'] = 'field_staff_contact_contact_id';
+  $handler->display->display_options['relationships']['field_staff_contact_contact_id']['table'] = 'field_data_field_staff_contact';
+  $handler->display->display_options['relationships']['field_staff_contact_contact_id']['field'] = 'field_staff_contact_contact_id';
+  /* Field: Bulk operations: CiviCRM Event */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_civicrm_event';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::civicrm_entity_actions_event_delete_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::civicrm_entity_actions_event_edit_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::civicrm_entity_actions_event_view_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: CiviCRM Events: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Events: Start Date */
+  $handler->display->display_options['fields']['start_date']['id'] = 'start_date';
+  $handler->display->display_options['fields']['start_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['start_date']['field'] = 'start_date';
+  $handler->display->display_options['fields']['start_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['start_date']['date_format'] = 'day_month_year';
+  $handler->display->display_options['fields']['start_date']['second_date_format'] = 'long';
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Audience */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['id'] = 'taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  /* Field: Field: Staff contact */
+  $handler->display->display_options['fields']['field_staff_contact']['id'] = 'field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_plain';
+  /* Field: CiviCRM Events: Event ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = 'Operations';
+  $handler->display->display_options['fields']['id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['id']['alter']['text'] = '<a href="/civicrm-event/[id]">View</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm-event/[id]/edit">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/event/manage/settings?reset=1&action=update&id=[id]">CiviCRM</a>';
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Sort criterion: CiviCRM Events: Start Date */
+  $handler->display->display_options['sorts']['start_date']['id'] = 'start_date';
+  $handler->display->display_options['sorts']['start_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['sorts']['start_date']['field'] = 'start_date';
+  $handler->display->display_options['sorts']['start_date']['order'] = 'DESC';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = '';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: CiviCRM Events: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title contains';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: CiviCRM Events: Start Date */
+  $handler->display->display_options['filters']['start_date']['id'] = 'start_date';
+  $handler->display->display_options['filters']['start_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['start_date']['field'] = 'start_date';
+  $handler->display->display_options['filters']['start_date']['operator'] = 'between';
+  $handler->display->display_options['filters']['start_date']['group'] = 1;
+  $handler->display->display_options['filters']['start_date']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['start_date']['expose']['operator_id'] = 'start_date_op';
+  $handler->display->display_options['filters']['start_date']['expose']['label'] = 'Start Date between';
+  $handler->display->display_options['filters']['start_date']['expose']['operator'] = 'start_date_op';
+  $handler->display->display_options['filters']['start_date']['expose']['identifier'] = 'start_date';
+  $handler->display->display_options['filters']['start_date']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['expose']['operator_id'] = 'taxonomy_vocabulary_3_tid_1_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['expose']['label'] = 'Audience';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['expose']['operator'] = 'taxonomy_vocabulary_3_tid_1_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['expose']['identifier'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['label'] = 'Ministry Centre';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group_info']['label'] = 'Ministry Centre (taxonomy_vocabulary_1)';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group_info']['identifier'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['table'] = 'node';
+  $handler->display->display_options['filters']['title_1']['field'] = 'title';
+  $handler->display->display_options['filters']['title_1']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['title_1']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Activity name contains';
+  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: CiviCRM Contacts: Display Name */
+  $handler->display->display_options['filters']['display_name']['id'] = 'display_name';
+  $handler->display->display_options['filters']['display_name']['table'] = 'civicrm_contact';
+  $handler->display->display_options['filters']['display_name']['field'] = 'display_name';
+  $handler->display->display_options['filters']['display_name']['relationship'] = 'field_staff_contact_contact_id';
+  $handler->display->display_options['filters']['display_name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['display_name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['display_name']['expose']['operator_id'] = 'display_name_op';
+  $handler->display->display_options['filters']['display_name']['expose']['label'] = 'Staff name contains';
+  $handler->display->display_options['filters']['display_name']['expose']['operator'] = 'display_name_op';
+  $handler->display->display_options['filters']['display_name']['expose']['identifier'] = 'display_name';
+  $handler->display->display_options['filters']['display_name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'admin/cbf/civicrm-events';
+  $translatables['cbf2019_event_admin_view'] = array(
+    t('Master'),
+    t('Website events'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('dateFormat: "yy-mm-dd"'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('These are CiviCRM Events that have been marked up for display on the website.
+
+To create a new CiviCRM Event
+
+<ol>
+<li>Go to <em>CiviCRM > Events > Manage Events</em> and click <em>Add Event</em></li>
+<li>Create the event as you normally would</li>
+<li>When you\'re ready to put the event on the website, click <em>Event links > View event on website</em></li>
+<li>Click on <em>Edit</em> to add the website content to the event</li>
+</ol>'),
+    t('Activity'),
+    t('field_staff_contact'),
+    t('Select'),
+    t('- Choose an operation -'),
+    t('Title'),
+    t('Start Date'),
+    t('Ministry Centre'),
+    t('Audience'),
+    t('Staff contact'),
+    t('Operations'),
+    t('<a href="/civicrm-event/[id]">View</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm-event/[id]/edit">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/event/manage/settings?reset=1&action=update&id=[id]">CiviCRM</a>'),
+    t('.'),
+    t('Title contains'),
+    t('Start Date between'),
+    t('Ministry Centre (taxonomy_vocabulary_1)'),
+    t('Activity name contains'),
+    t('Staff name contains'),
+    t('Page'),
+  );
+  $export['cbf2019_event_admin_view'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_event_details';
   $view->description = 'Details of this event such as when, where and cost';
   $view->tag = 'default';
