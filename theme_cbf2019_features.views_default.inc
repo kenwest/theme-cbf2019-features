@@ -2929,11 +2929,10 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['label'] = '';
-  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
     'bypass_access' => 0,
-    'link' => 0,
+    'link' => 1,
   );
   /* Field: Field: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
