@@ -3747,6 +3747,100 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+
+  /* Display: For What's On */
+  $handler = $view->new_display('block', 'For What\'s On', 'block_4');
+  $handler->display->display_options['display_description'] = 'Mappables for the What\'s On page';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'taxonomy_vocabulary_1_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Mappable entityforms only */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['ui_name'] = 'Mappable entityforms only';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mappable' => 'mappable',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Entityform Submission: Source entity bundle (field_source_entity_bundle) */
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['id'] = 'field_source_entity_bundle_value';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['table'] = 'field_data_field_source_entity_bundle';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['field'] = 'field_source_entity_bundle_value';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['value'] = 'regular_venue';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['group'] = 2;
+  /* Filter criterion: Entityform Submission: Source entity type (field_source_entity_type) */
+  $handler->display->display_options['filters']['field_source_entity_type_value']['id'] = 'field_source_entity_type_value';
+  $handler->display->display_options['filters']['field_source_entity_type_value']['table'] = 'field_data_field_source_entity_type';
+  $handler->display->display_options['filters']['field_source_entity_type_value']['field'] = 'field_source_entity_type_value';
+  $handler->display->display_options['filters']['field_source_entity_type_value']['value'] = 'civicrm_event';
+  $handler->display->display_options['filters']['field_source_entity_type_value']['group'] = 2;
   $translatables['cbf2019_mappable'] = array(
     t('Master'),
     t('more'),
@@ -3780,6 +3874,8 @@ To create a new CiviCRM Event
     t('Mappables for an Activity which is offered in all cities'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
+    t('For What\'s On'),
+    t('Mappables for the What\'s On page'),
   );
   $export['cbf2019_mappable'] = $view;
 
