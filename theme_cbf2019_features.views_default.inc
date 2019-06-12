@@ -5172,11 +5172,6 @@ To create a new CiviCRM Event
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['content'] = 'Related content';
   $handler->display->display_options['header']['area']['format'] = '3';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_related_content_node']['id'] = 'reverse_field_related_content_node';
   $handler->display->display_options['relationships']['reverse_field_related_content_node']['table'] = 'node';
@@ -5209,16 +5204,16 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title_1']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
   /* Field: Content: Resource type */
   $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
   $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
@@ -5233,7 +5228,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_speakers']['label'] = '';
   $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speakers']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '[field_speakers] <div class="field-rewrite-half-separator"></div>';
+  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>';
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
@@ -5345,9 +5340,8 @@ To create a new CiviCRM Event
     t('Desc'),
     t('Title'),
     t('Related content'),
-    t('Activity'),
     t('Referencing content'),
-    t('[field_speakers] <div class="field-rewrite-half-separator"></div>'),
+    t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_date_text]'),
     t('All'),
     t('Defaults'),
