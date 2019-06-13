@@ -3500,12 +3500,27 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
   $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['alter']['text'] = '<strong>[field_in_activity]</strong><br/>';
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
   /* Field: Entityform Submission: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['label'] = '';
   $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['alter']['text'] = '<strong>[field_title]</strong><br/>';
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
   /* Field: Location: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -3514,8 +3529,9 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<em>[name]</em><br/>';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['empty'] = '[field_title]';
   /* Field: Location: Street */
   $handler->display->display_options['fields']['street']['id'] = 'street';
   $handler->display->display_options['fields']['street']['table'] = 'location';
@@ -3564,7 +3580,9 @@ To create a new CiviCRM Event
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        <strong>[name]</strong><br/>
+        [field_in_activity]
+        [field_title]
+        [name]
         [street], [city] [field_summary] [field_order_url]
       </div>
 ';
@@ -3605,6 +3623,112 @@ To create a new CiviCRM Event
   $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Location: Latitude */
+  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['table'] = 'location';
+  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['latitude']['label'] = '';
+  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
+  /* Field: Location: Longitude */
+  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['table'] = 'location';
+  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['longitude']['label'] = '';
+  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['alter']['text'] = '<strong>[field_in_activity]</strong><br/>';
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['alter']['text'] = '<strong>[field_title]</strong><br/>';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<em>[name]</em><br/>';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Note */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<br/><em>[field_summary]</em>';
+  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
+  /* Field: Field: Order URL */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = '<br/>Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
+        [field_title]
+        [name]
+        [street], [city] [field_summary] [field_order_url]
+      </div>
+';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -3704,6 +3828,112 @@ To create a new CiviCRM Event
   $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Location: Latitude */
+  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['table'] = 'location';
+  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['latitude']['label'] = '';
+  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
+  /* Field: Location: Longitude */
+  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['table'] = 'location';
+  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['longitude']['label'] = '';
+  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['alter']['text'] = '<strong>[field_in_activity]</strong><br/>';
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['alter']['text'] = '<strong>[field_title]</strong><br/>';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<em>[name]</em><br/>';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Note */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<br/><em>[field_summary]</em>';
+  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
+  /* Field: Field: Order URL */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = '<br/>Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
+        [field_title]
+        [name]
+        [street], [city] [field_summary] [field_order_url]
+      </div>
+';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -3791,6 +4021,13 @@ To create a new CiviCRM Event
       ),
     ),
   );
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'What\'s on nearby';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3850,14 +4087,18 @@ To create a new CiviCRM Event
     t('Asc'),
     t('Desc'),
     t('Location'),
-    t('[field_title]'),
+    t('<strong>[field_in_activity]</strong><br/>'),
+    t('<strong>[field_title]</strong><br/>'),
+    t('<em>[name]</em><br/>'),
     t('<br/><em>[field_summary]</em>'),
     t('<br/>Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>'),
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        <strong>[name]</strong><br/>
+        [field_in_activity]
+        [field_title]
+        [name]
         [street], [city] [field_summary] [field_order_url]
       </div>
 '),
@@ -3867,6 +4108,15 @@ To create a new CiviCRM Event
     t('For Activity'),
     t('Mappables for an Activity'),
     t('Activity'),
+    t('      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
+        [field_title]
+        [name]
+        [street], [city] [field_summary] [field_order_url]
+      </div>
+'),
     t('All'),
     t('For CiviCRM Event'),
     t('Mappables for a CiviCRM Event'),
@@ -3876,6 +4126,7 @@ To create a new CiviCRM Event
     t('Advanced options'),
     t('For What\'s On'),
     t('Mappables for the What\'s On page'),
+    t('What\'s on nearby'),
   );
   $export['cbf2019_mappable'] = $view;
 
