@@ -4131,6 +4131,458 @@ To create a new CiviCRM Event
   $export['cbf2019_mappable'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_ministry_team_admin_view';
+  $view->description = 'Ministry teams view for staff';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 ministry team admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'cbf2019 ministry team admin view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'display_name' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'meeting_day_time' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'time_of_day' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'name' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'display_name' => 'display_name',
+    'name' => 'name',
+    'meeting_day_time' => 'meeting_day_time',
+    'time_of_day' => 'time_of_day',
+    'id' => 'id',
+    'entityform_id' => 'entityform_id',
+  );
+  $handler->display->display_options['style_options']['default'] = 'display_name';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'display_name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'meeting_day_time' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'time_of_day' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'These are CiviCRM Teams that have been marked up for display on maps on the website.
+
+To publish a CiviCRM Team on a map, set up the team in CiviCRM then come to this page and click here to <a href="/eform/submit/ministry-team">create a new Ministry Team</a> (this links the CiviCRM team with the map).
+
+To modify the details of a team on the map click on <em>Edit CiviCRM</em> beside the team. When you save the team with its new details these will appear on the map.
+
+To remove a team from the maps, click the checkbox next to the team and choose operation <em>Delete item</em> and press <em>Execute</em>.';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entityform Submission: Ministry team (field_ministry_team) */
+  $handler->display->display_options['relationships']['field_ministry_team_contact_id']['id'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['relationships']['field_ministry_team_contact_id']['table'] = 'field_data_field_ministry_team';
+  $handler->display->display_options['relationships']['field_ministry_team_contact_id']['field'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['relationships']['field_ministry_team_contact_id']['label'] = 'CiviCRM Team';
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'log' => 0,
+      ),
+    ),
+  );
+  /* Field: CiviCRM Contacts: Display Name */
+  $handler->display->display_options['fields']['display_name']['id'] = 'display_name';
+  $handler->display->display_options['fields']['display_name']['table'] = 'civicrm_contact';
+  $handler->display->display_options['fields']['display_name']['field'] = 'display_name';
+  $handler->display->display_options['fields']['display_name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['fields']['display_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['display_name']['link_to_civicrm_contact'] = 0;
+  /* Field: CiviCRM Tags: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'civicrm_tag';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['fields']['name']['label'] = 'Tags';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Custom: Team details: Meeting day/time */
+  $handler->display->display_options['fields']['meeting_day_time']['id'] = 'meeting_day_time';
+  $handler->display->display_options['fields']['meeting_day_time']['table'] = 'civicrm_value_1_team_details_5';
+  $handler->display->display_options['fields']['meeting_day_time']['field'] = 'meeting_day_time';
+  $handler->display->display_options['fields']['meeting_day_time']['relationship'] = 'field_ministry_team_contact_id';
+  /* Field: CiviCRM Custom: Team details: Time of day */
+  $handler->display->display_options['fields']['time_of_day']['id'] = 'time_of_day';
+  $handler->display->display_options['fields']['time_of_day']['table'] = 'civicrm_value_1_team_details_5';
+  $handler->display->display_options['fields']['time_of_day']['field'] = 'time_of_day';
+  $handler->display->display_options['fields']['time_of_day']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['fields']['time_of_day']['element_label_colon'] = FALSE;
+  /* Field: CiviCRM Contacts: Contact ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_contact';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = 'Operations';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '<a href="/entityform/[entityform_id]/edit">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/view?reset=1&cid=[id]">View CiviCRM</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/add?reset=1&action=update&cid=[id]">Edit CiviCRM</a>';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'ministry_team' => 'ministry_team',
+  );
+  /* Filter criterion: CiviCRM Contacts: Display Name */
+  $handler->display->display_options['filters']['display_name']['id'] = 'display_name';
+  $handler->display->display_options['filters']['display_name']['table'] = 'civicrm_contact';
+  $handler->display->display_options['filters']['display_name']['field'] = 'display_name';
+  $handler->display->display_options['filters']['display_name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['filters']['display_name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['display_name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['display_name']['expose']['operator_id'] = 'display_name_op';
+  $handler->display->display_options['filters']['display_name']['expose']['label'] = 'Name contains';
+  $handler->display->display_options['filters']['display_name']['expose']['operator'] = 'display_name_op';
+  $handler->display->display_options['filters']['display_name']['expose']['identifier'] = 'display_name';
+  $handler->display->display_options['filters']['display_name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: CiviCRM Custom: Team details: Meeting day/time */
+  $handler->display->display_options['filters']['meeting_day_time']['id'] = 'meeting_day_time';
+  $handler->display->display_options['filters']['meeting_day_time']['table'] = 'civicrm_value_1_team_details_5';
+  $handler->display->display_options['filters']['meeting_day_time']['field'] = 'meeting_day_time';
+  $handler->display->display_options['filters']['meeting_day_time']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['filters']['meeting_day_time']['operator'] = 'contains';
+  $handler->display->display_options['filters']['meeting_day_time']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['meeting_day_time']['expose']['operator_id'] = 'meeting_day_time_op';
+  $handler->display->display_options['filters']['meeting_day_time']['expose']['label'] = 'Meeting day/time contains';
+  $handler->display->display_options['filters']['meeting_day_time']['expose']['operator'] = 'meeting_day_time_op';
+  $handler->display->display_options['filters']['meeting_day_time']['expose']['identifier'] = 'meeting_day_time';
+  $handler->display->display_options['filters']['meeting_day_time']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: CiviCRM Custom: Team details: Time of day */
+  $handler->display->display_options['filters']['time_of_day']['id'] = 'time_of_day';
+  $handler->display->display_options['filters']['time_of_day']['table'] = 'civicrm_value_1_team_details_5';
+  $handler->display->display_options['filters']['time_of_day']['field'] = 'time_of_day';
+  $handler->display->display_options['filters']['time_of_day']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['filters']['time_of_day']['operator'] = 'contains';
+  $handler->display->display_options['filters']['time_of_day']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['time_of_day']['expose']['operator_id'] = 'time_of_day_op';
+  $handler->display->display_options['filters']['time_of_day']['expose']['label'] = 'Time of day contains';
+  $handler->display->display_options['filters']['time_of_day']['expose']['operator'] = 'time_of_day_op';
+  $handler->display->display_options['filters']['time_of_day']['expose']['identifier'] = 'time_of_day';
+  $handler->display->display_options['filters']['time_of_day']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: CiviCRM Tags: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'civicrm_tag';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['filters']['name']['value'] = array(
+    'all' => 'all',
+    41 => '41',
+    69 => '69',
+    80 => '80',
+    74 => '74',
+    53 => '53',
+    39 => '39',
+    70 => '70',
+    40 => '40',
+    36 => '36',
+    84 => '84',
+    65 => '65',
+    23 => '23',
+    25 => '25',
+    43 => '43',
+    67 => '67',
+    68 => '68',
+    71 => '71',
+    85 => '85',
+    76 => '76',
+    26 => '26',
+    81 => '81',
+    27 => '27',
+    34 => '34',
+    86 => '86',
+    19 => '19',
+    7 => '7',
+    33 => '33',
+    54 => '54',
+    17 => '17',
+    8 => '8',
+    9 => '9',
+    83 => '83',
+    60 => '60',
+    75 => '75',
+    24 => '24',
+    77 => '77',
+    82 => '82',
+    28 => '28',
+    35 => '35',
+    59 => '59',
+    78 => '78',
+    37 => '37',
+    55 => '55',
+    73 => '73',
+    29 => '29',
+    50 => '50',
+    30 => '30',
+    79 => '79',
+    31 => '31',
+    32 => '32',
+    61 => '61',
+    42 => '42',
+    20 => '20',
+    38 => '38',
+  );
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Tag';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/ministry-teams';
+  $translatables['cbf2019_ministry_team_admin_view'] = array(
+    t('Master'),
+    t('cbf2019 ministry team admin view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('These are CiviCRM Teams that have been marked up for display on maps on the website.
+
+To publish a CiviCRM Team on a map, set up the team in CiviCRM then come to this page and click here to <a href="/eform/submit/ministry-team">create a new Ministry Team</a> (this links the CiviCRM team with the map).
+
+To modify the details of a team on the map click on <em>Edit CiviCRM</em> beside the team. When you save the team with its new details these will appear on the map.
+
+To remove a team from the maps, click the checkbox next to the team and choose operation <em>Delete item</em> and press <em>Execute</em>.'),
+    t('CiviCRM Team'),
+    t('Select'),
+    t('- Choose an operation -'),
+    t('Display Name'),
+    t('Tags'),
+    t('Meeting day/time'),
+    t('Time of day'),
+    t('.'),
+    t('Operations'),
+    t('<a href="/entityform/[entityform_id]/edit">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/view?reset=1&cid=[id]">View CiviCRM</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/add?reset=1&action=update&cid=[id]">Edit CiviCRM</a>'),
+    t('Name contains'),
+    t('Meeting day/time contains'),
+    t('Time of day contains'),
+    t('Tag'),
+    t('Page'),
+  );
+  $export['cbf2019_ministry_team_admin_view'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_page_header_civicrm_event';
   $view->description = 'Page header for all CiviCRM Event pages';
   $view->tag = 'page-header';
@@ -4264,7 +4716,7 @@ To create a new CiviCRM Event
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -4465,7 +4917,7 @@ To create a new CiviCRM Event
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
