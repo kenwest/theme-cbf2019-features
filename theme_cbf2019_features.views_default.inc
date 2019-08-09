@@ -2316,6 +2316,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['text'] = 'REGISTER NOW';
   $handler->display->display_options['fields']['id']['alter']['make_link'] = TRUE;
@@ -2323,6 +2324,21 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: Non-CiviCRM registration link */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['ui_name'] = 'Non-CiviCRM registration link';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'REGISTER NOW';
+  $handler->display->display_options['fields']['field_order_url']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['path'] = '[field_order_url-url]';
+  $handler->display->display_options['fields']['field_order_url']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['empty'] = '[id]';
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['type'] = 'link_plain';
   /* Contextual filter: CiviCRM Events: Event ID */
   $handler->display->display_options['arguments']['id']['id'] = 'id';
   $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
@@ -2407,6 +2423,7 @@ To create a new CiviCRM Event
     t('Address'),
     t('REGISTER NOW'),
     t('.'),
+    t('[id]'),
     t('All'),
     t('Block'),
   );
