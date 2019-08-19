@@ -7354,6 +7354,10 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['link_url'] = 'whats-on';
+
+  /* Display: Block for Content Full Width */
+  $handler = $view->new_display('block', 'Block for Content Full Width', 'block_1');
+  $handler->display->display_options['link_url'] = 'whats-on';
   $translatables['local_civicrm_event_slider'] = array(
     t('Master'),
     t('<none>'),
@@ -7371,6 +7375,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('All'),
     t('Block'),
     t('more'),
+    t('Block for Content Full Width'),
   );
   $export['local_civicrm_event_slider'] = $view;
 
