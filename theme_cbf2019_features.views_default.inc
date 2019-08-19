@@ -3431,6 +3431,17 @@ To create a new CiviCRM Event
   $handler->display->display_options['footer']['area']['content'] = '[geo_code_2]';
   $handler->display->display_options['footer']['area']['format'] = 'raw_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+
+  /* Display: Home page - with map */
+  $handler = $view->new_display('block', 'Home page - with map', 'block_2');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '[geo_code_2]';
+  $handler->display->display_options['footer']['area']['format'] = 'raw_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $translatables['cbf2019_local_office'] = array(
     t('Master'),
     t('<none>'),
@@ -3469,6 +3480,7 @@ To create a new CiviCRM Event
     t('Block'),
     t('Block with map'),
     t('[geo_code_2]'),
+    t('Home page - with map'),
   );
   $export['cbf2019_local_office'] = $view;
 
