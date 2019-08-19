@@ -6833,9 +6833,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['label'] = '';
   $handler->display->display_options['fields']['field_summary']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<div class="overlaid-image">[field_image]</div><div class="image-overlay">[field_summary]</div>';
-  $handler->display->display_options['fields']['field_summary']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_summary']['alter']['path'] = '/staff-contact?cid1=[field_staff_contact]';
+  $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<div class="overlaid-image">[field_image]</div><a href="/staff-contact?cid1=[field_staff_contact]"><div class="image-overlay">[field_summary]</div></a>';
   $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_summary']['element_wrapper_class'] = 'image-plus-hover-overlay';
   /* Field: Entityform Submission: Title */
@@ -6907,7 +6905,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('All'),
     t('Our team'),
     t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
-    t('<div class="overlaid-image">[field_image]</div><div class="image-overlay">[field_summary]</div>'),
+    t('<div class="overlaid-image">[field_image]</div><a href="/staff-contact?cid1=[field_staff_contact]"><div class="image-overlay">[field_summary]</div></a>'),
     t('Block'),
   );
   $export['cbf2019_staff_slider'] = $view;
