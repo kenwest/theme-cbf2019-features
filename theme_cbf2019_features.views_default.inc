@@ -3609,10 +3609,12 @@ To create a new CiviCRM Event
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        [field_in_activity]
-        [field_title]
-        [name]
-        [street], [city] [field_summary] [field_order_url]
+        <div class="marker-content">
+          [field_in_activity]
+          [field_title]
+          [name]
+          [street], [city] [field_summary] [field_order_url]
+        </div>
       </div>
 ';
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
@@ -3751,9 +3753,11 @@ To create a new CiviCRM Event
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        [field_title]
-        [name]
-        [street], [city] [field_summary] [field_order_url]
+        <div class="marker-content">
+          [field_title]
+          [name]
+          [street], [city] [field_summary] [field_order_url]
+        </div>
       </div>
 ';
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
@@ -3956,9 +3960,11 @@ To create a new CiviCRM Event
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        [field_title]
-        [name]
-        [street], [city] [field_summary] [field_order_url]
+        <div class="marker-content">
+          [field_title]
+          [name]
+          [street], [city] [field_summary] [field_order_url]
+        </div>
       </div>
 ';
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
@@ -4125,10 +4131,12 @@ To create a new CiviCRM Event
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        [field_in_activity]
-        [field_title]
-        [name]
-        [street], [city] [field_summary] [field_order_url]
+        <div class="marker-content">
+          [field_in_activity]
+          [field_title]
+          [name]
+          [street], [city] [field_summary] [field_order_url]
+        </div>
       </div>
 '),
     t('.'),
@@ -4141,9 +4149,11 @@ To create a new CiviCRM Event
         data-lat="[latitude]"
         data-long="[longitude]"
         data-icon="https://citybibleforum.org/sites/all/themes/cbf2019/map-marker.png">
-        [field_title]
-        [name]
-        [street], [city] [field_summary] [field_order_url]
+        <div class="marker-content">
+          [field_title]
+          [name]
+          [street], [city] [field_summary] [field_order_url]
+        </div>
       </div>
 '),
     t('All'),
