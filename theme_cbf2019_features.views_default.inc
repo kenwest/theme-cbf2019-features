@@ -3604,9 +3604,10 @@ To create a new CiviCRM Event
         <div class="marker-content">
           <div class="marker-item marker-activity">[field_in_activity]</div>
           <div class="marker-item marker-title">[field_title]</div>
-          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
           <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-address">[street], [city]</div>
         </div>
       </div>
@@ -3750,9 +3751,10 @@ To create a new CiviCRM Event
         data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
         <div class="marker-content">
           <div class="marker-item marker-title">[field_title]</div>
-          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
           <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-address">[street], [city]</div>
         </div>
       </div>
@@ -3969,9 +3971,10 @@ To create a new CiviCRM Event
         data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
         <div class="marker-content">
           <div class="marker-item marker-title">[field_title]</div>
-          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
           <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-address">[street], [city]</div>
         </div>
       </div>
@@ -4148,9 +4151,10 @@ To create a new CiviCRM Event
         <div class="marker-content">
           <div class="marker-item marker-activity">[field_in_activity]</div>
           <div class="marker-item marker-title">[field_title]</div>
-          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
           <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-address">[street], [city]</div>
         </div>
       </div>
@@ -4168,9 +4172,10 @@ To create a new CiviCRM Event
         data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
         <div class="marker-content">
           <div class="marker-item marker-title">[field_title]</div>
-          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
           <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
           <div class="marker-item marker-address">[street], [city]</div>
         </div>
       </div>
