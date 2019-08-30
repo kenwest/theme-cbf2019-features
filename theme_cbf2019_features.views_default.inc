@@ -6984,7 +6984,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
         'bef_collapsible' => 0,
         'autosubmit' => 0,
         'is_secondary' => 0,
-        'any_label' => '',
+        'any_label' => 'All',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -7212,12 +7212,12 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
+    t('All'),
     t('Activities'),
     t('[field_highlight]'),
     t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
     t('All cities'),
     t('[taxonomy_vocabulary_1] | [field_regularity]'),
-    t('All'),
     t('Highlight location (field_highlight_location)'),
     t('Block'),
   );
