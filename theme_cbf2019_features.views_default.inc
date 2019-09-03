@@ -2372,14 +2372,6 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
   $handler->display->display_options['filters']['is_public']['group'] = 1;
-  /* Filter criterion: CiviCRM Events: Start Date */
-  $handler->display->display_options['filters']['start_date']['id'] = 'start_date';
-  $handler->display->display_options['filters']['start_date']['table'] = 'civicrm_event';
-  $handler->display->display_options['filters']['start_date']['field'] = 'start_date';
-  $handler->display->display_options['filters']['start_date']['operator'] = '>=';
-  $handler->display->display_options['filters']['start_date']['value']['value'] = 'now';
-  $handler->display->display_options['filters']['start_date']['value']['type'] = 'offset';
-  $handler->display->display_options['filters']['start_date']['group'] = 1;
   /* Filter criterion: CiviCRM Events: Registration End Date */
   $handler->display->display_options['filters']['registration_end_date']['id'] = 'registration_end_date';
   $handler->display->display_options['filters']['registration_end_date']['table'] = 'civicrm_event';
@@ -2408,6 +2400,14 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['registration_start_date_1']['field'] = 'registration_start_date';
   $handler->display->display_options['filters']['registration_start_date_1']['operator'] = 'empty';
   $handler->display->display_options['filters']['registration_start_date_1']['group'] = 2;
+  /* Filter criterion: CiviCRM Events: End Date */
+  $handler->display->display_options['filters']['end_date']['id'] = 'end_date';
+  $handler->display->display_options['filters']['end_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['end_date']['field'] = 'end_date';
+  $handler->display->display_options['filters']['end_date']['operator'] = '>=';
+  $handler->display->display_options['filters']['end_date']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['end_date']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['end_date']['group'] = 1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
