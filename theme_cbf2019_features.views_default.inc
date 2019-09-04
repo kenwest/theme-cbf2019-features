@@ -6255,6 +6255,26 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     ),
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Speakers. Speakers are known as Authors when displayed in blogs.
+
+<ol>
+<li>To add a Speaker, you have a couple of options ...</ii>
+<ol>
+<li>When creating an article, name a speaker who doesn&#39;t yet exist. This happens any time you name a speaker but don&#39;t match it to an existing speaker (ie, you match an existing speaker by clicking on an option in the dropdown).</ii>
+<li>Or, <a href="/admin/structure/taxonomy/speaker/add">add a speaker</a> directly.</ii>
+</ol>
+<li>To be visible in an article, the Speaker must have a description</ii>
+<li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
+<li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
+<li>The listing of Speakers tells you how many Articles and CiviCRM Events refer to each Speaker. The Speaker description should be suitably generic to work in all these contexts. The listing also shows you some of the Description and whether a Landscape or Portrait image is attached.</ii>
+<li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
+</ol>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
   $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
@@ -6521,6 +6541,20 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('This view allows you to find and edit Speakers. Speakers are known as Authors when displayed in blogs.
+
+<ol>
+<li>To add a Speaker, you have a couple of options ...</ii>
+<ol>
+<li>When creating an article, name a speaker who doesn&#39;t yet exist. This happens any time you name a speaker but don&#39;t match it to an existing speaker (ie, you match an existing speaker by clicking on an option in the dropdown).</ii>
+<li>Or, <a href="/admin/structure/taxonomy/speaker/add">add a speaker</a> directly.</ii>
+</ol>
+<li>To be visible in an article, the Speaker must have a description</ii>
+<li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
+<li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
+<li>The listing of Speakers tells you how many Articles and CiviCRM Events refer to each Speaker. The Speaker description should be suitably generic to work in all these contexts. The listing also shows you some of the Description and whether a Landscape or Portrait image is attached.</ii>
+<li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
+</ol>'),
     t('CiviCRM Event'),
     t('Content'),
     t('Select'),
