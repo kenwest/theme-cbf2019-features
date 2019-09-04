@@ -2321,6 +2321,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['id']['alter']['text'] = 'REGISTER NOW';
   $handler->display->display_options['fields']['id']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['path'] = '/civicrm/event/register?reset=1&id=[id]';
+  $handler->display->display_options['fields']['id']['alter']['rel'] = 'nofollow';
   $handler->display->display_options['fields']['id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
