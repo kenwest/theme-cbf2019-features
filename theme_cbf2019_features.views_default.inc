@@ -4372,7 +4372,7 @@ To create a new CiviCRM Event
 
 To publish a CiviCRM Team on a map, set up the team in CiviCRM then come to this page and click here to <a href="/eform/submit/ministry-team">create a new Ministry Team</a> (this links the CiviCRM team with the map).
 
-To modify the details of a team on the map click on <em>Edit CiviCRM</em> beside the team. When you save the team with its new details these will appear on the map.
+To modify the details of a team on the map click on <em>Edit CiviCRM fields</em> beside the team. When you save the team with its new details these will appear on the map.
 
 To remove a team from the maps, click the checkbox next to the team and choose operation <em>Delete item</em> and press <em>Execute</em>.';
   $handler->display->display_options['header']['area']['format'] = '2';
@@ -4572,7 +4572,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
 To publish a CiviCRM Team on a map, set up the team in CiviCRM then come to this page and click here to <a href="/eform/submit/ministry-team">create a new Ministry Team</a> (this links the CiviCRM team with the map).
 
-To modify the details of a team on the map click on <em>Edit CiviCRM</em> beside the team. When you save the team with its new details these will appear on the map.
+To modify the details of a team on the map click on <em>Edit CiviCRM fields</em> beside the team. When you save the team with its new details these will appear on the map.
 
 To remove a team from the maps, click the checkbox next to the team and choose operation <em>Delete item</em> and press <em>Execute</em>.'),
     t('CiviCRM Team'),
