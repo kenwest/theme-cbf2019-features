@@ -4425,12 +4425,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['meeting_day_time']['table'] = 'civicrm_value_1_team_details_5';
   $handler->display->display_options['fields']['meeting_day_time']['field'] = 'meeting_day_time';
   $handler->display->display_options['fields']['meeting_day_time']['relationship'] = 'field_ministry_team_contact_id';
-  /* Field: CiviCRM Custom: Team details: Time of day */
-  $handler->display->display_options['fields']['time_of_day']['id'] = 'time_of_day';
-  $handler->display->display_options['fields']['time_of_day']['table'] = 'civicrm_value_1_team_details_5';
-  $handler->display->display_options['fields']['time_of_day']['field'] = 'time_of_day';
-  $handler->display->display_options['fields']['time_of_day']['relationship'] = 'field_ministry_team_contact_id';
-  $handler->display->display_options['fields']['time_of_day']['element_label_colon'] = FALSE;
   /* Field: CiviCRM Contacts: Contact ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'civicrm_contact';
@@ -4502,29 +4496,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     10 => 0,
     9 => 0,
   );
-  /* Filter criterion: CiviCRM Custom: Team details: Time of day */
-  $handler->display->display_options['filters']['time_of_day']['id'] = 'time_of_day';
-  $handler->display->display_options['filters']['time_of_day']['table'] = 'civicrm_value_1_team_details_5';
-  $handler->display->display_options['filters']['time_of_day']['field'] = 'time_of_day';
-  $handler->display->display_options['filters']['time_of_day']['relationship'] = 'field_ministry_team_contact_id';
-  $handler->display->display_options['filters']['time_of_day']['operator'] = 'contains';
-  $handler->display->display_options['filters']['time_of_day']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['time_of_day']['expose']['operator_id'] = 'time_of_day_op';
-  $handler->display->display_options['filters']['time_of_day']['expose']['label'] = 'Time of day contains';
-  $handler->display->display_options['filters']['time_of_day']['expose']['operator'] = 'time_of_day_op';
-  $handler->display->display_options['filters']['time_of_day']['expose']['identifier'] = 'time_of_day';
-  $handler->display->display_options['filters']['time_of_day']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
   /* Filter criterion: CiviCRM Tags: Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'civicrm_tag';
@@ -4582,13 +4553,11 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Display Name'),
     t('Tags'),
     t('Meeting day/time'),
-    t('Time of day'),
     t('.'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a> &nbsp; <a href="/civicrm/contact/view?reset=1&cid=[id]">View&nbsp;CiviCRM</a> &nbsp; <a href="/civicrm/profile/edit?gid=78&reset=1&id=[id]">Edit&nbsp;CiviCRM&nbsp;fields</a>'),
     t('Name contains'),
     t('Meeting day/time contains'),
-    t('Time of day contains'),
     t('Tag'),
     t('Page'),
   );
