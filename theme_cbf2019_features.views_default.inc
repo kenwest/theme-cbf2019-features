@@ -4445,7 +4445,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['label'] = 'Operations';
   $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '<a href="/entityform/[entityform_id]/edit">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/view?reset=1&cid=[id]">View CiviCRM</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/add?reset=1&action=update&cid=[id]">Edit CiviCRM</a>';
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '<a href="/entityform/[entityform_id]/edit">Edit</a> &nbsp; <a href="/civicrm/contact/view?reset=1&cid=[id]">View&nbsp;CiviCRM</a> &nbsp; <a href="/civicrm/profile/edit?gid=78&reset=1&id=[id]">Edit&nbsp;CiviCRM&nbsp;fields</a>';
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   /* Filter criterion: Entityform Submission: Entityform Type */
@@ -4584,7 +4584,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Time of day'),
     t('.'),
     t('Operations'),
-    t('<a href="/entityform/[entityform_id]/edit">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/view?reset=1&cid=[id]">View CiviCRM</a>&nbsp;&nbsp;&nbsp;<a href="/civicrm/contact/add?reset=1&action=update&cid=[id]">Edit CiviCRM</a>'),
+    t('<a href="/entityform/[entityform_id]/edit">Edit</a> &nbsp; <a href="/civicrm/contact/view?reset=1&cid=[id]">View&nbsp;CiviCRM</a> &nbsp; <a href="/civicrm/profile/edit?gid=78&reset=1&id=[id]">Edit&nbsp;CiviCRM&nbsp;fields</a>'),
     t('Name contains'),
     t('Meeting day/time contains'),
     t('Time of day contains'),
