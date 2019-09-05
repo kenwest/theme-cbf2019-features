@@ -4439,6 +4439,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['meeting_day_time']['table'] = 'civicrm_value_1_team_details_5';
   $handler->display->display_options['fields']['meeting_day_time']['field'] = 'meeting_day_time';
   $handler->display->display_options['fields']['meeting_day_time']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['fields']['meeting_day_time']['alter']['strip_tags'] = TRUE;
   /* Field: CiviCRM Contacts: Contact ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'civicrm_contact';
