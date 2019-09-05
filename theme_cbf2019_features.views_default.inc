@@ -4499,7 +4499,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['nick_name']['group'] = 1;
   $handler->display->display_options['filters']['nick_name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['nick_name']['expose']['operator_id'] = 'nick_name_op';
-  $handler->display->display_options['filters']['nick_name']['expose']['label'] = 'Nickname contains';
+  $handler->display->display_options['filters']['nick_name']['expose']['label'] = 'Title contains';
   $handler->display->display_options['filters']['nick_name']['expose']['operator'] = 'nick_name_op';
   $handler->display->display_options['filters']['nick_name']['expose']['identifier'] = 'nick_name';
   $handler->display->display_options['filters']['nick_name']['expose']['remember_roles'] = array(
@@ -4607,7 +4607,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a> &nbsp; <a href="/civicrm/contact/view?reset=1&cid=[id]">View&nbsp;CiviCRM</a> &nbsp; <a href="/civicrm/profile/edit?gid=78&reset=1&id=[id]">Edit&nbsp;CiviCRM&nbsp;fields</a>'),
     t('Name contains'),
-    t('Nickname contains'),
+    t('Title contains'),
     t('Meeting day/time contains'),
     t('Tag'),
     t('Page'),
