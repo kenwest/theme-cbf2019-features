@@ -4313,6 +4313,7 @@ To create a new CiviCRM Event
     'time_of_day' => 'time_of_day',
     'id' => 'id',
     'entityform_id' => 'entityform_id',
+    'nick_name' => 'nick_name',
   );
   $handler->display->display_options['style_options']['default'] = 'display_name';
   $handler->display->display_options['style_options']['info'] = array(
@@ -4358,6 +4359,13 @@ To create a new CiviCRM Event
     ),
     'entityform_id' => array(
       'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nick_name' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -4413,6 +4421,12 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['display_name']['relationship'] = 'field_ministry_team_contact_id';
   $handler->display->display_options['fields']['display_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['display_name']['link_to_civicrm_contact'] = 0;
+  /* Field: CiviCRM Contacts: Nickname */
+  $handler->display->display_options['fields']['nick_name']['id'] = 'nick_name';
+  $handler->display->display_options['fields']['nick_name']['table'] = 'civicrm_contact';
+  $handler->display->display_options['fields']['nick_name']['field'] = 'nick_name';
+  $handler->display->display_options['fields']['nick_name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['fields']['nick_name']['label'] = 'Title';
   /* Field: CiviCRM Tags: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'civicrm_tag';
@@ -4450,12 +4464,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['type']['value'] = array(
     'ministry_team' => 'ministry_team',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: CiviCRM Contacts: Display Name */
   $handler->display->display_options['filters']['display_name']['id'] = 'display_name';
   $handler->display->display_options['filters']['display_name']['table'] = 'civicrm_contact';
   $handler->display->display_options['filters']['display_name']['field'] = 'display_name';
   $handler->display->display_options['filters']['display_name']['relationship'] = 'field_ministry_team_contact_id';
   $handler->display->display_options['filters']['display_name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['display_name']['group'] = 1;
   $handler->display->display_options['filters']['display_name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['display_name']['expose']['operator_id'] = 'display_name_op';
   $handler->display->display_options['filters']['display_name']['expose']['label'] = 'Name contains';
@@ -4473,12 +4489,43 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     10 => 0,
     9 => 0,
   );
+  /* Filter criterion: CiviCRM Contacts: Nickname */
+  $handler->display->display_options['filters']['nick_name']['id'] = 'nick_name';
+  $handler->display->display_options['filters']['nick_name']['table'] = 'civicrm_contact';
+  $handler->display->display_options['filters']['nick_name']['field'] = 'nick_name';
+  $handler->display->display_options['filters']['nick_name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['filters']['nick_name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['nick_name']['group'] = 1;
+  $handler->display->display_options['filters']['nick_name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nick_name']['expose']['operator_id'] = 'nick_name_op';
+  $handler->display->display_options['filters']['nick_name']['expose']['label'] = 'Nickname contains';
+  $handler->display->display_options['filters']['nick_name']['expose']['operator'] = 'nick_name_op';
+  $handler->display->display_options['filters']['nick_name']['expose']['identifier'] = 'nick_name';
+  $handler->display->display_options['filters']['nick_name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['nick_name']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['nick_name']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['nick_name']['expose']['autocomplete_field'] = 'nick_name';
+  $handler->display->display_options['filters']['nick_name']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['nick_name']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['nick_name']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: CiviCRM Custom: Team details: Meeting day/time */
   $handler->display->display_options['filters']['meeting_day_time']['id'] = 'meeting_day_time';
   $handler->display->display_options['filters']['meeting_day_time']['table'] = 'civicrm_value_1_team_details_5';
   $handler->display->display_options['filters']['meeting_day_time']['field'] = 'meeting_day_time';
   $handler->display->display_options['filters']['meeting_day_time']['relationship'] = 'field_ministry_team_contact_id';
   $handler->display->display_options['filters']['meeting_day_time']['operator'] = 'contains';
+  $handler->display->display_options['filters']['meeting_day_time']['group'] = 1;
   $handler->display->display_options['filters']['meeting_day_time']['exposed'] = TRUE;
   $handler->display->display_options['filters']['meeting_day_time']['expose']['operator_id'] = 'meeting_day_time_op';
   $handler->display->display_options['filters']['meeting_day_time']['expose']['label'] = 'Meeting day/time contains';
@@ -4501,6 +4548,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['name']['table'] = 'civicrm_tag';
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['relationship'] = 'field_ministry_team_contact_id';
+  $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['label'] = 'Tag';
@@ -4551,12 +4599,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Select'),
     t('- Choose an operation -'),
     t('Display Name'),
+    t('Title'),
     t('Tags'),
     t('Meeting day/time'),
     t('.'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a> &nbsp; <a href="/civicrm/contact/view?reset=1&cid=[id]">View&nbsp;CiviCRM</a> &nbsp; <a href="/civicrm/profile/edit?gid=78&reset=1&id=[id]">Edit&nbsp;CiviCRM&nbsp;fields</a>'),
     t('Name contains'),
+    t('Nickname contains'),
     t('Meeting day/time contains'),
     t('Tag'),
     t('Page'),
