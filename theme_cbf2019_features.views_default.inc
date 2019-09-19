@@ -2353,6 +2353,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
+    4 => 'OR',
     3 => 'OR',
     2 => 'OR',
   );
@@ -2374,11 +2375,25 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
   $handler->display->display_options['filters']['is_public']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: End Date */
+  $handler->display->display_options['filters']['end_date']['id'] = 'end_date';
+  $handler->display->display_options['filters']['end_date']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['end_date']['field'] = 'end_date';
+  $handler->display->display_options['filters']['end_date']['operator'] = '>=';
+  $handler->display->display_options['filters']['end_date']['value']['value'] = 'now';
+  $handler->display->display_options['filters']['end_date']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['end_date']['group'] = 4;
+  /* Filter criterion: CiviCRM Events: Registration End Date */
+  $handler->display->display_options['filters']['registration_end_date_2']['id'] = 'registration_end_date_2';
+  $handler->display->display_options['filters']['registration_end_date_2']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['registration_end_date_2']['field'] = 'registration_end_date';
+  $handler->display->display_options['filters']['registration_end_date_2']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['registration_end_date_2']['group'] = 4;
   /* Filter criterion: CiviCRM Events: Registration End Date */
   $handler->display->display_options['filters']['registration_end_date']['id'] = 'registration_end_date';
   $handler->display->display_options['filters']['registration_end_date']['table'] = 'civicrm_event';
   $handler->display->display_options['filters']['registration_end_date']['field'] = 'registration_end_date';
-  $handler->display->display_options['filters']['registration_end_date']['operator'] = '>';
+  $handler->display->display_options['filters']['registration_end_date']['operator'] = '>=';
   $handler->display->display_options['filters']['registration_end_date']['value']['value'] = 'now';
   $handler->display->display_options['filters']['registration_end_date']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['registration_end_date']['group'] = 3;
@@ -2392,7 +2407,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['registration_start_date']['id'] = 'registration_start_date';
   $handler->display->display_options['filters']['registration_start_date']['table'] = 'civicrm_event';
   $handler->display->display_options['filters']['registration_start_date']['field'] = 'registration_start_date';
-  $handler->display->display_options['filters']['registration_start_date']['operator'] = '<';
+  $handler->display->display_options['filters']['registration_start_date']['operator'] = '<=';
   $handler->display->display_options['filters']['registration_start_date']['value']['value'] = 'now';
   $handler->display->display_options['filters']['registration_start_date']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['registration_start_date']['group'] = 2;
@@ -2402,14 +2417,6 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['registration_start_date_1']['field'] = 'registration_start_date';
   $handler->display->display_options['filters']['registration_start_date_1']['operator'] = 'empty';
   $handler->display->display_options['filters']['registration_start_date_1']['group'] = 2;
-  /* Filter criterion: CiviCRM Events: End Date */
-  $handler->display->display_options['filters']['end_date']['id'] = 'end_date';
-  $handler->display->display_options['filters']['end_date']['table'] = 'civicrm_event';
-  $handler->display->display_options['filters']['end_date']['field'] = 'end_date';
-  $handler->display->display_options['filters']['end_date']['operator'] = '>=';
-  $handler->display->display_options['filters']['end_date']['value']['value'] = 'now';
-  $handler->display->display_options['filters']['end_date']['value']['type'] = 'offset';
-  $handler->display->display_options['filters']['end_date']['group'] = 1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
