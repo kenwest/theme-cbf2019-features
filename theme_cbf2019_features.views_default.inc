@@ -7067,7 +7067,9 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 <li>Making the image available for use in special contexts (eg the CBF+ block)</li>
 </ol>
 
-You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.';
+You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.
+
+Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Bulk operations: Entityform Submission */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -7115,11 +7117,6 @@ You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['label'] = 'Name';
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
-  /* Field: Field: Subtitle */
-  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   /* Field: Field: Sidebar title */
   $handler->display->display_options['fields']['field_sidebar_title']['id'] = 'field_sidebar_title';
   $handler->display->display_options['fields']['field_sidebar_title']['table'] = 'field_data_field_sidebar_title';
@@ -7133,6 +7130,11 @@ You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_synopsis']['delta_offset'] = '0';
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
@@ -7179,35 +7181,6 @@ You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Subtitle (field_subtitle) */
-  $handler->display->display_options['filters']['field_subtitle_value']['id'] = 'field_subtitle_value';
-  $handler->display->display_options['filters']['field_subtitle_value']['table'] = 'field_data_field_subtitle';
-  $handler->display->display_options['filters']['field_subtitle_value']['field'] = 'field_subtitle_value';
-  $handler->display->display_options['filters']['field_subtitle_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_subtitle_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_subtitle_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['operator_id'] = 'field_subtitle_value_op';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['label'] = 'Subtitle contains';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['operator'] = 'field_subtitle_value_op';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['identifier'] = 'field_subtitle_value';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_field'] = 'field_subtitle';
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Field: Sidebar title (field_sidebar_title) */
   $handler->display->display_options['filters']['field_sidebar_title_value']['id'] = 'field_sidebar_title_value';
   $handler->display->display_options['filters']['field_sidebar_title_value']['table'] = 'field_data_field_sidebar_title';
@@ -7266,6 +7239,35 @@ You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit
   $handler->display->display_options['filters']['field_synopsis_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_synopsis_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_synopsis_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field: Subtitle (field_subtitle) */
+  $handler->display->display_options['filters']['field_subtitle_value']['id'] = 'field_subtitle_value';
+  $handler->display->display_options['filters']['field_subtitle_value']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['filters']['field_subtitle_value']['field'] = 'field_subtitle_value';
+  $handler->display->display_options['filters']['field_subtitle_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_subtitle_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_subtitle_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['operator_id'] = 'field_subtitle_value_op';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['label'] = 'Subtitle contains';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['operator'] = 'field_subtitle_value_op';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['identifier'] = 'field_subtitle_value';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_field'] = 'field_subtitle';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -7294,20 +7296,22 @@ You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit
 <li>Making the image available for use in special contexts (eg the CBF+ block)</li>
 </ol>
 
-You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.'),
+You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.
+
+Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.'),
     t('Select'),
     t('- Choose an operation -'),
     t('Name'),
-    t('Subtitle'),
     t('Content type'),
     t('Path'),
+    t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
     t('.'),
     t('Name contains'),
-    t('Subtitle contains'),
     t('Content type contains'),
     t('Path contains'),
+    t('Subtitle contains'),
     t('Page'),
   );
   $export['cbf2019_title_header_admin_view'] = $view;
