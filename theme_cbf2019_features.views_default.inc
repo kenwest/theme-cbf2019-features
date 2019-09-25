@@ -7114,6 +7114,16 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
       ),
     ),
   );
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'logo_autox67',
+    'image_link' => '',
+  );
   /* Field: Entityform Submission: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
@@ -7304,6 +7314,7 @@ You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit
 Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.'),
     t('Select'),
     t('- Choose an operation -'),
+    t('Title image'),
     t('Name'),
     t('Content type'),
     t('Path'),
