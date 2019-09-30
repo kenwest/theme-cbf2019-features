@@ -5004,6 +5004,30 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['display_description'] = ' Eg civicrm/event/register?reset=1&id=1979 -- the title varies for each event';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
+
+  /* Display: First 2 components of path */
+  $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field: Path (field_synopsis) */
+  $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
+  $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = '$cbf_url_parts = explode(\'/\', parse_url(request_uri())["path"]);
+if (empty($cbf_url_parts[1])) {
+  return \'/\';
+}
+else if (empty($cbf_url_parts[2])) {
+  return \'/\' . $cbf_url_parts[1];
+}
+else {
+  return \'/\' . $cbf_url_parts[1] . \'/\' . $cbf_url_parts[2];
+}';
+  $handler->display->display_options['arguments']['field_synopsis_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_synopsis_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_synopsis_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_synopsis_value']['limit'] = '0';
   $translatables['cbf2019_page_header_paths'] = array(
     t('Master'),
     t('more'),
@@ -5016,6 +5040,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Path'),
     t('Path which should not be cached'),
     t(' Eg civicrm/event/register?reset=1&id=1979 -- the title varies for each event'),
+    t('First 2 components of path'),
   );
   $export['cbf2019_page_header_paths'] = $view;
 
