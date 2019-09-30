@@ -7241,43 +7241,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['bef'] = array(
-    'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => '2',
-        ),
-      ),
-      'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
-      'secondary_collapse_override' => '0',
-    ),
-    'field_staff_groups_tid' => array(
-      'bef_format' => 'bef_links',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => 'All',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            1 => 'vocabulary',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-  );
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -7348,6 +7312,62 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['type']['value'] = array(
     'staff' => 'staff',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Not intended for display';
+
+  /* Display: Staff slider for About Us */
+  $handler = $view->new_display('block', 'Staff slider for About Us', 'block_1');
+  $handler->display->display_options['display_description'] = 'Staff with filtering by staff group';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'field_staff_groups_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
   /* Filter criterion: Entityform Submission: Staff groups (field_staff_groups) */
   $handler->display->display_options['filters']['field_staff_groups_tid']['id'] = 'field_staff_groups_tid';
   $handler->display->display_options['filters']['field_staff_groups_tid']['table'] = 'field_data_field_staff_groups';
@@ -7371,8 +7391,27 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_staff_groups_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_staff_groups_tid']['vocabulary'] = 'staff_group';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Staff slider for Activity */
+  $handler = $view->new_display('block', 'Staff slider for Activity', 'block_2');
+  $handler->display->display_options['display_description'] = 'Staff associated with an Activity';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_staff_slider'] = array(
     t('Master'),
     t('<none>'),
@@ -7382,13 +7421,19 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Select any filter and click on Apply to see results'),
-    t('Advanced options'),
-    t('All'),
     t('Our team'),
     t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('<div class="overlaid-image">[field_image]</div><a href="/staff-contact?cid1=[field_staff_contact]" rel="nofollow"><div class="image-overlay">[field_summary]</div></a>'),
-    t('Block'),
+    t('Defaults'),
+    t('Not intended for display'),
+    t('Staff slider for About Us'),
+    t('Staff with filtering by staff group'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('All'),
+    t('Staff slider for Activity'),
+    t('Staff associated with an Activity'),
+    t('Activity'),
   );
   $export['cbf2019_staff_slider'] = $view;
 
