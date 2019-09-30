@@ -6861,6 +6861,369 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $export['cbf2019_speakers'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_staff_admin_view';
+  $view->description = 'Allows admin of title Header entities';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 staff admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Staff admin view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    10 => '10',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'field_title' => 'field_title',
+    'field_weight' => 'field_weight',
+    'field_subtitle' => 'field_subtitle',
+    'field_staff_groups' => 'field_staff_groups',
+    'field_in_activity' => 'field_in_activity',
+    'title' => 'title',
+    'entityform_id' => 'entityform_id',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_weight';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_weight' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_subtitle' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_staff_groups' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_in_activity' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Staff members ...
+
+<ol>
+<li>Can be put in Staff groups that are listed on the About Us page</li>
+<li>Can be associated with an Activity (eg Third Space)</li>
+</ol>
+
+You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existing ones below.';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'log' => 0,
+      ),
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+          'title_header::field_title' => 'title_header::field_title',
+          'title_header::field_title_image' => 'title_header::field_title_image',
+        ),
+      ),
+    ),
+  );
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = 'Name';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Weight */
+  $handler->display->display_options['fields']['field_weight']['id'] = 'field_weight';
+  $handler->display->display_options['fields']['field_weight']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['fields']['field_weight']['field'] = 'field_weight';
+  $handler->display->display_options['fields']['field_weight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_weight']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = 'Position';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Staff groups */
+  $handler->display->display_options['fields']['field_staff_groups']['id'] = 'field_staff_groups';
+  $handler->display->display_options['fields']['field_staff_groups']['table'] = 'field_data_field_staff_groups';
+  $handler->display->display_options['fields']['field_staff_groups']['field'] = 'field_staff_groups';
+  $handler->display->display_options['fields']['field_staff_groups']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_groups']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_staff_groups']['delta_offset'] = '0';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = 'Activities';
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_in_activity']['delta_offset'] = '0';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = 'Operations';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '<a href="/entityform/[entityform_id]/edit">Edit</a>';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Entityform Submission: Title (field_title) */
+  $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
+  $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_title_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_title_value']['expose']['operator_id'] = 'field_title_value_op';
+  $handler->display->display_options['filters']['field_title_value']['expose']['label'] = 'Name contains';
+  $handler->display->display_options['filters']['field_title_value']['expose']['operator'] = 'field_title_value_op';
+  $handler->display->display_options['filters']['field_title_value']['expose']['identifier'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_field'] = 'field_title';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field: Subtitle (field_subtitle) */
+  $handler->display->display_options['filters']['field_subtitle_value']['id'] = 'field_subtitle_value';
+  $handler->display->display_options['filters']['field_subtitle_value']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['filters']['field_subtitle_value']['field'] = 'field_subtitle_value';
+  $handler->display->display_options['filters']['field_subtitle_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_subtitle_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_subtitle_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['operator_id'] = 'field_subtitle_value_op';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['label'] = 'Position contains';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['operator'] = 'field_subtitle_value_op';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['identifier'] = 'field_subtitle_value';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_field'] = 'field_subtitle';
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_subtitle_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Entityform Submission: Staff groups (field_staff_groups) */
+  $handler->display->display_options['filters']['field_staff_groups_tid']['id'] = 'field_staff_groups_tid';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['table'] = 'field_data_field_staff_groups';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['field'] = 'field_staff_groups_tid';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_staff_groups_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_staff_groups_tid']['expose']['operator_id'] = 'field_staff_groups_tid_op';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['expose']['label'] = 'Staff group';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['expose']['operator'] = 'field_staff_groups_tid_op';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['expose']['identifier'] = 'field_staff_groups_tid';
+  $handler->display->display_options['filters']['field_staff_groups_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_staff_groups_tid']['vocabulary'] = 'staff_group';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Activity name contains';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/staff';
+  $translatables['cbf2019_staff_admin_view'] = array(
+    t('Master'),
+    t('Staff admin view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Staff members ...
+
+<ol>
+<li>Can be put in Staff groups that are listed on the About Us page</li>
+<li>Can be associated with an Activity (eg Third Space)</li>
+</ol>
+
+You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existing ones below.'),
+    t('Activity'),
+    t('Select'),
+    t('- Choose an operation -'),
+    t('Name'),
+    t('Weight'),
+    t('Position'),
+    t('Staff groups'),
+    t('Activities'),
+    t('Operations'),
+    t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
+    t('.'),
+    t('Name contains'),
+    t('Position contains'),
+    t('Staff group'),
+    t('Activity name contains'),
+    t('Page'),
+  );
+  $export['cbf2019_staff_admin_view'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_staff_slider';
   $view->description = '';
   $view->tag = '4-items';
