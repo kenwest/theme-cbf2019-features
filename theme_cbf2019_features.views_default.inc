@@ -5896,6 +5896,260 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $export['cbf2019_recent_library'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_regular_venue_admin_view';
+  $view->description = 'Allows admin of title Header entities';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 regular venue admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Regular venue admin view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    10 => '10',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'field_title' => 'field_title',
+    'entityform_id' => 'entityform_id',
+  );
+  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Regular venues ...
+
+<ol>
+<li>Must be associated with an Activity</li>
+<li>Have a location, plus description of date, time etc</li>
+</ol>
+
+You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or edit existing ones below.';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'log' => 0,
+      ),
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+          'title_header::field_title' => 'title_header::field_title',
+          'title_header::field_title_image' => 'title_header::field_title_image',
+        ),
+      ),
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['title']['label'] = 'Activity';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = 'Name';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = 'Operations';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '<a href="/entityform/[entityform_id]/edit">Edit</a>';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'regular_venue' => 'regular_venue',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Entityform Submission: Title (field_title) */
+  $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
+  $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_title_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_title_value']['expose']['operator_id'] = 'field_title_value_op';
+  $handler->display->display_options['filters']['field_title_value']['expose']['label'] = 'Name contains';
+  $handler->display->display_options['filters']['field_title_value']['expose']['operator'] = 'field_title_value_op';
+  $handler->display->display_options['filters']['field_title_value']['expose']['identifier'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_field'] = 'field_title';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Activity contains';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+    4 => 0,
+    8 => 0,
+    10 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/regular-venue';
+  $translatables['cbf2019_regular_venue_admin_view'] = array(
+    t('Master'),
+    t('Regular venue admin view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Regular venues ...
+
+<ol>
+<li>Must be associated with an Activity</li>
+<li>Have a location, plus description of date, time etc</li>
+</ol>
+
+You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or edit existing ones below.'),
+    t('Activity'),
+    t('Select'),
+    t('- Choose an operation -'),
+    t('Name'),
+    t('Operations'),
+    t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
+    t('.'),
+    t('Name contains'),
+    t('Activity contains'),
+    t('Page'),
+  );
+  $export['cbf2019_regular_venue_admin_view'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_related_content';
   $view->description = 'Content related to the current node';
   $view->tag = 'default';
