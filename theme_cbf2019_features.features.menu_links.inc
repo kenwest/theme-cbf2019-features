@@ -263,6 +263,29 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+  // Exported menu link: menu-third-space-main-menu_about-us:<front>.
+  $menu_links['menu-third-space-main-menu_about-us:<front>'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'About us',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_about-us:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.

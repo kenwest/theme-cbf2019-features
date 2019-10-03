@@ -22,10 +22,17 @@ function theme_cbf2019_features_menu_default_menu_custom() {
     'title' => 'CBF 2019 plus menu',
     'description' => '',
   );
+  // Exported menu: menu-third-space-main-menu.
+  $menus['menu-third-space-main-menu'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'title' => 'Third Space main menu',
+    'description' => '',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('CBF 2019 main menu');
   t('CBF 2019 plus menu');
+  t('Third Space main menu');
 
   return $menus;
 }
