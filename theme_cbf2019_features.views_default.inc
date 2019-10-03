@@ -7782,7 +7782,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   $view = new view();
   $view->name = 'cbf2019_third_space_events';
-  $view->description = 'Upcoming events, localised to the visitor if possible';
+  $view->description = 'Upcoming events';
   $view->tag = 'merge-events';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 third space events';
