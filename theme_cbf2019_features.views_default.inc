@@ -7683,6 +7683,104 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $export['cbf2019_staff_slider'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_third_space_categories';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 third space categories';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'time_per_domain';
+  $handler->display->display_options['cache']['results_lifespan'] = '518400';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '3';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '4';
+  $handler->display->display_options['style_options']['columns_sm'] = '0';
+  $handler->display->display_options['style_options']['columns_md'] = '0';
+  $handler->display->display_options['style_options']['columns_lg'] = '0';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Find your Third Space';
+  $handler->display->display_options['header']['area']['format'] = '3';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Icon name */
+  $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['ui_name'] = 'Icon name';
+  $handler->display->display_options['fields']['field_second_title']['label'] = '';
+  $handler->display->display_options['fields']['field_second_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_second_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_second_title']['alter']['text'] = '<i class="[field_second_title]"></i>';
+  $handler->display->display_options['fields']['field_second_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_second_title']['type'] = 'text_plain';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['text'] = '<a href="/third-space/category/[tid]" title="[name]">[field_second_title]</a>';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'third_space_category' => 'third_space_category',
+  );
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: For home page */
+  $handler = $view->new_display('block', 'For home page', 'block_1');
+  $translatables['cbf2019_third_space_categories'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Find your Third Space'),
+    t('<i class="[field_second_title]"></i>'),
+    t('<a href="/third-space/category/[tid]" title="[name]">[field_second_title]</a>'),
+    t('.'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('For home page'),
+  );
+  $export['cbf2019_third_space_categories'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_title_header_admin_view';
   $view->description = 'Allows admin of title Header entities';
   $view->tag = 'default';
