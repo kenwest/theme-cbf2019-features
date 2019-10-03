@@ -76,6 +76,7 @@ features[views_view][] = cbf2019_speakers
 features[views_view][] = cbf2019_staff_admin_view
 features[views_view][] = cbf2019_staff_slider
 features[views_view][] = cbf2019_third_space_categories
+features[views_view][] = cbf2019_third_space_category
 features[views_view][] = cbf2019_third_space_events
 features[views_view][] = cbf2019_title_header_admin_view
 features[views_view][] = cbf2019_whats_on_activities
