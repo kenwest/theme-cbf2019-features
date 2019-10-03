@@ -1032,7 +1032,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Highlight video */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -1060,7 +1060,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
@@ -1098,7 +1098,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Highlight video */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
@@ -1122,7 +1122,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
-  /* Field: Field: Promotional video */
+  /* Field: Field: Highlight video */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -1165,13 +1165,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
@@ -1202,7 +1202,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
@@ -1995,7 +1995,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Highlight video */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -2022,7 +2022,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'OR',
   );
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
@@ -4762,7 +4762,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -4977,7 +4977,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -5008,7 +5008,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: First 2 components of path */
   $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -7790,7 +7790,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Path */
+  /* Field: Field: Synopsis */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -7876,7 +7876,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Path (field_synopsis) */
+  /* Filter criterion: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -7970,7 +7970,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Path'),
+    t('Synopsis'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
