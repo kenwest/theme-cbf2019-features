@@ -7816,7 +7816,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['style_options']['columns_md'] = '4';
   $handler->display->display_options['style_options']['columns_lg'] = '0';
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -7825,52 +7824,41 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Third Space category name';
   $handler->display->display_options['header']['area']['format'] = '3';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
   $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => 'content',
+    'image_style' => 'third_space_grid',
+    'image_link' => '',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
-  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
-  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
-    'bypass_access' => 0,
-    'link' => 1,
-  );
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   /* Field: Content: Resource type */
   $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
   $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
   $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
   /* Field: Field: Speaker(s) */
@@ -7879,6 +7867,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['label'] = '';
   $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>';
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
@@ -7887,8 +7877,9 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['label'] = '';
+  $handler->display->display_options['fields']['field_episode_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
+  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]';
   $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
     'format_type' => 'custom',
@@ -7900,13 +7891,25 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'show_remaining_days' => 0,
     'show_repeat_rule' => 'show',
   );
-  /* Field: Field: Subtitle */
-  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
-  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<div class="overlaid-image">[field_highlight]</div>
+<div class="image-overlay">
+  <div>
+    <div class="views-field views-field-title">[title]</div>
+    <div class="views-field views-field-subtitle">[field_subtitle]</div>
+    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
+    <div class="views-field views-field-episode-date">[field_episode_date]</div>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'image-plus-fixed-overlay';
   /* Sort criterion: Field: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
@@ -8038,92 +8041,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
-  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
-  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
-    'bypass_access' => 0,
-    'link' => 1,
-  );
-  /* Field: Content: Resource type */
-  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
-  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
-  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
-  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
-  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
-  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['label'] = '';
-  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
-  $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
-  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
-    'format_type' => 'custom',
-    'custom_date_format' => 'j M Y',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Field: Subtitle */
-  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
-  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'third-space/category/%';
   $translatables['cbf2019_third_space_category'] = array(
     t('Master'),
@@ -8136,8 +8053,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Desc'),
     t('Title'),
     t('Third Space category name'),
-    t('Activity'),
-    t('[field_speakers] | [field_episode_date]'),
+    t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
+    t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
+    t('<div class="overlaid-image">[field_highlight]</div>
+<div class="image-overlay">
+  <div>
+    <div class="views-field views-field-title">[title]</div>
+    <div class="views-field views-field-subtitle">[field_subtitle]</div>
+    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
+    <div class="views-field views-field-episode-date">[field_episode_date]</div>
+  </div>
+</div>'),
     t('All'),
     t('Resource type (field_resource_type)'),
     t('Defaults'),
