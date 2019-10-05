@@ -5045,6 +5045,86 @@ else {
   $export['cbf2019_page_header_paths'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_page_header_third_space_category';
+  $view->description = '';
+  $view->tag = 'page-header';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 page header - third space category';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time_per_domain';
+  $handler->display->display_options['cache']['results_lifespan'] = '518400';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'third_space_category' => 'third_space_category',
+  );
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'third_space_category' => 'third_space_category',
+  );
+
+  /* Display: Path */
+  $handler = $view->new_display('block', 'Path', 'block');
+  $translatables['cbf2019_page_header_third_space_category'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('Path'),
+  );
+  $export['cbf2019_page_header_third_space_category'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_recent_library';
   $view->description = 'Recent library view for the cbf2019 theme';
   $view->tag = 'default';
