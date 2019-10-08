@@ -7979,11 +7979,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = '<div class="overlaid-image">[field_highlight]</div>
 <div class="image-overlay">
-  <div>
+  <div class="image-overlay-inner">
     <div class="views-field views-field-title">[title]</div>
     <div class="views-field views-field-subtitle">[field_subtitle]</div>
-    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
     <div class="views-field views-field-episode-date">[field_episode_date]</div>
+    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
   </div>
 </div>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
@@ -8137,11 +8137,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
     t('<div class="overlaid-image">[field_highlight]</div>
 <div class="image-overlay">
-  <div>
+  <div class="image-overlay-inner">
     <div class="views-field views-field-title">[title]</div>
     <div class="views-field views-field-subtitle">[field_subtitle]</div>
-    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
     <div class="views-field views-field-episode-date">[field_episode_date]</div>
+    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
   </div>
 </div>'),
     t('All'),
