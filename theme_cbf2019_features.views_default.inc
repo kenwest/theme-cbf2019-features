@@ -2069,6 +2069,74 @@ To create a new CiviCRM Event
   $export['cbf2019_event_highlight_slider'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_event_override_price';
+  $view->description = 'If price is overridden, display that. Else show the cbf2019 event override price\' view';
+  $view->tag = 'default';
+  $view->base_table = 'civicrm_event';
+  $view->human_name = 'cbf2019 event override price';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'event-override-price';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_event_price';
+  $handler->display->display_options['fields']['view']['display'] = 'block';
+  $handler->display->display_options['fields']['view']['arguments'] = '!1';
+  /* Field: Override price text */
+  $handler->display->display_options['fields']['field_sidebar_title']['id'] = 'field_sidebar_title';
+  $handler->display->display_options['fields']['field_sidebar_title']['table'] = 'field_data_field_sidebar_title';
+  $handler->display->display_options['fields']['field_sidebar_title']['field'] = 'field_sidebar_title';
+  $handler->display->display_options['fields']['field_sidebar_title']['ui_name'] = 'Override price text';
+  $handler->display->display_options['fields']['field_sidebar_title']['label'] = '';
+  $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidebar_title']['empty'] = '[view]';
+  $handler->display->display_options['fields']['field_sidebar_title']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_event_override_price'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('[view]'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_event_override_price'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_event_price';
   $view->description = '';
   $view->tag = 'event-price';
