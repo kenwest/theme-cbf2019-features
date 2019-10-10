@@ -1798,7 +1798,7 @@ To create a new CiviCRM Event
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<none>';
-  $handler->display->display_options['css_class'] = 'venue';
+  $handler->display->display_options['css_class'] = 'event-details';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -1862,7 +1862,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['view']['field'] = 'view';
   $handler->display->display_options['fields']['view']['label'] = 'Cost';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_event_price';
+  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_event_override_price';
   $handler->display->display_options['fields']['view']['display'] = 'block';
   $handler->display->display_options['fields']['view']['arguments'] = '!1';
   /* Contextual filter: CiviCRM Events: Event ID */
