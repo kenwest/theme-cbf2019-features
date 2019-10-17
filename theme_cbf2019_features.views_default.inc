@@ -8094,6 +8094,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
@@ -8122,8 +8123,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     ),
     3 => array(
       'title' => 'Read',
-      'operator' => 'contains',
-      'value' => 'd',
+      'operator' => 'regular_expression',
+      'value' => '(o|d|t)',
     ),
   );
 
