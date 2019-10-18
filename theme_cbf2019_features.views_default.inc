@@ -7853,12 +7853,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '3';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
   $handler->display->display_options['style_options']['columns_vertical'] = '4';
-  $handler->display->display_options['style_options']['columns_xs'] = '4';
-  $handler->display->display_options['style_options']['columns_sm'] = '0';
+  $handler->display->display_options['style_options']['columns_xs'] = '6';
+  $handler->display->display_options['style_options']['columns_sm'] = '3';
   $handler->display->display_options['style_options']['columns_md'] = '0';
   $handler->display->display_options['style_options']['columns_lg'] = '0';
+  $handler->display->display_options['style_options']['column_class'] = 'third-space-category';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
