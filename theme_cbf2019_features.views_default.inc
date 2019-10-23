@@ -1236,6 +1236,95 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_content_highlight_slider'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_domain';
+  $view->description = 'Domain-related view displays';
+  $view->tag = 'default';
+  $view->base_table = 'domain';
+  $view->human_name = 'cbf2019 domain';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Domains: Domain ID */
+  $handler->display->display_options['fields']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['table'] = 'domain';
+  $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['label'] = '';
+  $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Domains: Valid */
+  $handler->display->display_options['filters']['valid']['id'] = 'valid';
+  $handler->display->display_options['filters']['valid']['table'] = 'domain';
+  $handler->display->display_options['filters']['valid']['field'] = 'valid';
+  $handler->display->display_options['filters']['valid']['value'] = 1;
+  $handler->display->display_options['filters']['valid']['group'] = 1;
+  $handler->display->display_options['filters']['valid']['expose']['operator'] = FALSE;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: Footer logo */
+  $handler = $view->new_display('block', 'Footer logo', 'block_1');
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time_per_domain';
+  $handler->display->display_options['cache']['results_lifespan'] = '518400';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Domains: Domain ID */
+  $handler->display->display_options['fields']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['table'] = 'domain';
+  $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['label'] = '';
+  $handler->display->display_options['fields']['domain_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['domain_id']['alter']['text'] = '<div class="footer-logo">
+  <a href="/" class="embed-responsive embed-responsive-16by9">
+    <img src="/sites/all/themes/cbf2019/images/[domain_id]/brand/logo-black.png">
+  </a>
+</div>';
+  $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
+  $translatables['cbf2019_domain'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('Footer logo'),
+    t('<div class="footer-logo">
+  <a href="/" class="embed-responsive embed-responsive-16by9">
+    <img src="/sites/all/themes/cbf2019/images/[domain_id]/brand/logo-black.png">
+  </a>
+</div>'),
+  );
+  $export['cbf2019_domain'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_event_admin_view';
   $view->description = 'Allow admin access to CiviCRM Events';
   $view->tag = 'default';
@@ -4830,7 +4919,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Field: Path (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -5045,7 +5134,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Field: Path (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -5076,7 +5165,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: First 2 components of path */
   $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Field: Path (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -8548,7 +8637,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Synopsis */
+  /* Field: Field: Path */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -8634,7 +8723,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Synopsis (field_synopsis) */
+  /* Filter criterion: Field: Path (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -8728,7 +8817,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Synopsis'),
+    t('Path'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
