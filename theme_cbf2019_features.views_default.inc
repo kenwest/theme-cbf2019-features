@@ -7941,22 +7941,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
-  $handler->display->display_options['style_options']['columns_vertical'] = '4';
-  $handler->display->display_options['style_options']['columns_xs'] = '6';
-  $handler->display->display_options['style_options']['columns_sm'] = '3';
-  $handler->display->display_options['style_options']['columns_md'] = '0';
-  $handler->display->display_options['style_options']['columns_lg'] = '0';
-  $handler->display->display_options['style_options']['column_class'] = 'third-space-category';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Find your Third Space';
-  $handler->display->display_options['header']['area']['format'] = '3';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -7974,7 +7960,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_second_title']['label'] = '';
   $handler->display->display_options['fields']['field_second_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_second_title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_second_title']['alter']['text'] = '<i class="[field_second_title]"></i>';
+  $handler->display->display_options['fields']['field_second_title']['alter']['text'] = '<i class="[field_second_title] fa-fw"></i>';
   $handler->display->display_options['fields']['field_second_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_second_title']['type'] = 'text_plain';
   /* Field: Taxonomy term: Term ID */
@@ -7983,7 +7969,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['tid']['alter']['text'] = '<a href="/third-space/category/[tid]" title="[name]">[field_second_title]</a>';
+  $handler->display->display_options['fields']['tid']['alter']['text'] = '<a class="third-space-category-[tid]" href="/third-space/category/[tid]" title="[name]">[field_second_title]</a>';
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Sort criterion: Taxonomy term: Weight */
@@ -8002,8 +7988,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: For home page */
-  $handler = $view->new_display('block', 'For home page', 'block_1');
+  /* Display: For room page */
+  $handler = $view->new_display('block', 'For room page', 'block_1');
   $translatables['cbf2019_third_space_categories'] = array(
     t('Master'),
     t('more'),
@@ -8012,13 +7998,12 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Find your Third Space'),
-    t('<i class="[field_second_title]"></i>'),
-    t('<a href="/third-space/category/[tid]" title="[name]">[field_second_title]</a>'),
+    t('<i class="[field_second_title] fa-fw"></i>'),
+    t('<a class="third-space-category-[tid]" href="/third-space/category/[tid]" title="[name]">[field_second_title]</a>'),
     t('.'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('For home page'),
+    t('For room page'),
   );
   $export['cbf2019_third_space_categories'] = $view;
 
