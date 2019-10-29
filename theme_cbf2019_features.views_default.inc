@@ -8057,7 +8057,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['title'] = '[name]';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'Our library';
@@ -8083,8 +8083,15 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Third Space category name';
+  $handler->display->display_options['header']['area']['content'] = '[name]';
   $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* Relationship: Field: Third Space categories (field_third_space_category) */
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['id'] = 'field_third_space_category_tid';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['table'] = 'field_data_field_third_space_category';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['field'] = 'field_third_space_category_tid';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['label'] = 'Category';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['required'] = TRUE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
@@ -8171,6 +8178,14 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'image-plus-fixed-overlay';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_third_space_category_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Sort criterion: Field: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
@@ -8249,7 +8264,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   /* Display: Category page */
   $handler = $view->new_display('page', 'Category page', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Third Space category name';
+  $handler->display->display_options['title'] = '[name]';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -8306,7 +8321,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['path'] = 'third-space/category/%';
   $translatables['cbf2019_third_space_category'] = array(
     t('Master'),
-    t('<none>'),
+    t('[name]'),
     t('Our library'),
     t('Apply'),
     t('Reset'),
@@ -8314,7 +8329,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Asc'),
     t('Desc'),
     t('Title'),
-    t('Third Space category name'),
+    t('Category'),
     t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
     t('<div class="overlaid-image">[field_highlight]</div>
