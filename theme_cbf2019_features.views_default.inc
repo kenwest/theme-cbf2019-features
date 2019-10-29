@@ -8191,16 +8191,15 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
-  /* Contextual filter: Global: Null */
-  $handler->display->display_options['arguments']['null']['id'] = 'null';
-  $handler->display->display_options['arguments']['null']['table'] = 'views';
-  $handler->display->display_options['arguments']['null']['field'] = 'null';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['index'] = '2';
-  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field: Third Space categories (field_third_space_category) */
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['id'] = 'field_third_space_category_tid';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['table'] = 'field_data_field_third_space_category';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['field'] = 'field_third_space_category_tid';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_third_space_category_tid']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Domain Access: Domain ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
