@@ -7990,6 +7990,24 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   /* Display: For room page */
   $handler = $view->new_display('block', 'For room page', 'block_1');
+
+  /* Display: Empty categories page */
+  $handler = $view->new_display('page', 'Empty categories page', 'page_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'third_space_category' => 'third_space_category',
+  );
+  /* Filter criterion: Taxonomy term: Term ID */
+  $handler->display->display_options['filters']['tid_raw']['id'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid_raw']['field'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw']['value']['value'] = '0';
+  $handler->display->display_options['path'] = 'third-space/categories';
   $translatables['cbf2019_third_space_categories'] = array(
     t('Master'),
     t('more'),
@@ -8004,6 +8022,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
     t('For room page'),
+    t('Empty categories page'),
   );
   $export['cbf2019_third_space_categories'] = $view;
 
