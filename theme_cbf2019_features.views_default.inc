@@ -8504,7 +8504,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
-  /* Filter criterion: CiviCRM Event: Third Space categories (field_third_space_category) */
+  /* Filter criterion: Field: Third Space categories (field_third_space_category) */
   $handler->display->display_options['filters']['field_third_space_category_tid']['id'] = 'field_third_space_category_tid';
   $handler->display->display_options['filters']['field_third_space_category_tid']['table'] = 'field_data_field_third_space_category';
   $handler->display->display_options['filters']['field_third_space_category_tid']['field'] = 'field_third_space_category_tid';
