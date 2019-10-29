@@ -283,7 +283,76 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_listen:third-space/listen.
+  $menu_links['menu-third-space-main-menu_listen:third-space/listen'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/listen',
+    'router_path' => 'third-space/listen',
+    'link_title' => 'Listen',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_listen:third-space/listen',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_read:third-space/read.
+  $menu_links['menu-third-space-main-menu_read:third-space/read'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/read',
+    'router_path' => 'third-space/read',
+    'link_title' => 'Read',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_read:third-space/read',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_watch:third-space/watch.
+  $menu_links['menu-third-space-main-menu_watch:third-space/watch'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/watch',
+    'router_path' => 'third-space/watch',
+    'link_title' => 'Watch',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_watch:third-space/watch',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
     'customized' => 1,
   );
 
@@ -293,7 +362,10 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Activities');
   t('Blog');
   t('Get involved');
+  t('Listen');
+  t('Read');
   t('Resources');
+  t('Watch');
   t('What\'s on');
 
   return $menu_links;
