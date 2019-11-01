@@ -263,24 +263,24 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-third-space-main-menu_about-us:<front>.
-  $menu_links['menu-third-space-main-menu_about-us:<front>'] = array(
+  // Exported menu link: menu-third-space-main-menu_about-us:node/4018.
+  $menu_links['menu-third-space-main-menu_about-us:node/4018'] = array(
     'menu_name' => 'menu-third-space-main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'node/4018',
+    'router_path' => 'node/%',
     'link_title' => 'About us',
     'options' => array(
+      'identifier' => 'menu-third-space-main-menu_about-us:node/4018',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-third-space-main-menu_about-us:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -47,
