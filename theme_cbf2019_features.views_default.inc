@@ -8018,6 +8018,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   /* Display: Empty categories page */
   $handler = $view->new_display('page', 'Empty categories page', 'page_1');
+  $handler->display->display_options['display_description'] = 'This gives us a page with no title header. All the data on this page comes from views';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
@@ -8036,6 +8037,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   /* Display: Empty home page */
   $handler = $view->new_display('page', 'Empty home page', 'page_2');
+  $handler->display->display_options['display_description'] = 'This gives us a page with no title header. All the data on this page comes from views';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
@@ -8066,6 +8068,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Don\'t display this block - for defaults only'),
     t('For room page'),
     t('Empty categories page'),
+    t('This gives us a page with no title header. All the data on this page comes from views'),
     t('Empty home page'),
   );
   $export['cbf2019_third_space_categories'] = $view;
