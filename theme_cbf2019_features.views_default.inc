@@ -8053,6 +8053,65 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['tid_raw']['field'] = 'tid_raw';
   $handler->display->display_options['filters']['tid_raw']['value']['value'] = '0';
   $handler->display->display_options['path'] = 'third-space/home';
+
+  /* Display: Room grid */
+  $handler = $view->new_display('block', 'Room grid', 'block_2');
+  $handler->display->display_options['display_description'] = 'Display the categories as a grid of rooms';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '6';
+  $handler->display->display_options['style_options']['columns_md'] = '4';
+  $handler->display->display_options['style_options']['columns_lg'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Icon name */
+  $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['ui_name'] = 'Icon name';
+  $handler->display->display_options['fields']['field_second_title']['label'] = '';
+  $handler->display->display_options['fields']['field_second_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_second_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_second_title']['alter']['text'] = '<i class="[field_second_title] fa-fw"></i>';
+  $handler->display->display_options['fields']['field_second_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_second_title']['type'] = 'text_plain';
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['text'] = '<a href="/third-space/category/[tid]" title="[name]"><div class="row">
+  <div class="col-xs-3 third-space-category-icon">[field_second_title]</div>
+  <div class="col-xs-9">
+    <div class="third-space-category-subtitle">[field_subtitle]</div>
+    <div class="third-space-category-name">[name]</div>
+  </div>
+</div></a>';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   $translatables['cbf2019_third_space_categories'] = array(
     t('Master'),
     t('more'),
@@ -8070,6 +8129,15 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Empty categories page'),
     t('This gives us a page with no title header. All the data on this page comes from views'),
     t('Empty home page'),
+    t('Room grid'),
+    t('Display the categories as a grid of rooms'),
+    t('<a href="/third-space/category/[tid]" title="[name]"><div class="row">
+  <div class="col-xs-3 third-space-category-icon">[field_second_title]</div>
+  <div class="col-xs-9">
+    <div class="third-space-category-subtitle">[field_subtitle]</div>
+    <div class="third-space-category-name">[name]</div>
+  </div>
+</div></a>'),
   );
   $export['cbf2019_third_space_categories'] = $view;
 
