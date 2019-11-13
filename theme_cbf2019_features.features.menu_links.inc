@@ -283,8 +283,55 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_activities:http://_anchor_.
+  $menu_links['menu-third-space-main-menu_activities:http://_anchor_'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'http://_anchor_',
+    'router_path' => '',
+    'link_title' => 'Activities',
+    'options' => array(
+      'identifier' => 'menu-third-space-main-menu_activities:http://_anchor_',
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 1,
+    'expanded' => 1,
     'weight' => -47,
     'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_bigger-questions:node/1263.
+  $menu_links['menu-third-space-main-menu_bigger-questions:node/1263'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'node/1263',
+    'router_path' => 'node/%',
+    'link_title' => 'Bigger Questions',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_bigger-questions:node/1263',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_activities:http://_anchor_',
   );
   // Exported menu link: menu-third-space-main-menu_listen:third-space/listen.
   $menu_links['menu-third-space-main-menu_listen:third-space/listen'] = array(
@@ -332,6 +379,30 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
+  // Exported menu link: menu-third-space-main-menu_reel-dialogue:node/2151.
+  $menu_links['menu-third-space-main-menu_reel-dialogue:node/2151'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'node/2151',
+    'router_path' => 'node/%',
+    'link_title' => 'Reel Dialogue',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_reel-dialogue:node/2151',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_activities:http://_anchor_',
+  );
   // Exported menu link: menu-third-space-main-menu_watch:third-space/watch.
   $menu_links['menu-third-space-main-menu_watch:third-space/watch'] = array(
     'menu_name' => 'menu-third-space-main-menu',
@@ -360,10 +431,12 @@ function theme_cbf2019_features_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About us');
   t('Activities');
+  t('Bigger Questions');
   t('Blog');
   t('Get involved');
   t('Listen');
   t('Read');
+  t('Reel Dialogue');
   t('Resources');
   t('Watch');
   t('What\'s on');
