@@ -1956,6 +1956,26 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['view']['view'] = 'cbf2019_event_override_price';
   $handler->display->display_options['fields']['view']['display'] = 'block';
   $handler->display->display_options['fields']['view']['arguments'] = '!1';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
+  $handler->display->display_options['fields']['view_1']['table'] = 'views';
+  $handler->display->display_options['fields']['view_1']['field'] = 'view';
+  $handler->display->display_options['fields']['view_1']['label'] = 'Who';
+  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['view_1']['view'] = 'cbf2019_speakers_summary';
+  $handler->display->display_options['fields']['view_1']['display'] = 'block_1';
+  $handler->display->display_options['fields']['view_1']['arguments'] = '!1';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_2']['id'] = 'view_2';
+  $handler->display->display_options['fields']['view_2']['table'] = 'views';
+  $handler->display->display_options['fields']['view_2']['field'] = 'view';
+  $handler->display->display_options['fields']['view_2']['label'] = ' ';
+  $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_2']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['view_2']['view'] = 'cbf2019_event_details_table';
+  $handler->display->display_options['fields']['view_2']['display'] = 'block_2';
+  $handler->display->display_options['fields']['view_2']['arguments'] = '!1';
   /* Contextual filter: CiviCRM Events: Event ID */
   $handler->display->display_options['arguments']['id']['id'] = 'id';
   $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
@@ -1984,6 +2004,8 @@ To create a new CiviCRM Event
     t('Where'),
     t('[supplemental_address_1] [street_address] [city]'),
     t('Cost'),
+    t('Who'),
+    t(' '),
     t('All'),
     t('Block'),
   );
