@@ -7384,6 +7384,102 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $export['cbf2019_speakers'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_speakers_summary';
+  $view->description = 'The \'cbf2019 speakers\' view is tagged as \'slider\'. This is tagged \'default\'.';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 speakers summary';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'speaker' => 'speaker',
+  );
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
+  $handler->display->display_options['filters']['description']['value'] = '0';
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: For CiviCRM Event */
+  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_1');
+  $handler->display->display_options['display_description'] = 'List of speakers for a Civi8CRM event';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['field'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['label'] = 'CiviCRM Event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = '#block-views-cbf2019-speakers-block-1';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+  $translatables['cbf2019_speakers_summary'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('For CiviCRM Event'),
+    t('List of speakers for a Civi8CRM event'),
+    t('CiviCRM Event'),
+    t('All'),
+  );
+  $export['cbf2019_speakers_summary'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_staff_admin_view';
   $view->description = 'Allows admin of title Header entities';
   $view->tag = 'default';
