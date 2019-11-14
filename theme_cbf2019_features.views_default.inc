@@ -2070,6 +2070,21 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Summary for CiviCRM Event */
+  $handler = $view->new_display('block', 'Summary for CiviCRM Event', 'block_2');
+  $handler->display->display_options['display_description'] = 'Description of details table for a CiviCRM Event';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_event_details_table'] = array(
     t('Master'),
     t('more'),
@@ -2083,6 +2098,8 @@ To create a new CiviCRM Event
     t('For CiviCRM Event'),
     t('Details table for a CiviCRM Event'),
     t('All'),
+    t('Summary for CiviCRM Event'),
+    t('Description of details table for a CiviCRM Event'),
   );
   $export['cbf2019_event_details_table'] = $view;
 
