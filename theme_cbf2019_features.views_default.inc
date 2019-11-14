@@ -1941,6 +1941,8 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['label'] = 'Where';
   $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['city']['alter']['text'] = '[supplemental_address_1] [street_address] [city]';
+  $handler->display->display_options['fields']['city']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['city']['alter']['path'] = '#block-views-cbf2019-mappable-block-2';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
