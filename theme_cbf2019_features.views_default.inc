@@ -3625,8 +3625,9 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['field_office_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_office_tid']['vocabulary'] = 'office';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
   /* Display: Block with map */
   $handler = $view->new_display('block', 'Block with map', 'block_1');
@@ -3684,7 +3685,9 @@ To create a new CiviCRM Event
     t('Post'),
     t('[street_address_1]<div>[city_1] [state_province] [postal_code]</div>'),
     t('<i class="fal fa-fw fa-at"></i>'),
-    t('Block'),
+    t('All'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
     t('Block with map'),
     t('[geo_code_2]'),
     t('Home page - with map'),
