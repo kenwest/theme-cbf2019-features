@@ -8326,8 +8326,9 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '[name]';
-  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['content'] = '<p>[name]</p>
+[description]';
+  $handler->display->display_options['header']['area']['format'] = 'raw_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Relationship: Field: Third Space categories (field_third_space_category) */
   $handler->display->display_options['relationships']['field_third_space_category_tid']['id'] = 'field_third_space_category_tid';
@@ -8429,6 +8430,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['relationship'] = 'field_third_space_category_tid';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['text'] = '<div class="description">[description]</div>';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['description']['hide_empty'] = TRUE;
   /* Sort criterion: Field: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
@@ -9263,6 +9275,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Asc'),
     t('Desc'),
     t('Title'),
+    t('<p>[name]</p>
+[description]'),
     t('Category'),
     t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
@@ -9275,6 +9289,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
   </div>
 </div>'),
+    t('<div class="description">[description]</div>'),
     t('All'),
     t('Resource type (field_resource_type)'),
     t('Defaults'),
