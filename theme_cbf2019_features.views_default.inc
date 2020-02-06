@@ -6966,13 +6966,15 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['fields']['field_image']['group_columns'] = array(
     'fid' => 'fid',
   );
-  /* Field: Taxonomy term: Term edit link */
-  $handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
-  $handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
-  $handler->display->display_options['fields']['edit_term']['label'] = 'Operations';
-  $handler->display->display_options['fields']['edit_term']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_term']['text'] = 'Edit';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = 'Operations';
+  $handler->display->display_options['fields']['tid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['text'] = '<a href="/taxonomy/term/[tid]/edit?destination=admin/cbf/speakers">Edit</a>';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -7158,7 +7160,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('Portrait image'),
     t('[field_image-fid]'),
     t('Operations'),
-    t('Edit'),
+    t('<a href="/taxonomy/term/[tid]/edit?destination=admin/cbf/speakers">Edit</a>'),
     t('Name contains'),
     t('Description contains'),
     t('Highlight (field_highlight:fid)'),
