@@ -39,6 +39,7 @@ features[menu_links][] = menu-cbf-2019-plus-menu_about-us:node/3670
 features[menu_links][] = menu-cbf-2019-plus-menu_activities:node/3686
 features[menu_links][] = menu-cbf-2019-plus-menu_blog:articles
 features[menu_links][] = menu-cbf-2019-plus-menu_get-involved:node/3786
+features[menu_links][] = menu-cbf-2019-plus-menu_networks:node/4125
 features[menu_links][] = menu-cbf-2019-plus-menu_resources:library
 features[menu_links][] = menu-cbf-2019-plus-menu_whats-on:node/3686
 features[menu_links][] = menu-third-space-main-menu_about-us:node/4018
