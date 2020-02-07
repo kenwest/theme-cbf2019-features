@@ -4835,6 +4835,275 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $export['cbf2019_ministry_team_admin_view'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_networks_activities';
+  $view->description = 'Shows activities on the what\'s on page';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 networks activities';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'field_networks_visibility_tid_1' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '6';
+  $handler->display->display_options['style_options']['columns_md'] = '4';
+  $handler->display->display_options['style_options']['columns_lg'] = '3';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Networks';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['empty'] = '[field_highlight]';
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['element_wrapper_class'] = 'image-plus-fixed-overlay';
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'file_url_plain';
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['empty'] = 'All cities';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Regularity */
+  $handler->display->display_options['fields']['field_regularity']['id'] = 'field_regularity';
+  $handler->display->display_options['fields']['field_regularity']['table'] = 'field_data_field_regularity';
+  $handler->display->display_options['fields']['field_regularity']['field'] = 'field_regularity';
+  $handler->display->display_options['fields']['field_regularity']['label'] = '';
+  $handler->display->display_options['fields']['field_regularity']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_regularity']['alter']['text'] = '[taxonomy_vocabulary_1] | [field_regularity]';
+  $handler->display->display_options['fields']['field_regularity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_regularity']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Time of day */
+  $handler->display->display_options['fields']['field_time_of_day']['id'] = 'field_time_of_day';
+  $handler->display->display_options['fields']['field_time_of_day']['table'] = 'field_data_field_time_of_day';
+  $handler->display->display_options['fields']['field_time_of_day']['field'] = 'field_time_of_day';
+  $handler->display->display_options['fields']['field_time_of_day']['label'] = '';
+  $handler->display->display_options['fields']['field_time_of_day']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_time_of_day']['type'] = 'taxonomy_term_reference_plain';
+  /* Sort criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Activity category (field_activity_category) */
+  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
+  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
+  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
+  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
+    1182 => '1182',
+    1183 => '1183',
+  );
+  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
+  /* Filter criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
+  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
+  /* Filter criterion: Content: Logo (field_logo:fid) */
+  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
+  /* Filter criterion: Field: Title image (field_title_image:fid) */
+  $handler->display->display_options['filters']['field_title_image_fid']['id'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['filters']['field_title_image_fid']['field'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_title_image_fid']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Content: Networks visibility (field_networks_visibility) */
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['id'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['table'] = 'field_data_field_networks_visibility';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['field'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['vocabulary'] = 'banner';
+  /* Filter criterion: Content: Networks visibility (field_networks_visibility) */
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['id'] = 'field_networks_visibility_tid_1';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['table'] = 'field_data_field_networks_visibility';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['field'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['operator_id'] = 'field_networks_visibility_tid_1_op';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['operator'] = 'field_networks_visibility_tid_1_op';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['identifier'] = 'field_networks_visibility_tid_1';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['vocabulary'] = 'banner';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_networks_activities'] = array(
+    t('Master'),
+    t('<none>'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('All'),
+    t('Networks'),
+    t('[field_highlight]'),
+    t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
+    t('All cities'),
+    t('[taxonomy_vocabulary_1] | [field_regularity]'),
+    t('Block'),
+  );
+  $export['cbf2019_networks_activities'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_page_header_civicrm_event';
   $view->description = 'Page header for all CiviCRM Event pages';
   $view->tag = 'page-header';

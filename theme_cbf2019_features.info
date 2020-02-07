@@ -73,6 +73,7 @@ features[views_view][] = cbf2019_local_events
 features[views_view][] = cbf2019_local_office
 features[views_view][] = cbf2019_mappable
 features[views_view][] = cbf2019_ministry_team_admin_view
+features[views_view][] = cbf2019_networks_activities
 features[views_view][] = cbf2019_page_header_civicrm_event
 features[views_view][] = cbf2019_page_header_no_results_image
 features[views_view][] = cbf2019_page_header_node
