@@ -24,6 +24,7 @@ dependencies[] = rhythm_features
 dependencies[] = taxonomy
 dependencies[] = views
 dependencies[] = views_bootstrap
+dependencies[] = views_data_export
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[image][] = title

@@ -9762,6 +9762,118 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler = $view->new_display('block', 'For categories page', 'block_1');
   $handler->display->display_options['display_description'] = 'Block for use on the categories page';
   $handler->display->display_options['link_url'] = 'library';
+
+  /* Display: New content from the last week */
+  $handler = $view->new_display('views_data_export', 'New content from the last week', 'views_data_export_1');
+  $handler->display->display_options['display_description'] = 'HTML for a weekly email';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_txt';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'third_space_grid',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+  );
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
+  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
+    'format_type' => 'custom',
+    'custom_date_format' => 'j M Y',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Resource type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'https://thirdspace.org.au/node/[nid]';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'image-plus-fixed-overlay';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Post date */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = '>=';
+  $handler->display->display_options['filters']['created']['value']['value'] = '-17 days';
+  $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
+  $handler->display->display_options['path'] = 'third-space/last-week';
   $translatables['cbf2019_third_space_content'] = array(
     t('Master'),
     t('Our library'),
@@ -9789,6 +9901,9 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('more'),
     t('For categories page'),
     t('Block for use on the categories page'),
+    t('New content from the last week'),
+    t('HTML for a weekly email'),
+    t('https://thirdspace.org.au/node/[nid]'),
   );
   $export['cbf2019_third_space_content'] = $view;
 
