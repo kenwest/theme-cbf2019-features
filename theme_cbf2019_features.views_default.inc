@@ -9871,7 +9871,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created']['table'] = 'node';
   $handler->display->display_options['filters']['created']['field'] = 'created';
   $handler->display->display_options['filters']['created']['operator'] = '>=';
-  $handler->display->display_options['filters']['created']['value']['value'] = '-17 days';
+  $handler->display->display_options['filters']['created']['value']['value'] = '-7 days';
   $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
   $handler->display->display_options['path'] = 'third-space/last-week';
   $translatables['cbf2019_third_space_content'] = array(
