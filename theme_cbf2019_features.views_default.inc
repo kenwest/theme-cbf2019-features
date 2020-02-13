@@ -10115,6 +10115,129 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $export['cbf2019_third_space_events'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_third_space_promoted';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 third space promoted';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entityqueue: Node Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'third_space_promoted_content' => 'third_space_promoted_content',
+  );
+  /* Relationship: Field: Third Space categories (field_third_space_category) */
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['id'] = 'field_third_space_category_tid';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['table'] = 'field_data_field_third_space_category';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['field'] = 'field_third_space_category_tid';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['label'] = 'Third Space Category';
+  $handler->display->display_options['relationships']['field_third_space_category_tid']['required'] = TRUE;
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_title_image']['group_column'] = 'entity_id';
+  /* Field: Field: Second title */
+  $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
+  $handler->display->display_options['fields']['field_second_title']['relationship'] = 'field_third_space_category_tid';
+  $handler->display->display_options['fields']['field_second_title']['label'] = '';
+  $handler->display->display_options['fields']['field_second_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_second_title']['alter']['text'] = '<i class="[field_second_title] fa-fw"></i>';
+  $handler->display->display_options['fields']['field_second_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_second_title']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_second_title']['group_column'] = 'entity_id';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Resource type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+  /* Sort criterion: Entityqueue: Node Queue Position */
+  $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: For Third Space categories page */
+  $handler = $view->new_display('block', 'For Third Space categories page', 'block_1');
+  $translatables['cbf2019_third_space_promoted'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Node Queue'),
+    t('Third Space Category'),
+    t('<i class="[field_second_title] fa-fw"></i>'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('For Third Space categories page'),
+  );
+  $export['cbf2019_third_space_promoted'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_title_header_admin_view';
   $view->description = 'Allows admin of title Header entities';
   $view->tag = 'default';
