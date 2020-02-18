@@ -9066,6 +9066,10 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -9113,6 +9117,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
   $handler->display->display_options['path'] = 'third-space/watch';
 
   /* Display: Listen page */
@@ -9281,6 +9299,10 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -9328,6 +9350,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
   $handler->display->display_options['path'] = 'third-space/listen';
 
   /* Display: Read page */
@@ -9496,6 +9532,10 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -9543,6 +9583,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
   $handler->display->display_options['path'] = 'third-space/read';
   $translatables['cbf2019_third_space_category'] = array(
     t('Master'),
@@ -9736,6 +9790,10 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -9752,6 +9810,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -9849,6 +9921,10 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'image-plus-fixed-overlay';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -9866,6 +9942,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
   /* Filter criterion: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'node';
