@@ -9942,11 +9942,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
-  /* Sort criterion: Field: Date (field_episode_date) */
-  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
-  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
-  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
