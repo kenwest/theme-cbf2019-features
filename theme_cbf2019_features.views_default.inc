@@ -9690,6 +9690,10 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['content'] = 'Recent articles';
   $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* Relationship: Entityqueue: Node Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
@@ -9843,6 +9847,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['style_plugin'] = 'views_data_export_txt';
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Node Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Promoted';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'third_space_promoted_content' => 'third_space_promoted_content',
+  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -9920,10 +9934,29 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'https://thirdspace.org.au/node/[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'image-plus-fixed-overlay';
+  /* Field: Subqueue: Queue Name */
+  $handler->display->display_options['fields']['queue']['id'] = 'queue';
+  $handler->display->display_options['fields']['queue']['table'] = 'entityqueue_subqueue';
+  $handler->display->display_options['fields']['queue']['field'] = 'queue';
+  $handler->display->display_options['fields']['queue']['relationship'] = 'entityqueue_relationship';
+  $handler->display->display_options['fields']['queue']['label'] = '';
+  $handler->display->display_options['fields']['queue']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Entityqueue: Node Queue Position */
+  $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
-    2 => 'OR',
+    3 => 'AND',
+    2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -9942,12 +9975,43 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Post date */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = '>=';
+  $handler->display->display_options['filters']['created']['value']['value'] = '-7 days';
+  $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['created']['group'] = 1;
   /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
-  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 1;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'blog' => 'blog',
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Post date */
+  $handler->display->display_options['filters']['created_1']['id'] = 'created_1';
+  $handler->display->display_options['filters']['created_1']['table'] = 'node';
+  $handler->display->display_options['filters']['created_1']['field'] = 'created';
+  $handler->display->display_options['filters']['created_1']['operator'] = '>=';
+  $handler->display->display_options['filters']['created_1']['value']['value'] = '-7 days';
+  $handler->display->display_options['filters']['created_1']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['created_1']['group'] = 2;
   /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
@@ -9956,13 +10020,12 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
-  /* Filter criterion: Content: Post date */
-  $handler->display->display_options['filters']['created']['id'] = 'created';
-  $handler->display->display_options['filters']['created']['table'] = 'node';
-  $handler->display->display_options['filters']['created']['field'] = 'created';
-  $handler->display->display_options['filters']['created']['operator'] = '>=';
-  $handler->display->display_options['filters']['created']['value']['value'] = '-7 days';
-  $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
+  /* Filter criterion: Entityqueue: Node In Queue */
+  $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['filters']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
+  $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
   $handler->display->display_options['path'] = 'third-space/last-week';
   $translatables['cbf2019_third_space_content'] = array(
     t('Master'),
@@ -9974,6 +10037,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Desc'),
     t('Title'),
     t('Recent articles'),
+    t('Node Queue'),
     t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
     t('<div class="overlaid-image">[field_highlight]</div>
@@ -9993,6 +10057,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Block for use on the categories page'),
     t('New content from the last week'),
     t('HTML for a weekly email'),
+    t('Promoted'),
     t('https://thirdspace.org.au/node/[nid]'),
   );
   $export['cbf2019_third_space_content'] = $view;
