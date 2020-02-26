@@ -8163,14 +8163,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Our team';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Field: Field: Staff contact */
-  $handler->display->display_options['fields']['field_staff_contact']['id'] = 'field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
-  $handler->display->display_options['fields']['field_staff_contact']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -8189,18 +8181,29 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['label'] = '';
-  $handler->display->display_options['fields']['field_summary']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_summary']['alter']['text'] = '<div class="overlaid-image">[field_image]</div><a href="/staff-contact?cid1=[field_staff_contact]" rel="nofollow"><div class="image-overlay">[field_summary]</div></a>';
+  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_summary']['element_wrapper_class'] = 'image-plus-hover-overlay';
+  /* Field: Field: Staff contact */
+  $handler->display->display_options['fields']['field_staff_contact']['id'] = 'field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['path'] = '/staff-contact?cid1=[field_staff_contact]';
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['rel'] = 'nofollow';
+  $handler->display->display_options['fields']['field_staff_contact']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_contact']['element_wrapper_class'] = 'image-plus-hover-overlay';
+  $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
   /* Field: Entityform Submission: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['label'] = '';
-  $handler->display->display_options['fields']['field_title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_title']['alter']['path'] = '/staff-contact?cid1=[field_staff_contact]';
-  $handler->display->display_options['fields']['field_title']['alter']['rel'] = 'nofollow';
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
   /* Field: Field: Subtitle */
   $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
@@ -8354,7 +8357,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Desc'),
     t('Our team'),
     t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
-    t('<div class="overlaid-image">[field_image]</div><a href="/staff-contact?cid1=[field_staff_contact]" rel="nofollow"><div class="image-overlay">[field_summary]</div></a>'),
+    t('<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>'),
     t('Defaults'),
     t('Not intended for display'),
     t('Staff slider for About Us'),
