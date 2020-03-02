@@ -6567,6 +6567,11 @@ else {
 
 You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or edit existing ones below.';
   $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
   /* Field: Bulk operations: Entityform Submission */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_entityform';
@@ -6617,7 +6622,6 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = 'Activities';
   $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
     'bypass_access' => 0,
     'link' => 0,
@@ -6669,6 +6673,26 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Activity name contains';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -6697,14 +6721,15 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 </ol>
 
 You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or edit existing ones below.'),
+    t('Activity'),
     t('Select'),
     t('- Choose an operation -'),
     t('Name'),
-    t('Activities'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
     t('.'),
     t('Name contains'),
+    t('Activity name contains'),
     t('Page'),
   );
   $export['cbf2019_regular_venue_admin_view'] = $view;
