@@ -6627,6 +6627,12 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_in_activity']['delta_offset'] = '0';
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
@@ -6693,6 +6699,21 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['value'] = '';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['label'] = 'Ministry Centre';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -6725,6 +6746,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('Select'),
     t('- Choose an operation -'),
     t('Name'),
+    t('Ministry Centre'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
     t('.'),
