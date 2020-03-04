@@ -1961,7 +1961,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
   $handler->display->display_options['fields']['view_1']['table'] = 'views';
   $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['label'] = 'Who';
+  $handler->display->display_options['fields']['view_1']['label'] = 'With';
   $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view_1']['view'] = 'cbf2019_speakers_summary';
@@ -2005,7 +2005,7 @@ To create a new CiviCRM Event
     t('Where'),
     t('[supplemental_address_1] [street_address] [city]'),
     t('Cost'),
-    t('Who'),
+    t('With'),
     t(' '),
     t('All'),
     t('Block'),
