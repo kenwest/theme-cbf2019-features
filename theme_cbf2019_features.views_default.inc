@@ -2787,6 +2787,16 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -3221,6 +3231,16 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -7650,6 +7670,18 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_speakers_civicrm_event';
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
 
   /* Display: For Library resources */
   $handler = $view->new_display('block', 'For Library resources', 'block_3');
@@ -10570,6 +10602,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_third_space_category_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_third_space_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_third_space_category_tid']['vocabulary'] = 'third_space_category';
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -11475,6 +11517,16 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['field_domain_domain_id']['operator'] = '!=';
   $handler->display->display_options['filters']['field_domain_domain_id']['value']['value'] = '1';
   $handler->display->display_options['filters']['field_domain_domain_id']['group'] = 2;
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
