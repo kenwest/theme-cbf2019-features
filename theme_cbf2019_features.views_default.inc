@@ -7763,8 +7763,8 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_2');
+  /* Display: For Local Activity */
+  $handler = $view->new_display('block', 'For Local Activity', 'block_2');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
@@ -7875,6 +7875,87 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: For National Activity by Ministry Centre */
+  $handler = $view->new_display('block', 'For National Activity by Ministry Centre', 'block_5');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['field'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['label'] = 'CiviCRM Event';
+  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
+    'vocabulary_1' => 'vocabulary_1',
+  );
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'speaker' => 'speaker',
+  );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
+  $handler->display->display_options['filters']['description']['value'] = '0';
+  $handler->display->display_options['filters']['description']['group'] = 1;
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
   $translatables['cbf2019_speakers'] = array(
     t('Master'),
     t('more'),
@@ -7890,12 +7971,13 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('For CiviCRM Event'),
     t('CiviCRM Event'),
     t('All'),
-    t('For Activity'),
+    t('For Local Activity'),
     t('Activity'),
     t('For Library resources'),
     t('Content'),
     t('For Blog articles'),
     t('Author'),
+    t('For National Activity by Ministry Centre'),
   );
   $export['cbf2019_speakers'] = $view;
 
