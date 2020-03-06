@@ -1014,7 +1014,7 @@ function theme_cbf2019_features_views_default_views() {
   $view = new view();
   $view->name = 'cbf2019_content_highlight_slider';
   $view->description = 'Slider showing promotional material for nodes';
-  $view->tag = 'slider, fieldwise';
+  $view->tag = 'slider, fieldwise, unique';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 content promotional slider';
   $view->core = 7;
@@ -1029,8 +1029,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Field: Highlight video */
@@ -1072,9 +1072,9 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_1');
-  $handler->display->display_options['display_description'] = 'Highlights for an Activity and its CiviCRM Events';
+  /* Display: For Local Activity */
+  $handler = $view->new_display('block', 'For Local Activity', 'block_1');
+  $handler->display->display_options['display_description'] = 'Highlights for a local Activity and its CiviCRM Events';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: View area */
   $handler->display->display_options['empty']['view']['id'] = 'view';
@@ -1108,6 +1108,14 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -1123,14 +1131,6 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
-  /* Field: Field: Highlight video */
-  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -1216,6 +1216,148 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'activity' => 'activity',
   );
+
+  /* Display: For National Activity by Ministry Centre */
+  $handler = $view->new_display('block', 'For National Activity by Ministry Centre', 'block_3');
+  $handler->display->display_options['display_description'] = 'Highlights for a National Activity and its CiviCRM Events';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: View area */
+  $handler->display->display_options['empty']['view']['id'] = 'view';
+  $handler->display->display_options['empty']['view']['table'] = 'views';
+  $handler->display->display_options['empty']['view']['field'] = 'view';
+  $handler->display->display_options['empty']['view']['empty'] = TRUE;
+  $handler->display->display_options['empty']['view']['view_to_insert'] = 'cbf2019_content_highlight_slider:block_2';
+  $handler->display->display_options['empty']['view']['inherit_arguments'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CiviCRM Events: Event ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
+  $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['field_highlight_video_1']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'civicrm-event/[id]';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
+  $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
+  $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
+  $handler->display->display_options['sorts']['field_sort_order_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
+    'vocabulary_1' => 'vocabulary_1',
+  );
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+  $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_video_url_1']['group'] = 2;
+  /* Filter criterion: Field: Image (field_image:fid) */
+  $handler->display->display_options['filters']['field_image_fid']['id'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['table'] = 'field_data_field_image';
+  $handler->display->display_options['filters']['field_image_fid']['field'] = 'field_image_fid';
+  $handler->display->display_options['filters']['field_image_fid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
   $translatables['cbf2019_content_highlight_slider'] = array(
     t('Master'),
     t('more'),
@@ -1227,12 +1369,14 @@ function theme_cbf2019_features_views_default_views() {
     t('All'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
-    t('For Activity'),
-    t('Highlights for an Activity and its CiviCRM Events'),
+    t('For Local Activity'),
+    t('Highlights for a local Activity and its CiviCRM Events'),
     t('CiviCRM Event'),
     t('.'),
     t('For Activity with no upcoming events'),
     t('Highlights for an Activity'),
+    t('For National Activity by Ministry Centre'),
+    t('Highlights for a National Activity and its CiviCRM Events'),
   );
   $export['cbf2019_content_highlight_slider'] = $view;
 
