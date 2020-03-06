@@ -137,7 +137,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_map_location']['id'] = 'field_map_location';
   $handler->display->display_options['fields']['field_map_location']['table'] = 'field_data_field_map_location';
   $handler->display->display_options['fields']['field_map_location']['field'] = 'field_map_location';
-  $handler->display->display_options['fields']['field_map_location']['label'] = 'Location';
+  $handler->display->display_options['fields']['field_map_location']['label'] = 'Where';
   $handler->display->display_options['fields']['field_map_location']['element_label_colon'] = FALSE;
   /* Field: Entityform Submission: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
@@ -178,7 +178,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Activity'),
     t('Day'),
     t('Time'),
-    t('Location'),
+    t('Where'),
     t('Note'),
     t('All'),
     t('Block'),
