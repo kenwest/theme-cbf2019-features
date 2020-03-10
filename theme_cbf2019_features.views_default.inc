@@ -5292,14 +5292,29 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['content'] = 'Upcoming events';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Field: Field: Highlight */
+  /* Field: Highlight image */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
   $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['ui_name'] = 'Highlight image';
   $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Promotional image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['ui_name'] = 'Promotional image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '[field_highlight]';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
@@ -5445,6 +5460,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Desc'),
     t('Title'),
     t('Upcoming events'),
+    t('[field_highlight]'),
     t('[field_date_text] | [city]'),
     t('More info'),
     t('.'),
@@ -12214,14 +12230,29 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Upcoming events';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Field: Field: Highlight */
+  /* Field: Highlight image */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
   $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['ui_name'] = 'Highlight image';
   $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Promotional image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['ui_name'] = 'Promotional image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '[field_highlight]';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
@@ -12364,6 +12395,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     t('Desc'),
     t('Title'),
     t('Upcoming events'),
+    t('[field_highlight]'),
     t('[field_date_text] | [city]'),
     t('More info'),
     t('.'),
