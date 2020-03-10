@@ -1116,21 +1116,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'civicrm-event/[id]';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -1220,6 +1205,14 @@ function theme_cbf2019_features_views_default_views() {
   /* Display: For National Activity by Ministry Centre */
   $handler = $view->new_display('block', 'For National Activity by Ministry Centre', 'block_3');
   $handler->display->display_options['display_description'] = 'Highlights for a National Activity and its CiviCRM Events';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['content'] = 'Promotional material';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: View area */
   $handler->display->display_options['empty']['view']['id'] = 'view';
@@ -1261,21 +1254,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'civicrm-event/[id]';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -1377,6 +1355,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Highlights for an Activity'),
     t('For National Activity by Ministry Centre'),
     t('Highlights for a National Activity and its CiviCRM Events'),
+    t('Title'),
+    t('Promotional material'),
   );
   $export['cbf2019_content_highlight_slider'] = $view;
 
