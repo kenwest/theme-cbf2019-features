@@ -9351,17 +9351,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['display_description'] = 'Staff associated with an Activity';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_activities_target_id']['id'] = 'field_activities_target_id';
+  $handler->display->display_options['relationships']['field_activities_target_id']['table'] = 'field_data_field_activities';
+  $handler->display->display_options['relationships']['field_activities_target_id']['field'] = 'field_activities_target_id';
+  $handler->display->display_options['relationships']['field_activities_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_activities_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_activities_target_id';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -9381,11 +9381,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'staff' => 'staff',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Activity (field_in_activity) */
-  $handler->display->display_options['filters']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
-  $handler->display->display_options['filters']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['filters']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
-  $handler->display->display_options['filters']['field_in_activity_target_id']['value']['value'] = '3977';
+  /* Filter criterion: Entityform Submission: Activities (field_activities) */
+  $handler->display->display_options['filters']['field_activities_target_id']['id'] = 'field_activities_target_id';
+  $handler->display->display_options['filters']['field_activities_target_id']['table'] = 'field_data_field_activities';
+  $handler->display->display_options['filters']['field_activities_target_id']['field'] = 'field_activities_target_id';
+  $handler->display->display_options['filters']['field_activities_target_id']['value']['value'] = '3977';
   $translatables['cbf2019_staff_slider'] = array(
     t('Master'),
     t('<none>'),
