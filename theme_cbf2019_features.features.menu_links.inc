@@ -330,8 +330,32 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 1,
     'expanded' => 1,
+    'weight' => -46,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_bible-and-prayer:third-space/category/1541.
+  $menu_links['menu-third-space-main-menu_bible-and-prayer:third-space/category/1541'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1541',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Bible and prayer',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_bible-and-prayer:third-space/category/1541',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
     'weight' => -47,
     'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
   );
   // Exported menu link: menu-third-space-main-menu_bigger-questions:node/1263.
   $menu_links['menu-third-space-main-menu_bigger-questions:node/1263'] = array(
@@ -357,6 +381,126 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'menu-third-space-main-menu_activities:http://_anchor_',
   );
+  // Exported menu link: menu-third-space-main-menu_entertainment:third-space/category/1540.
+  $menu_links['menu-third-space-main-menu_entertainment:third-space/category/1540'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1540',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Entertainment',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_entertainment:third-space/category/1540',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
+  // Exported menu link: menu-third-space-main-menu_environment-and-science:third-space/category/1544.
+  $menu_links['menu-third-space-main-menu_environment-and-science:third-space/category/1544'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1544',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Environment and science',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_environment-and-science:third-space/category/1544',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
+  // Exported menu link: menu-third-space-main-menu_food:third-space/category/1565.
+  $menu_links['menu-third-space-main-menu_food:third-space/category/1565'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1565',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Food',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_food:third-space/category/1565',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
+  // Exported menu link: menu-third-space-main-menu_health-and-wellbeing:third-space/category/1548.
+  $menu_links['menu-third-space-main-menu_health-and-wellbeing:third-space/category/1548'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1548',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Health and wellbeing',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_health-and-wellbeing:third-space/category/1548',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
+  // Exported menu link: menu-third-space-main-menu_learning:third-space/category/1543.
+  $menu_links['menu-third-space-main-menu_learning:third-space/category/1543'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1543',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Learning',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_learning:third-space/category/1543',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
   // Exported menu link: menu-third-space-main-menu_listen:third-space/listen.
   $menu_links['menu-third-space-main-menu_listen:third-space/listen'] = array(
     'menu_name' => 'menu-third-space-main-menu',
@@ -379,6 +523,30 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
     'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_politics-and-society:third-space/category/1546.
+  $menu_links['menu-third-space-main-menu_politics-and-society:third-space/category/1546'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1546',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Politics and society',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_politics-and-society:third-space/category/1546',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
   );
   // Exported menu link: menu-third-space-main-menu_read:third-space/read.
   $menu_links['menu-third-space-main-menu_read:third-space/read'] = array(
@@ -427,6 +595,77 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'menu-third-space-main-menu_activities:http://_anchor_',
   );
+  // Exported menu link: menu-third-space-main-menu_relationships:third-space/category/1547.
+  $menu_links['menu-third-space-main-menu_relationships:third-space/category/1547'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1547',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Relationships',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_relationships:third-space/category/1547',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -42,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
+  // Exported menu link: menu-third-space-main-menu_rooms:http://_anchor_.
+  $menu_links['menu-third-space-main-menu_rooms:http://_anchor_'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'http://_anchor_',
+    'router_path' => '',
+    'link_title' => 'Rooms',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-third-space-main-menu_sport:third-space/category/1545.
+  $menu_links['menu-third-space-main-menu_sport:third-space/category/1545'] = array(
+    'menu_name' => 'menu-third-space-main-menu',
+    'link_path' => 'third-space/category/1545',
+    'router_path' => 'third-space/category/%',
+    'link_title' => 'Sport',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-third-space-main-menu_sport:third-space/category/1545',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'menu-third-space-main-menu_rooms:http://_anchor_',
+  );
   // Exported menu link: menu-third-space-main-menu_watch:third-space/watch.
   $menu_links['menu-third-space-main-menu_watch:third-space/watch'] = array(
     'menu_name' => 'menu-third-space-main-menu',
@@ -455,14 +694,24 @@ function theme_cbf2019_features_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About us');
   t('Activities');
+  t('Bible and prayer');
   t('Bigger Questions');
   t('Blog');
+  t('Entertainment');
+  t('Environment and science');
+  t('Food');
   t('Get involved');
+  t('Health and wellbeing');
+  t('Learning');
   t('Listen');
   t('Networks');
+  t('Politics and society');
   t('Read');
   t('Reel Dialogue');
+  t('Relationships');
   t('Resources');
+  t('Rooms');
+  t('Sport');
   t('Watch');
   t('What\'s on');
 
