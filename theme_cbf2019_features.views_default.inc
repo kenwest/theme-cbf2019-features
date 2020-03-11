@@ -2762,6 +2762,126 @@ To create a new CiviCRM Event
   $export['cbf2019_event_registration'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_home_page_slider';
+  $view->description = 'Sliders showing promoted content on the CBF and CBF+ home pages';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 home page slider';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entityqueue: Entityform Submission Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 0;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_home_page_slider' => 0,
+    'cbf_plus_home_page_slider' => 0,
+  );
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'title',
+    'image_link' => '',
+  );
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Field: Order URL */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['type'] = 'link_plain';
+  /* Sort criterion: Entityqueue: Entityform Submission Queue Position */
+  $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'home_page_slider' => 'home_page_slider',
+  );
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: For CBF home page */
+  $handler = $view->new_display('block', 'For CBF home page', 'block_1');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Entityform Submission Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_home_page_slider' => 'cbf_home_page_slider',
+    'cbf_plus_home_page_slider' => 0,
+  );
+
+  /* Display: For CBF+ home page */
+  $handler = $view->new_display('block', 'For CBF+ home page', 'block_2');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Entityform Submission Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_plus_home_page_slider' => 'cbf_plus_home_page_slider',
+    'cbf_home_page_slider' => 0,
+  );
+  $translatables['cbf2019_home_page_slider'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Entityform Submission Queue'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('For CBF home page'),
+    t('For CBF+ home page'),
+  );
+  $export['cbf2019_home_page_slider'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_key_dates';
   $view->description = 'Show key dates for upcoming CviiCRM Events';
   $view->tag = 'merge-events, key-dates';
