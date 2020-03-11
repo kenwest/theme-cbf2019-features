@@ -8833,6 +8833,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Staff admin view';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     3 => '3',
@@ -8925,10 +8926,10 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existing ones below.';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
-  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_activities_target_id']['id'] = 'field_activities_target_id';
+  $handler->display->display_options['relationships']['field_activities_target_id']['table'] = 'field_data_field_activities';
+  $handler->display->display_options['relationships']['field_activities_target_id']['field'] = 'field_activities_target_id';
+  $handler->display->display_options['relationships']['field_activities_target_id']['label'] = 'Activities';
   /* Field: Bulk operations: Entityform Submission */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_entityform';
@@ -8996,18 +8997,19 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_groups']['field'] = 'field_staff_groups';
   $handler->display->display_options['fields']['field_staff_groups']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_groups']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_staff_groups']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_staff_groups']['delta_offset'] = '0';
-  /* Field: Field: Activity */
-  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = 'Activities';
-  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+  /* Field: Entityform Submission: Activities */
+  $handler->display->display_options['fields']['field_activities']['id'] = 'field_activities';
+  $handler->display->display_options['fields']['field_activities']['table'] = 'field_data_field_activities';
+  $handler->display->display_options['fields']['field_activities']['field'] = 'field_activities';
+  $handler->display->display_options['fields']['field_activities']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_activities']['settings'] = array(
     'bypass_access' => 0,
     'link' => 0,
   );
-  $handler->display->display_options['fields']['field_in_activity']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_activities']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_activities']['delta_offset'] = '0';
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
@@ -9108,33 +9110,24 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   );
   $handler->display->display_options['filters']['field_staff_groups_tid']['vocabulary'] = 'staff_group';
   /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Activity name contains';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['table'] = 'node';
+  $handler->display->display_options['filters']['title_1']['field'] = 'title';
+  $handler->display->display_options['filters']['title_1']['relationship'] = 'field_activities_target_id';
+  $handler->display->display_options['filters']['title_1']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Activity name contains';
+  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
+  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -9163,14 +9156,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 </ol>
 
 You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existing ones below.'),
-    t('Activity'),
+    t('Activities'),
     t('Select'),
     t('- Choose an operation -'),
     t('Name'),
     t('Weight'),
     t('Position'),
     t('Staff groups'),
-    t('Activities'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
     t('.'),
