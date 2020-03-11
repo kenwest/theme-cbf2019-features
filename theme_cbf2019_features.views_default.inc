@@ -5215,6 +5215,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view']['ui_name'] = 'Regular venues';
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view']['view'] = 'cbf2019_national_activity_regular_venues';
   $handler->display->display_options['fields']['view']['display'] = 'block';
   $handler->display->display_options['fields']['view']['arguments'] = '!1';
@@ -5225,6 +5226,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_3']['ui_name'] = 'Event slider';
   $handler->display->display_options['fields']['view_3']['label'] = '';
   $handler->display->display_options['fields']['view_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_3']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view_3']['view'] = 'cbf2019_national_activity_event_slider';
   $handler->display->display_options['fields']['view_3']['display'] = 'block';
   $handler->display->display_options['fields']['view_3']['arguments'] = '!1';
@@ -5245,6 +5247,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_2']['ui_name'] = 'Speakers';
   $handler->display->display_options['fields']['view_2']['label'] = '';
   $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_2']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view_2']['view'] = 'cbf2019_speakers';
   $handler->display->display_options['fields']['view_2']['display'] = 'block_5';
   $handler->display->display_options['fields']['view_2']['arguments'] = '!1';
