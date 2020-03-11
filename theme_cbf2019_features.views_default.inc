@@ -5132,6 +5132,17 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_1']['view'] = 'cbf2019_content_highlight_slider';
   $handler->display->display_options['fields']['view_1']['display'] = 'block_3';
   $handler->display->display_options['fields']['view_1']['arguments'] = '!1';
+  /* Field: Staff slider */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['ui_name'] = 'Staff slider';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_staff_slider';
+  $handler->display->display_options['fields']['view']['display'] = 'block_2';
+  $handler->display->display_options['fields']['view']['arguments'] = '!1';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
