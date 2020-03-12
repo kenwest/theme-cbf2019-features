@@ -12226,17 +12226,6 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Activity category (field_activity_category) */
-  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
-  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
-    1182 => '1182',
-    1183 => '1183',
-  );
-  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
   /* Filter criterion: Field: Highlight location (field_highlight_location) */
   $handler->display->display_options['filters']['field_highlight_location_tid']['id'] = 'field_highlight_location_tid';
   $handler->display->display_options['filters']['field_highlight_location_tid']['table'] = 'field_data_field_highlight_location';
