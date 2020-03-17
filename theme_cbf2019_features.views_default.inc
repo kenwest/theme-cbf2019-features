@@ -2951,8 +2951,8 @@ To create a new CiviCRM Event
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<p>There are no events scheduled for your city at this time.</p>
-<p>Please come back soon or contact us to find out what’s coming up.</p>';
+  $handler->display->display_options['empty']['area']['content'] = '<p class="align-center">There are no events scheduled for your city at this time.</p>
+<p class="align-center">Please come back soon or contact us to find out what’s coming up.</p>';
   $handler->display->display_options['empty']['area']['format'] = '2';
   /* Field: Field: Sort Order */
   $handler->display->display_options['fields']['field_sort_order']['id'] = 'field_sort_order';
@@ -3056,8 +3056,8 @@ To create a new CiviCRM Event
     t('Advanced options'),
     t('All'),
     t('Key dates'),
-    t('<p>There are no events scheduled for your city at this time.</p>
-<p>Please come back soon or contact us to find out what’s coming up.</p>'),
+    t('<p class="align-center">There are no events scheduled for your city at this time.</p>
+<p class="align-center">Please come back soon or contact us to find out what’s coming up.</p>'),
     t('.'),
     t('Block'),
   );
