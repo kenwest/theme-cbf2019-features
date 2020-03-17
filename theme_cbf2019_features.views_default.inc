@@ -5491,6 +5491,8 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['summary']['table'] = 'civicrm_event';
   $handler->display->display_options['fields']['summary']['field'] = 'summary';
   $handler->display->display_options['fields']['summary']['label'] = '';
+  $handler->display->display_options['fields']['summary']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['summary']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
   /* Field: CiviCRM Events: Event ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
@@ -12411,6 +12413,8 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['summary']['table'] = 'civicrm_event';
   $handler->display->display_options['fields']['summary']['field'] = 'summary';
   $handler->display->display_options['fields']['summary']['label'] = '';
+  $handler->display->display_options['fields']['summary']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['summary']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
   /* Field: CiviCRM Events: Event ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
