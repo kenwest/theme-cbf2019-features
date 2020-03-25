@@ -9480,6 +9480,12 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'third_space_category' => 'third_space_category',
   );
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'not';
+  $handler->display->display_options['filters']['name']['value'] = 'Panic';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
