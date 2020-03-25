@@ -46,6 +46,7 @@ features[menu_links][] = menu-third-space-main-menu_food:third-space/category/15
 features[menu_links][] = menu-third-space-main-menu_health-and-wellbeing:third-space/category/1548
 features[menu_links][] = menu-third-space-main-menu_learning:third-space/category/1543
 features[menu_links][] = menu-third-space-main-menu_listen:third-space/listen
+features[menu_links][] = menu-third-space-main-menu_panic-room---covid-19:third-space/category/1636
 features[menu_links][] = menu-third-space-main-menu_politics-and-society:third-space/category/1546
 features[menu_links][] = menu-third-space-main-menu_read:third-space/read
 features[menu_links][] = menu-third-space-main-menu_reel-dialogue:node/2151
