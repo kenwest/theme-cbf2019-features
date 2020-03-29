@@ -728,8 +728,8 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Health and wellbeing');
   t('Learning');
   t('Listen');
-  t('Panic room - COVID-19');
   t('Networks');
+  t('Panic room - COVID-19');
   t('Politics and society');
   t('Read');
   t('Reel Dialogue');
