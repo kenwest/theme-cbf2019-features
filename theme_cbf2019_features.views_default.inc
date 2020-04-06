@@ -637,6 +637,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'For Collection', 'block_3');
   $handler->display->display_options['display_description'] = 'This display shows the recent blog articles for a Collection';
   $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -7675,6 +7679,10 @@ else {
   $handler = $view->new_display('block', 'For Collection', 'block_4');
   $handler->display->display_options['display_description'] = 'This display shows the recent library resources for a Collection';
   $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Collection (field_collection) */
   $handler->display->display_options['arguments']['field_collection_tid']['id'] = 'field_collection_tid';
@@ -11106,7 +11114,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Field: Icon name */
+  /* Field: Field: Second title */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
@@ -12143,7 +12151,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_title_image']['group_column'] = 'entity_id';
-  /* Field: Field: Icon name */
+  /* Field: Field: Second title */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
