@@ -1098,6 +1098,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['alter']['text'] = '<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [field_subtitle]
+  </div>
+</div>';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'h4 align-center';
   /* Field: Taxonomy term: Term description */
@@ -1105,6 +1111,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['description']['field'] = 'description';
   $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['text'] = '<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [description]
+  </div>
+</div>';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   /* Field: Episodes */
   $handler->display->display_options['fields']['view']['id'] = 'view';
@@ -1160,6 +1172,16 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [field_subtitle]
+  </div>
+</div>'),
+    t('<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [description]
+  </div>
+</div>'),
     t('All'),
     t('Page'),
   );
@@ -10014,7 +10036,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<p>[name]</p>
-[description]';
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    [description]
+  </div>
+</div>';
   $handler->display->display_options['header']['area']['format'] = 'raw_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Relationship: Field: Third Space categories (field_third_space_category) */
@@ -11017,7 +11043,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Desc'),
     t('Title'),
     t('<p>[name]</p>
-[description]'),
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    [description]
+  </div>
+</div>'),
     t('Category'),
     t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
