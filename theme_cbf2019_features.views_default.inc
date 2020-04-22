@@ -3597,6 +3597,11 @@ To create a new CiviCRM Event
   $handler->display->display_options['empty']['area']['content'] = '<p class="align-center">There are no events scheduled for your city at this time.</p>
 <p class="align-center">Please come back soon or contact us to find out what’s coming up.</p>';
   $handler->display->display_options['empty']['area']['format'] = '2';
+  /* Relationship: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['label'] = 'Ministry Centre';
   /* Field: Field: Sort Order */
   $handler->display->display_options['fields']['field_sort_order']['id'] = 'field_sort_order';
   $handler->display->display_options['fields']['field_sort_order']['table'] = 'field_data_field_sort_order';
@@ -3644,6 +3649,11 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   /* Filter criterion: Field: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
   $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
@@ -3651,6 +3661,18 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  $handler->display->display_options['filters']['is_active']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
+  $handler->display->display_options['filters']['is_public']['group'] = 1;
   /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
@@ -3674,16 +3696,33 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value_1']['id'] = 'field_next_action_value_1';
+  $handler->display->display_options['filters']['field_next_action_value_1']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value_1']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value_1']['value'] = '0';
+  $handler->display->display_options['filters']['field_next_action_value_1']['group'] = 2;
   /* Filter criterion: CiviCRM Events: Is Active */
-  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
-  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
-  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
-  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  $handler->display->display_options['filters']['is_active_1']['id'] = 'is_active_1';
+  $handler->display->display_options['filters']['is_active_1']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active_1']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active_1']['value'] = '1';
+  $handler->display->display_options['filters']['is_active_1']['group'] = 2;
   /* Filter criterion: CiviCRM Events: Is Public */
-  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
-  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
-  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
-  $handler->display->display_options['filters']['is_public']['value'] = '1';
+  $handler->display->display_options['filters']['is_public_1']['id'] = 'is_public_1';
+  $handler->display->display_options['filters']['is_public_1']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public_1']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public_1']['value'] = '1';
+  $handler->display->display_options['filters']['is_public_1']['group'] = 2;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['id'] = 'taxonomy_vocabulary_1_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['vocabulary'] = 'vocabulary_1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -3701,6 +3740,7 @@ To create a new CiviCRM Event
     t('Key dates'),
     t('<p class="align-center">There are no events scheduled for your city at this time.</p>
 <p class="align-center">Please come back soon or contact us to find out what’s coming up.</p>'),
+    t('Ministry Centre'),
     t('.'),
     t('Block'),
   );
@@ -4017,6 +4057,11 @@ To create a new CiviCRM Event
   $handler->display->display_options['relationships']['id']['location_type'] = '0';
   $handler->display->display_options['relationships']['id']['location_op'] = '0';
   $handler->display->display_options['relationships']['id']['is_primary'] = 0;
+  /* Relationship: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['label'] = 'Ministry Centre';
   /* Field: CiviCRM Events: Event ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
@@ -4088,6 +4133,11 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   /* Filter criterion: Field: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
   $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
@@ -4095,6 +4145,18 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Is Active */
+  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  $handler->display->display_options['filters']['is_active']['group'] = 1;
+  /* Filter criterion: CiviCRM Events: Is Public */
+  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public']['value'] = '1';
+  $handler->display->display_options['filters']['is_public']['group'] = 1;
   /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
@@ -4118,16 +4180,33 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value_1']['id'] = 'field_next_action_value_1';
+  $handler->display->display_options['filters']['field_next_action_value_1']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value_1']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value_1']['value'] = '0';
+  $handler->display->display_options['filters']['field_next_action_value_1']['group'] = 2;
   /* Filter criterion: CiviCRM Events: Is Active */
-  $handler->display->display_options['filters']['is_active']['id'] = 'is_active';
-  $handler->display->display_options['filters']['is_active']['table'] = 'civicrm_event';
-  $handler->display->display_options['filters']['is_active']['field'] = 'is_active';
-  $handler->display->display_options['filters']['is_active']['value'] = '1';
+  $handler->display->display_options['filters']['is_active_1']['id'] = 'is_active_1';
+  $handler->display->display_options['filters']['is_active_1']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_active_1']['field'] = 'is_active';
+  $handler->display->display_options['filters']['is_active_1']['value'] = '1';
+  $handler->display->display_options['filters']['is_active_1']['group'] = 2;
   /* Filter criterion: CiviCRM Events: Is Public */
-  $handler->display->display_options['filters']['is_public']['id'] = 'is_public';
-  $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
-  $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
-  $handler->display->display_options['filters']['is_public']['value'] = '1';
+  $handler->display->display_options['filters']['is_public_1']['id'] = 'is_public_1';
+  $handler->display->display_options['filters']['is_public_1']['table'] = 'civicrm_event';
+  $handler->display->display_options['filters']['is_public_1']['field'] = 'is_public';
+  $handler->display->display_options['filters']['is_public_1']['value'] = '1';
+  $handler->display->display_options['filters']['is_public_1']['group'] = 2;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['id'] = 'taxonomy_vocabulary_1_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['value'] = '';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['vocabulary'] = 'vocabulary_1';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -4159,6 +4238,11 @@ To create a new CiviCRM Event
   $handler->display->display_options['relationships']['id']['location_type'] = '0';
   $handler->display->display_options['relationships']['id']['location_op'] = '0';
   $handler->display->display_options['relationships']['id']['is_primary'] = 0;
+  /* Relationship: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['label'] = 'Ministry Centre';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
@@ -4198,6 +4282,7 @@ To create a new CiviCRM Event
     t('All'),
     t('Events'),
     t('Address'),
+    t('Ministry Centre'),
     t('.'),
     t('[field_date_text] | [city]'),
     t('Defaults'),
@@ -6035,7 +6120,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $view = new view();
   $view->name = 'cbf2019_national_activity_event_slider';
   $view->description = '';
-  $view->tag = 'default, slider, autoplay';
+  $view->tag = 'local, slider, autoplay';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 national activity event slider';
   $view->core = 7;
@@ -6101,6 +6186,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
@@ -6171,22 +6264,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
-    'vocabulary_1' => 'vocabulary_1',
-  );
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -13591,7 +13668,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $view = new view();
   $view->name = 'local_civicrm_event_slider';
   $view->description = '';
-  $view->tag = 'default, slider, autoplay';
+  $view->tag = 'local, slider, autoplay';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 local event slider';
   $view->core = 7;
@@ -13659,6 +13736,14 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
@@ -13720,23 +13805,6 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_visitor_city_string();';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
-    'vocabulary_1' => 'vocabulary_1',
-  );
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
