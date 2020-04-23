@@ -3268,11 +3268,11 @@ To create a new CiviCRM Event
     'amount' => 'amount',
     'label' => 'label',
   );
-  /* Relationship: The Address allows the rego date filters to test for -empty- */
+  /* Relationship: An optional relationship allows the rego date filters to test for -empty- */
   $handler->display->display_options['relationships']['id']['id'] = 'id';
   $handler->display->display_options['relationships']['id']['table'] = 'civicrm_address';
   $handler->display->display_options['relationships']['id']['field'] = 'id';
-  $handler->display->display_options['relationships']['id']['ui_name'] = 'The Address allows the rego date filters to test for -empty-';
+  $handler->display->display_options['relationships']['id']['ui_name'] = 'An optional relationship allows the rego date filters to test for -empty-';
   $handler->display->display_options['relationships']['id']['label'] = 'Address';
   $handler->display->display_options['relationships']['id']['location_type'] = '0';
   $handler->display->display_options['relationships']['id']['location_op'] = '0';
