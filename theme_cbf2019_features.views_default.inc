@@ -2712,6 +2712,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['city']['alter']['path'] = '#block-views-cbf2019-mappable-block-2';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
@@ -4117,6 +4118,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['city']['alter']['text'] = '[field_date_text] | [city]';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['empty'] = '[field_date_text]';
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
@@ -4285,6 +4287,7 @@ To create a new CiviCRM Event
     t('Ministry Centre'),
     t('.'),
     t('[field_date_text] | [city]'),
+    t('[field_date_text]'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('For What\'s On'),
@@ -6219,6 +6222,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['city']['alter']['text'] = '[field_date_text] | [city]';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['empty'] = '[field_date_text]';
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
@@ -6318,6 +6322,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Upcoming events'),
     t('[field_highlight]'),
     t('[field_date_text] | [city]'),
+    t('[field_date_text]'),
     t('More info'),
     t('.'),
     t('All'),
@@ -12891,6 +12896,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['city']['alter']['text'] = '[field_date_text] | [city]';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['empty'] = '[field_date_text]';
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
@@ -12962,6 +12968,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Address'),
     t('.'),
     t('[field_date_text] | [city]'),
+    t('[field_date_text]'),
     t('All'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
@@ -13769,6 +13776,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['city']['alter']['text'] = '[field_date_text] | [city]';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['empty'] = '[field_date_text]';
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
@@ -13864,6 +13872,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     t('Upcoming events'),
     t('[field_highlight]'),
     t('[field_date_text] | [city]'),
+    t('[field_date_text]'),
     t('More info'),
     t('.'),
     t('All'),
