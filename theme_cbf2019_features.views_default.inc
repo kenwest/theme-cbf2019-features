@@ -6755,7 +6755,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
   $view = new view();
   $view->name = 'cbf2019_page_header_civicrm_event';
-  $view->description = 'Page header for all CiviCRM Event pages';
+  $view->description = 'Page header for all CiviCRM Event pages. Can\'t cache rendered output else search block will fail.';
   $view->tag = 'page-header';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 page header - CiviCRM Event';
@@ -6770,7 +6770,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['cache']['type'] = 'time';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -6857,7 +6857,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
   $view = new view();
   $view->name = 'cbf2019_page_header_collection';
-  $view->description = '';
+  $view->description = 'Can\'t cache rendered output else search block will fail.';
   $view->tag = 'page-header';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 page header - collection';
@@ -6872,7 +6872,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['cache']['type'] = 'time_per_domain';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -6937,7 +6937,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
   $view = new view();
   $view->name = 'cbf2019_page_header_no_results_image';
-  $view->description = 'Image FID in cases where there are no results';
+  $view->description = 'Image FID in cases where there are no results. Can\'t cache rendered output else search block will fail.';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 page header - no results image';
@@ -6952,7 +6952,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['cache']['type'] = 'time';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -7022,7 +7022,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
   $view = new view();
   $view->name = 'cbf2019_page_header_node';
-  $view->description = 'Page header for all node pages';
+  $view->description = 'Page header for all node pages. Can\'t cache rendered output else search block will fail.';
   $view->tag = 'page-header';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 page header - node';
@@ -7037,7 +7037,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['cache']['type'] = 'time';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -7148,7 +7148,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
   $view = new view();
   $view->name = 'cbf2019_page_header_paths';
-  $view->description = 'Page header for specific cases';
+  $view->description = 'Page header for specific cases. Can\'t cache rendered output else search block will fail.';
   $view->tag = 'page-header';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 page header - special';
@@ -7163,7 +7163,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['cache']['type'] = 'time';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -7258,7 +7258,7 @@ else {
 
   $view = new view();
   $view->name = 'cbf2019_page_header_third_space_category';
-  $view->description = '';
+  $view->description = 'Can\'t cache rendered output else search block will fail.';
   $view->tag = 'page-header';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 page header - third space category';
@@ -7273,7 +7273,7 @@ else {
   $handler->display->display_options['cache']['type'] = 'time_per_domain';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
