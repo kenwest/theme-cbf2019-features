@@ -1589,7 +1589,22 @@ function theme_cbf2019_features_views_default_views() {
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -1706,6 +1721,44 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'collection' => 'collection',
   );
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name contains';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_field'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['name']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['operator'] = 'contains';
+  $handler->display->display_options['filters']['description']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['description']['expose']['operator_id'] = 'description_op';
+  $handler->display->display_options['filters']['description']['expose']['label'] = 'Description contains';
+  $handler->display->display_options['filters']['description']['expose']['operator'] = 'description_op';
+  $handler->display->display_options['filters']['description']['expose']['identifier'] = 'description';
+  $handler->display->display_options['filters']['description']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_field'] = 'description';
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['description']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1725,6 +1778,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -1759,6 +1814,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Operations'),
     t('<a href="/collection/[tid_1]">View</a>&nbsp;&nbsp;
 <a href="/taxonomy/term/[tid_1]/edit?destination=admin/cbf/collections">Edit</a>'),
+    t('Name contains'),
+    t('Description contains'),
     t('Page'),
   );
   $export['cbf2019_collection_admin_view'] = $view;
