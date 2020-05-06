@@ -1613,14 +1613,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories).
+  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections assumes they contain no more than 8 library episodes, 8 blogs and 3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
 
 <ol>
-<li>To add a Collection, you have a couple of options ...</ii>
-<ol>
-<li>When creating an article, name a collection which doesn&#39;t yet exist. This happens any time you name a collection but don&#39;t match it to an existing collection (ie, you match an existing collection by clicking on an option in the dropdown).</ii>
-<li>Or, <a href="/admin/structure/taxonomy/collection/add">add a collection</a> directly.</ii>
-</ol>
+<li>To use an existing Collection, name it in the Collection field on an article or a term. This field is on the Classification tab for Blog Entries and Library Episodes.</ii>
+<li>You can <a href="/admin/structure/taxonomy/collection/add">create a new Collection</a></ii>
+<ul>
+<li>Beware that when editing an article, if you name a collection which doesn&#39;t yet exist, you will create a collection but it won&#39;t have any content. This happens any time you type (part of) a collection name but don&#39;t click the corresponding option in the dropdown.</ii>
+<li>If you do this, come to this screen, find the new Collection and fill in it&#39;s details</ii>
+</ul>
 <li>To be usable, the collection must have a subtitle, description and title image</ii>
 <li>To find an existing collection, use the form below to narrow the search by name or description</ii>
 <li>The listing of collections tells you how many Articles and Terms refer to each collection. The listing also shows you some of the Description.</ii>
@@ -1787,14 +1788,15 @@ function theme_cbf2019_features_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories).
+    t('This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections assumes they contain no more than 8 library episodes, 8 blogs and 3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
 
 <ol>
-<li>To add a Collection, you have a couple of options ...</ii>
-<ol>
-<li>When creating an article, name a collection which doesn&#39;t yet exist. This happens any time you name a collection but don&#39;t match it to an existing collection (ie, you match an existing collection by clicking on an option in the dropdown).</ii>
-<li>Or, <a href="/admin/structure/taxonomy/collection/add">add a collection</a> directly.</ii>
-</ol>
+<li>To use an existing Collection, name it in the Collection field on an article or a term. This field is on the Classification tab for Blog Entries and Library Episodes.</ii>
+<li>You can <a href="/admin/structure/taxonomy/collection/add">create a new Collection</a></ii>
+<ul>
+<li>Beware that when editing an article, if you name a collection which doesn&#39;t yet exist, you will create a collection but it won&#39;t have any content. This happens any time you type (part of) a collection name but don&#39;t click the corresponding option in the dropdown.</ii>
+<li>If you do this, come to this screen, find the new Collection and fill in it&#39;s details</ii>
+</ul>
 <li>To be usable, the collection must have a subtitle, description and title image</ii>
 <li>To find an existing collection, use the form below to narrow the search by name or description</ii>
 <li>The listing of collections tells you how many Articles and Terms refer to each collection. The listing also shows you some of the Description.</ii>
