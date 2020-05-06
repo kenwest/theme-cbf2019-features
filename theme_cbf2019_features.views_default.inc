@@ -1569,6 +1569,201 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_collection'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_collection_admin_view';
+  $view->description = 'Administer collections';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 collection admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'cbf2019 collection admin view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories).
+
+<ol>
+<li>To add a Collection, you have a couple of options ...</ii>
+<ol>
+<li>When creating an article, name a collection which doesn&#39;t yet exist. This happens any time you name a collection but don&#39;t match it to an existing collection (ie, you match an existing collection by clicking on an option in the dropdown).</ii>
+<li>Or, <a href="/admin/structure/taxonomy/collection/add">add a collection</a> directly.</ii>
+</ol>
+<li>To be usable, the collection must have a subtitle, description and title image</ii>
+<li>To find an existing collection, use the form below to narrow the search by name or description</ii>
+<li>The listing of collections tells you how many Articles and Terms refer to each collection. The listing also shows you some of the Description.</ii>
+<li>To edit or delete a collection, click the Edit link and from there you can either edit and Save, or Delete the collection.</ii>
+</ol>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Taxonomy term: Content using Collection */
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['id'] = 'reverse_field_collection_node';
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['field'] = 'reverse_field_collection_node';
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['label'] = 'Node';
+  /* Relationship: Taxonomy term: Taxonomy term using Collection */
+  $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['id'] = 'reverse_field_collection_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['field'] = 'reverse_field_collection_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['label'] = 'Term';
+  /* Field: Bulk operations: Taxonomy term */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_taxonomy_term';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'log' => 0,
+      ),
+    ),
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = 'Description';
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['description']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_title_image']['group_column'] = 'entity_id';
+  /* Field: COUNT(DISTINCT Taxonomy term: Term ID) */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'reverse_field_collection_taxonomy_term';
+  $handler->display->display_options['fields']['tid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['tid']['label'] = 'Terms';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_collection_node';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['nid']['label'] = 'Articles';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid_1']['label'] = 'Operations';
+  $handler->display->display_options['fields']['tid_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tid_1']['alter']['text'] = '<a href="/collection/[tid_1]">View</a>&nbsp;&nbsp;
+<a href="/taxonomy/term/[tid_1]/edit?destination=admin/cbf/collections">Edit</a>';
+  $handler->display->display_options['fields']['tid_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid_1']['separator'] = '';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'collection' => 'collection',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/collections';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Collections';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['cbf2019_collection_admin_view'] = array(
+    t('Master'),
+    t('cbf2019 collection admin view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories).
+
+<ol>
+<li>To add a Collection, you have a couple of options ...</ii>
+<ol>
+<li>When creating an article, name a collection which doesn&#39;t yet exist. This happens any time you name a collection but don&#39;t match it to an existing collection (ie, you match an existing collection by clicking on an option in the dropdown).</ii>
+<li>Or, <a href="/admin/structure/taxonomy/collection/add">add a collection</a> directly.</ii>
+</ol>
+<li>To be usable, the collection must have a subtitle, description and title image</ii>
+<li>To find an existing collection, use the form below to narrow the search by name or description</ii>
+<li>The listing of collections tells you how many Articles and Terms refer to each collection. The listing also shows you some of the Description.</ii>
+<li>To edit or delete a collection, click the Edit link and from there you can either edit and Save, or Delete the collection.</ii>
+</ol>'),
+    t('Node'),
+    t('Term'),
+    t('Select'),
+    t('- Choose an operation -'),
+    t('Name'),
+    t('Description'),
+    t('Title image'),
+    t('Terms'),
+    t('.'),
+    t(','),
+    t('Articles'),
+    t('Operations'),
+    t('<a href="/collection/[tid_1]">View</a>&nbsp;&nbsp;
+<a href="/taxonomy/term/[tid_1]/edit?destination=admin/cbf/collections">Edit</a>'),
+    t('Page'),
+  );
+  $export['cbf2019_collection_admin_view'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_content_details_table';
   $view->description = '';
   $view->tag = 'default';
