@@ -1617,11 +1617,17 @@ function theme_cbf2019_features_views_default_views() {
 
 <ol>
 <li>To use an existing Collection, name it in the Collection field on an article or a term. This field is on the Classification tab for Blog Entries and Library Episodes.</ii>
-<li>You can <a href="/admin/structure/taxonomy/collection/add">create a new Collection</a></ii>
+<li>You can add a new Collection in two ways ...
+<ol>
+<li>If you are a normal user just refer to the new Collection in the Collection field
 <ul>
-<li>Beware that when editing an article, if you name a collection which doesn&#39;t yet exist, you will create a collection but it won&#39;t have any content. This happens any time you type (part of) a collection name but don&#39;t click the corresponding option in the dropdown.</ii>
-<li>If you do this, come to this screen, find the new Collection and fill in it&#39;s details</ii>
+<li>If you name a collection which doesn&#39;t yet exist, you will create a collection but it won&#39;t have any content. This happens any time you type (part of) a collection name but don&#39;t click the corresponding option in the dropdown.</li>
+<li>If you do this, come to this screen, find the new Collection and fill in it&#39;s details</li>
 </ul>
+</li>
+<li>If you are a super user you can <a href="/admin/structure/taxonomy/collection/add">create a new Collection</a> directly. As this ability allows you to break things it is restricted.</li>
+</ol>
+</li>
 <li>To be usable, the collection must have a subtitle, description and title image</ii>
 <li>To find an existing collection, use the form below to narrow the search by name or description</ii>
 <li>The listing of collections tells you how many Articles and Terms refer to each collection. The listing also shows you some of the Description.</ii>
@@ -1792,11 +1798,17 @@ function theme_cbf2019_features_views_default_views() {
 
 <ol>
 <li>To use an existing Collection, name it in the Collection field on an article or a term. This field is on the Classification tab for Blog Entries and Library Episodes.</ii>
-<li>You can <a href="/admin/structure/taxonomy/collection/add">create a new Collection</a></ii>
+<li>You can add a new Collection in two ways ...
+<ol>
+<li>If you are a normal user just refer to the new Collection in the Collection field
 <ul>
-<li>Beware that when editing an article, if you name a collection which doesn&#39;t yet exist, you will create a collection but it won&#39;t have any content. This happens any time you type (part of) a collection name but don&#39;t click the corresponding option in the dropdown.</ii>
-<li>If you do this, come to this screen, find the new Collection and fill in it&#39;s details</ii>
+<li>If you name a collection which doesn&#39;t yet exist, you will create a collection but it won&#39;t have any content. This happens any time you type (part of) a collection name but don&#39;t click the corresponding option in the dropdown.</li>
+<li>If you do this, come to this screen, find the new Collection and fill in it&#39;s details</li>
 </ul>
+</li>
+<li>If you are a super user you can <a href="/admin/structure/taxonomy/collection/add">create a new Collection</a> directly. As this ability allows you to break things it is restricted.</li>
+</ol>
+</li>
 <li>To be usable, the collection must have a subtitle, description and title image</ii>
 <li>To find an existing collection, use the form below to narrow the search by name or description</ii>
 <li>The listing of collections tells you how many Articles and Terms refer to each collection. The listing also shows you some of the Description.</ii>
@@ -9569,11 +9581,17 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 
 <ol>
 <li>To use an existing Speaker, name them in the Speaker(s) field for an article or event. This field is on the Basic Details tab.</ii>
-<li>You can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a></ii>
+<li>You can add a new Speaker in two ways ...
+<ol>
+<li>If you are a normal user just refer to the new speaker in the Speaker(s) field
 <ul>
-<li>Beware that when editing an article or event, if you name a speaker who doesn&#39;t yet exist in the system, you will create a speaker but it won&#39;t have any content. This happens any time you type (part of) a speaker name but don&#39;t click the corresponding option in the dropdown.</ii>
-<li>If you do this, come to this screen, find the new Speaker and fill in their details</ii>
+<li>If you name a speaker who doesn&#39;t yet exist in the system, you will create a Speaker but it won&#39;t have any content. This happens any time you type (part of) a speaker name but don&#39;t click the corresponding option in the dropdown.</li>
+<li>If you do this, come to this screen, find the new Speaker and fill in their details</li>
 </ul>
+</li>
+<li>If you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly. As this ability allows you to break things it is restricted.</li>
+</ol>
+</li>
 <li>To be visible in an article, the Speaker must have a description</ii>
 <li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
 <li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
@@ -9854,11 +9872,17 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 
 <ol>
 <li>To use an existing Speaker, name them in the Speaker(s) field for an article or event. This field is on the Basic Details tab.</ii>
-<li>You can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a></ii>
+<li>You can add a new Speaker in two ways ...
+<ol>
+<li>If you are a normal user just refer to the new speaker in the Speaker(s) field
 <ul>
-<li>Beware that when editing an article or event, if you name a speaker who doesn&#39;t yet exist in the system, you will create a speaker but it won&#39;t have any content. This happens any time you type (part of) a speaker name but don&#39;t click the corresponding option in the dropdown.</ii>
-<li>If you do this, come to this screen, find the new Speaker and fill in their details</ii>
+<li>If you name a speaker who doesn&#39;t yet exist in the system, you will create a Speaker but it won&#39;t have any content. This happens any time you type (part of) a speaker name but don&#39;t click the corresponding option in the dropdown.</li>
+<li>If you do this, come to this screen, find the new Speaker and fill in their details</li>
 </ul>
+</li>
+<li>If you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly. As this ability allows you to break things it is restricted.</li>
+</ol>
+</li>
 <li>To be visible in an article, the Speaker must have a description</ii>
 <li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
 <li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
