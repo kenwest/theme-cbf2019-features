@@ -10965,6 +10965,78 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $export['cbf2019_staff_slider'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_term_promotional_slider';
+  $view->description = 'Slider showing promotional material for taxonomy terms';
+  $view->tag = 'slider, fieldwise, unique';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 term promotional slider';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'bg-gray-view-content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Highlight video */
+  $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
+  $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video_1']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'collection' => 'collection',
+  );
+  /* Filter criterion: Field: Highlight video (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: For collections */
+  $handler = $view->new_display('block', 'For collections', 'block_1');
+  $handler->display->display_options['display_description'] = 'Show on a Collection page';
+  $translatables['cbf2019_term_promotional_slider'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('For collections'),
+    t('Show on a Collection page'),
+  );
+  $export['cbf2019_term_promotional_slider'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_third_space_categories';
   $view->description = '';
   $view->tag = 'default';
@@ -12315,7 +12387,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Field: Second title */
+  /* Field: Field: Icon name */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
@@ -13354,7 +13426,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_title_image']['group_column'] = 'entity_id';
-  /* Field: Field: Second title */
+  /* Field: Field: Icon name */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
