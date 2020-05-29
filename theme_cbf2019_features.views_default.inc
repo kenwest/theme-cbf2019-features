@@ -1052,6 +1052,12 @@ function theme_cbf2019_features_views_default_views() {
   /* Display: For Collection */
   $handler = $view->new_display('block', 'For Collection', 'block_3');
   $handler->display->display_options['display_description'] = 'This display shows the recent blog articles for a Collection';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'All news in our blog';
   $handler->display->display_options['link_url'] = 'articles';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -1062,7 +1068,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Blog';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -8835,11 +8840,25 @@ else {
   /* Display: For Collection */
   $handler = $view->new_display('block', 'For Collection', 'block_4');
   $handler->display->display_options['display_description'] = 'This display shows the recent library resources for a Collection';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'Our library';
   $handler->display->display_options['link_url'] = 'library';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
+  $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Collection (field_collection) */
   $handler->display->display_options['arguments']['field_collection_tid']['id'] = 'field_collection_tid';
