@@ -1534,26 +1534,6 @@ function theme_cbf2019_features_views_default_views() {
   </div>
 </div>';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Episodes */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'Episodes';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_recent_library';
-  $handler->display->display_options['fields']['view']['display'] = 'block_4';
-  $handler->display->display_options['fields']['view']['arguments'] = '!1';
-  /* Field: Blog entries */
-  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
-  $handler->display->display_options['fields']['view_1']['table'] = 'views';
-  $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Blog entries';
-  $handler->display->display_options['fields']['view_1']['label'] = '';
-  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'cbf2019_blog';
-  $handler->display->display_options['fields']['view_1']['display'] = 'block_3';
-  $handler->display->display_options['fields']['view_1']['arguments'] = '!1';
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
