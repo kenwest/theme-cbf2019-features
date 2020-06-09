@@ -11018,6 +11018,63 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['relationships']['field_activities_target_id']['field'] = 'field_activities_target_id';
   $handler->display->display_options['relationships']['field_activities_target_id']['label'] = 'Activity';
   $handler->display->display_options['relationships']['field_activities_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'person_360x438',
+    'image_link' => '',
+  );
+  /* Field: Entityform Submission: Note */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
+  /* Field: Field: Staff contact */
+  $handler->display->display_options['fields']['field_staff_contact']['id'] = 'field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
+  $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['path'] = '/staff-contact?cid1=[field_staff_contact]';
+  $handler->display->display_options['fields']['field_staff_contact']['alter']['rel'] = 'nofollow';
+  $handler->display->display_options['fields']['field_staff_contact']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_contact']['element_wrapper_class'] = 'image-plus-hover-overlay';
+  $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
