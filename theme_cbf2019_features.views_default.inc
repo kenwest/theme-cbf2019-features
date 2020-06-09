@@ -7373,7 +7373,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Field: Path (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -7588,7 +7588,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Field: Path (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -7619,7 +7619,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: First 2 components of path */
   $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Field: Path (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -13721,7 +13721,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Synopsis */
+  /* Field: Field: Path */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -13807,7 +13807,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Synopsis (field_synopsis) */
+  /* Filter criterion: Field: Path (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -13901,7 +13901,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Synopsis'),
+    t('Path'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
