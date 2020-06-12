@@ -1887,6 +1887,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Collections';
   $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entityqueue: Taxonomy term Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_library_collection_slider' => 0,
+    'cbf_plus_library_collection_slider' => 0,
+  );
   /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
@@ -1924,23 +1934,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['tid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Contextual filter: Field: Audience (taxonomy_vocabulary_3) */
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['default_argument_options']['code'] = 'if (stristr(domain_get_domain()[\'subdomain\'], \'plus\') === false) return 48;
-return null;';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['validate_options']['vocabularies'] = array(
-    'vocabulary_3' => 'vocabulary_3',
-  );
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_3_tid']['validate']['fail'] = 'ignore';
+  /* Sort criterion: Entityqueue: Taxonomy term Queue Position */
+  $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -1949,8 +1946,37 @@ return null;';
     'collection' => 'collection',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
+
+  /* Display: For CBF library */
+  $handler = $view->new_display('block', 'For CBF library', 'block_1');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Taxonomy term Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_library_collection_slider' => 'cbf_library_collection_slider',
+    'cbf_plus_library_collection_slider' => 0,
+  );
+
+  /* Display: For CBF Plus library */
+  $handler = $view->new_display('block', 'For CBF Plus library', 'block_2');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Taxonomy term Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_plus_library_collection_slider' => 'cbf_plus_library_collection_slider',
+    'cbf_library_collection_slider' => 0,
+  );
   $translatables['cbf2019_collection_slider'] = array(
     t('Master'),
     t('more'),
@@ -1960,10 +1986,13 @@ return null;';
     t('Asc'),
     t('Desc'),
     t('Collections'),
+    t('Taxonomy term Queue'),
     t('More info'),
     t('.'),
-    t('All'),
-    t('Block'),
+    t('Defaults'),
+    t('Don\'t display this block - for defaults only'),
+    t('For CBF library'),
+    t('For CBF Plus library'),
   );
   $export['cbf2019_collection_slider'] = $view;
 
