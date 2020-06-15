@@ -490,6 +490,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -536,6 +540,20 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
+  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
   $handler->display->display_options['metatags'] = array(
     'und' => array(
       'title' => array(
