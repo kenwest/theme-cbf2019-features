@@ -12585,7 +12585,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Field: Icon name */
+  /* Field: Field: Second title */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
@@ -13624,7 +13624,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_title_image']['group_column'] = 'entity_id';
-  /* Field: Field: Icon name */
+  /* Field: Field: Second title */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
