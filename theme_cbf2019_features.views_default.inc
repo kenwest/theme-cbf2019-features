@@ -945,8 +945,9 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Blog';
+  $handler->display->display_options['header']['area']['content'] = '[field_blog_label]';
   $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -1044,6 +1045,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Blog label */
+  $handler->display->display_options['fields']['field_blog_label']['id'] = 'field_blog_label';
+  $handler->display->display_options['fields']['field_blog_label']['table'] = 'field_data_field_blog_label';
+  $handler->display->display_options['fields']['field_blog_label']['field'] = 'field_blog_label';
+  $handler->display->display_options['fields']['field_blog_label']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['field_blog_label']['label'] = '';
+  $handler->display->display_options['fields']['field_blog_label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_label']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_label']['empty'] = 'Blog';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1223,6 +1233,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Title'),
     t('For Activity'),
     t('Recent blog articles for an activity'),
+    t('[field_blog_label]'),
     t('Activity'),
     t('For Collection'),
     t('This display shows the recent blog articles for a Collection'),
