@@ -2130,6 +2130,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -2197,6 +2199,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
   /* Field: Field: Promotional video */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
@@ -2205,6 +2209,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -2335,6 +2341,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
   /* Field: Field: Promotional video */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
@@ -2343,6 +2351,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -3358,6 +3368,8 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -11209,6 +11221,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
