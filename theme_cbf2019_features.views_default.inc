@@ -6460,6 +6460,13 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -6566,10 +6573,30 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['type']['value'] = array(
     'activity' => 'activity',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Activity category (field_activity_category) */
+  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
+  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
+  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
+  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
+    1182 => '1182',
+  );
+  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
   /* Filter criterion: Field: Highlight location (field_highlight_location) */
   $handler->display->display_options['filters']['field_highlight_location_tid']['id'] = 'field_highlight_location_tid';
   $handler->display->display_options['filters']['field_highlight_location_tid']['table'] = 'field_data_field_highlight_location';
   $handler->display->display_options['filters']['field_highlight_location_tid']['field'] = 'field_highlight_location_tid';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_highlight_location_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_highlight_location_tid']['expose']['operator_id'] = 'field_highlight_location_tid_op';
   $handler->display->display_options['filters']['field_highlight_location_tid']['expose']['operator'] = 'field_highlight_location_tid_op';
@@ -6579,22 +6606,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   );
   $handler->display->display_options['filters']['field_highlight_location_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highlight_location_tid']['vocabulary'] = 'banner';
-  /* Filter criterion: Field: Activity category (field_activity_category) */
-  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
-  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
-    1182 => '1182',
-  );
-  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
-  /* Filter criterion: Field: Highlight location (field_highlight_location) */
-  $handler->display->display_options['filters']['field_highlight_location_tid_1']['id'] = 'field_highlight_location_tid_1';
-  $handler->display->display_options['filters']['field_highlight_location_tid_1']['table'] = 'field_data_field_highlight_location';
-  $handler->display->display_options['filters']['field_highlight_location_tid_1']['field'] = 'field_highlight_location_tid';
-  $handler->display->display_options['filters']['field_highlight_location_tid_1']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_location_tid_1']['type'] = 'select';
-  $handler->display->display_options['filters']['field_highlight_location_tid_1']['vocabulary'] = 'banner';
 
   /* Display: For Networks pattern */
   $handler = $view->new_display('block', 'For Networks pattern', 'block_2');
@@ -6616,6 +6627,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
   /* Filter criterion: Field: Activity category (field_activity_category) */
   $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
   $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
@@ -6623,6 +6642,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
     1183 => '1183',
   );
+  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
 
@@ -6646,6 +6666,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
   /* Filter criterion: Field: Activity category (field_activity_category) */
   $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
   $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
@@ -6653,6 +6681,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
     1184 => '1184',
   );
+  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
   $translatables['cbf2019_national_activity_contents'] = array(
@@ -7220,17 +7249,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Activity category (field_activity_category) */
-  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
-  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
-    1182 => '1182',
-    1183 => '1183',
-  );
-  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
   /* Filter criterion: Field: Weight (field_weight) */
   $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
   $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
@@ -14410,6 +14428,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -14517,6 +14536,13 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_logo']['element_wrapper_class'] = 'image-plus-fixed-overlay';
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo']['type'] = 'file_url_plain';
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subtitle']['hide_empty'] = TRUE;
   /* Field: Field: Ministry Centre */
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
@@ -14580,6 +14606,27 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
+  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
+  /* Filter criterion: Content: Logo (field_logo:fid) */
+  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
+  /* Filter criterion: Field: Highlight location (field_highlight_location) */
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['id'] = 'field_highlight_location_tid_1';
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['table'] = 'field_data_field_highlight_location';
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['field'] = 'field_highlight_location_tid';
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_highlight_location_tid_1']['vocabulary'] = 'banner';
   /* Filter criterion: Field: Highlight location (field_highlight_location) */
   $handler->display->display_options['filters']['field_highlight_location_tid']['id'] = 'field_highlight_location_tid';
   $handler->display->display_options['filters']['field_highlight_location_tid']['table'] = 'field_data_field_highlight_location';
@@ -14611,19 +14658,6 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   );
   $handler->display->display_options['filters']['field_highlight_location_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highlight_location_tid']['vocabulary'] = 'banner';
-  /* Filter criterion: Field: Weight (field_weight) */
-  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
-  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
-  /* Filter criterion: Content: Logo (field_logo:fid) */
-  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
-  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
-  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
   /* Filter criterion: Field: Title image (field_title_image:fid) */
   $handler->display->display_options['filters']['field_title_image_fid']['id'] = 'field_title_image_fid';
   $handler->display->display_options['filters']['field_title_image_fid']['table'] = 'field_data_field_title_image';
