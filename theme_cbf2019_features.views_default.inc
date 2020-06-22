@@ -1250,7 +1250,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_city_activities';
-  $view->description = '';
+  $view->description = 'This view is superceded by the \'cbf2019 what\'s on activities\' view';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 city activities';
@@ -1490,6 +1490,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['enabled'] = FALSE;
   $translatables['cbf2019_city_activities'] = array(
     t('Master'),
     t('more'),
@@ -4304,7 +4305,7 @@ To create a new CiviCRM Event
 
   $view = new view();
   $view->name = 'cbf2019_local_activities';
-  $view->description = '';
+  $view->description = 'This view is superceded by the \'cbf2019 what\'s on activities\' view';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 local activities';
@@ -4514,6 +4515,7 @@ To create a new CiviCRM Event
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['enabled'] = FALSE;
   $translatables['cbf2019_local_activities'] = array(
     t('Master'),
     t('more'),
