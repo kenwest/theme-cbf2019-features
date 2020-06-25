@@ -3834,6 +3834,14 @@ To create a new CiviCRM Event
   $handler->display->display_options['relationships']['id']['location_type'] = '0';
   $handler->display->display_options['relationships']['id']['location_op'] = '0';
   $handler->display->display_options['relationships']['id']['is_primary'] = 1;
+  /* Field: CiviCRM Events: Registration Link Text */
+  $handler->display->display_options['fields']['registration_link_text']['id'] = 'registration_link_text';
+  $handler->display->display_options['fields']['registration_link_text']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['registration_link_text']['field'] = 'registration_link_text';
+  $handler->display->display_options['fields']['registration_link_text']['label'] = '';
+  $handler->display->display_options['fields']['registration_link_text']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['registration_link_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['registration_link_text']['empty'] = 'Register now';
   /* Field: CiviCRM Events: Event ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
@@ -3841,7 +3849,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['id']['alter']['text'] = 'REGISTER NOW';
+  $handler->display->display_options['fields']['id']['alter']['text'] = '[registration_link_text]';
   $handler->display->display_options['fields']['id']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['path'] = '/civicrm/event/register?reset=1&id=[id]';
   $handler->display->display_options['fields']['id']['alter']['rel'] = 'nofollow';
@@ -3953,8 +3961,10 @@ To create a new CiviCRM Event
     t('Asc'),
     t('Desc'),
     t('Address'),
-    t('REGISTER NOW'),
+    t('Register now'),
+    t('[registration_link_text]'),
     t('.'),
+    t('REGISTER NOW'),
     t('[id]'),
     t('All'),
     t('Block'),
