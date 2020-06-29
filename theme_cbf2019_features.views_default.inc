@@ -13387,7 +13387,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['expression'] = '31';
+  $handler->display->display_options['fields']['expression']['expression'] = '7';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Entityqueue: Node Queue Position */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -13697,7 +13697,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['expression'] = '7';
+  $handler->display->display_options['fields']['expression']['expression'] = '31';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Entityqueue: Node Queue Position */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
