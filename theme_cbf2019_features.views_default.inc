@@ -7076,7 +7076,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
   $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
   $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
-    1749 => '1749',
+    1762 => '1762',
   );
   $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
