@@ -936,9 +936,9 @@ function theme_cbf2019_features_views_default_views() {
   );
   $handler->display->display_options['path'] = 'articles';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_2');
-  $handler->display->display_options['display_description'] = 'Recent blog articles for an activity';
+  /* Display: For Local Activity */
+  $handler = $view->new_display('block', 'For Local Activity', 'block_2');
+  $handler->display->display_options['display_description'] = 'Recent blog articles for a local activity';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -1089,6 +1089,31 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
 
   /* Display: For Collection */
   $handler = $view->new_display('block', 'For Collection', 'block_3');
@@ -1219,6 +1244,187 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: For National Activity */
+  $handler = $view->new_display('block', 'For National Activity', 'block_4');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'container';
+  $handler->display->display_options['display_description'] = 'Recent blog articles for a national activity';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'All news in our blog';
+  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '[field_blog_label]';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Content author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['label'] = 'Author';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
+  $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
+  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
+    'format_type' => 'custom',
+    'custom_date_format' => 'j M Y',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Blog label */
+  $handler->display->display_options['fields']['field_blog_label']['id'] = 'field_blog_label';
+  $handler->display->display_options['fields']['field_blog_label']['table'] = 'field_data_field_blog_label';
+  $handler->display->display_options['fields']['field_blog_label']['field'] = 'field_blog_label';
+  $handler->display->display_options['fields']['field_blog_label']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['field_blog_label']['label'] = '';
+  $handler->display->display_options['fields']['field_blog_label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_label']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_label']['empty'] = 'Blog';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
   $translatables['cbf2019_blog'] = array(
     t('Master'),
     t('<none>'),
@@ -1246,12 +1452,14 @@ function theme_cbf2019_features_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Title'),
-    t('For Activity'),
-    t('Recent blog articles for an activity'),
+    t('For Local Activity'),
+    t('Recent blog articles for a local activity'),
     t('[field_blog_label]'),
     t('Activity'),
     t('For Collection'),
     t('This display shows the recent blog articles for a Collection'),
+    t('For National Activity'),
+    t('Recent blog articles for a national activity'),
   );
   $export['cbf2019_blog'] = $view;
 
@@ -8081,9 +8289,9 @@ else {
   $handler->display->display_options['display_description'] = 'Recent library resources for the home page';
   $handler->display->display_options['link_url'] = 'library';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_2');
-  $handler->display->display_options['display_description'] = 'Recent library resources for an activity';
+  /* Display: For Local Activity */
+  $handler = $view->new_display('block', 'For Local Activity', 'block_2');
+  $handler->display->display_options['display_description'] = 'Recent library resources for a local activity';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -8237,6 +8445,14 @@ else {
   $handler->display->display_options['filters']['field_episode_date_value']['field'] = 'field_episode_date_value';
   $handler->display->display_options['filters']['field_episode_date_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_episode_date_value']['default_date'] = '4 years ago';
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
 
   /* Display: Resource library */
   $handler = $view->new_display('page', 'Resource library', 'page_1');
@@ -9179,6 +9395,173 @@ else {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: For National Activity */
+  $handler = $view->new_display('block', 'For National Activity', 'block_5');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'container';
+  $handler->display->display_options['display_description'] = 'Recent library resources for a national activity';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'Our library';
+  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
+  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Content: Resource type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
+  $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
+  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
+    'format_type' => 'custom',
+    'custom_date_format' => 'j M Y',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['filters']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['filters']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['filters']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['filters']['field_episode_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_episode_date_value']['default_date'] = '4 years ago';
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
@@ -9198,8 +9581,8 @@ else {
     t('more'),
     t('For home page'),
     t('Recent library resources for the home page'),
-    t('For Activity'),
-    t('Recent library resources for an activity'),
+    t('For Local Activity'),
+    t('Recent library resources for a local activity'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -9221,6 +9604,8 @@ else {
     t('Node referencing Activity'),
     t('For Collection'),
     t('This display shows the recent library resources for a Collection'),
+    t('For National Activity'),
+    t('Recent library resources for a national activity'),
   );
   $export['cbf2019_recent_library'] = $view;
 
@@ -9356,9 +9741,9 @@ else {
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'library';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_1');
-  $handler->display->display_options['display_description'] = 'Show recycled content for an Activity';
+  /* Display: For Local Activity */
+  $handler = $view->new_display('block', 'For Local Activity', 'block_1');
+  $handler->display->display_options['display_description'] = 'Show recycled content for a local Activity';
   $handler->display->display_options['link_url'] = 'library';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -9472,6 +9857,171 @@ else {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'activity' => 'activity',
   );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Recycle date (field_recycle_date) */
+  $handler->display->display_options['filters']['field_recycle_date_value']['id'] = 'field_recycle_date_value';
+  $handler->display->display_options['filters']['field_recycle_date_value']['table'] = 'field_data_field_recycle_date';
+  $handler->display->display_options['filters']['field_recycle_date_value']['field'] = 'field_recycle_date_value';
+  $handler->display->display_options['filters']['field_recycle_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_recycle_date_value']['default_date'] = 'now';
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+
+  /* Display: For National Activity */
+  $handler = $view->new_display('block', 'For National Activity', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'container';
+  $handler->display->display_options['display_description'] = 'Show recycled content for a national Activity';
+  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['content'] = '[field_recycle_label]';
+  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Content: Resource type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>';
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Date text */
+  $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['label'] = '';
+  $handler->display->display_options['fields']['field_date_text']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_text']['alter']['text'] = '[field_speakers] <div class="field-rewrite-half-separator"></div> [field_date_text]';
+  $handler->display->display_options['fields']['field_date_text']['element_label_colon'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Recycle label */
+  $handler->display->display_options['fields']['field_recycle_label']['id'] = 'field_recycle_label';
+  $handler->display->display_options['fields']['field_recycle_label']['table'] = 'field_data_field_recycle_label';
+  $handler->display->display_options['fields']['field_recycle_label']['field'] = 'field_recycle_label';
+  $handler->display->display_options['fields']['field_recycle_label']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['field_recycle_label']['label'] = '';
+  $handler->display->display_options['fields']['field_recycle_label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_recycle_label']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_recycle_label']['empty'] = 'Recycled content';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'activity' => 'activity',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Recycle date (field_recycle_date) */
+  $handler->display->display_options['filters']['field_recycle_date_value']['id'] = 'field_recycle_date_value';
+  $handler->display->display_options['filters']['field_recycle_date_value']['table'] = 'field_data_field_recycle_date';
+  $handler->display->display_options['filters']['field_recycle_date_value']['field'] = 'field_recycle_date_value';
+  $handler->display->display_options['filters']['field_recycle_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_recycle_date_value']['default_date'] = 'now';
+  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
   $translatables['cbf2019_recycled_content'] = array(
     t('Master'),
     t('<none>'),
@@ -9487,11 +10037,13 @@ else {
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('more'),
-    t('For Activity'),
-    t('Show recycled content for an Activity'),
+    t('For Local Activity'),
+    t('Show recycled content for a local Activity'),
     t('[field_recycle_label]'),
     t('Activity'),
     t('All'),
+    t('For National Activity'),
+    t('Show recycled content for a national Activity'),
   );
   $export['cbf2019_recycled_content'] = $view;
 
