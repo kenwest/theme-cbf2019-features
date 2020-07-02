@@ -12097,7 +12097,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Our team';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-staff-slider-view-header">Our team</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -12348,7 +12348,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Our team'),
+    t('<span id="cbf2019-staff-slider-view-header">Our team</span>'),
     t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>'),
