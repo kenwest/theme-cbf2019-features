@@ -14214,6 +14214,27 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 1;
   /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status_2']['id'] = 'status_2';
+  $handler->display->display_options['filters']['status_2']['table'] = 'node';
+  $handler->display->display_options['filters']['status_2']['field'] = 'status';
+  $handler->display->display_options['filters']['status_2']['value'] = '1';
+  $handler->display->display_options['filters']['status_2']['group'] = 3;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
+  $handler->display->display_options['filters']['type_2']['table'] = 'node';
+  $handler->display->display_options['filters']['type_2']['field'] = 'type';
+  $handler->display->display_options['filters']['type_2']['value'] = array(
+    'blog' => 'blog',
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type_2']['group'] = 3;
+  /* Filter criterion: Entityqueue: Node In Queue */
+  $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['filters']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
+  $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -14244,12 +14265,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
-  /* Filter criterion: Entityqueue: Node In Queue */
-  $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
-  $handler->display->display_options['filters']['entityqueue_relationship']['table'] = 'node';
-  $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
-  $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
-  $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
   $handler->display->display_options['path'] = 'third-space/last-week';
 
   /* Display: For Third Space ministry page */
@@ -14525,6 +14540,27 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 1;
   /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status_2']['id'] = 'status_2';
+  $handler->display->display_options['filters']['status_2']['table'] = 'node';
+  $handler->display->display_options['filters']['status_2']['field'] = 'status';
+  $handler->display->display_options['filters']['status_2']['value'] = '1';
+  $handler->display->display_options['filters']['status_2']['group'] = 3;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
+  $handler->display->display_options['filters']['type_2']['table'] = 'node';
+  $handler->display->display_options['filters']['type_2']['field'] = 'type';
+  $handler->display->display_options['filters']['type_2']['value'] = array(
+    'blog' => 'blog',
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type_2']['group'] = 3;
+  /* Filter criterion: Entityqueue: Node In Queue */
+  $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['filters']['entityqueue_relationship']['table'] = 'node';
+  $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
+  $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -14555,12 +14591,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
-  /* Filter criterion: Entityqueue: Node In Queue */
-  $handler->display->display_options['filters']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
-  $handler->display->display_options['filters']['entityqueue_relationship']['table'] = 'node';
-  $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
-  $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
-  $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
   $handler->display->display_options['path'] = 'third-space/last-month';
   $translatables['cbf2019_third_space_content'] = array(
     t('Master'),
