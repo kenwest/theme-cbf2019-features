@@ -8711,6 +8711,28 @@ else {
       'secondary_label' => 'Advanced options',
       'secondary_collapse_override' => '0',
     ),
+    'field_topic_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_select_all_none_nested' => FALSE,
+        'bef_term_description' => 0,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
     'title' => array(
       'bef_format' => 'default',
       'more_options' => array(
@@ -8721,28 +8743,6 @@ else {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_topic_tid' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_select_all_none_nested' => FALSE,
-        'bef_term_description' => 0,
-        'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            1 => 'vocabulary',
           ),
         ),
         'rewrite' => array(
@@ -8942,6 +8942,30 @@ else {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Topic(s) (field_topic) */
+  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
+    756 => '756',
+    757 => '757',
+    758 => '758',
+    760 => '760',
+    761 => '761',
+    762 => '762',
+  );
+  $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['identifier'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
+  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -8972,31 +8996,6 @@ else {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Topic(s) (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['label'] = 'Topics';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator'] = 'field_topic_tid_op';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['identifier'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
   /* Filter criterion: Field: Speaker(s) (field_speakers) */
   $handler->display->display_options['filters']['field_speakers_tid']['id'] = 'field_speakers_tid';
   $handler->display->display_options['filters']['field_speakers_tid']['table'] = 'field_data_field_speakers';
@@ -9822,7 +9821,6 @@ else {
     t('Search'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
-    t('Topics'),
     t('Speaker'),
     t('City'),
     t('Resource type (field_resource_type)'),
