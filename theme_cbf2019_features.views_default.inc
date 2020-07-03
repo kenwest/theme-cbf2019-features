@@ -14580,7 +14580,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created_1']['table'] = 'node';
   $handler->display->display_options['filters']['created_1']['field'] = 'created';
   $handler->display->display_options['filters']['created_1']['operator'] = '>=';
-  $handler->display->display_options['filters']['created_1']['value']['value'] = '-7 days';
+  $handler->display->display_options['filters']['created_1']['value']['value'] = '-31 days';
   $handler->display->display_options['filters']['created_1']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created_1']['group'] = 2;
   /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
