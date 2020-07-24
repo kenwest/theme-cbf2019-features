@@ -8013,6 +8013,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
 
   /* Display: Content type */
   $handler = $view->new_display('block', 'Content type', 'block_1');
+  $handler->display->display_options['display_comment'] = 'This view is not tagged with \'page-header\' because it\'s results are used by other page-header views.';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Sidebar title (field_sidebar_title) */
   $handler->display->display_options['arguments']['field_sidebar_title_value']['id'] = 'field_sidebar_title_value';
