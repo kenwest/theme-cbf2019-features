@@ -543,6 +543,17 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Search: Score */
+  $handler->display->display_options['sorts']['score']['id'] = 'score';
+  $handler->display->display_options['sorts']['score']['table'] = 'search_index';
+  $handler->display->display_options['sorts']['score']['field'] = 'score';
+  $handler->display->display_options['sorts']['score']['order'] = 'DESC';
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -564,36 +575,6 @@ function theme_cbf2019_features_views_default_views() {
     'blog' => 'blog',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
@@ -608,6 +589,19 @@ function theme_cbf2019_features_views_default_views() {
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['metatags'] = array(
     'und' => array(
       'title' => array(
@@ -1506,7 +1500,7 @@ function theme_cbf2019_features_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Title'),
+    t('Search terms'),
     t('For Local Activity'),
     t('Recent blog articles for a local activity'),
     t('[field_blog_label]'),
