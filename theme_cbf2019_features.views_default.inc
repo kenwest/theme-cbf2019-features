@@ -8712,7 +8712,7 @@ else {
       'secondary_label' => 'Advanced options',
       'secondary_collapse_override' => '0',
     ),
-    'field_topic_tid' => array(
+    'term_node_tid_depth' => array(
       'bef_format' => 'bef_links',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
@@ -8943,11 +8943,11 @@ else {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Topic(s) (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
+  /* Filter criterion: Content: Has taxonomy terms (with depth) */
+  $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['value'] = array(
     756 => '756',
     757 => '757',
     758 => '758',
@@ -8955,18 +8955,19 @@ else {
     761 => '761',
     762 => '762',
   );
-  $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator'] = 'field_topic_tid_op';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['identifier'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['term_node_tid_depth']['group'] = 1;
+  $handler->display->display_options['filters']['term_node_tid_depth']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['remember_roles'] = array(
     2 => '2',
   );
-  $handler->display->display_options['filters']['field_topic_tid']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
+  $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'topic';
+  $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '1';
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
