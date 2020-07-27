@@ -8926,6 +8926,17 @@ else {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Search: Score */
+  $handler->display->display_options['sorts']['score']['id'] = 'score';
+  $handler->display->display_options['sorts']['score']['table'] = 'search_index';
+  $handler->display->display_options['sorts']['score']['field'] = 'score';
+  $handler->display->display_options['sorts']['score']['order'] = 'DESC';
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -8968,115 +8979,19 @@ else {
   $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'topic';
   $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
   $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '1';
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Speaker(s) (field_speakers) */
-  $handler->display->display_options['filters']['field_speakers_tid']['id'] = 'field_speakers_tid';
-  $handler->display->display_options['filters']['field_speakers_tid']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['filters']['field_speakers_tid']['field'] = 'field_speakers_tid';
-  $handler->display->display_options['filters']['field_speakers_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_speakers_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_speakers_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_speakers_tid']['expose']['operator_id'] = 'field_speakers_tid_op';
-  $handler->display->display_options['filters']['field_speakers_tid']['expose']['label'] = 'Speaker';
-  $handler->display->display_options['filters']['field_speakers_tid']['expose']['operator'] = 'field_speakers_tid_op';
-  $handler->display->display_options['filters']['field_speakers_tid']['expose']['identifier'] = 'field_speakers_tid';
-  $handler->display->display_options['filters']['field_speakers_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['field_speakers_tid']['vocabulary'] = 'speaker';
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['table'] = 'node';
-  $handler->display->display_options['filters']['title_1']['field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['filters']['title_1']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title_1']['group'] = 1;
-  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
-  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Activity';
-  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
-  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_field'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['label'] = 'City';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
   /* Filter criterion: Content: Resource type (field_resource_type) */
   $handler->display->display_options['filters']['field_resource_type_value']['id'] = 'field_resource_type_value';
   $handler->display->display_options['filters']['field_resource_type_value']['table'] = 'field_data_field_resource_type';
@@ -9088,7 +9003,7 @@ else {
   $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator'] = 'field_resource_type_value_op';
   $handler->display->display_options['filters']['field_resource_type_value']['expose']['identifier'] = 'field_resource_type_value';
   $handler->display->display_options['filters']['field_resource_type_value']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['label'] = 'Resource type';
   $handler->display->display_options['filters']['field_resource_type_value']['group_info']['identifier'] = 'field_resource_type_value';
   $handler->display->display_options['filters']['field_resource_type_value']['group_info']['group_items'] = array(
     1 => array(
@@ -9823,10 +9738,9 @@ else {
     t('Search'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
-    t('Speaker'),
-    t('City'),
+    t('Search terms'),
     t('Resource type (field_resource_type)'),
-    t('Type'),
+    t('Resource type'),
     t('For Node\'s activity'),
     t('Recent library resources for a node\'s activity'),
     t('Node referencing Activity'),
