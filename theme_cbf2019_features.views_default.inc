@@ -2935,7 +2935,17 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/" class="embed-responsive embed-responsive-16by9">
     <img src="/sites/all/themes/cbf2019/images/[domain_id]/brand/logo-black.png">
   </a>
-</div>';
+</div>
+<span class="footer-social-links">
+  <a href="/domain/[domain_id]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
+</span>
+<span class="footer-social-links">
+  <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
+</span>
+<span class="footer-social-links">
+  <a href="/domain/[domain_id]/youtube" class=""><i class=" fab fa-youtube"></i></a>
+</span>
+';
   $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
   $translatables['cbf2019_domain'] = array(
     t('Master'),
@@ -2953,7 +2963,17 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/" class="embed-responsive embed-responsive-16by9">
     <img src="/sites/all/themes/cbf2019/images/[domain_id]/brand/logo-black.png">
   </a>
-</div>'),
+</div>
+<span class="footer-social-links">
+  <a href="/domain/[domain_id]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
+</span>
+<span class="footer-social-links">
+  <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
+</span>
+<span class="footer-social-links">
+  <a href="/domain/[domain_id]/youtube" class=""><i class=" fab fa-youtube"></i></a>
+</span>
+'),
   );
   $export['cbf2019_domain'] = $view;
 
