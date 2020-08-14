@@ -11028,8 +11028,11 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 
   /* Display: For Episode */
   $handler = $view->new_display('block', 'For Episode', 'block_1');
+  $handler->display->display_options['display_comment'] = 'Disabling caching on this display as this doesn\'t work when the No Results view is invoked.';
   $handler->display->display_options['display_description'] = 'Related content for a Library Episode';
   $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: View (Views field view) */
   $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
