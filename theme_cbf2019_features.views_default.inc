@@ -9827,8 +9827,6 @@ else {
   /* Display: For Node's activity */
   $handler = $view->new_display('block', 'For Node\'s activity', 'block_3');
   $handler->display->display_options['display_description'] = 'Recent library resources for a node\'s activity';
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
