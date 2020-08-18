@@ -2546,7 +2546,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -2576,7 +2576,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
@@ -2614,7 +2614,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
@@ -2625,7 +2625,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -2670,13 +2670,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
@@ -2707,7 +2707,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
@@ -2756,7 +2756,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
@@ -2767,7 +2767,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -2839,13 +2839,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
@@ -2870,7 +2870,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -2880,7 +2880,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
@@ -2913,13 +2913,13 @@ function theme_cbf2019_features_views_default_views() {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
@@ -4111,7 +4111,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
@@ -4140,7 +4140,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'OR',
   );
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
@@ -12734,7 +12734,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Promotional video */
+  /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
@@ -12758,7 +12758,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'collection' => 'collection',
   );
-  /* Filter criterion: Field: Promotional video (field_highlight_video:url) */
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
