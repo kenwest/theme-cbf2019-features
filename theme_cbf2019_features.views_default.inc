@@ -2599,10 +2599,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['empty']['view']['view_to_insert'] = 'cbf2019_content_highlight_slider:block_2';
   $handler->display->display_options['empty']['view']['inherit_arguments'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Relationship: CiviCRM Event */
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['ui_name'] = 'CiviCRM Event';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CiviCRM Events: Event ID */
@@ -2635,6 +2636,19 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
