@@ -8044,9 +8044,9 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $view = new view();
   $view->name = 'cbf2019_national_activity_event_slider';
   $view->description = '';
-  $view->tag = 'local, slider, autoplay';
+  $view->tag = 'slider, autoplay';
   $view->base_table = 'civicrm_event';
-  $view->human_name = 'cbf2019 national activity event slider';
+  $view->human_name = 'cbf2019 activity event slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -8061,6 +8061,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
@@ -8180,6 +8181,23 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['arguments']['field_in_activity_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_in_activity_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_in_activity_target_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Ministry Centre */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['null']['validate_options']['vocabularies'] = array(
+    'vocabulary_1' => 'vocabulary_1',
+  );
+  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
   /* Contextual filter: CiviCRM Event: Domain (field_domain) */
   $handler->display->display_options['arguments']['field_domain_domain_id']['id'] = 'field_domain_domain_id';
   $handler->display->display_options['arguments']['field_domain_domain_id']['table'] = 'field_data_field_domain';
