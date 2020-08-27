@@ -2735,9 +2735,9 @@ function theme_cbf2019_features_views_default_views() {
     'activity' => 'activity',
   );
 
-  /* Display: For National Activity by Ministry Centre */
-  $handler = $view->new_display('block', 'For National Activity by Ministry Centre', 'block_3');
-  $handler->display->display_options['display_description'] = 'Highlights for a National Activity and its CiviCRM Events';
+  /* Display: For National Activity CiviCRM Events */
+  $handler = $view->new_display('block', 'For National Activity CiviCRM Events', 'block_3');
+  $handler->display->display_options['display_description'] = 'Highlights for a National Activity\'s CiviCRM Events';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -2746,19 +2746,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['label'] = 'Title';
   $handler->display->display_options['header']['area']['content'] = 'Promotional material';
   $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: View area */
-  $handler->display->display_options['empty']['view']['id'] = 'view';
-  $handler->display->display_options['empty']['view']['table'] = 'views';
-  $handler->display->display_options['empty']['view']['field'] = 'view';
-  $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'cbf2019_content_highlight_slider:block_2';
-  $handler->display->display_options['empty']['view']['inherit_arguments'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Relationship: CiviCRM Event */
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['ui_name'] = 'CiviCRM Event';
   $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CiviCRM Events: Event ID */
@@ -2770,6 +2763,15 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Promotional videos */
   $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
   $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
@@ -2781,16 +2783,19 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
-  /* Field: Field: Promotional videos */
-  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
@@ -2807,23 +2812,23 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
+  /* Contextual filter: Ministry Centre */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['null']['validate_options']['vocabularies'] = array(
     'vocabulary_1' => 'vocabulary_1',
   );
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2957,8 +2962,8 @@ function theme_cbf2019_features_views_default_views() {
     t('.'),
     t('For Activity with no upcoming events'),
     t('Highlights for an Activity'),
-    t('For National Activity by Ministry Centre'),
-    t('Highlights for a National Activity and its CiviCRM Events'),
+    t('For National Activity CiviCRM Events'),
+    t('Highlights for a National Activity\'s CiviCRM Events'),
     t('Title'),
     t('Promotional material'),
     t('For non-Activity'),
