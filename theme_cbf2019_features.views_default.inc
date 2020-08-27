@@ -5979,6 +5979,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['cache']['output_lifespan'] = '1800';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -6217,6 +6218,14 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
+  /* Field: Domains: Domain ID */
+  $handler->display->display_options['fields']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['table'] = 'domain';
+  $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['domain_id']['label'] = '';
+  $handler->display->display_options['fields']['domain_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
@@ -6226,7 +6235,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
-        data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+        data-icon="/sites/all/themes/cbf2019/images/[domain_id]/map/marker.png">
         <div class="marker-content">
           <div class="marker-item marker-title">[field_title]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
@@ -6240,15 +6249,6 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Entityform Submission: Domain (domain entity) */
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['id'] = 'domain_entityform_domain_id';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['table'] = 'field_data_domain_entityform';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['field'] = 'domain_entityform_domain_id';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -6259,20 +6259,133 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Mappable entityforms only */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['ui_name'] = 'Mappable entityforms only';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mappable' => 'mappable',
+  );
+  /* Filter criterion: Domain Access: Domain ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['gid']['value'] = array(
+    '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+  );
 
   /* Display: For CiviCRM Event */
   $handler = $view->new_display('block', 'For CiviCRM Event', 'block_2');
   $handler->display->display_options['display_description'] = 'Mappables for a CiviCRM Event';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Location: Latitude */
+  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['table'] = 'location';
+  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['latitude']['label'] = '';
+  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
+  /* Field: Location: Longitude */
+  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['table'] = 'location';
+  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['longitude']['label'] = '';
+  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Note */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
+  /* Field: Field: Order URL */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="/sites/all/themes/cbf2019/images/!2/map/marker.png">
+        <div class="marker-content">
+          <div class="marker-item marker-activity">[field_in_activity]</div>
+          <div class="marker-item marker-title">[field_title]</div>
+          <div class="marker-item marker-summary">[field_summary]</div>
+          <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
+          <div class="marker-item marker-address">[street], [city]</div>
+        </div>
+      </div>
+';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Entityform Submission: Domain (domain entity) */
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['id'] = 'domain_entityform_domain_id';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['table'] = 'field_data_domain_entityform';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['field'] = 'domain_entityform_domain_id';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Entityform Submission: Source entity id (field_source_entity_id) */
   $handler->display->display_options['arguments']['field_source_entity_id_value']['id'] = 'field_source_entity_id_value';
   $handler->display->display_options['arguments']['field_source_entity_id_value']['table'] = 'field_data_field_source_entity_id';
@@ -6283,6 +6396,15 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['field_source_entity_id_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_source_entity_id_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_source_entity_id_value']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Entityform Submission: Domain (domain entity) */
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['id'] = 'domain_entityform_domain_id';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['table'] = 'field_data_domain_entityform';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['field'] = 'domain_entityform_domain_id';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Mappable entityforms only */
@@ -6303,8 +6425,6 @@ To create a new CiviCRM Event
   /* Display: For national Activity */
   $handler = $view->new_display('block', 'For national Activity', 'block_3');
   $handler->display->display_options['display_description'] = 'Mappables for an Activity which is offered in all cities';
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -6439,6 +6559,14 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
+  /* Field: Domains: Domain ID */
+  $handler->display->display_options['fields']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['table'] = 'domain';
+  $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['domain_id']['label'] = '';
+  $handler->display->display_options['fields']['domain_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
   $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
@@ -6448,7 +6576,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
-        data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+        data-icon="/sites/all/themes/cbf2019/images/[domain_id]/map/marker.png">
         <div class="marker-content">
           <div class="marker-item marker-title">[field_title]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
@@ -6462,15 +6590,6 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Entityform Submission: Domain (domain entity) */
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['id'] = 'domain_entityform_domain_id';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['table'] = 'field_data_domain_entityform';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['field'] = 'domain_entityform_domain_id';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -6481,6 +6600,22 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
+    'vocabulary_1' => 'vocabulary_1',
+  );
+  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Mappable entityforms only */
@@ -6491,28 +6626,14 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['type']['value'] = array(
     'mappable' => 'mappable',
   );
-  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
+  /* Filter criterion: Domain Access: Domain ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['filters']['gid']['value'] = array(
+    '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
   );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
 
   /* Display: For What's On */
   $handler = $view->new_display('block', 'For What\'s On', 'block_4');
@@ -6651,7 +6772,7 @@ To create a new CiviCRM Event
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
-        data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+        data-icon="/sites/all/themes/cbf2019/images/[domain_id]/map/marker.png">
         <div class="marker-content">
           <div class="marker-item marker-title">[field_title]</div>
           <div class="marker-item marker-summary">[field_summary]</div>
@@ -6664,6 +6785,21 @@ To create a new CiviCRM Event
 '),
     t('For CiviCRM Event'),
     t('Mappables for a CiviCRM Event'),
+    t('      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="/sites/all/themes/cbf2019/images/!2/map/marker.png">
+        <div class="marker-content">
+          <div class="marker-item marker-activity">[field_in_activity]</div>
+          <div class="marker-item marker-title">[field_title]</div>
+          <div class="marker-item marker-summary">[field_summary]</div>
+          <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
+          <div class="marker-item marker-address">[street], [city]</div>
+        </div>
+      </div>
+'),
     t('For national Activity'),
     t('Mappables for an Activity which is offered in all cities'),
     t('Select any filter and click on Apply to see results'),
