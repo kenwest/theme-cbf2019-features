@@ -8275,7 +8275,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $view->description = 'List of the regular venues for an activity';
   $view->tag = '3-items';
   $view->base_table = 'entityform';
-  $view->human_name = 'cbf2019 national activity regular venues';
+  $view->human_name = 'cbf2019 activity regular venues';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -8284,7 +8284,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['css_class'] = 'venue';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
