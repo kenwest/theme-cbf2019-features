@@ -335,6 +335,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['style_options']['columns_lg'] = '4';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-blog-view-header">Blog</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -461,13 +467,6 @@ function theme_cbf2019_features_views_default_views() {
   /* Display: For home page */
   $handler = $view->new_display('block', 'For home page', 'block_1');
   $handler->display->display_options['link_url'] = 'articles';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Blog';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -599,6 +598,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -1148,7 +1153,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '[field_blog_label]';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-blog-view-header">[field_blog_label]</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1320,13 +1325,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Blog';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -1462,7 +1460,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '[field_blog_label]';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-blog-view-header">[field_blog_label]</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1625,6 +1623,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<span id="cbf2019-blog-view-header">Blog</span>'),
     t('Author'),
     t('[name]'),
     t('[field_speakers] | [field_episode_date]'),
@@ -1645,7 +1644,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Search terms'),
     t('For Local Activity'),
     t('Recent blog articles for a local activity'),
-    t('[field_blog_label]'),
+    t('<span id="cbf2019-blog-view-header">[field_blog_label]</span>'),
     t('Activity'),
     t('For Collection'),
     t('This display shows the recent blog articles for a Collection'),
@@ -2744,7 +2743,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Promotional material';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-content-promotional-slider-view-header">Promotional material</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: CiviCRM Event */
@@ -2965,7 +2964,7 @@ function theme_cbf2019_features_views_default_views() {
     t('For National Activity CiviCRM Events'),
     t('Highlights for a National Activity\'s CiviCRM Events'),
     t('Title'),
-    t('Promotional material'),
+    t('<span id="cbf2019-content-promotional-slider-view-header">Promotional material</span>'),
     t('For non-Activity'),
     t('Slider for non-Activity nodes'),
     t('Activity'),
@@ -8077,7 +8076,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Upcoming events';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-activity-event-slider-view-header">Upcoming events</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Highlight image */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -8258,7 +8257,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Asc'),
     t('Desc'),
     t('Title'),
-    t('Upcoming events'),
+    t('<span id="cbf2019-activity-event-slider-view-header">Upcoming events</span>'),
     t('[field_highlight]'),
     t('[field_date_text] | [city]'),
     t('[field_date_text]'),
@@ -8891,7 +8890,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -9107,7 +9106,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -9138,7 +9137,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: First 2 components of path */
   $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Path (field_synopsis) */
+  /* Contextual filter: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -9296,9 +9295,8 @@ else {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
-  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-recent-library-view-header">Recent resources</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
@@ -9440,14 +9438,6 @@ else {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
-  $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
@@ -10330,14 +10320,6 @@ else {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
-  $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
@@ -10413,14 +10395,6 @@ else {
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
-  $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Collection (field_collection) */
   $handler->display->display_options['arguments']['field_collection_tid']['id'] = 'field_collection_tid';
@@ -10467,14 +10441,6 @@ else {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Recent resources';
-  $handler->display->display_options['header']['area']['format'] = '3';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
@@ -10622,7 +10588,7 @@ else {
     t('Asc'),
     t('Desc'),
     t('Title'),
-    t('Recent resources'),
+    t('<span id="cbf2019-recent-library-view-header">Recent resources</span>'),
     t('Activity'),
     t('[field_speakers] | [field_episode_date]'),
     t('All'),
@@ -10694,8 +10660,8 @@ else {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = 'Recycled content';
-  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-recycled-content-view-header">Recycled content</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -10799,8 +10765,8 @@ else {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = '[field_recycle_label]';
-  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-recycled-content-view-header">[field_recycle_label]</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
@@ -10941,8 +10907,8 @@ else {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = '[field_recycle_label]';
-  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-recycled-content-view-header">[field_recycle_label]</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
@@ -11079,7 +11045,7 @@ else {
     t('Asc'),
     t('Desc'),
     t('Title'),
-    t('Recycled content'),
+    t('<span id="cbf2019-recycled-content-view-header">Recycled content</span>'),
     t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_date_text]'),
     t('Defaults'),
@@ -11087,8 +11053,9 @@ else {
     t('more'),
     t('For Local Activity'),
     t('Show recycled content for a local Activity'),
-    t('[field_recycle_label]'),
+    t('<span id="cbf2019-recycled-content-view-header">[field_recycle_label]</span>'),
     t('Activity'),
+    t('Recycled content'),
     t('All'),
     t('For National Activity'),
     t('Show recycled content for a national Activity'),
@@ -12152,7 +12119,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Speaker';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">Speaker</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -12485,7 +12452,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Speaker'),
+    t('<span id="cbf2019-speakers-view-header">Speaker</span>'),
     t('<div class="landscape-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('[field_image]'),
     t('Defaults'),
@@ -15996,7 +15963,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Path */
+  /* Field: Field: Synopsis */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -16082,7 +16049,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Path (field_synopsis) */
+  /* Filter criterion: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -16176,7 +16143,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Path'),
+    t('Synopsis'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
