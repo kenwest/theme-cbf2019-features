@@ -11558,6 +11558,261 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $export['cbf2019_related_content'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_search';
+  $view->description = 'Search results for nodes';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 search';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Results for "!1"';
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['use_more_text'] = 'Our library';
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'keys' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '6';
+  $handler->display->display_options['style_options']['columns_md'] = '4';
+  $handler->display->display_options['style_options']['columns_lg'] = '0';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No content matches your search';
+  $handler->display->display_options['empty']['area']['format'] = '2';
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['empty'] = '<img src="https://citybibleforum.test/sites/default/files/styles/third_space_grid/public/default_images/default-highlight-image_1.png?itok=Ohfuj8IE" alt="Alt" width="450" height="450">';
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'third_space_grid',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Resource type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['label'] = '';
+  $handler->display->display_options['fields']['field_resource_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['label'] = '';
+  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>';
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
+  $handler->display->display_options['fields']['field_episode_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]';
+  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
+    'format_type' => 'custom',
+    'custom_date_format' => 'j M Y',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<div class="overlaid-image">[field_highlight]</div>
+<div class="image-overlay">
+  <div class="image-overlay-inner">
+    <div class="views-field views-field-title">[title]</div>
+    <div class="views-field views-field-subtitle">[field_subtitle]</div>
+    <div class="views-field views-field-episode-date">[field_episode_date]</div>
+    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'image-plus-fixed-overlay';
+  /* Sort criterion: Search: Score */
+  $handler->display->display_options['sorts']['score']['id'] = 'score';
+  $handler->display->display_options['sorts']['score']['table'] = 'search_index';
+  $handler->display->display_options['sorts']['score']['field'] = 'score';
+  $handler->display->display_options['sorts']['score']['order'] = 'DESC';
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
+  /* Contextual filter: Search: Search Terms */
+  $handler->display->display_options['arguments']['keys']['id'] = 'keys';
+  $handler->display->display_options['arguments']['keys']['table'] = 'search_index';
+  $handler->display->display_options['arguments']['keys']['field'] = 'keys';
+  $handler->display->display_options['arguments']['keys']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['keys']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['keys']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['keys']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['keys']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['keys']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+    'blog' => 'blog',
+    'episode' => 'episode',
+    'page' => 'page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+  $handler->display->display_options['link_url'] = 'library';
+
+  /* Display: Search results page */
+  $handler = $view->new_display('page', 'Search results page', 'page_1');
+  $handler->display->display_options['path'] = 'search/node/%';
+  $translatables['cbf2019_search'] = array(
+    t('Master'),
+    t('Results for "!1"'),
+    t('Our library'),
+    t('Search'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No content matches your search'),
+    t('<img src="https://citybibleforum.test/sites/default/files/styles/third_space_grid/public/default_images/default-highlight-image_1.png?itok=Ohfuj8IE" alt="Alt" width="450" height="450">'),
+    t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
+    t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
+    t('<div class="overlaid-image">[field_highlight]</div>
+<div class="image-overlay">
+  <div class="image-overlay-inner">
+    <div class="views-field views-field-title">[title]</div>
+    <div class="views-field views-field-subtitle">[field_subtitle]</div>
+    <div class="views-field views-field-episode-date">[field_episode_date]</div>
+    <div class="views-field views-field-field-resource-type">[field_resource_type]</div>
+  </div>
+</div>'),
+    t('All'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('more'),
+    t('Search results page'),
+  );
+  $export['cbf2019_search'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_speaker_admin_view';
   $view->description = '';
   $view->tag = 'default';
