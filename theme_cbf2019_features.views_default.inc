@@ -11637,7 +11637,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['fields']['field_highlight']['label'] = '';
   $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['empty'] = '<img src="https://citybibleforum.test/sites/default/files/styles/third_space_grid/public/default_images/default-highlight-image_1.png?itok=Ohfuj8IE" alt="Alt" width="450" height="450">';
+  $handler->display->display_options['fields']['field_highlight']['empty'] = '<img src="/sites/default/files/styles/third_space_grid/public/default_images/default-highlight-image_1.png?itok=Ohfuj8IE" alt="Alt" width="450" height="450">';
   $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_highlight']['settings'] = array(
     'image_style' => 'third_space_grid',
@@ -11792,7 +11792,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('next ›'),
     t('last »'),
     t('No content matches your search'),
-    t('<img src="https://citybibleforum.test/sites/default/files/styles/third_space_grid/public/default_images/default-highlight-image_1.png?itok=Ohfuj8IE" alt="Alt" width="450" height="450">'),
+    t('<img src="/sites/default/files/styles/third_space_grid/public/default_images/default-highlight-image_1.png?itok=Ohfuj8IE" alt="Alt" width="450" height="450">'),
     t('<span>[field_speakers]</span> <div class="field-rewrite-half-separator"></div>'),
     t('[field_speakers] <div class="field-rewrite-half-separator"></div> [field_episode_date]'),
     t('<div class="overlaid-image">[field_highlight]</div>
