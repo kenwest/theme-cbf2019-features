@@ -14145,53 +14145,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['total_pages'] = '0';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'blog' => 'blog',
-    'episode' => 'episode',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Resource type (field_resource_type) */
-  $handler->display->display_options['filters']['field_resource_type_value']['id'] = 'field_resource_type_value';
-  $handler->display->display_options['filters']['field_resource_type_value']['table'] = 'field_data_field_resource_type';
-  $handler->display->display_options['filters']['field_resource_type_value']['field'] = 'field_resource_type_value';
-  $handler->display->display_options['filters']['field_resource_type_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_resource_type_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator_id'] = 'field_resource_type_value_op';
-  $handler->display->display_options['filters']['field_resource_type_value']['expose']['label'] = 'Resource type (field_resource_type)';
-  $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator'] = 'field_resource_type_value_op';
-  $handler->display->display_options['filters']['field_resource_type_value']['expose']['identifier'] = 'field_resource_type_value';
-  $handler->display->display_options['filters']['field_resource_type_value']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['identifier'] = 'field_resource_type_value';
-  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['group_items'] = array(
-    1 => array(
-      'title' => 'Watch',
-      'operator' => 'contains',
-      'value' => 'v',
-    ),
-    2 => array(
-      'title' => 'Listen',
-      'operator' => 'contains',
-      'value' => 'a',
-    ),
-    3 => array(
-      'title' => 'Read',
-      'operator' => 'regular_expression',
-      'value' => '(o|d|t)',
-    ),
-  );
   $handler->display->display_options['path'] = 'third-space/category/%';
 
   /* Display: Watch page */
