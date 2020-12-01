@@ -458,6 +458,16 @@ function theme_cbf2019_features_views_default_views() {
     'blog' => 'blog',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -577,6 +587,16 @@ function theme_cbf2019_features_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Blog */
   $handler = $view->new_display('page', 'Blog', 'page_1');
@@ -746,6 +766,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'not empty';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['metatags'] = array(
     'und' => array(
       'title' => array(
@@ -1307,6 +1337,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For Collection */
   $handler = $view->new_display('block', 'For Collection', 'block_3');
@@ -1614,6 +1654,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_blog'] = array(
     t('Master'),
     t('<none>'),
@@ -1892,6 +1942,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
   $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -2703,6 +2763,17 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_image_fid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For Activity with no upcoming events */
   $handler = $view->new_display('block', 'For Activity with no upcoming events', 'block_2');
@@ -2877,6 +2948,17 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_image_fid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
   $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For non-Activity */
   $handler = $view->new_display('block', 'For non-Activity', 'block_4');
@@ -3288,6 +3370,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -5037,6 +5129,17 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   /* Filter criterion: Field: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value_1']['id'] = 'field_next_action_value_1';
   $handler->display->display_options['filters']['field_next_action_value_1']['table'] = 'field_data_field_next_action';
@@ -5064,6 +5167,17 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['group'] = 2;
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -5296,6 +5410,16 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
   $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -5523,6 +5647,17 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   /* Filter criterion: Field: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value_1']['id'] = 'field_next_action_value_1';
   $handler->display->display_options['filters']['field_next_action_value_1']['table'] = 'field_data_field_next_action';
@@ -5550,6 +5685,17 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['value'] = '';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['group'] = 2;
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid_1']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -6200,6 +6346,16 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['type']['value'] = array(
     'mappable' => 'mappable',
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -6361,6 +6517,16 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['gid']['value'] = array(
     '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For CiviCRM Event */
   $handler = $view->new_display('block', 'For CiviCRM Event', 'block_2');
@@ -6718,6 +6884,16 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['gid']['value'] = array(
     '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For What's On */
   $handler = $view->new_display('block', 'For What\'s On', 'block_4');
@@ -6821,6 +6997,16 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['field_source_entity_type_value']['field'] = 'field_source_entity_type_value';
   $handler->display->display_options['filters']['field_source_entity_type_value']['value'] = 'civicrm_event';
   $handler->display->display_options['filters']['field_source_entity_type_value']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_mappable'] = array(
     t('Master'),
     t('more'),
@@ -8329,6 +8515,16 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -8730,6 +8926,16 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   );
   $handler->display->display_options['filters']['field_networks_visibility_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_networks_visibility_tid_1']['vocabulary'] = 'banner';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -9493,6 +9699,16 @@ else {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -9660,6 +9876,16 @@ else {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Resource library */
   $handler = $view->new_display('page', 'Resource library', 'page_1');
@@ -10007,6 +10233,16 @@ else {
       'value' => 'd',
     ),
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['metatags'] = array(
     'und' => array(
       'title' => array(
@@ -10462,6 +10698,16 @@ else {
   $handler->display->display_options['filters']['field_episode_date_value']['field'] = 'field_episode_date_value';
   $handler->display->display_options['filters']['field_episode_date_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_episode_date_value']['default_date'] = '4 years ago';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For Collection */
   $handler = $view->new_display('block', 'For Collection', 'block_4');
@@ -10663,6 +10909,16 @@ else {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
@@ -10834,6 +11090,16 @@ else {
   $handler->display->display_options['filters']['field_recycle_date_value']['field'] = 'field_recycle_date_value';
   $handler->display->display_options['filters']['field_recycle_date_value']['operator'] = '<=';
   $handler->display->display_options['filters']['field_recycle_date_value']['default_date'] = 'now';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -10979,6 +11245,16 @@ else {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For National Activity */
   $handler = $view->new_display('block', 'For National Activity', 'block_2');
@@ -11121,6 +11397,16 @@ else {
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_recycled_content'] = array(
     t('Master'),
     t('<none>'),
@@ -11554,6 +11840,16 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -11594,6 +11890,16 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['type']['value'] = array(
     'episode' => 'episode',
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For non-Episode */
   $handler = $view->new_display('block', 'For non-Episode', 'block_2');
@@ -11618,6 +11924,16 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['type']['value'] = array(
     'episode' => 'episode',
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_related_content'] = array(
     t('Master'),
     t('<none>'),
@@ -11849,6 +12165,16 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     'page' => 'page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -12603,6 +12929,17 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['relationship'] = 'reverse_field_speakers_civicrm_event';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For Library resources */
   $handler = $view->new_display('block', 'For Library resources', 'block_3');
@@ -12784,6 +13121,17 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['relationship'] = 'reverse_field_speakers_civicrm_event';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_speakers'] = array(
     t('Master'),
     t('more'),
@@ -14082,6 +14430,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -14378,6 +14736,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['path'] = 'third-space/watch';
 
   /* Display: Listen page */
@@ -14611,6 +14979,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['path'] = 'third-space/listen';
 
   /* Display: Read page */
@@ -14844,6 +15222,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['path'] = 'third-space/read';
   $translatables['cbf2019_third_space_category'] = array(
     t('Master'),
@@ -15205,6 +15593,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -15384,6 +15782,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_2']['id'] = 'status_2';
   $handler->display->display_options['filters']['status_2']['table'] = 'node';
@@ -15405,6 +15814,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
   $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 3;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
@@ -15436,6 +15856,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['id'] = 'taxonomy_vocabulary_3_tid_2';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['path'] = 'third-space/last-week';
 
   /* Display: For Third Space ministry page */
@@ -15710,6 +16141,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_2']['id'] = 'status_2';
   $handler->display->display_options['filters']['status_2']['table'] = 'node';
@@ -15731,6 +16173,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['filters']['entityqueue_relationship']['value'] = '1';
   $handler->display->display_options['filters']['entityqueue_relationship']['group'] = 3;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['id'] = 'taxonomy_vocabulary_3_tid_2';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['group'] = 3;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_2']['vocabulary'] = 'vocabulary_3';
   /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
@@ -15762,6 +16215,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     0 => '0',
   );
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
   $handler->display->display_options['path'] = 'third-space/last-month';
   $translatables['cbf2019_third_space_content'] = array(
     t('Master'),
@@ -15979,6 +16443,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -16124,6 +16598,16 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
@@ -16709,6 +17193,16 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
   $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -16913,6 +17407,16 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['filters']['is_public']['table'] = 'civicrm_event';
   $handler->display->display_options['filters']['is_public']['field'] = 'is_public';
   $handler->display->display_options['filters']['is_public']['value'] = '1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1870 => '1870',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
