@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * theme_cbf2019_features.features.field_base.inc
@@ -31,13 +32,37 @@ function theme_cbf2019_features_field_default_field_bases() {
     'type' => 'domain_entity',
   );
 
-  // Exported field_base: 'field_in_activity'.
-  $field_bases['field_in_activity'] = array(
+  // Exported field_base: 'field_highlight_video'.
+  $field_bases['field_highlight_video'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_in_activity',
+    'field_name' => 'field_highlight_video',
+    'indexes' => array(
+      'height' => array(
+        0 => 'height',
+      ),
+      'width' => array(
+        0 => 'width',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'video_filter_field',
+    'settings' => array(
+      'width_height' => 'dont',
+    ),
+    'translatable' => 0,
+    'type' => 'video_filter',
+  );
+
+  // Exported field_base: 'field_related_blogs'.
+  $field_bases['field_related_blogs'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_related_blogs',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -49,6 +74,9 @@ function theme_cbf2019_features_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
+          'entityqueue' => array(
+            'status' => 0,
+          ),
           'views-select-list' => array(
             'status' => 0,
           ),
@@ -59,7 +87,7 @@ function theme_cbf2019_features_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'activity' => 'activity',
+          'blog' => 'blog',
         ),
       ),
       'target_type' => 'node',
@@ -68,107 +96,53 @@ function theme_cbf2019_features_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_logo'.
-  $field_bases['field_logo'] = array(
+  // Exported field_base: 'field_related_episodes'.
+  $field_bases['field_related_episodes'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_logo',
+    'field_name' => 'field_related_episodes',
     'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'file',
+    'module' => 'entityreference',
     'settings' => array(
-      'display_default' => 0,
-      'display_field' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'file',
-  );
-
-  // Exported field_base: 'field_regularity'.
-  $field_bases['field_regularity'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_regularity',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'regularity',
-          'parent' => 0,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'entityqueue' => array(
+            'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'episode' => 'episode',
         ),
       ),
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_source_entity_alias'.
-  $field_bases['field_source_entity_alias'] = array(
+  // Exported field_base: 'field_short_form'.
+  $field_bases['field_short_form'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_source_entity_alias',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => '$entity_field[0][\'value\'] = "";',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => 0,
-        'data_length' => 255,
-        'data_not_NULL' => 0,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'recalculate' => 0,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
-  );
-
-  // Exported field_base: 'field_source_entity_id'.
-  $field_bases['field_source_entity_id'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_source_entity_id',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_source_entity_type'.
-  $field_bases['field_source_entity_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_source_entity_type',
+    'field_name' => 'field_short_form',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -176,11 +150,9 @@ function theme_cbf2019_features_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 64,
-    ),
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_subtitle'.
@@ -202,53 +174,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_summary'.
-  $field_bases['field_summary'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_summary',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_time_of_day'.
-  $field_bases['field_time_of_day'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_time_of_day',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'time_of_day',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_title'.
@@ -292,60 +217,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'taxonomy_vocabulary_1'.
-  $field_bases['taxonomy_vocabulary_1'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'taxonomy_vocabulary_1',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'vocabulary_1',
-          'parent' => 0,
-        ),
-      ),
-      'required' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'taxonomy_vocabulary_3'.
-  $field_bases['taxonomy_vocabulary_3'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'taxonomy_vocabulary_3',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'vocabulary_3',
-          'parent' => 0,
-        ),
-      ),
-      'required' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;
