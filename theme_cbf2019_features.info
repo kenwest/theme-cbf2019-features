@@ -50,6 +50,7 @@ features[image][] = title
 features[menu_custom][] = menu-cbf-2019-main-menu
 features[menu_custom][] = menu-cbf-2019-plus-menu
 features[menu_custom][] = menu-third-space-main-menu
+features[menu_links][] = management_collections:admin/cbf/collections
 features[menu_links][] = menu-cbf-2019-main-menu_about-us:node/3670
 features[menu_links][] = menu-cbf-2019-main-menu_activities:node/3686
 features[menu_links][] = menu-cbf-2019-main-menu_blog:articles

@@ -11,6 +11,24 @@
 function theme_cbf2019_features_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: management_collections:admin/cbf/collections.
+  $menu_links['management_collections:admin/cbf/collections'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/cbf/collections',
+    'router_path' => 'admin/cbf/collections',
+    'link_title' => 'Collections',
+    'options' => array(
+      'identifier' => 'management_collections:admin/cbf/collections',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'management_content:admin/content',
+  );
   // Exported menu link: menu-cbf-2019-main-menu_about-us:node/3670.
   $menu_links['menu-cbf-2019-main-menu_about-us:node/3670'] = array(
     'menu_name' => 'menu-cbf-2019-main-menu',
@@ -721,6 +739,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Bible and prayer');
   t('Bigger Questions');
   t('Blog');
+  t('Collections');
   t('Entertainment');
   t('Environment and science');
   t('Food');
