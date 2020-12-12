@@ -2064,6 +2064,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'collection/%';
   $translatables['cbf2019_collection'] = array(
     t('Master'),
@@ -2290,6 +2291,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'admin/cbf/collections';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Collections';
@@ -2496,6 +2498,339 @@ function theme_cbf2019_features_views_default_views() {
     t('For CBF Plus library'),
   );
   $export['cbf2019_collection_slider'] = $view;
+
+  $view = new view();
+  $view->name = 'cbf2019_collections';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 collections';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '[field_title]';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['alter']['text'] = '<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [field_subtitle]
+  </div>
+</div>';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Field: Activity sidebar */
+  $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['label'] = '';
+  $handler->display->display_options['fields']['field_short_form']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_short_form']['alter']['text'] = '<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [field_short_form]
+  </div>
+</div>';
+  $handler->display->display_options['fields']['field_short_form']['element_label_colon'] = FALSE;
+  /* Contextual filter: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['arguments']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['arguments']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['arguments']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['arguments']['entityform_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['entityform_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['entityform_id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['entityform_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['entityform_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['entityform_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['entityform_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['entityform_id']['validate']['type'] = 'numeric';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'collection' => 'collection',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'collection/%';
+  $translatables['cbf2019_collections'] = array(
+    t('Master'),
+    t('[field_title]'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [field_subtitle]
+  </div>
+</div>'),
+    t('<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    [field_short_form]
+  </div>
+</div>'),
+    t('All'),
+    t('Page'),
+  );
+  $export['cbf2019_collections'] = $view;
+
+  $view = new view();
+  $view->name = 'cbf2019_collections_admin_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 collections admin view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'cbf2019 collections admin view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'entityform_id' => 'entityform_id',
+  );
+  $handler->display->display_options['style_options']['class'] = '';
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections assumes they contain no more than 8 library episodes, 8 blogs and 3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
+
+<ol>
+<li>You can <a href="/eform/submit/collection">create a new Collection</a></li>
+<li>To be usable, the collection must have a subtitle, description and title image</ii>
+<li>To find an existing collection, use the form below to narrow the search by name or description</ii>
+<li>The listing of collections tells you how many Blogs, Episodes and Third Space Categories are in each collection. The listing also shows you some of the Description.</ii>
+<li>To edit or delete a collection, click the Edit link and from there you can either edit and Save, or Delete the collection.</ii>
+</ol>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'log' => 0,
+      ),
+    ),
+  );
+  /* Field: Entityform Submission: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  /* Field: Field: Activity sidebar */
+  $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['label'] = 'Description';
+  $handler->display->display_options['fields']['field_short_form']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['field_short_form']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_short_form']['type'] = 'text_plain';
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Entityform Submission: Related blogs */
+  $handler->display->display_options['fields']['field_related_blogs']['id'] = 'field_related_blogs';
+  $handler->display->display_options['fields']['field_related_blogs']['table'] = 'field_data_field_related_blogs';
+  $handler->display->display_options['fields']['field_related_blogs']['field'] = 'field_related_blogs';
+  $handler->display->display_options['fields']['field_related_blogs']['label'] = 'Blogs';
+  $handler->display->display_options['fields']['field_related_blogs']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_related_blogs']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_related_blogs']['multi_type'] = 'count';
+  /* Field: Entityform Submission: Related episodes */
+  $handler->display->display_options['fields']['field_related_episodes']['id'] = 'field_related_episodes';
+  $handler->display->display_options['fields']['field_related_episodes']['table'] = 'field_data_field_related_episodes';
+  $handler->display->display_options['fields']['field_related_episodes']['field'] = 'field_related_episodes';
+  $handler->display->display_options['fields']['field_related_episodes']['label'] = 'Episodes';
+  $handler->display->display_options['fields']['field_related_episodes']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_related_episodes']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_related_episodes']['multi_type'] = 'count';
+  /* Field: Field: Third Space categories */
+  $handler->display->display_options['fields']['field_third_space_category']['id'] = 'field_third_space_category';
+  $handler->display->display_options['fields']['field_third_space_category']['table'] = 'field_data_field_third_space_category';
+  $handler->display->display_options['fields']['field_third_space_category']['field'] = 'field_third_space_category';
+  $handler->display->display_options['fields']['field_third_space_category']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_third_space_category']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_third_space_category']['multi_type'] = 'count';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = 'Operations';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '<a href="/collection/[entityform_id]">View</a>&nbsp;&nbsp;
+<a href="/entityform/[entityform_id]/edit?destination=admin/cbf/collections">Edit</a>';
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'collection' => 'collection',
+  );
+  /* Filter criterion: Entityform Submission: Title (field_title) */
+  $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
+  $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_title_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_title_value']['expose']['operator_id'] = 'field_title_value_op';
+  $handler->display->display_options['filters']['field_title_value']['expose']['label'] = 'Title contains';
+  $handler->display->display_options['filters']['field_title_value']['expose']['operator'] = 'field_title_value_op';
+  $handler->display->display_options['filters']['field_title_value']['expose']['identifier'] = 'field_title_value';
+  $handler->display->display_options['filters']['field_title_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_field'] = 'field_title';
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field: Activity sidebar (field_short_form) */
+  $handler->display->display_options['filters']['field_short_form_value']['id'] = 'field_short_form_value';
+  $handler->display->display_options['filters']['field_short_form_value']['table'] = 'field_data_field_short_form';
+  $handler->display->display_options['filters']['field_short_form_value']['field'] = 'field_short_form_value';
+  $handler->display->display_options['filters']['field_short_form_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_short_form_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['operator_id'] = 'field_short_form_value_op';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['label'] = 'Description contains';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['operator'] = 'field_short_form_value_op';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['identifier'] = 'field_short_form_value';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['autocomplete_field'] = 'field_short_form';
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_short_form_value']['expose']['autocomplete_dependent'] = 0;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/collections';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Collections';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['cbf2019_collections_admin_view'] = array(
+    t('Master'),
+    t('cbf2019 collections admin view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections assumes they contain no more than 8 library episodes, 8 blogs and 3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
+
+<ol>
+<li>You can <a href="/eform/submit/collection">create a new Collection</a></li>
+<li>To be usable, the collection must have a subtitle, description and title image</ii>
+<li>To find an existing collection, use the form below to narrow the search by name or description</ii>
+<li>The listing of collections tells you how many Blogs, Episodes and Third Space Categories are in each collection. The listing also shows you some of the Description.</ii>
+<li>To edit or delete a collection, click the Edit link and from there you can either edit and Save, or Delete the collection.</ii>
+</ol>'),
+    t('Entityform Submission'),
+    t('- Choose an operation -'),
+    t('Title'),
+    t('Description'),
+    t('Title image'),
+    t('Blogs'),
+    t('Episodes'),
+    t('Third Space categories'),
+    t('Operations'),
+    t('<a href="/collection/[entityform_id]">View</a>&nbsp;&nbsp;
+<a href="/entityform/[entityform_id]/edit?destination=admin/cbf/collections">Edit</a>'),
+    t('.'),
+    t('Title contains'),
+    t('Description contains'),
+    t('Page'),
+  );
+  $export['cbf2019_collections_admin_view'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_content_details_table';
