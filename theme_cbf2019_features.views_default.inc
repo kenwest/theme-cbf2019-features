@@ -346,6 +346,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['label'] = 'Author';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['id'] = 'reverse_field_related_blogs_entityform';
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['field'] = 'reverse_field_related_blogs_entityform';
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
@@ -1365,6 +1369,18 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Content author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['label'] = 'Author';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['id'] = 'reverse_field_related_blogs_entityform';
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['field'] = 'reverse_field_related_blogs_entityform';
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['label'] = 'Collection';
+  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -1450,20 +1466,19 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Collection (field_collection) */
-  $handler->display->display_options['arguments']['field_collection_tid']['id'] = 'field_collection_tid';
-  $handler->display->display_options['arguments']['field_collection_tid']['table'] = 'field_data_field_collection';
-  $handler->display->display_options['arguments']['field_collection_tid']['field'] = 'field_collection_tid';
-  $handler->display->display_options['arguments']['field_collection_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_collection_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_collection_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_collection_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_collection_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_collection_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_collection_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_collection_tid']['validate_options']['vocabularies'] = array(
-    'collection' => 'collection',
-  );
+  /* Contextual filter: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['arguments']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['arguments']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['arguments']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['arguments']['entityform_id']['relationship'] = 'reverse_field_related_blogs_entityform';
+  $handler->display->display_options['arguments']['entityform_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['entityform_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['entityform_id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['entityform_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['entityform_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['entityform_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['entityform_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['entityform_id']['validate']['type'] = 'numeric';
   /* Contextual filter: Domain Access: Domain ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
@@ -1675,6 +1690,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('<span id="cbf2019-blog-view-header">Blog</span>'),
     t('Author'),
+    t('Entityform Submission referencing Content from field_related_blogs'),
     t('[name]'),
     t('[field_speakers] | [field_episode_date]'),
     t('READ MORE'),
@@ -1698,6 +1714,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Activity'),
     t('For Collection'),
     t('This display shows the recent blog articles for a Collection'),
+    t('Collection'),
     t('For National Activity'),
     t('Recent blog articles for a national activity'),
   );
