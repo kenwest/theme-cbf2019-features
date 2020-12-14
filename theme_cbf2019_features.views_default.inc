@@ -2518,7 +2518,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_collections';
-  $view->description = '';
+  $view->description = 'A page showing the library resources, blogs and Third Space categories in a Collection';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 collections';
@@ -2618,7 +2618,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_collections_admin_view';
-  $view->description = '';
+  $view->description = 'Administer collections';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 collections admin view';
