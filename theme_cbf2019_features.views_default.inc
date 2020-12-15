@@ -2628,7 +2628,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'cbf2019 collections admin view';
+  $handler->display->display_options['title'] = 'Collections';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -2808,7 +2808,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['cbf2019_collections_admin_view'] = array(
     t('Master'),
-    t('cbf2019 collections admin view'),
+    t('Collections'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -7586,7 +7586,7 @@ To create a new CiviCRM Event
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'cbf2019 ministry team admin view';
+  $handler->display->display_options['title'] = 'Ministry teams';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -7953,7 +7953,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['path'] = 'admin/cbf/ministry-teams';
   $translatables['cbf2019_ministry_team_admin_view'] = array(
     t('Master'),
-    t('cbf2019 ministry team admin view'),
+    t('Ministry teams'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -12028,7 +12028,7 @@ else {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Regular venue admin view';
+  $handler->display->display_options['title'] = 'Regular venues';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -12247,7 +12247,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['path'] = 'admin/cbf/regular-venues';
   $translatables['cbf2019_regular_venue_admin_view'] = array(
     t('Master'),
-    t('Regular venue admin view'),
+    t('Regular venues'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -12818,7 +12818,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'cbf2019 speaker admin view';
+  $handler->display->display_options['title'] = 'Speakers';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -13276,7 +13276,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['menu']['name'] = 'management';
   $translatables['cbf2019_speaker_admin_view'] = array(
     t('Master'),
-    t('cbf2019 speaker admin view'),
+    t('Speakers'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -13848,7 +13848,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Staff admin view';
+  $handler->display->display_options['title'] = 'Staff';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -14152,7 +14152,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['path'] = 'admin/cbf/staff';
   $translatables['cbf2019_staff_admin_view'] = array(
     t('Master'),
-    t('Staff admin view'),
+    t('Staff'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -17239,7 +17239,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Title header admin view';
+  $handler->display->display_options['title'] = 'Title headers';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -17485,7 +17485,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['path'] = 'admin/cbf/title-headers';
   $translatables['cbf2019_title_header_admin_view'] = array(
     t('Master'),
-    t('Title header admin view'),
+    t('Title headers'),
     t('more'),
     t('Apply'),
     t('Reset'),
