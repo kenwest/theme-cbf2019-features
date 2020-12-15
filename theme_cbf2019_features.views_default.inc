@@ -2660,7 +2660,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections assumes they contain no more than 8 library episodes, 8 blogs and 3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
+  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections works best if they contain no more than 12 library episodes, 6 blogs and ~3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
 
 <ol>
 <li>You can <a href="/eform/submit/collection">create a new Collection</a></li>
@@ -2822,7 +2822,7 @@ function theme_cbf2019_features_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections assumes they contain no more than 8 library episodes, 8 blogs and 3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
+    t('This view allows you to find and edit Collections. Collections are thematic groupings of Articles (blogs and library episodes) and Terms (Third Space categories). <em>The current implementation of Collections works best if they contain no more than 12 library episodes, 6 blogs and ~3 Third Space categories. Further development work is required to support larger Collections (esp searching).</em>
 
 <ol>
 <li>You can <a href="/eform/submit/collection">create a new Collection</a></li>
