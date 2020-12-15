@@ -2557,6 +2557,7 @@ function theme_cbf2019_features_views_default_views() {
   </div>
 </div>';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'h4 align-center';
   /* Field: Field: Activity sidebar */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
