@@ -14623,9 +14623,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
-    'collection' => 'collection',
-  );
   /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
   $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
@@ -14638,7 +14635,23 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   /* Display: For collections */
   $handler = $view->new_display('block', 'For collections', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Show on a Collection page';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'collection' => 'collection',
+  );
   $translatables['cbf2019_term_promotional_slider'] = array(
     t('Master'),
     t('more'),
