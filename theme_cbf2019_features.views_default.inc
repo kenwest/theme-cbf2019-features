@@ -3742,6 +3742,77 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_domain'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_entityform_promotional_slider';
+  $view->description = 'Slider showing promotional material for entityforms';
+  $view->tag = 'slider, fieldwise, unique';
+  $view->base_table = 'entityform';
+  $view->human_name = 'cbf2019 entityform promotional slider';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'bg-gray-view-content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['style_options']['wrap'] = '0';
+  $handler->display->display_options['style_options']['visible'] = '';
+  $handler->display->display_options['style_options']['auto'] = '0';
+  $handler->display->display_options['style_options']['autoPause'] = 1;
+  $handler->display->display_options['style_options']['easing'] = '';
+  $handler->display->display_options['style_options']['vertical'] = 0;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Promotional videos */
+  $handler->display->display_options['fields']['field_highlight_video']['id'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['field'] = 'field_highlight_video';
+  $handler->display->display_options['fields']['field_highlight_video']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_video']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_video']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_highlight_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_highlight_video']['multi_type'] = 'ul';
+  /* Contextual filter: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['arguments']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['arguments']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['arguments']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['arguments']['entityform_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['entityform_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['entityform_id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['entityform_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['entityform_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['entityform_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['entityform_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['entityform_id']['validate']['type'] = 'numeric';
+  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
+  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
+  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
+  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
+
+  /* Display: For all types */
+  $handler = $view->new_display('block', 'For all types', 'block');
+  $translatables['cbf2019_entityform_promotional_slider'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('For all types'),
+  );
+  $export['cbf2019_entityform_promotional_slider'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_entityqueue_content';
   $view->description = 'Shows content from an entityqueue';
   $view->tag = 'default';

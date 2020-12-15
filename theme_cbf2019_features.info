@@ -101,6 +101,7 @@ features[views_view][] = cbf2019_content_details_table
 features[views_view][] = cbf2019_content_highlight_slider
 features[views_view][] = cbf2019_content_videos
 features[views_view][] = cbf2019_domain
+features[views_view][] = cbf2019_entityform_promotional_slider
 features[views_view][] = cbf2019_entityqueue_content
 features[views_view][] = cbf2019_event_admin_view
 features[views_view][] = cbf2019_event_details
