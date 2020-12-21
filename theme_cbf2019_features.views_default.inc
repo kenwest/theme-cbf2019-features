@@ -3424,12 +3424,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
   $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
   /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
-  $handler->display->display_options['filters']['field_highlight_video_url']['id'] = 'field_highlight_video_url';
-  $handler->display->display_options['filters']['field_highlight_video_url']['table'] = 'field_data_field_highlight_video';
-  $handler->display->display_options['filters']['field_highlight_video_url']['field'] = 'field_highlight_video_url';
-  $handler->display->display_options['filters']['field_highlight_video_url']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_video_url']['group'] = 2;
-  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
   $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
   $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
@@ -3452,6 +3446,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
     1957 => '1957',
   );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
