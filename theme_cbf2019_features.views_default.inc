@@ -14076,6 +14076,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = 'Position';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['group_column'] = 'entity_id';
   /* Field: Entityform Submission: Staff groups */
   $handler->display->display_options['fields']['field_staff_groups']['id'] = 'field_staff_groups';
   $handler->display->display_options['fields']['field_staff_groups']['table'] = 'field_data_field_staff_groups';
@@ -14247,6 +14254,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Name'),
     t('Weight'),
     t('Position'),
+    t('Ministry Centre'),
     t('Staff groups'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
