@@ -2930,6 +2930,10 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['entityform_id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Sort criterion: Entityqueue: Entityform Submission Queue Position */
+  $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   /* Filter criterion: Entityform Submission: Entityform Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'entityform';
