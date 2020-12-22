@@ -8271,6 +8271,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_3']['view'] = 'cbf2019_blog';
   $handler->display->display_options['fields']['view_3']['display'] = 'block_4';
   $handler->display->display_options['fields']['view_3']['arguments'] = '!1';
+  /* Field: Collections */
+  $handler->display->display_options['fields']['view_10']['id'] = 'view_10';
+  $handler->display->display_options['fields']['view_10']['table'] = 'views';
+  $handler->display->display_options['fields']['view_10']['field'] = 'view';
+  $handler->display->display_options['fields']['view_10']['ui_name'] = 'Collections';
+  $handler->display->display_options['fields']['view_10']['view'] = 'cbf2019_collections_slider';
+  $handler->display->display_options['fields']['view_10']['display'] = 'block_3';
+  $handler->display->display_options['fields']['view_10']['arguments'] = '!1';
   /* Field: Recycled content */
   $handler->display->display_options['fields']['view_4']['id'] = 'view_4';
   $handler->display->display_options['fields']['view_4']['table'] = 'views';
@@ -8404,118 +8412,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: For Networks pattern */
   $handler = $view->new_display('block', 'For Networks pattern', 'block_2');
   $handler->display->display_options['display_description'] = 'For activities that fit the Networks pattern';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Networks visibility */
-  $handler->display->display_options['fields']['field_networks_visibility']['id'] = 'field_networks_visibility';
-  $handler->display->display_options['fields']['field_networks_visibility']['table'] = 'field_data_field_networks_visibility';
-  $handler->display->display_options['fields']['field_networks_visibility']['field'] = 'field_networks_visibility';
-  $handler->display->display_options['fields']['field_networks_visibility']['ui_name'] = 'Networks visibility';
-  $handler->display->display_options['fields']['field_networks_visibility']['label'] = '';
-  $handler->display->display_options['fields']['field_networks_visibility']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_networks_visibility']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_networks_visibility']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_networks_visibility']['delta_offset'] = '0';
-  /* Field: Regular venues */
-  $handler->display->display_options['fields']['view_6']['id'] = 'view_6';
-  $handler->display->display_options['fields']['view_6']['table'] = 'views';
-  $handler->display->display_options['fields']['view_6']['field'] = 'view';
-  $handler->display->display_options['fields']['view_6']['ui_name'] = 'Regular venues';
-  $handler->display->display_options['fields']['view_6']['label'] = '';
-  $handler->display->display_options['fields']['view_6']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_6']['view'] = 'cbf2019_national_activity_regular_venues';
-  $handler->display->display_options['fields']['view_6']['display'] = 'block';
-  $handler->display->display_options['fields']['view_6']['arguments'] = '!1';
-  /* Field: Upcoming events */
-  $handler->display->display_options['fields']['view_5']['id'] = 'view_5';
-  $handler->display->display_options['fields']['view_5']['table'] = 'views';
-  $handler->display->display_options['fields']['view_5']['field'] = 'view';
-  $handler->display->display_options['fields']['view_5']['ui_name'] = 'Upcoming events';
-  $handler->display->display_options['fields']['view_5']['label'] = '';
-  $handler->display->display_options['fields']['view_5']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_5']['view'] = 'cbf2019_national_activity_event_slider';
-  $handler->display->display_options['fields']['view_5']['display'] = 'block';
-  $handler->display->display_options['fields']['view_5']['arguments'] = '!1';
-  /* Field: Event Promotional material */
-  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
-  $handler->display->display_options['fields']['view_1']['table'] = 'views';
-  $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Event Promotional material';
-  $handler->display->display_options['fields']['view_1']['label'] = '';
-  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'cbf2019_content_highlight_slider';
-  $handler->display->display_options['fields']['view_1']['display'] = 'block_3';
-  $handler->display->display_options['fields']['view_1']['arguments'] = '!1';
-  /* Field: Speakers */
-  $handler->display->display_options['fields']['view_7']['id'] = 'view_7';
-  $handler->display->display_options['fields']['view_7']['table'] = 'views';
-  $handler->display->display_options['fields']['view_7']['field'] = 'view';
-  $handler->display->display_options['fields']['view_7']['ui_name'] = 'Speakers';
-  $handler->display->display_options['fields']['view_7']['label'] = '';
-  $handler->display->display_options['fields']['view_7']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_7']['view'] = 'cbf2019_speakers';
-  $handler->display->display_options['fields']['view_7']['display'] = 'block_5';
-  $handler->display->display_options['fields']['view_7']['arguments'] = '!1';
-  /* Field: Map */
-  $handler->display->display_options['fields']['view_8']['id'] = 'view_8';
-  $handler->display->display_options['fields']['view_8']['table'] = 'views';
-  $handler->display->display_options['fields']['view_8']['field'] = 'view';
-  $handler->display->display_options['fields']['view_8']['ui_name'] = 'Map';
-  $handler->display->display_options['fields']['view_8']['label'] = '';
-  $handler->display->display_options['fields']['view_8']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_8']['view'] = 'cbf2019_mappable';
-  $handler->display->display_options['fields']['view_8']['display'] = 'block_3';
-  $handler->display->display_options['fields']['view_8']['arguments'] = '!1';
-  /* Field: Staff */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'Staff';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['view']['view'] = 'cbf2019_staff_slider';
-  $handler->display->display_options['fields']['view']['display'] = 'block_2';
-  $handler->display->display_options['fields']['view']['arguments'] = '!1';
-  /* Field: Recent resources */
-  $handler->display->display_options['fields']['view_2']['id'] = 'view_2';
-  $handler->display->display_options['fields']['view_2']['table'] = 'views';
-  $handler->display->display_options['fields']['view_2']['field'] = 'view';
-  $handler->display->display_options['fields']['view_2']['ui_name'] = 'Recent resources';
-  $handler->display->display_options['fields']['view_2']['label'] = '';
-  $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_2']['view'] = 'cbf2019_recent_library';
-  $handler->display->display_options['fields']['view_2']['display'] = 'block_5';
-  $handler->display->display_options['fields']['view_2']['arguments'] = '!1';
-  /* Field: Blog entries */
-  $handler->display->display_options['fields']['view_3']['id'] = 'view_3';
-  $handler->display->display_options['fields']['view_3']['table'] = 'views';
-  $handler->display->display_options['fields']['view_3']['field'] = 'view';
-  $handler->display->display_options['fields']['view_3']['ui_name'] = 'Blog entries';
-  $handler->display->display_options['fields']['view_3']['label'] = '';
-  $handler->display->display_options['fields']['view_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_3']['view'] = 'cbf2019_blog';
-  $handler->display->display_options['fields']['view_3']['display'] = 'block_4';
-  $handler->display->display_options['fields']['view_3']['arguments'] = '!1';
-  /* Field: Recycled content */
-  $handler->display->display_options['fields']['view_4']['id'] = 'view_4';
-  $handler->display->display_options['fields']['view_4']['table'] = 'views';
-  $handler->display->display_options['fields']['view_4']['field'] = 'view';
-  $handler->display->display_options['fields']['view_4']['ui_name'] = 'Recycled content';
-  $handler->display->display_options['fields']['view_4']['label'] = '';
-  $handler->display->display_options['fields']['view_4']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_4']['view'] = 'cbf2019_recycled_content';
-  $handler->display->display_options['fields']['view_4']['display'] = 'block_2';
-  $handler->display->display_options['fields']['view_4']['arguments'] = '!1';
-  /* Field: Activity promotional material */
-  $handler->display->display_options['fields']['view_9']['id'] = 'view_9';
-  $handler->display->display_options['fields']['view_9']['table'] = 'views';
-  $handler->display->display_options['fields']['view_9']['field'] = 'view';
-  $handler->display->display_options['fields']['view_9']['ui_name'] = 'Activity promotional material';
-  $handler->display->display_options['fields']['view_9']['label'] = '';
-  $handler->display->display_options['fields']['view_9']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_9']['view'] = 'cbf2019_content_highlight_slider';
-  $handler->display->display_options['fields']['view_9']['display'] = 'block_2';
-  $handler->display->display_options['fields']['view_9']['arguments'] = '!1';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -8661,6 +8557,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_3']['view'] = 'cbf2019_blog';
   $handler->display->display_options['fields']['view_3']['display'] = 'block_4';
   $handler->display->display_options['fields']['view_3']['arguments'] = '!1';
+  /* Field: Collections */
+  $handler->display->display_options['fields']['view_10']['id'] = 'view_10';
+  $handler->display->display_options['fields']['view_10']['table'] = 'views';
+  $handler->display->display_options['fields']['view_10']['field'] = 'view';
+  $handler->display->display_options['fields']['view_10']['ui_name'] = 'Collections';
+  $handler->display->display_options['fields']['view_10']['view'] = 'cbf2019_collections_slider';
+  $handler->display->display_options['fields']['view_10']['display'] = 'block_3';
+  $handler->display->display_options['fields']['view_10']['arguments'] = '!1';
   /* Field: Recycled content */
   $handler->display->display_options['fields']['view_4']['id'] = 'view_4';
   $handler->display->display_options['fields']['view_4']['table'] = 'views';
@@ -8823,6 +8727,14 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_2']['view'] = 'cbf2019_recent_library';
   $handler->display->display_options['fields']['view_2']['display'] = 'block_5';
   $handler->display->display_options['fields']['view_2']['arguments'] = '!1';
+  /* Field: Collections */
+  $handler->display->display_options['fields']['view_10']['id'] = 'view_10';
+  $handler->display->display_options['fields']['view_10']['table'] = 'views';
+  $handler->display->display_options['fields']['view_10']['field'] = 'view';
+  $handler->display->display_options['fields']['view_10']['ui_name'] = 'Collections';
+  $handler->display->display_options['fields']['view_10']['view'] = 'cbf2019_collections_slider';
+  $handler->display->display_options['fields']['view_10']['display'] = 'block_3';
+  $handler->display->display_options['fields']['view_10']['arguments'] = '!1';
   /* Field: Recycled content */
   $handler->display->display_options['fields']['view_4']['id'] = 'view_4';
   $handler->display->display_options['fields']['view_4']['table'] = 'views';
@@ -8900,6 +8812,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('All'),
+    t('View'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
     t('For Whats On pattern'),
