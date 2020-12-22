@@ -2977,6 +2977,31 @@ function theme_cbf2019_features_views_default_views() {
     'cbf_plus_home_page_slider' => 0,
     'cbf_library_collections_slider' => 0,
   );
+
+  /* Display: For Activity */
+  $handler = $view->new_display('block', 'For Activity', 'block_3');
+  $handler->display->display_options['display_description'] = 'Shows the Activity\'s collections in the order specified';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_collections_node']['id'] = 'reverse_field_collections_node';
+  $handler->display->display_options['relationships']['reverse_field_collections_node']['table'] = 'entityform';
+  $handler->display->display_options['relationships']['reverse_field_collections_node']['field'] = 'reverse_field_collections_node';
+  $handler->display->display_options['relationships']['reverse_field_collections_node']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['reverse_field_collections_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_collections_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
   $translatables['cbf2019_collections_slider'] = array(
     t('Master'),
     t('more'),
@@ -2993,6 +3018,10 @@ function theme_cbf2019_features_views_default_views() {
     t('Don\'t display this block - for defaults only'),
     t('For CBF library'),
     t('For CBF Plus library'),
+    t('For Activity'),
+    t('Shows the Activity\'s collections in the order specified'),
+    t('Activity'),
+    t('All'),
   );
   $export['cbf2019_collections_slider'] = $view;
 
