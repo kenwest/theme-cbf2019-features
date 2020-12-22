@@ -3392,6 +3392,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['null']['validate']['type'] = 'numeric';
   $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
+  /* Contextual filter: CiviCRM Event: Domain (field_domain) */
+  $handler->display->display_options['arguments']['field_domain_domain_id']['id'] = 'field_domain_domain_id';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['table'] = 'field_data_field_domain';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['field'] = 'field_domain_domain_id';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -13728,6 +13738,16 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['arguments']['null_1']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['null_1']['validate']['type'] = 'numeric';
   $handler->display->display_options['arguments']['null_1']['validate']['fail'] = 'ignore';
+  /* Contextual filter: CiviCRM Event: Domain (field_domain) */
+  $handler->display->display_options['arguments']['field_domain_domain_id']['id'] = 'field_domain_domain_id';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['table'] = 'field_data_field_domain';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['field'] = 'field_domain_domain_id';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
