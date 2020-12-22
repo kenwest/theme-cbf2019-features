@@ -3328,11 +3328,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['id']['separator'] = '';
-  /* Field: Field: Ministry Centre */
+  /* Field: Ministry Centre filtered during post-execute */
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['ui_name'] = 'Ministry Centre filtered during post-execute';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
@@ -3377,11 +3378,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Ministry Centre */
+  /* Contextual filter: Ministry Centre filter applied during post-execute */
   $handler->display->display_options['arguments']['null']['id'] = 'null';
   $handler->display->display_options['arguments']['null']['table'] = 'views';
   $handler->display->display_options['arguments']['null']['field'] = 'null';
-  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre filter applied during post-execute';
   $handler->display->display_options['arguments']['null']['default_action'] = 'default';
   $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
@@ -3389,10 +3390,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['null']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['null']['validate_options']['vocabularies'] = array(
-    'vocabulary_1' => 'vocabulary_1',
-  );
+  $handler->display->display_options['arguments']['null']['validate']['type'] = 'numeric';
   $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
@@ -9012,23 +9010,20 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['arguments']['field_in_activity_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_in_activity_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_in_activity_target_id']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Ministry Centre */
-  $handler->display->display_options['arguments']['null']['id'] = 'null';
-  $handler->display->display_options['arguments']['null']['table'] = 'views';
-  $handler->display->display_options['arguments']['null']['field'] = 'null';
-  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
-  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['null']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['null']['validate_options']['vocabularies'] = array(
-    'vocabulary_1' => 'vocabulary_1',
-  );
-  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Ministry Centre filter applied during post-execute */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['ui_name'] = 'Ministry Centre filter applied during post-execute';
+  $handler->display->display_options['arguments']['null_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null_1']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null_1']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null_1']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['null_1']['validate']['fail'] = 'ignore';
   /* Contextual filter: CiviCRM Event: Domain (field_domain) */
   $handler->display->display_options['arguments']['field_domain_domain_id']['id'] = 'field_domain_domain_id';
   $handler->display->display_options['arguments']['field_domain_domain_id']['table'] = 'field_data_field_domain';
@@ -13698,11 +13693,12 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['fields']['description']['field'] = 'description';
   $handler->display->display_options['fields']['description']['label'] = '';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Field: Ministry Centre */
+  /* Field: Ministry Centre filtered during post-execute */
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['relationship'] = 'reverse_field_speakers_civicrm_event';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['ui_name'] = 'Ministry Centre filtered during post-execute';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
@@ -13718,23 +13714,20 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Ministry Centre */
-  $handler->display->display_options['arguments']['null']['id'] = 'null';
-  $handler->display->display_options['arguments']['null']['table'] = 'views';
-  $handler->display->display_options['arguments']['null']['field'] = 'null';
-  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
-  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['null']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['null']['validate_options']['vocabularies'] = array(
-    'vocabulary_1' => 'vocabulary_1',
-  );
-  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Ministry Centre filter applied during post-execute */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['ui_name'] = 'Ministry Centre filter applied during post-execute';
+  $handler->display->display_options['arguments']['null_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null_1']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null_1']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null_1']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['null_1']['validate']['fail'] = 'ignore';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
@@ -14522,22 +14515,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate_options']['vocabularies'] = array(
-    'vocabulary_1' => 'vocabulary_1',
-  );
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Ministry Centre filter applied during post-execute */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre filter applied during post-execute';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
 
   /* Display: Staff slider for Third Space */
   $handler = $view->new_display('block', 'Staff slider for Third Space', 'block_3');
