@@ -8276,6 +8276,8 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_10']['table'] = 'views';
   $handler->display->display_options['fields']['view_10']['field'] = 'view';
   $handler->display->display_options['fields']['view_10']['ui_name'] = 'Collections';
+  $handler->display->display_options['fields']['view_10']['label'] = '';
+  $handler->display->display_options['fields']['view_10']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_10']['view'] = 'cbf2019_collections_slider';
   $handler->display->display_options['fields']['view_10']['display'] = 'block_3';
   $handler->display->display_options['fields']['view_10']['arguments'] = '!1';
@@ -8562,6 +8564,8 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_10']['table'] = 'views';
   $handler->display->display_options['fields']['view_10']['field'] = 'view';
   $handler->display->display_options['fields']['view_10']['ui_name'] = 'Collections';
+  $handler->display->display_options['fields']['view_10']['label'] = '';
+  $handler->display->display_options['fields']['view_10']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_10']['view'] = 'cbf2019_collections_slider';
   $handler->display->display_options['fields']['view_10']['display'] = 'block_3';
   $handler->display->display_options['fields']['view_10']['arguments'] = '!1';
@@ -8732,6 +8736,8 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['view_10']['table'] = 'views';
   $handler->display->display_options['fields']['view_10']['field'] = 'view';
   $handler->display->display_options['fields']['view_10']['ui_name'] = 'Collections';
+  $handler->display->display_options['fields']['view_10']['label'] = '';
+  $handler->display->display_options['fields']['view_10']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_10']['view'] = 'cbf2019_collections_slider';
   $handler->display->display_options['fields']['view_10']['display'] = 'block_3';
   $handler->display->display_options['fields']['view_10']['arguments'] = '!1';
@@ -8812,7 +8818,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('All'),
-    t('View'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
     t('For Whats On pattern'),
