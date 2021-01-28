@@ -2178,7 +2178,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_collection_node']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['relationships']['reverse_field_collection_node']['field'] = 'reverse_field_collection_node';
   $handler->display->display_options['relationships']['reverse_field_collection_node']['label'] = 'Node';
-  /* Relationship: Taxonomy term: Taxonomy term using Collection */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['id'] = 'reverse_field_collection_taxonomy_term';
   $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['relationships']['reverse_field_collection_taxonomy_term']['field'] = 'reverse_field_collection_taxonomy_term';

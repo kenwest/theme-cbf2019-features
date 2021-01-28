@@ -480,40 +480,6 @@ function theme_cbf2019_features_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-third_space_category-field_collection'.
-  $field_instances['taxonomy_term-third_space_category-field_collection'] = array(
-    'bundle' => 'third_space_category',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'This category may be added to one or more Collections. Separate collection names with a comma. As you type you can either select the name of an existing collection or type the name of a new one. Only use this field under the direction of the National Resource Manager.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_collection',
-    'label' => 'Collection',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
   // 'taxonomy_term-third_space_category-field_second_title'.
   $field_instances['taxonomy_term-third_space_category-field_second_title'] = array(
     'bundle' => 'third_space_category',
@@ -650,7 +616,6 @@ function theme_cbf2019_features_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add links to related blogs. Since items can have the same name, be careful to check the node number to see you have the right one! Put them in the order you want them to appear.');
   t('Add links to related episodes. Since items can have the same name, be careful to check the node number to see you have the right one! Put them in the order you want them to appear.');
-  t('Collection');
   t('Description');
   t('Domain');
   t('Icon name');
@@ -663,7 +628,6 @@ function theme_cbf2019_features_field_default_field_instances() {
   t('Specify the Fontawesome family and icon names, eg "fal fa-ambulance"');
   t('Subtitle');
   t('Third Space categories');
-  t('This category may be added to one or more Collections. Separate collection names with a comma. As you type you can either select the name of an existing collection or type the name of a new one. Only use this field under the direction of the National Resource Manager.');
   t('Title');
   t('Title image');
   t('Title image for the Third Space category');
