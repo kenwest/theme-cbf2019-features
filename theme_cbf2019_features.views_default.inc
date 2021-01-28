@@ -6048,7 +6048,7 @@ To create a new CiviCRM Event
   $view = new view();
   $view->name = 'cbf2019_local_events';
   $view->description = 'Upcoming events, localised to the visitor if possible';
-  $view->tag = 'merge-events';
+  $view->tag = 'do-not-merge-events';
   $view->base_table = 'civicrm_event';
   $view->human_name = 'cbf2019 local events';
   $view->core = 7;
@@ -17881,7 +17881,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<none>';
-  $handler->display->display_options['css_class'] = 'bg-gray-view-content cbf-merge-events';
+  $handler->display->display_options['css_class'] = 'bg-gray-view-content cbf-do-not-merge-events';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'All events';
