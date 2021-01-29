@@ -49,7 +49,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -44,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_activities:node/3686.
@@ -72,7 +72,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -48,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_blog:articles.
@@ -89,6 +89,29 @@ function theme_cbf2019_features_menu_default_menu_links() {
         'class' => '',
         'style' => '',
       ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_networks:node/4125.
+  $menu_links['menu-cbf-2019-main-menu_networks:node/4125'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'node/4125',
+    'router_path' => 'node/%',
+    'link_title' => 'Networks',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_networks:node/4125',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -118,7 +141,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_whats-on:node/3686.
@@ -141,7 +164,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_about-us:node/3670.

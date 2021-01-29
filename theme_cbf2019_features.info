@@ -53,6 +53,7 @@ features[menu_links][] = management_collections:admin/cbf/collections
 features[menu_links][] = menu-cbf-2019-main-menu_about-us:node/3670
 features[menu_links][] = menu-cbf-2019-main-menu_activities:node/3686
 features[menu_links][] = menu-cbf-2019-main-menu_blog:articles
+features[menu_links][] = menu-cbf-2019-main-menu_networks:node/4125
 features[menu_links][] = menu-cbf-2019-main-menu_resources:library
 features[menu_links][] = menu-cbf-2019-main-menu_whats-on:node/3686
 features[menu_links][] = menu-cbf-2019-plus-menu_about-us:node/3670
