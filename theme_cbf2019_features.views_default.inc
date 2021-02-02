@@ -346,10 +346,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['label'] = 'Author';
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['id'] = 'reverse_field_related_blogs_entityform';
-  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['field'] = 'reverse_field_related_blogs_entityform';
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
   $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
@@ -1690,7 +1686,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('<span id="cbf2019-blog-view-header">Blog</span>'),
     t('Author'),
-    t('Entityform Submission referencing Content from field_related_blogs'),
     t('[name]'),
     t('[field_speakers] | [field_episode_date]'),
     t('READ MORE'),
