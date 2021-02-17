@@ -418,17 +418,14 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Third Space restricted */
+  $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['label'] = '';
+  $handler->display->display_options['fields']['field_third_space_restricted']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['type'] = 'list_key';
   /* Sort criterion: Field: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
@@ -526,10 +523,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Date as DD Mmm */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['ui_name'] = 'Date as DD Mmm';
   $handler->display->display_options['fields']['field_episode_date']['label'] = '';
   $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
@@ -550,17 +548,14 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Third Space restricted */
+  $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['label'] = '';
+  $handler->display->display_options['fields']['field_third_space_restricted']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['type'] = 'list_key';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -624,98 +619,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
-  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
-  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
-    'bypass_access' => 0,
-    'link' => 1,
-  );
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Field: Speaker(s) */
-  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['label'] = '';
-  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
-  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
-  $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
-  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
-    'format_type' => 'custom',
-    'custom_date_format' => 'j M Y',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Field: Subtitle */
-  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
-  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Third Space restricted */
-  $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
-  $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
-  $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
-  $handler->display->display_options['fields']['field_third_space_restricted']['label'] = '';
-  $handler->display->display_options['fields']['field_third_space_restricted']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_third_space_restricted']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_third_space_restricted']['type'] = 'list_key';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Search: Score */
   $handler->display->display_options['sorts']['score']['id'] = 'score';
@@ -1217,10 +1120,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Activity excluded from display */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['ui_name'] = 'Activity excluded from display';
   $handler->display->display_options['fields']['field_in_activity']['label'] = '';
   $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
@@ -1272,22 +1176,20 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Blog label */
+  /* Field: Content: Third Space restricted */
+  $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['label'] = '';
+  $handler->display->display_options['fields']['field_third_space_restricted']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['type'] = 'list_key';
+  /* Field: Blog label for view header */
   $handler->display->display_options['fields']['field_blog_label']['id'] = 'field_blog_label';
   $handler->display->display_options['fields']['field_blog_label']['table'] = 'field_data_field_blog_label';
   $handler->display->display_options['fields']['field_blog_label']['field'] = 'field_blog_label';
   $handler->display->display_options['fields']['field_blog_label']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['fields']['field_blog_label']['ui_name'] = 'Blog label for view header';
   $handler->display->display_options['fields']['field_blog_label']['label'] = '';
   $handler->display->display_options['fields']['field_blog_label']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_blog_label']['element_label_colon'] = FALSE;
@@ -1377,90 +1279,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['field'] = 'reverse_field_related_blogs_entityform';
   $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['label'] = 'Collection';
   $handler->display->display_options['relationships']['reverse_field_related_blogs_entityform']['required'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
-  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
-  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
-    'bypass_access' => 0,
-    'link' => 1,
-  );
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Field: Speaker(s) */
-  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['label'] = '';
-  $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
-  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
-  $handler->display->display_options['fields']['field_episode_date']['label'] = '';
-  $handler->display->display_options['fields']['field_episode_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_episode_date']['alter']['text'] = '[field_speakers] | [field_episode_date]';
-  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
-    'format_type' => 'custom',
-    'custom_date_format' => 'j M',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Field: Subtitle */
-  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
-  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
-  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['arguments']['entityform_id']['id'] = 'entityform_id';
@@ -1545,10 +1363,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Activity excluded from display */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['ui_name'] = 'Activity excluded from display';
   $handler->display->display_options['fields']['field_in_activity']['label'] = '';
   $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
@@ -1600,17 +1419,14 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'READ MORE';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Third Space restricted */
+  $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
+  $handler->display->display_options['fields']['field_third_space_restricted']['label'] = '';
+  $handler->display->display_options['fields']['field_third_space_restricted']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_third_space_restricted']['type'] = 'list_key';
   /* Field: Content: Blog label */
   $handler->display->display_options['fields']['field_blog_label']['id'] = 'field_blog_label';
   $handler->display->display_options['fields']['field_blog_label']['table'] = 'field_data_field_blog_label';
@@ -1688,7 +1504,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Author'),
     t('[name]'),
     t('[field_speakers] | [field_episode_date]'),
-    t('READ MORE'),
     t('All'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
