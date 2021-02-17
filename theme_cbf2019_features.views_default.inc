@@ -5999,6 +5999,13 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
+  /* Field: CiviCRM Events: Summary */
+  $handler->display->display_options['fields']['summary']['id'] = 'summary';
+  $handler->display->display_options['fields']['summary']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['summary']['field'] = 'summary';
+  $handler->display->display_options['fields']['summary']['label'] = '';
+  $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['summary']['hide_empty'] = TRUE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
@@ -16861,6 +16868,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['city']['location_type'] = '0';
   $handler->display->display_options['fields']['city']['location_op'] = '0';
   $handler->display->display_options['fields']['city']['is_primary'] = 0;
+  /* Field: CiviCRM Events: Summary */
+  $handler->display->display_options['fields']['summary']['id'] = 'summary';
+  $handler->display->display_options['fields']['summary']['table'] = 'civicrm_event';
+  $handler->display->display_options['fields']['summary']['field'] = 'summary';
+  $handler->display->display_options['fields']['summary']['label'] = '';
+  $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['summary']['hide_empty'] = TRUE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
