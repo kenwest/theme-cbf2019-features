@@ -5913,7 +5913,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '4';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
   $handler->display->display_options['style_options']['columns_vertical'] = '4';
   $handler->display->display_options['style_options']['columns_xs'] = '12';
   $handler->display->display_options['style_options']['columns_sm'] = '6';
@@ -16672,7 +16672,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '4';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
   $handler->display->display_options['style_options']['columns_vertical'] = '4';
   $handler->display->display_options['style_options']['columns_xs'] = '12';
   $handler->display->display_options['style_options']['columns_sm'] = '6';
