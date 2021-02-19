@@ -6004,6 +6004,8 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['summary']['table'] = 'civicrm_event';
   $handler->display->display_options['fields']['summary']['field'] = 'summary';
   $handler->display->display_options['fields']['summary']['label'] = '';
+  $handler->display->display_options['fields']['summary']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['summary']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['summary']['hide_empty'] = TRUE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
@@ -9335,6 +9337,8 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['summary']['field'] = 'summary';
   $handler->display->display_options['fields']['summary']['label'] = '';
   $handler->display->display_options['fields']['summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['summary']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['summary']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
   /* Field: Field: Title image */
   $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
@@ -16758,6 +16762,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['summary']['table'] = 'civicrm_event';
   $handler->display->display_options['fields']['summary']['field'] = 'summary';
   $handler->display->display_options['fields']['summary']['label'] = '';
+  $handler->display->display_options['fields']['summary']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['summary']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['summary']['hide_empty'] = TRUE;
   /* Sort criterion: Field: Sort Order (field_sort_order) */
