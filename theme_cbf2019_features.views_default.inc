@@ -13097,7 +13097,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">Speaker</span>';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">With</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -13276,13 +13276,6 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
 
   /* Display: For Blog articles */
   $handler = $view->new_display('block', 'For Blog articles', 'block_4');
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Author';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Content using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
@@ -13460,7 +13453,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<span id="cbf2019-speakers-view-header">Speaker</span>'),
+    t('<span id="cbf2019-speakers-view-header">With</span>'),
     t('<div class="landscape-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('[field_image]'),
     t('Defaults'),
@@ -13472,7 +13465,6 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('For Library resources'),
     t('Content'),
     t('For Blog articles'),
-    t('Author'),
     t('For National Activity by Ministry Centre'),
   );
   $export['cbf2019_speakers'] = $view;
