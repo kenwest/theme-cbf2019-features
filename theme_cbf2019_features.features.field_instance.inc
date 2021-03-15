@@ -36,7 +36,7 @@ function theme_cbf2019_features_field_default_field_instances() {
       'module' => 'domain_entity',
       'settings' => array(),
       'type' => 'domain_entity_user_multiple_choice',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -69,7 +69,7 @@ function theme_cbf2019_features_field_default_field_instances() {
       'module' => 'video_filter_field',
       'settings' => array(),
       'type' => 'video_filter',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -107,7 +107,7 @@ function theme_cbf2019_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -145,7 +145,7 @@ function theme_cbf2019_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -179,7 +179,7 @@ function theme_cbf2019_features_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -245,7 +245,7 @@ function theme_cbf2019_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -345,7 +345,38 @@ function theme_cbf2019_features_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-collection-taxonomy_vocabulary_3'.
+  $field_instances['entityform-collection-taxonomy_vocabulary_3'] = array(
+    'bundle' => 'collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Who is the intended audience for the content in this collection? "Christians in the workplace" content is pitched at Christians. "General" content is for anybody whether Christian or not. "Unlisted" content is not promoted on the website - visitors need to be given a direct link to see it.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'taxonomy_vocabulary_3',
+    'label' => 'Audience',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
   );
 
@@ -616,6 +647,7 @@ function theme_cbf2019_features_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add links to related blogs. Since items can have the same name, be careful to check the node number to see you have the right one! Put them in the order you want them to appear.');
   t('Add links to related episodes. Since items can have the same name, be careful to check the node number to see you have the right one! Put them in the order you want them to appear.');
+  t('Audience');
   t('Description');
   t('Domain');
   t('Icon name');
@@ -631,6 +663,7 @@ function theme_cbf2019_features_field_default_field_instances() {
   t('Title');
   t('Title image');
   t('Title image for the Third Space category');
+  t('Who is the intended audience for the content in this collection? "Christians in the workplace" content is pitched at Christians. "General" content is for anybody whether Christian or not. "Unlisted" content is not promoted on the website - visitors need to be given a direct link to see it.');
 
   return $field_instances;
 }
