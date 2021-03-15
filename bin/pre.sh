@@ -4,4 +4,7 @@
 # Set the permissions so the webserver can update the files.
 #
 
-chmod g+w -R .
+SCRIPT=$(realpath $0)
+SCRIPTPATH=$(dirname $SCRIPT)
+
+chmod g+w -R $SCRIPTPATH/..

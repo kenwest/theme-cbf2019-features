@@ -4,4 +4,7 @@
 # Restore the permissions before committing changes to Git.
 #
 
-chmod g-w -R .
+SCRIPT=$(realpath $0)
+SCRIPTPATH=$(dirname $SCRIPT)
+
+chmod g-w -R $SCRIPTPATH/..
