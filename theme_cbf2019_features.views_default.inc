@@ -1302,6 +1302,49 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['relationship'] = 'reverse_field_related_blogs_entityform';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1957 => '1957',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1957 => '1957',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For National Activity */
   $handler = $view->new_display('block', 'For National Activity', 'block_4');
@@ -2507,11 +2550,16 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
-  /* Field: Field: Short description */
+  /* Field: Field: Audience */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['id'] = 'taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Description */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
-  $handler->display->display_options['fields']['field_short_form']['label'] = 'Description';
   $handler->display->display_options['fields']['field_short_form']['alter']['max_length'] = '128';
   $handler->display->display_options['fields']['field_short_form']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_short_form']['type'] = 'text_plain';
@@ -2645,6 +2693,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Entityform Submission'),
     t('- Choose an operation -'),
     t('Title'),
+    t('Audience'),
     t('Description'),
     t('Title image'),
     t('Blogs'),
@@ -11073,6 +11122,49 @@ else {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['relationship'] = 'reverse_field_related_episodes_entityform';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    1957 => '1957',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1957 => '1957',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 2;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
   /* Display: For National Activity */
   $handler = $view->new_display('block', 'For National Activity', 'block_5');
