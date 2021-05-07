@@ -6184,58 +6184,6 @@ To create a new CiviCRM Event
 <p>Please come back soon or contact us to find out what’s coming up.</p>';
   $handler->display->display_options['empty']['area']['format'] = '2';
 
-  /* Display: For speaker */
-  $handler = $view->new_display('block', 'For speaker', 'block_3');
-  $handler->display->display_options['display_description'] = 'Show upcoming events for a speaker';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: CiviCRM Address: Address */
-  $handler->display->display_options['relationships']['id']['id'] = 'id';
-  $handler->display->display_options['relationships']['id']['table'] = 'civicrm_address';
-  $handler->display->display_options['relationships']['id']['field'] = 'id';
-  $handler->display->display_options['relationships']['id']['label'] = 'Address';
-  $handler->display->display_options['relationships']['id']['location_type'] = '0';
-  $handler->display->display_options['relationships']['id']['location_op'] = '0';
-  $handler->display->display_options['relationships']['id']['is_primary'] = 0;
-  /* Relationship: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['label'] = 'Ministry Centre';
-  /* Relationship: Field: Speaker(s) (field_speakers) */
-  $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
-  $handler->display->display_options['relationships']['field_speakers_tid']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['relationships']['field_speakers_tid']['field'] = 'field_speakers_tid';
-  $handler->display->display_options['relationships']['field_speakers_tid']['label'] = 'Speaker';
-  $handler->display->display_options['relationships']['field_speakers_tid']['required'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Taxonomy term: Term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_speakers_tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['tid']['default_argument_options']['code'] = 'return cbf_get_last_item_in_path();';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
-    'speaker' => 'speaker',
-  );
-  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
-  /* Contextual filter: CiviCRM Event: Domain (field_domain) */
-  $handler->display->display_options['arguments']['field_domain_domain_id']['id'] = 'field_domain_domain_id';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['table'] = 'field_data_field_domain';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['field'] = 'field_domain_domain_id';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
-
   /* Display: For Activity - warning - will merge events */
   $handler = $view->new_display('block', 'For Activity - warning - will merge events', 'block_2');
   $handler->display->display_options['enabled'] = FALSE;
@@ -6303,9 +6251,6 @@ To create a new CiviCRM Event
     t('Local events for the What\'s on page'),
     t('<p>There are no events scheduled for your city at this time.</p>
 <p>Please come back soon or contact us to find out what’s coming up.</p>'),
-    t('For speaker'),
-    t('Show upcoming events for a speaker'),
-    t('Speaker'),
     t('For Activity - warning - will merge events'),
     t('Local events for an Activity page - should be in a separate view to not merge events'),
     t('Activity'),
