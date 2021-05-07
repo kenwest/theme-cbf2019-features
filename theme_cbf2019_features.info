@@ -124,6 +124,7 @@ features[views_view][] = cbf2019_national_activity_contents
 features[views_view][] = cbf2019_national_activity_event_slider
 features[views_view][] = cbf2019_national_activity_regular_venues
 features[views_view][] = cbf2019_networks_activities
+features[views_view][] = cbf2019_non_local_event_slider
 features[views_view][] = cbf2019_page_header_civicrm_event
 features[views_view][] = cbf2019_page_header_collection
 features[views_view][] = cbf2019_page_header_collections
