@@ -3555,6 +3555,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
   $handler->display->display_options['fields']['domain_id']['label'] = '';
   $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
+  /* Field: Domains: Machine name */
+  $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['table'] = 'domain';
+  $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['label'] = '';
+  $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
   /* Contextual filter: Domain Access: Domain ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
@@ -3590,23 +3596,30 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['domain_id']['table'] = 'domain';
   $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
   $handler->display->display_options['fields']['domain_id']['label'] = '';
-  $handler->display->display_options['fields']['domain_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['domain_id']['alter']['text'] = '<div class="footer-logo">
+  $handler->display->display_options['fields']['domain_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
+  /* Field: Domains: Machine name */
+  $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['table'] = 'domain';
+  $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['label'] = '';
+  $handler->display->display_options['fields']['machine_name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['machine_name']['alter']['text'] = '<div class="footer-logo">
   <a href="/" class="embed-responsive embed-responsive-16by9">
-    <img src="/sites/all/themes/cbf2019/images/[domain_id]/brand/logo-black.png">
+    <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png">
   </a>
 </div>
 <span class="footer-social-links">
-  <a href="/domain/[domain_id]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
+  <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="/domain/[domain_id]/youtube" class=""><i class=" fab fa-youtube"></i></a>
+  <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
 </span>
 ';
-  $handler->display->display_options['fields']['domain_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
   $translatables['cbf2019_domain'] = array(
     t('Master'),
     t('more'),
@@ -3621,17 +3634,17 @@ function theme_cbf2019_features_views_default_views() {
     t('Footer logo'),
     t('<div class="footer-logo">
   <a href="/" class="embed-responsive embed-responsive-16by9">
-    <img src="/sites/all/themes/cbf2019/images/[domain_id]/brand/logo-black.png">
+    <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png">
   </a>
 </div>
 <span class="footer-social-links">
-  <a href="/domain/[domain_id]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
+  <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="/domain/[domain_id]/youtube" class=""><i class=" fab fa-youtube"></i></a>
+  <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
 </span>
 '),
   );
