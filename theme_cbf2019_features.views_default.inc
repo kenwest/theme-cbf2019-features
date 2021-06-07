@@ -6477,7 +6477,7 @@ To create a new CiviCRM Event
       data-zoom="14"
       data-address="[street_address], [city], Australia"
       data-type="roadmap"
-      data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+      data-icon="/sites/all/themes/cbf2019/images/!2/map/marker.png">
     </div>
   </div>
 </div>';
@@ -6571,6 +6571,17 @@ To create a new CiviCRM Event
   $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['domain_entityform_domain_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain machine name */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Domain machine name';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return domain_get_domain()[\'machine_name\'];';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Entityform Submission: Entityform Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'entityform';
@@ -6654,7 +6665,7 @@ To create a new CiviCRM Event
       data-zoom="14"
       data-address="[street_address], [city], Australia"
       data-type="roadmap"
-      data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+      data-icon="/sites/all/themes/cbf2019/images/!2/map/marker.png">
     </div>
   </div>
 </div>'),
