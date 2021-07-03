@@ -17,7 +17,7 @@ function theme_cbf2019_features_default_fe_block_boxes() {
   $fe_block_boxes->machine_name = 'cbf2019_theme_home_top';
   $fe_block_boxes->body = '[nd_menu menu="menu-cbf-2019-main-menu" transparent="1" search="1" cart="0" language="0" different_values="0" type="dark"]
 [/nd_menu]
-[nd_view admin_url="admin/structure/views/view/cbf2019_home_page_slider/edit/block_2" different_values="0" style_margin_bottom="75px"]
+[nd_view admin_url="admin/structure/views/view/cbf2019_home_page_slider/edit/block_1" different_values="0" style_margin_bottom="75px"]
 [/nd_view]
 [nd_container different_values="0" style_margin_bottom="75px"]
 [row extra_classes="multi-columns-row alt-features-grid" different_values="0"]
