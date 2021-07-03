@@ -49,7 +49,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -43,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_activities:node/3686.
@@ -72,8 +72,35 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_art--culture:library.
+  $menu_links['menu-cbf-2019-main-menu_art--culture:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Art + Culture',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'query' => array(
+        'term_node_tid_depth' => 760,
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_art--culture:library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
   );
   // Exported menu link: menu-cbf-2019-main-menu_blog:articles.
   $menu_links['menu-cbf-2019-main-menu_blog:articles'] = array(
@@ -95,8 +122,85 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => -44,
     'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_christianity:library.
+  $menu_links['menu-cbf-2019-main-menu_christianity:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Christianity',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'query' => array(
+        'term_node_tid_depth' => 757,
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_christianity:library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_explore-topics:library.
+  $menu_links['menu-cbf-2019-main-menu_explore-topics:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Explore topics',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => -49,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_jesus:library.
+  $menu_links['menu-cbf-2019-main-menu_jesus:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Jesus',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'query' => array(
+        'term_node_tid_depth' => 756,
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_jesus:library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
   );
   // Exported menu link: menu-cbf-2019-main-menu_networks:node/4125.
   $menu_links['menu-cbf-2019-main-menu_networks:node/4125'] = array(
@@ -118,7 +222,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_resources:library.
@@ -137,12 +241,39 @@ function theme_cbf2019_features_menu_default_menu_links() {
       ),
     ),
     'module' => 'menu',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_society:library.
+  $menu_links['menu-cbf-2019-main-menu_society:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Society',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'query' => array(
+        'term_node_tid_depth' => 762,
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_society:library',
+    ),
+    'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
   );
   // Exported menu link: menu-cbf-2019-main-menu_whats-on:node/3686.
   $menu_links['menu-cbf-2019-main-menu_whats-on:node/3686'] = array(
@@ -164,8 +295,62 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -48,
     'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_work:library.
+  $menu_links['menu-cbf-2019-main-menu_work:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Work',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'query' => array(
+        'term_node_tid_depth' => 758,
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_work:library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
+  );
+  // Exported menu link: menu-cbf-2019-main-menu_worldviews:library.
+  $menu_links['menu-cbf-2019-main-menu_worldviews:library'] = array(
+    'menu_name' => 'menu-cbf-2019-main-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Worldviews',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'query' => array(
+        'term_node_tid_depth' => 761,
+      ),
+      'identifier' => 'menu-cbf-2019-main-menu_worldviews:library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-main-menu_explore-topics:library',
   );
   // Exported menu link: menu-cbf-2019-plus-menu_about-us:node/3670.
   $menu_links['menu-cbf-2019-plus-menu_about-us:node/3670'] = array(
@@ -759,15 +944,19 @@ function theme_cbf2019_features_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About us');
   t('Activities');
+  t('Art + Culture');
   t('Bible and prayer');
   t('Bigger Questions');
   t('Blog');
+  t('Christianity');
   t('Collections');
   t('Entertainment');
   t('Environment and science');
+  t('Explore topics');
   t('Food');
   t('Get involved');
   t('Health and wellbeing');
+  t('Jesus');
   t('Learning');
   t('Listen');
   t('Networks');
@@ -778,9 +967,12 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Relationships');
   t('Resources');
   t('Rooms');
+  t('Society');
   t('Sport');
   t('Watch');
   t('What\'s on');
+  t('Work');
+  t('Worldviews');
 
   return $menu_links;
 }
