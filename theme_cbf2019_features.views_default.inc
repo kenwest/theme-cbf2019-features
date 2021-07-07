@@ -3709,14 +3709,20 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: What's on */
   $handler = $view->new_display('page', 'What\'s on', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'What\'s on';
   $handler->display->display_options['path'] = 'whats-on';
 
   /* Display: Networks */
   $handler = $view->new_display('page', 'Networks', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Networks';
   $handler->display->display_options['path'] = 'networks';
 
   /* Display: About us */
   $handler = $view->new_display('page', 'About us', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'About us';
   $handler->display->display_options['path'] = 'about-us';
   $translatables['cbf2019_empty_pages'] = array(
     t('Master'),
