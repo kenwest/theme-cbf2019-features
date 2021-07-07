@@ -3651,6 +3651,93 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_domain'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_empty_pages';
+  $view->description = 'Empty pages for different contexts - home, whats-on, networks, about-us';
+  $view->tag = 'default';
+  $view->base_table = 'domain';
+  $view->human_name = 'cbf2019 empty pages';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time_per_domain';
+  $handler->display->display_options['cache']['results_lifespan'] = '518400';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '518400';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Domains: Domain ID */
+  $handler->display->display_options['fields']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['fields']['domain_id']['table'] = 'domain';
+  $handler->display->display_options['fields']['domain_id']['field'] = 'domain_id';
+  /* Contextual filter: Domain zero */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['ui_name'] = 'Domain zero';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['gid']['default_argument_options']['argument'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Domains: Valid */
+  $handler->display->display_options['filters']['valid']['id'] = 'valid';
+  $handler->display->display_options['filters']['valid']['table'] = 'domain';
+  $handler->display->display_options['filters']['valid']['field'] = 'valid';
+  $handler->display->display_options['filters']['valid']['value'] = 1;
+  $handler->display->display_options['filters']['valid']['group'] = 1;
+  $handler->display->display_options['filters']['valid']['expose']['operator'] = FALSE;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('page', 'Defaults', 'page');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+  $handler->display->display_options['path'] = 'empty-page';
+
+  /* Display: Home */
+  $handler = $view->new_display('page', 'Home', 'page_1');
+  $handler->display->display_options['path'] = 'home';
+
+  /* Display: What's on */
+  $handler = $view->new_display('page', 'What\'s on', 'page_2');
+  $handler->display->display_options['path'] = 'whats-on';
+
+  /* Display: Networks */
+  $handler = $view->new_display('page', 'Networks', 'page_3');
+  $handler->display->display_options['path'] = 'networks';
+
+  /* Display: About us */
+  $handler = $view->new_display('page', 'About us', 'page_4');
+  $handler->display->display_options['path'] = 'about-us';
+  $translatables['cbf2019_empty_pages'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Domain ID'),
+    t('All'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('Home'),
+    t('What\'s on'),
+    t('Networks'),
+    t('About us'),
+  );
+  $export['cbf2019_empty_pages'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_entityform_promotional_slider';
   $view->description = 'Slider showing promotional material for entityforms';
   $view->tag = 'slider, fieldwise, unique';
