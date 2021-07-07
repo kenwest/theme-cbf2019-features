@@ -350,7 +350,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -43,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_blog:articles.
@@ -373,30 +373,30 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -45,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_get-involved:node/3786.
-  $menu_links['menu-cbf-2019-plus-menu_get-involved:node/3786'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_library:library.
+  $menu_links['menu-cbf-2019-plus-menu_library:library'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'node/3786',
-    'router_path' => 'node/%',
-    'link_title' => 'Get involved',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Library',
     'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_library:library',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-cbf-2019-plus-menu_get-involved:node/3786',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_networks:networks.
@@ -422,20 +422,43 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_resources:library.
-  $menu_links['menu-cbf-2019-plus-menu_resources:library'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_third-space:https://thirdspace.org.au.
+  $menu_links['menu-cbf-2019-plus-menu_third-space:https://thirdspace.org.au'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'library',
-    'router_path' => 'library',
-    'link_title' => 'Resources',
+    'link_path' => 'https://thirdspace.org.au',
+    'router_path' => '',
+    'link_title' => 'Third Space',
     'options' => array(
-      'identifier' => 'menu-cbf-2019-plus-menu_resources:library',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
+      'identifier' => 'menu-cbf-2019-plus-menu_third-space:https://thirdspace.org.au',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_training:node/5218.
+  $menu_links['menu-cbf-2019-plus-menu_training:node/5218'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/5218',
+    'router_path' => 'node/%',
+    'link_title' => 'Training',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_training:node/5218',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -910,10 +933,10 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Environment and science');
   t('Explore topics');
   t('Food');
-  t('Get involved');
   t('Health and wellbeing');
   t('Jesus');
   t('Learning');
+  t('Library');
   t('Listen');
   t('Networks');
   t('Panic room - COVID-19');
@@ -921,10 +944,11 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Read');
   t('Reel Dialogue');
   t('Relationships');
-  t('Resources');
   t('Rooms');
   t('Society');
   t('Sport');
+  t('Third Space');
+  t('Training');
   t('Watch');
   t('What\'s on');
   t('Work');
