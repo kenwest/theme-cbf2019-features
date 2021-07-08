@@ -9541,7 +9541,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Networks for Christians and enquirers';
+  $handler->display->display_options['header']['area']['content'] = '<span class="cardinal">Networks for Christians and enquirers</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
@@ -9643,7 +9643,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('Networks for Christians'),
     t('General Networks'),
     t('General networks'),
-    t('Networks for Christians and enquirers'),
+    t('<span class="cardinal">Networks for Christians and enquirers</span>'),
   );
   $export['cbf2019_networks_activities'] = $view;
 
