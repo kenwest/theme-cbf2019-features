@@ -173,7 +173,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
-    'weight' => -50,
+    'weight' => -48,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_jesus:library.
@@ -223,7 +223,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -50,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-main-menu_society:library.
@@ -350,7 +350,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => -44,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_blog:articles.
@@ -376,29 +376,6 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_library:library.
-  $menu_links['menu-cbf-2019-plus-menu_library:library'] = array(
-    'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'library',
-    'router_path' => 'library',
-    'link_title' => 'Library',
-    'options' => array(
-      'identifier' => 'menu-cbf-2019-plus-menu_library:library',
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-  );
   // Exported menu link: menu-cbf-2019-plus-menu_networks:networks.
   $menu_links['menu-cbf-2019-plus-menu_networks:networks'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
@@ -419,7 +396,30 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -50,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_resources:library.
+  $menu_links['menu-cbf-2019-plus-menu_resources:library'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'library',
+    'router_path' => 'library',
+    'link_title' => 'Resources',
+    'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_resources:library',
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-cbf-2019-plus-menu_third-space:https://thirdspace.org.au.
@@ -488,7 +488,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: menu-third-space-main-menu_about-us:node/4018.
@@ -936,7 +936,6 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Health and wellbeing');
   t('Jesus');
   t('Learning');
-  t('Library');
   t('Listen');
   t('Networks');
   t('Panic room - COVID-19');
@@ -944,6 +943,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Read');
   t('Reel Dialogue');
   t('Relationships');
+  t('Resources');
   t('Rooms');
   t('Society');
   t('Sport');
