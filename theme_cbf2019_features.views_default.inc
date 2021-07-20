@@ -3620,6 +3620,28 @@ function theme_cbf2019_features_views_default_views() {
 </span>
 ';
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
+
+  /* Display: Email signature */
+  $handler = $view->new_display('page', 'Email signature', 'email_signature');
+  $handler->display->display_options['display_description'] = 'Generate a template email signature for staff';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    7 => '7',
+    4 => '4',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'domain/email-signature';
   $translatables['cbf2019_domain'] = array(
     t('Master'),
     t('more'),
@@ -3647,6 +3669,8 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
 </span>
 '),
+    t('Email signature'),
+    t('Generate a template email signature for staff'),
   );
   $export['cbf2019_domain'] = $view;
 
