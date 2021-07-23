@@ -10447,10 +10447,11 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Path */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['ui_name'] = 'Path';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = 'return parse_url(request_uri())["path"];';
@@ -10478,10 +10479,11 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: First 2 components of path */
   $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: First two components of Path */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['ui_name'] = 'First two components of Path';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = '$cbf_url_parts = explode(\'/\', parse_url(request_uri())["path"]);
@@ -17823,6 +17825,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
+  $handler->display->display_options['fields']['field_synopsis']['label'] = 'Path';
   $handler->display->display_options['fields']['field_synopsis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_synopsis']['delta_offset'] = '0';
   /* Field: Field: Subtitle */
