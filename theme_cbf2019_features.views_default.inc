@@ -17751,12 +17751,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 <ol>
 <li>Associating the image with a specific URL path (eg resource library)</li>
 <li>Making the image the default for nodes with a specific content type (eg blog articles)</li>
-<li>Making the image available for use in special contexts (eg the CBF+ block)</li>
+<li>Making the image available for use in special contexts (eg a place to upload an image for a block)</li>
 </ol>
 
 You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.
 
-Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.';
+Notes ...
+
+<ol>
+<li>SEO: the Subtitle is used as the H2 element if the Path is set.</li>
+<li>Domain: you can limit them to only display in certain domains. This allows you to display different Titles and Images on the same page in different domains.</li>
+</ol>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Bulk operations: Entityform Submission */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -17991,18 +17996,23 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
 <ol>
 <li>Associating the image with a specific URL path (eg resource library)</li>
 <li>Making the image the default for nodes with a specific content type (eg blog articles)</li>
-<li>Making the image available for use in special contexts (eg the CBF+ block)</li>
+<li>Making the image available for use in special contexts (eg a place to upload an image for a block)</li>
 </ol>
 
 You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.
 
-Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.'),
+Notes ...
+
+<ol>
+<li>SEO: the Subtitle is used as the H2 element if the Path is set.</li>
+<li>Domain: you can limit them to only display in certain domains. This allows you to display different Titles and Images on the same page in different domains.</li>
+</ol>'),
     t('Select'),
     t('- Choose an operation -'),
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Synopsis'),
+    t('Path'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
