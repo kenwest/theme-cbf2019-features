@@ -3613,7 +3613,7 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
+  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
@@ -3663,7 +3663,7 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
+  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
