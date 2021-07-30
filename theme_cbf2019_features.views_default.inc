@@ -3613,13 +3613,35 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
+  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
 </span>
 ';
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
+
+  /* Display: Email signature */
+  $handler = $view->new_display('page', 'Email signature', 'email_signature');
+  $handler->display->display_options['display_description'] = 'Generate a template email signature for staff';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    7 => '7',
+    4 => '4',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'domain/email-signature';
   $translatables['cbf2019_domain'] = array(
     t('Master'),
     t('more'),
@@ -3641,12 +3663,14 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="https://www.linkedin.com/company/city-bible-forum" class=""><i class=" fab fa-linkedin-in"></i></a>
+  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
 </span>
 '),
+    t('Email signature'),
+    t('Generate a template email signature for staff'),
   );
   $export['cbf2019_domain'] = $view;
 
@@ -9437,8 +9461,187 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+
+  /* Display: Networks */
+  $handler = $view->new_display('block', 'Networks', 'block_1');
+  $handler->display->display_options['display_description'] = 'All networks visible from this domain';
+
+  /* Display: Christian Networks */
+  $handler = $view->new_display('block', 'Christian Networks', 'block_2');
+  $handler->display->display_options['display_description'] = 'Christian networks';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Networks for Christians';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
+  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
+  /* Filter criterion: Content: Logo (field_logo:fid) */
+  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
+  /* Filter criterion: Field: Title image (field_title_image:fid) */
+  $handler->display->display_options['filters']['field_title_image_fid']['id'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['filters']['field_title_image_fid']['field'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_title_image_fid']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Content: Networks visibility (field_networks_visibility) */
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['id'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['table'] = 'field_data_field_networks_visibility';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['field'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['vocabulary'] = 'banner';
+  /* Filter criterion: Content: Networks visibility (field_networks_visibility) */
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['id'] = 'field_networks_visibility_tid_1';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['table'] = 'field_data_field_networks_visibility';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['field'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['operator_id'] = 'field_networks_visibility_tid_1_op';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['operator'] = 'field_networks_visibility_tid_1_op';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['identifier'] = 'field_networks_visibility_tid_1';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['vocabulary'] = 'banner';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    47 => '47',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
+
+  /* Display: General Networks */
+  $handler = $view->new_display('block', 'General Networks', 'block_3');
+  $handler->display->display_options['display_description'] = 'General networks';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<span class="cardinal">Networks for Christians and enquirers</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
+  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
+  /* Filter criterion: Content: Logo (field_logo:fid) */
+  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
+  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
+  /* Filter criterion: Field: Title image (field_title_image:fid) */
+  $handler->display->display_options['filters']['field_title_image_fid']['id'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['filters']['field_title_image_fid']['field'] = 'field_title_image_fid';
+  $handler->display->display_options['filters']['field_title_image_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_title_image_fid']['group'] = 2;
+  /* Filter criterion: Field: Highlight (field_highlight:fid) */
+  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
+  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
+  /* Filter criterion: Content: Networks visibility (field_networks_visibility) */
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['id'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['table'] = 'field_data_field_networks_visibility';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['field'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_networks_visibility_tid']['vocabulary'] = 'banner';
+  /* Filter criterion: Content: Networks visibility (field_networks_visibility) */
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['id'] = 'field_networks_visibility_tid_1';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['table'] = 'field_data_field_networks_visibility';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['field'] = 'field_networks_visibility_tid';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['operator_id'] = 'field_networks_visibility_tid_1_op';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['operator'] = 'field_networks_visibility_tid_1_op';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['identifier'] = 'field_networks_visibility_tid_1';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_networks_visibility_tid_1']['vocabulary'] = 'banner';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    48 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_networks_activities'] = array(
     t('Master'),
     t('<none>'),
@@ -9456,7 +9659,15 @@ To remove a team from the maps, click the checkbox next to the team and choose o
     t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
     t('All cities'),
     t('[taxonomy_vocabulary_1] | [field_regularity]'),
-    t('Block'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('All networks visible from this domain'),
+    t('Christian Networks'),
+    t('Christian networks'),
+    t('Networks for Christians'),
+    t('General Networks'),
+    t('General networks'),
+    t('<span class="cardinal">Networks for Christians and enquirers</span>'),
   );
   $export['cbf2019_networks_activities'] = $view;
 
@@ -10236,10 +10447,11 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: Path */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['ui_name'] = 'Path';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = 'return parse_url(request_uri())["path"];';
@@ -10267,10 +10479,11 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   /* Display: First 2 components of path */
   $handler = $view->new_display('block', 'First 2 components of path', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Synopsis (field_synopsis) */
+  /* Contextual filter: First two components of Path */
   $handler->display->display_options['arguments']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['arguments']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['arguments']['field_synopsis_value']['field'] = 'field_synopsis_value';
+  $handler->display->display_options['arguments']['field_synopsis_value']['ui_name'] = 'First two components of Path';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = '$cbf_url_parts = explode(\'/\', parse_url(request_uri())["path"]);
@@ -10904,6 +11117,7 @@ else {
     756 => '756',
     757 => '757',
     758 => '758',
+    759 => '759',
     760 => '760',
     761 => '761',
     762 => '762',
@@ -17537,12 +17751,17 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 <ol>
 <li>Associating the image with a specific URL path (eg resource library)</li>
 <li>Making the image the default for nodes with a specific content type (eg blog articles)</li>
-<li>Making the image available for use in special contexts (eg the CBF+ block)</li>
+<li>Making the image available for use in special contexts (eg a place to upload an image for a block)</li>
 </ol>
 
 You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.
 
-Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.';
+Notes ...
+
+<ol>
+<li>SEO: the Subtitle is used as the H2 element if the Path is set.</li>
+<li>Domain: you can limit them to only display in certain domains. This allows you to display different Titles and Images on the same page in different domains.</li>
+</ol>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Bulk operations: Entityform Submission */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -17611,6 +17830,7 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
+  $handler->display->display_options['fields']['field_synopsis']['label'] = 'Path';
   $handler->display->display_options['fields']['field_synopsis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_synopsis']['delta_offset'] = '0';
   /* Field: Field: Subtitle */
@@ -17776,18 +17996,23 @@ Note that the Subtitle is used in cases where Path is set. In those cases it is 
 <ol>
 <li>Associating the image with a specific URL path (eg resource library)</li>
 <li>Making the image the default for nodes with a specific content type (eg blog articles)</li>
-<li>Making the image available for use in special contexts (eg the CBF+ block)</li>
+<li>Making the image available for use in special contexts (eg a place to upload an image for a block)</li>
 </ol>
 
 You can <a href="/eform/submit/title-header">add a new Title header</a>, or edit existing ones below.
 
-Note that the Subtitle is used in cases where Path is set. In those cases it is used as the H2 element on the page.'),
+Notes ...
+
+<ol>
+<li>SEO: the Subtitle is used as the H2 element if the Path is set.</li>
+<li>Domain: you can limit them to only display in certain domains. This allows you to display different Titles and Images on the same page in different domains.</li>
+</ol>'),
     t('Select'),
     t('- Choose an operation -'),
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Synopsis'),
+    t('Path'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
