@@ -10480,7 +10480,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['arguments']['field_synopsis_value']['ui_name'] = 'Path';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = 'return parse_url(request_uri())["path"];';
+  $handler->display->display_options['arguments']['field_synopsis_value']['default_argument_options']['code'] = 'return rtrim(parse_url(request_uri())["path"], \'/\');';
   $handler->display->display_options['arguments']['field_synopsis_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_synopsis_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_synopsis_value']['summary_options']['items_per_page'] = '25';
