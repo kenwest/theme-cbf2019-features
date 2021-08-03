@@ -2805,8 +2805,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: For CBF library */
-  $handler = $view->new_display('block', 'For CBF library', 'block_1');
+  /* Display: For general library */
+  $handler = $view->new_display('block', 'For general library', 'block_1');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -2821,8 +2821,42 @@ function theme_cbf2019_features_views_default_views() {
     'cbf_plus_library_collections_slider' => 0,
   );
 
-  /* Display: For CBF Plus library */
-  $handler = $view->new_display('block', 'For CBF Plus library', 'block_2');
+  /* Display: For general library for topic */
+  $handler = $view->new_display('block', 'For general library for topic', 'block_4');
+  $handler->display->display_options['display_description'] = 'This is a duplicate of \'For general library\' so block location can be different';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Entityform Submission Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_library_collections_slider' => 'cbf_library_collections_slider',
+    'cbf_home_page_slider' => 0,
+    'cbf_plus_home_page_slider' => 0,
+    'cbf_plus_library_collections_slider' => 0,
+  );
+
+  /* Display: For Christian library */
+  $handler = $view->new_display('block', 'For Christian library', 'block_2');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entityqueue: Entityform Submission Queue */
+  $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'entityform';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
+  $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
+  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
+    'cbf_plus_library_collections_slider' => 'cbf_plus_library_collections_slider',
+    'cbf_home_page_slider' => 0,
+    'cbf_plus_home_page_slider' => 0,
+    'cbf_library_collections_slider' => 0,
+  );
+
+  /* Display: For Christian library for topic */
+  $handler = $view->new_display('block', 'For Christian library for topic', 'block_5');
+  $handler->display->display_options['display_description'] = 'This is a duplicate of \'For Christian library\' so block location can be different';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -2875,8 +2909,12 @@ function theme_cbf2019_features_views_default_views() {
     t('.'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('For CBF library'),
-    t('For CBF Plus library'),
+    t('For general library'),
+    t('For general library for topic'),
+    t('This is a duplicate of \'For general library\' so block location can be different'),
+    t('For Christian library'),
+    t('For Christian library for topic'),
+    t('This is a duplicate of \'For Christian library\' so block location can be different'),
     t('For Activity'),
     t('Shows the Activity\'s collections in the order specified'),
     t('Activity'),
@@ -11576,6 +11614,661 @@ else {
   );
   $handler->display->display_options['path'] = 'library';
 
+  /* Display: Resource library for topic */
+  $handler = $view->new_display('page', 'Resource library for topic', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Resource library';
+  $handler->display->display_options['display_description'] = 'This is a duplicate of \'Resource library\' with a different path so block ordering can be different';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'Our library';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'term_node_tid_depth' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_select_all_none_nested' => FALSE,
+        'bef_term_description' => 0,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'title' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_speakers_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'title_1' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'taxonomy_vocabulary_1_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_resource_type_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['format'] = '3';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Search: Score */
+  $handler->display->display_options['sorts']['score']['id'] = 'score';
+  $handler->display->display_options['sorts']['score']['table'] = 'search_index';
+  $handler->display->display_options['sorts']['score']['field'] = 'score';
+  $handler->display->display_options['sorts']['score']['order'] = 'DESC';
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy terms (with depth) */
+  $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['value'] = array(
+    756 => '756',
+    757 => '757',
+    758 => '758',
+    759 => '759',
+    760 => '760',
+    761 => '761',
+    762 => '762',
+  );
+  $handler->display->display_options['filters']['term_node_tid_depth']['group'] = 1;
+  $handler->display->display_options['filters']['term_node_tid_depth']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
+  $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'topic';
+  $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '1';
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search terms';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  /* Filter criterion: Content: Resource type (field_resource_type) */
+  $handler->display->display_options['filters']['field_resource_type_value']['id'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['filters']['field_resource_type_value']['field'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_resource_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator_id'] = 'field_resource_type_value_op';
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['label'] = 'Resource type (field_resource_type)';
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['operator'] = 'field_resource_type_value_op';
+  $handler->display->display_options['filters']['field_resource_type_value']['expose']['identifier'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['label'] = 'Resource type';
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['identifier'] = 'field_resource_type_value';
+  $handler->display->display_options['filters']['field_resource_type_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Order hardcopy',
+      'operator' => 'contains',
+      'value' => 'o',
+    ),
+    2 => array(
+      'title' => 'Video',
+      'operator' => 'contains',
+      'value' => 'v',
+    ),
+    3 => array(
+      'title' => 'Audio',
+      'operator' => 'contains',
+      'value' => 'a',
+    ),
+    4 => array(
+      'title' => 'Download PDF',
+      'operator' => 'contains',
+      'value' => 'd',
+    ),
+  );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    1957 => '1957',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[view:title] | [current-page:pager][site:name]',
+        'default' => '[view:title] | [current-page:pager][site:name]',
+      ),
+      'description' => array(
+        'value' => 'Looking for answers to life\'s biggest questions? We\'re here to explore with you. Dive into our free resource library.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'set_cookie' => array(
+        'value' => '',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+        'default' => '',
+      ),
+      'pragma' => array(
+        'value' => '',
+      ),
+      'cache-control' => array(
+        'value' => '',
+      ),
+      'expires' => array(
+        'value' => '',
+      ),
+      'og:type' => array(
+        'value' => '',
+      ),
+      'og:url' => array(
+        'value' => '',
+      ),
+      'og:title' => array(
+        'value' => '',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video:url' => array(
+        'value' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+      'twitter:card' => array(
+        'value' => '',
+      ),
+      'twitter:creator' => array(
+        'value' => '',
+      ),
+      'twitter:creator:id' => array(
+        'value' => '',
+      ),
+      'twitter:url' => array(
+        'value' => '',
+      ),
+      'twitter:title' => array(
+        'value' => '',
+      ),
+      'twitter:description' => array(
+        'value' => '',
+      ),
+      'twitter:dnt' => array(
+        'value' => '',
+      ),
+      'twitter:image' => array(
+        'value' => '',
+      ),
+      'twitter:image:width' => array(
+        'value' => '',
+      ),
+      'twitter:image:height' => array(
+        'value' => '',
+      ),
+      'twitter:image:alt' => array(
+        'value' => '',
+      ),
+      'twitter:image0' => array(
+        'value' => '',
+      ),
+      'twitter:image1' => array(
+        'value' => '',
+      ),
+      'twitter:image2' => array(
+        'value' => '',
+      ),
+      'twitter:image3' => array(
+        'value' => '',
+      ),
+      'twitter:player' => array(
+        'value' => '',
+      ),
+      'twitter:player:width' => array(
+        'value' => '',
+      ),
+      'twitter:player:height' => array(
+        'value' => '',
+      ),
+      'twitter:player:stream' => array(
+        'value' => '',
+      ),
+      'twitter:player:stream:content_type' => array(
+        'value' => '',
+      ),
+      'twitter:app:country' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:iphone' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:iphone' => array(
+        'value' => '',
+      ),
+      'twitter:app:url:iphone' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:url:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:app:url:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:label1' => array(
+        'value' => '',
+      ),
+      'twitter:data1' => array(
+        'value' => '',
+      ),
+      'twitter:label2' => array(
+        'value' => '',
+      ),
+      'twitter:data2' => array(
+        'value' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['path'] = 'library/topic';
+
   /* Display: For Node's activity */
   $handler = $view->new_display('block', 'For Node\'s activity', 'block_3');
   $handler->display->display_options['display_description'] = 'Recent library resources for a node\'s activity';
@@ -11995,6 +12688,8 @@ else {
     t('Search terms'),
     t('Resource type (field_resource_type)'),
     t('Resource type'),
+    t('Resource library for topic'),
+    t('This is a duplicate of \'Resource library\' with a different path so block ordering can be different'),
     t('For Node\'s activity'),
     t('Recent library resources for a node\'s activity'),
     t('Node referencing Activity'),
