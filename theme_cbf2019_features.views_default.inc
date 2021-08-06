@@ -5464,7 +5464,7 @@ To create a new CiviCRM Event
 
   $view = new view();
   $view->name = 'cbf2019_home_page_slider';
-  $view->description = 'Sliders showing promoted content on the CBF and CBF+ home pages';
+  $view->description = 'Sliders showing promoted content on the Third Space and City Bible Forum home pages';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 home page slider';
@@ -5543,8 +5543,9 @@ To create a new CiviCRM Event
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: For CBF home page */
-  $handler = $view->new_display('block', 'For CBF home page', 'block_1');
+  /* Display: For Third Space home page */
+  $handler = $view->new_display('block', 'For Third Space home page', 'block_1');
+  $handler->display->display_options['display_description'] = 'General audience';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -5557,8 +5558,9 @@ To create a new CiviCRM Event
     'cbf_plus_home_page_slider' => 0,
   );
 
-  /* Display: For CBF+ home page */
-  $handler = $view->new_display('block', 'For CBF+ home page', 'block_2');
+  /* Display: For City Bible Forum home page */
+  $handler = $view->new_display('block', 'For City Bible Forum home page', 'block_2');
+  $handler->display->display_options['display_description'] = 'Christian audience';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -5569,6 +5571,8 @@ To create a new CiviCRM Event
   $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
     'cbf_plus_home_page_slider' => 'cbf_plus_home_page_slider',
     'cbf_home_page_slider' => 0,
+    'cbf_library_collections_slider' => 0,
+    'cbf_plus_library_collections_slider' => 0,
   );
   $translatables['cbf2019_home_page_slider'] = array(
     t('Master'),
@@ -5581,8 +5585,10 @@ To create a new CiviCRM Event
     t('Entityform Submission Queue'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('For CBF home page'),
-    t('For CBF+ home page'),
+    t('For Third Space home page'),
+    t('General audience'),
+    t('For City Bible Forum home page'),
+    t('Christian audience'),
   );
   $export['cbf2019_home_page_slider'] = $view;
 
