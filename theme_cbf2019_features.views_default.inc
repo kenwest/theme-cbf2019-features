@@ -1851,7 +1851,7 @@ function theme_cbf2019_features_views_default_views() {
   $view->description = 'A page showing the library resources, blogs and Third Space categories in a Collection';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'cbf2019 collection';
+  $view->human_name = 'Legacy cbf2019 collection';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1965,7 +1965,7 @@ function theme_cbf2019_features_views_default_views() {
   $view->description = 'Administer collections';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'cbf2019 collection admin view';
+  $view->human_name = 'Legacy cbf2019 collection admin view';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -2232,7 +2232,7 @@ function theme_cbf2019_features_views_default_views() {
   $view->description = '';
   $view->tag = 'slider, autoplay';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'cbf2019 collection slider';
+  $view->human_name = 'Legacy cbf2019 collection slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
