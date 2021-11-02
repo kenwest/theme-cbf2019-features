@@ -10929,12 +10929,6 @@ else {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Date (field_episode_date) */
-  $handler->display->display_options['filters']['field_episode_date_value']['id'] = 'field_episode_date_value';
-  $handler->display->display_options['filters']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['filters']['field_episode_date_value']['field'] = 'field_episode_date_value';
-  $handler->display->display_options['filters']['field_episode_date_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_episode_date_value']['default_date'] = '4 years ago';
   /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
@@ -12329,12 +12323,6 @@ else {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Date (field_episode_date) */
-  $handler->display->display_options['filters']['field_episode_date_value']['id'] = 'field_episode_date_value';
-  $handler->display->display_options['filters']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['filters']['field_episode_date_value']['field'] = 'field_episode_date_value';
-  $handler->display->display_options['filters']['field_episode_date_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_episode_date_value']['default_date'] = '4 years ago';
   /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
@@ -12578,12 +12566,6 @@ else {
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Date (field_episode_date) */
-  $handler->display->display_options['filters']['field_episode_date_value']['id'] = 'field_episode_date_value';
-  $handler->display->display_options['filters']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
-  $handler->display->display_options['filters']['field_episode_date_value']['field'] = 'field_episode_date_value';
-  $handler->display->display_options['filters']['field_episode_date_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_episode_date_value']['default_date'] = '4 years ago';
   /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
