@@ -2391,7 +2391,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -2546,7 +2546,7 @@ function theme_cbf2019_features_views_default_views() {
       ),
     ),
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -2617,7 +2617,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'collection' => 'collection',
   );
-  /* Filter criterion: Entityform Submission: Title (field_title) */
+  /* Filter criterion: Field: Title (field_title) */
   $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
   $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
   $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
@@ -2765,7 +2765,7 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'portfolio_653x368',
     'image_link' => '',
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -5507,7 +5507,7 @@ To create a new CiviCRM Event
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -6904,7 +6904,7 @@ To create a new CiviCRM Event
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -7073,7 +7073,7 @@ To create a new CiviCRM Event
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -7227,7 +7227,7 @@ To create a new CiviCRM Event
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -7426,7 +7426,7 @@ To create a new CiviCRM Event
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -13269,7 +13269,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
       ),
     ),
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -13307,7 +13307,7 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     'regular_venue' => 'regular_venue',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Entityform Submission: Title (field_title) */
+  /* Filter criterion: Field: Title (field_title) */
   $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
   $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
   $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
@@ -15133,7 +15133,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       ),
     ),
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -15197,7 +15197,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'staff' => 'staff',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Entityform Submission: Title (field_title) */
+  /* Filter criterion: Field: Title (field_title) */
   $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
   $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
   $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
@@ -15413,7 +15413,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>';
   $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -15430,7 +15430,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
   $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
   $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
-  /* Sort criterion: Entityform Submission: Title (field_title) */
+  /* Sort criterion: Field: Title (field_title) */
   $handler->display->display_options['sorts']['field_title_value']['id'] = 'field_title_value';
   $handler->display->display_options['sorts']['field_title_value']['table'] = 'field_data_field_title';
   $handler->display->display_options['sorts']['field_title_value']['field'] = 'field_title_value';
@@ -15569,7 +15569,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>';
   $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -18500,7 +18500,7 @@ Notes ...
     'image_style' => 'logo_autox67',
     'image_link' => '',
   );
-  /* Field: Entityform Submission: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -18542,7 +18542,7 @@ Notes ...
     'title_header' => 'title_header',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Entityform Submission: Title (field_title) */
+  /* Filter criterion: Field: Title (field_title) */
   $handler->display->display_options['filters']['field_title_value']['id'] = 'field_title_value';
   $handler->display->display_options['filters']['field_title_value']['table'] = 'field_data_field_title';
   $handler->display->display_options['filters']['field_title_value']['field'] = 'field_title_value';
