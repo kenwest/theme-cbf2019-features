@@ -14138,7 +14138,7 @@ If your Speaker doesn&#39;t yet exist...
   <ul>
     <li>Type in the name of the Speaker</li>
     <li>Save the article</li>
-    <li>Come back her, find the new Speaker and then fill in their details</li>
+    <li>Come back here, find the new Speaker and then fill in their details</li>
   </ul></li>
   <li>Note that if you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly.</li>
 </ul>
@@ -14437,7 +14437,7 @@ If your Speaker doesn&#39;t yet exist...
   <ul>
     <li>Type in the name of the Speaker</li>
     <li>Save the article</li>
-    <li>Come back her, find the new Speaker and then fill in their details</li>
+    <li>Come back here, find the new Speaker and then fill in their details</li>
   </ul></li>
   <li>Note that if you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly.</li>
 </ul>
