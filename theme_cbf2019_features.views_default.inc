@@ -14130,27 +14130,35 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'This view allows you to find and edit Speakers. Speakers are known as Authors when displayed in blogs.
+  $handler->display->display_options['header']['area']['content'] = 'This page is where you set up Speaker bios and pictures. It assumes the Speaker already exists.
 
-<ol>
-<li>To use an existing Speaker, name them in the Speaker(s) field for an article or event. This field is on the Basic Details tab.</ii>
-<li>You can add a new Speaker in two ways ...
-<ol>
-<li>If you are a normal user just refer to the new speaker in the Speaker(s) field
+If your Speaker doesn&#39;t yet exist...
 <ul>
-<li>If you name a speaker who doesn&#39;t yet exist in the system, you will create a Speaker but it won&#39;t have any content. This happens any time you type (part of) a speaker name but don&#39;t click the corresponding option in the dropdown.</li>
-<li>If you do this, come to this screen, find the new Speaker and fill in their details</li>
+  <li>Go back to your article and add the Speaker there
+  <ul>
+    <li>Type in the name of the Speaker</li>
+    <li>Save the article</li>
+    <li>Come back her, find the new Speaker and then fill in their details</li>
+  </ul></li>
+  <li>Note that if you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly.</li>
 </ul>
-</li>
-<li>If you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly. As this ability allows you to break things it is restricted.</li>
-</ol>
-</li>
-<li>To be visible in an article, the Speaker must have a description</ii>
-<li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
-<li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
-<li>The listing of Speakers tells you how many Articles and CiviCRM Events refer to each Speaker. The Speaker description should be suitably generic to work in all these contexts. The listing also shows you some of the Description and whether a Landscape or Portrait image is attached.</ii>
-<li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
-</ol>
+
+You may discover you have inadvertently created a duplicate of your Speaker. This is possible because Sam Chan etc are common names. To remove a duplicate ...
+<ul>
+  <li>Edit the duplicate Speaker below and click the Delete button at the bottom of the edit screen.</li>
+  <li>Go back to your article.</li>
+  <li>Type (part of) the Speaker name into the article&#39;s Speakers field but click the correct item in the dropdown list.</li>
+  <li>Save your article</li>
+</ul>
+
+Notes ...
+<ul>
+  <li>To be visible in an article, the Speaker must have a description (bio)</ii>
+  <li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
+  <li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
+  <li>The listing of Speakers tells you how many Articles and CiviCRM Events refer to each Speaker. The Speaker description should be suitably generic to work in all these contexts. The listing also shows you some of the Description and whether a Landscape or Portrait image is attached.</ii>
+  <li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
+</ul>
 ';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
@@ -14421,27 +14429,35 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('This view allows you to find and edit Speakers. Speakers are known as Authors when displayed in blogs.
+    t('This page is where you set up Speaker bios and pictures. It assumes the Speaker already exists.
 
-<ol>
-<li>To use an existing Speaker, name them in the Speaker(s) field for an article or event. This field is on the Basic Details tab.</ii>
-<li>You can add a new Speaker in two ways ...
-<ol>
-<li>If you are a normal user just refer to the new speaker in the Speaker(s) field
+If your Speaker doesn&#39;t yet exist...
 <ul>
-<li>If you name a speaker who doesn&#39;t yet exist in the system, you will create a Speaker but it won&#39;t have any content. This happens any time you type (part of) a speaker name but don&#39;t click the corresponding option in the dropdown.</li>
-<li>If you do this, come to this screen, find the new Speaker and fill in their details</li>
+  <li>Go back to your article and add the Speaker there
+  <ul>
+    <li>Type in the name of the Speaker</li>
+    <li>Save the article</li>
+    <li>Come back her, find the new Speaker and then fill in their details</li>
+  </ul></li>
+  <li>Note that if you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly.</li>
 </ul>
-</li>
-<li>If you are a super user you can <a href="/admin/structure/taxonomy/speaker/add">create a new Speaker</a> directly. As this ability allows you to break things it is restricted.</li>
-</ol>
-</li>
-<li>To be visible in an article, the Speaker must have a description</ii>
-<li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
-<li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
-<li>The listing of Speakers tells you how many Articles and CiviCRM Events refer to each Speaker. The Speaker description should be suitably generic to work in all these contexts. The listing also shows you some of the Description and whether a Landscape or Portrait image is attached.</ii>
-<li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
-</ol>
+
+You may discover you have inadvertently created a duplicate of your Speaker. This is possible because Sam Chan etc are common names. To remove a duplicate ...
+<ul>
+  <li>Edit the duplicate Speaker below and click the Delete button at the bottom of the edit screen.</li>
+  <li>Go back to your article.</li>
+  <li>Type (part of) the Speaker name into the article&#39;s Speakers field but click the correct item in the dropdown list.</li>
+  <li>Save your article</li>
+</ul>
+
+Notes ...
+<ul>
+  <li>To be visible in an article, the Speaker must have a description (bio)</ii>
+  <li>For best results, add a Landscape Image to the Speaker. A Portrait Image will also work but is less pleasing. If no image is added, a place-marker is displayed.</ii>
+  <li>To find an existing speaker, use the form below to narrow the search by name or description or image type</ii>
+  <li>The listing of Speakers tells you how many Articles and CiviCRM Events refer to each Speaker. The Speaker description should be suitably generic to work in all these contexts. The listing also shows you some of the Description and whether a Landscape or Portrait image is attached.</ii>
+  <li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
+</ul>
 '),
     t('CiviCRM Event'),
     t('Content'),
