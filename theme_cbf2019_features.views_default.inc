@@ -19008,6 +19008,220 @@ Notes ...
   $export['cbf2019_whats_on_activities'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_with';
+  $view->description = 'A view of a "with speaker" paragraph';
+  $view->tag = 'slider, autoplay, unique';
+  $view->base_table = 'paragraphs_item';
+  $view->human_name = 'cbf2019 with';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '1800';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '1800';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">With</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Paragraphs item: Speaker (field_speaker) */
+  $handler->display->display_options['relationships']['field_speaker_tid']['id'] = 'field_speaker_tid';
+  $handler->display->display_options['relationships']['field_speaker_tid']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['relationships']['field_speaker_tid']['field'] = 'field_speaker_tid';
+  $handler->display->display_options['relationships']['field_speaker_tid']['label'] = 'Speaker';
+  $handler->display->display_options['relationships']['field_speaker_tid']['required'] = TRUE;
+  /* Relationship: Article */
+  $handler->display->display_options['relationships']['field_with_node']['id'] = 'field_with_node';
+  $handler->display->display_options['relationships']['field_with_node']['table'] = 'paragraphs_item';
+  $handler->display->display_options['relationships']['field_with_node']['field'] = 'field_with_node';
+  $handler->display->display_options['relationships']['field_with_node']['ui_name'] = 'Article';
+  $handler->display->display_options['relationships']['field_with_node']['label'] = 'Article';
+  $handler->display->display_options['relationships']['field_with_node']['required'] = TRUE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+  $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image_1']['relationship'] = 'field_speaker_tid';
+  $handler->display->display_options['fields']['field_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_image_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_1']['empty'] = '<div class="landscape-image-placeholder"><i class="fal fa-user"></i></div>';
+  $handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_1']['settings'] = array(
+    'image_style' => 'person_360x438',
+    'image_link' => '',
+  );
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight_1']['id'] = 'field_highlight_1';
+  $handler->display->display_options['fields']['field_highlight_1']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight_1']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight_1']['relationship'] = 'field_speaker_tid';
+  $handler->display->display_options['fields']['field_highlight_1']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight_1']['empty'] = '[field_image_1]';
+  $handler->display->display_options['fields']['field_highlight_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight_1']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '[field_highlight_1]';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'person_360x438',
+    'image_link' => '',
+  );
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['empty'] = '[field_image]';
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_speaker_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Role */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['ui_name'] = 'Role';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['relationship'] = 'field_speaker_tid';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '500';
+  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: Field: Description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['alter']['max_length'] = '500';
+  $handler->display->display_options['fields']['field_description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['empty'] = '[description]';
+  $handler->display->display_options['fields']['field_description']['settings'] = array(
+    'trim_length' => '100',
+  );
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  /* Filter criterion: Paragraphs item: Bundle */
+  $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['table'] = 'paragraphs_item';
+  $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['value'] = array(
+    'with_speaker' => 'with_speaker',
+  );
+  $handler->display->display_options['filters']['bundle']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['relationship'] = 'field_speaker_tid';
+  $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
+  $handler->display->display_options['filters']['description']['value'] = '0';
+  $handler->display->display_options['filters']['description']['group'] = 2;
+  /* Filter criterion: Field: Description (field_description) */
+  $handler->display->display_options['filters']['field_description_value']['id'] = 'field_description_value';
+  $handler->display->display_options['filters']['field_description_value']['table'] = 'field_data_field_description';
+  $handler->display->display_options['filters']['field_description_value']['field'] = 'field_description_value';
+  $handler->display->display_options['filters']['field_description_value']['operator'] = 'longerthan';
+  $handler->display->display_options['filters']['field_description_value']['value'] = '0';
+  $handler->display->display_options['filters']['field_description_value']['group'] = 2;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+
+  /* Display: For node */
+  $handler = $view->new_display('block', 'For node', 'block_1');
+  $handler->display->display_options['display_description'] = 'Shows the "with speaker" for nodes';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: View (Views field view) */
+  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
+  $handler->display->display_options['empty']['view_field']['table'] = 'views';
+  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
+  $handler->display->display_options['empty']['view_field']['label'] = '';
+  $handler->display->display_options['empty']['view_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_speakers';
+  $handler->display->display_options['empty']['view_field']['display'] = 'block_3';
+  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_with_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $translatables['cbf2019_with'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('<span id="cbf2019-speakers-view-header">With</span>'),
+    t('Speaker'),
+    t('Article'),
+    t('<div class="landscape-image-placeholder"><i class="fal fa-user"></i></div>'),
+    t('[field_image_1]'),
+    t('[field_highlight_1]'),
+    t('[field_image]'),
+    t('[description]'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('For node'),
+    t('Shows the "with speaker" for nodes'),
+    t('All'),
+  );
+  $export['cbf2019_with'] = $view;
+
+  $view = new view();
   $view->name = 'local_civicrm_event_slider';
   $view->description = '';
   $view->tag = 'local, slider, autoplay';
