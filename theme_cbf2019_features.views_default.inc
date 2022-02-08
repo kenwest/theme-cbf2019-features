@@ -14669,8 +14669,8 @@ Notes ...
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: For Library resources */
-  $handler = $view->new_display('block', 'For Library resources', 'block_3');
+  /* Display: For non-Activity nodes */
+  $handler = $view->new_display('block', 'For non-Activity nodes', 'block_3');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Content using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
@@ -14690,8 +14690,8 @@ Notes ...
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: For Blog articles */
-  $handler = $view->new_display('block', 'For Blog articles', 'block_4');
+  /* Display: Deprecated - for Blog articles */
+  $handler = $view->new_display('block', 'Deprecated - for Blog articles', 'block_4');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Content using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
@@ -14878,9 +14878,9 @@ Notes ...
     t('All'),
     t('For Local Activity'),
     t('Activity'),
-    t('For Library resources'),
+    t('For non-Activity nodes'),
     t('Content'),
-    t('For Blog articles'),
+    t('Deprecated - for Blog articles'),
     t('For National Activity by Ministry Centre'),
   );
   $export['cbf2019_speakers'] = $view;
