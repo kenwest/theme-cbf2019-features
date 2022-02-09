@@ -3694,6 +3694,8 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Courses';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -3806,6 +3808,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('Page'),
+    t('Courses'),
     t('search'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
@@ -3817,7 +3820,6 @@ function theme_cbf2019_features_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Summary'),
-    t('Courses'),
   );
   $export['cbf2019_courses'] = $view;
 
