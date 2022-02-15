@@ -418,7 +418,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Third Space restricted */
+  /* Field: Content: Don't show this blog on the Home or Blog pages */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -548,7 +548,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Third Space restricted */
+  /* Field: Content: Don't show this blog on the Home or Blog pages */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -573,7 +573,7 @@ function theme_cbf2019_features_views_default_views() {
     'blog' => 'blog',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -597,6 +597,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('page', 'Blog', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Blog';
+  $handler->display->display_options['display_comment'] = 'We want Reel Dialogue content to not show unless Search Terms have been entered. We use the third_space_restricted field (better name would be "Don\'t show this article on the Home or Blog pages") to do this. We do it by sorting on Search Term score descending, then third_space_restricted ascending, and finally Date descending. When there are Search Terms, the high scoring Articles are shown first, so third_space_restricted=1 articles have a good chance of being seen if they are relevant. Without Search Terms, the score is zero, and the 500+ third_space_restricted=1 blogs are displayed after the 1000+ other blogs.';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -625,7 +626,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['sorts']['score']['table'] = 'search_index';
   $handler->display->display_options['sorts']['score']['field'] = 'score';
   $handler->display->display_options['sorts']['score']['order'] = 'DESC';
-  /* Sort criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Sort criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['sorts']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['sorts']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['sorts']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -664,11 +665,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
   );
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
-  $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
-  $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
-  $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
-  $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'not empty';
   /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
@@ -1176,7 +1172,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Third Space restricted */
+  /* Field: Content: Don't show this blog on the Home or Blog pages */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -1462,7 +1458,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Third Space restricted */
+  /* Field: Content: Don't show this blog on the Home or Blog pages */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -16726,13 +16722,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -16969,13 +16965,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -17212,13 +17208,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -17595,13 +17591,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -17792,7 +17788,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created']['value']['value'] = '-7 days';
   $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created']['group'] = 1;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -17864,7 +17860,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created_1']['value']['value'] = '-7 days';
   $handler->display->display_options['filters']['created_1']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created_1']['group'] = 2;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -18151,7 +18147,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created']['value']['value'] = '-31 days';
   $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created']['group'] = 1;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -18223,7 +18219,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created_1']['value']['value'] = '-31 days';
   $handler->display->display_options['filters']['created_1']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created_1']['group'] = 2;
-  /* Filter criterion: Content: Third Space restricted (field_third_space_restricted) */
+  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
