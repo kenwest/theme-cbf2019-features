@@ -3619,6 +3619,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_training_pathway']['field'] = 'field_training_pathway';
   $handler->display->display_options['fields']['field_training_pathway']['label'] = '';
   $handler->display->display_options['fields']['field_training_pathway']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_training_pathway']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_training_pathway']['alter']['text'] = '<em>[field_training_pathway]</em>';
   $handler->display->display_options['fields']['field_training_pathway']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_training_pathway']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Activity */
@@ -3798,6 +3800,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<em>[field_training_pathway]</em>'),
     t('[field_training_pathway] | [field_in_activity]'),
     t('[field_training_pathway]'),
     t('All'),
