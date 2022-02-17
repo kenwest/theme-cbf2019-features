@@ -654,20 +654,20 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_training:node/5218.
-  $menu_links['menu-cbf-2019-plus-menu_training:node/5218'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_training:courses.
+  $menu_links['menu-cbf-2019-plus-menu_training:courses'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'node/5218',
-    'router_path' => 'node/%',
+    'link_path' => 'courses',
+    'router_path' => 'courses',
     'link_title' => 'Training',
     'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_training:courses',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-cbf-2019-plus-menu_training:node/5218',
     ),
     'module' => 'menu',
     'hidden' => 0,

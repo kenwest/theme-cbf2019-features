@@ -3791,7 +3791,7 @@ function theme_cbf2019_features_views_default_views() {
   );
   $handler->display->display_options['filters']['field_training_pathway_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_training_pathway_tid']['vocabulary'] = 'training_pathway';
-  $handler->display->display_options['path'] = 'new-courses';
+  $handler->display->display_options['path'] = 'courses';
   $translatables['cbf2019_courses'] = array(
     t('Master'),
     t('more'),
