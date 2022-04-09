@@ -431,7 +431,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_map_location']['field'] = 'field_map_location';
   $handler->display->display_options['fields']['field_map_location']['label'] = 'Where';
   $handler->display->display_options['fields']['field_map_location']['element_label_colon'] = FALSE;
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -598,7 +598,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Don't show this blog on the Home or Blog pages */
+  /* Field: Content: Only visible in Reel Dialogue */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -728,7 +728,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Don't show this blog on the Home or Blog pages */
+  /* Field: Content: Only visible in Reel Dialogue */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -753,7 +753,7 @@ function theme_cbf2019_features_views_default_views() {
     'blog' => 'blog',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -806,7 +806,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['sorts']['score']['table'] = 'search_index';
   $handler->display->display_options['sorts']['score']['field'] = 'score';
   $handler->display->display_options['sorts']['score']['order'] = 'DESC';
-  /* Sort criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Sort criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['sorts']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['sorts']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['sorts']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -1352,7 +1352,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Don't show this blog on the Home or Blog pages */
+  /* Field: Content: Only visible in Reel Dialogue */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -1638,7 +1638,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Don't show this blog on the Home or Blog pages */
+  /* Field: Content: Only visible in Reel Dialogue */
   $handler->display->display_options['fields']['field_third_space_restricted']['id'] = 'field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['fields']['field_third_space_restricted']['field'] = 'field_third_space_restricted';
@@ -7575,7 +7575,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -7744,7 +7744,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -7898,7 +7898,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -8097,7 +8097,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -9822,7 +9822,7 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_map_location']['field'] = 'field_map_location';
   $handler->display->display_options['fields']['field_map_location']['label'] = 'Where';
   $handler->display->display_options['fields']['field_map_location']['element_label_colon'] = FALSE;
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -16029,7 +16029,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -16185,7 +16185,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Entityform Submission: Note */
+  /* Field: Field: Note */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -17108,13 +17108,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -17351,13 +17351,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -17594,13 +17594,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
       'value' => '(o|d|t)',
     ),
   );
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -17977,13 +17977,13 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'episode' => 'episode',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['operator'] = 'empty';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['group'] = 2;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -18174,7 +18174,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created']['value']['value'] = '-7 days';
   $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created']['group'] = 1;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -18246,7 +18246,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created_1']['value']['value'] = '-7 days';
   $handler->display->display_options['filters']['created_1']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created_1']['group'] = 2;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';
@@ -18533,7 +18533,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created']['value']['value'] = '-31 days';
   $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created']['group'] = 1;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value']['id'] = 'field_third_space_restricted_value';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value']['field'] = 'field_third_space_restricted_value';
@@ -18605,7 +18605,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['created_1']['value']['value'] = '-31 days';
   $handler->display->display_options['filters']['created_1']['value']['type'] = 'offset';
   $handler->display->display_options['filters']['created_1']['group'] = 2;
-  /* Filter criterion: Content: Don&#039;t show this blog on the Home or Blog pages (field_third_space_restricted) */
+  /* Filter criterion: Content: Only visible in Reel Dialogue (field_third_space_restricted) */
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['id'] = 'field_third_space_restricted_value_1';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['table'] = 'field_data_field_third_space_restricted';
   $handler->display->display_options['filters']['field_third_space_restricted_value_1']['field'] = 'field_third_space_restricted_value';

@@ -71,7 +71,7 @@ function theme_cbf2019_features_image_default_styles() {
   $styles['title'] = array(
     'label' => 'title',
     'effects' => array(
-      10 => array(
+      18 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1600,
@@ -79,7 +79,7 @@ function theme_cbf2019_features_image_default_styles() {
         ),
         'weight' => 1,
       ),
-      11 => array(
+      19 => array(
         'name' => 'imagick_convert',
         'data' => array(
           'format' => 'image/jpeg',
