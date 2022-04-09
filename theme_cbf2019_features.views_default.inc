@@ -1875,41 +1875,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'blog' => 'blog',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['operator'] = 'empty';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
-  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
-    1957 => '1957',
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_blog'] = array(
     t('Master'),
     t('<none>'),
