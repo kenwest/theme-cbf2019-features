@@ -3358,9 +3358,9 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
 
-  /* Display: For node */
-  $handler = $view->new_display('block', 'For node', 'block_1');
-  $handler->display->display_options['display_description'] = 'Details table for a node';
+  /* Display: For non-Activity */
+  $handler = $view->new_display('block', 'For non-Activity', 'block_1');
+  $handler->display->display_options['display_description'] = 'Details table for a non-Activity';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -3371,6 +3371,63 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Details (field_details) */
+  $handler->display->display_options['filters']['field_details_value']['id'] = 'field_details_value';
+  $handler->display->display_options['filters']['field_details_value']['table'] = 'field_data_field_details';
+  $handler->display->display_options['filters']['field_details_value']['field'] = 'field_details_value';
+  $handler->display->display_options['filters']['field_details_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+
+  /* Display: For Activity */
+  $handler = $view->new_display('block', 'For Activity', 'block_2');
+  $handler->display->display_options['display_description'] = 'Details table for an Activity';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Field: Details (field_details) */
+  $handler->display->display_options['filters']['field_details_value']['id'] = 'field_details_value';
+  $handler->display->display_options['filters']['field_details_value']['table'] = 'field_data_field_details';
+  $handler->display->display_options['filters']['field_details_value']['field'] = 'field_details_value';
+  $handler->display->display_options['filters']['field_details_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
   $translatables['cbf2019_content_details_table'] = array(
     t('Master'),
     t('more'),
@@ -3381,9 +3438,11 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
-    t('For node'),
-    t('Details table for a node'),
+    t('For non-Activity'),
+    t('Details table for a non-Activity'),
     t('All'),
+    t('For Activity'),
+    t('Details table for an Activity'),
   );
   $export['cbf2019_content_details_table'] = $view;
 
