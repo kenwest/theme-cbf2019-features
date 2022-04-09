@@ -3361,6 +3361,8 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: For Activity */
   $handler = $view->new_display('block', 'For Activity', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Details table for an Activity';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
