@@ -12,6 +12,186 @@ function theme_cbf2019_features_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'cbf2019_activity_components';
+  $view->description = 'Show the Activity components in the order they are listed. The theme template uses views_embed_view() to display the rows.';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 activity components';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'field_highlight_location_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: View (Views field view) */
+  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
+  $handler->display->display_options['empty']['view_field']['table'] = 'views';
+  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
+  $handler->display->display_options['empty']['view_field']['label'] = 'National activity contents';
+  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_national_activity_contents';
+  $handler->display->display_options['empty']['view_field']['display'] = 'block_1';
+  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
+  /* Relationship: Content: Components (field_activity_components) */
+  $handler->display->display_options['relationships']['field_activity_components_value']['id'] = 'field_activity_components_value';
+  $handler->display->display_options['relationships']['field_activity_components_value']['table'] = 'field_data_field_activity_components';
+  $handler->display->display_options['relationships']['field_activity_components_value']['field'] = 'field_activity_components_value';
+  $handler->display->display_options['relationships']['field_activity_components_value']['label'] = 'Component';
+  $handler->display->display_options['relationships']['field_activity_components_value']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_activity_components_value']['delta'] = '-1';
+  /* Relationship: Paragraphs item: Type (field_activity_component_type) */
+  $handler->display->display_options['relationships']['field_activity_component_type_tid']['id'] = 'field_activity_component_type_tid';
+  $handler->display->display_options['relationships']['field_activity_component_type_tid']['table'] = 'field_data_field_activity_component_type';
+  $handler->display->display_options['relationships']['field_activity_component_type_tid']['field'] = 'field_activity_component_type_tid';
+  $handler->display->display_options['relationships']['field_activity_component_type_tid']['relationship'] = 'field_activity_components_value';
+  $handler->display->display_options['relationships']['field_activity_component_type_tid']['label'] = 'Type';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Paragraphs item: Type */
+  $handler->display->display_options['fields']['field_activity_component_type']['id'] = 'field_activity_component_type';
+  $handler->display->display_options['fields']['field_activity_component_type']['table'] = 'field_data_field_activity_component_type';
+  $handler->display->display_options['fields']['field_activity_component_type']['field'] = 'field_activity_component_type';
+  $handler->display->display_options['fields']['field_activity_component_type']['relationship'] = 'field_activity_components_value';
+  /* Field: Field: Note */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['relationship'] = 'field_activity_component_type_tid';
+  $handler->display->display_options['fields']['field_summary']['label'] = 'Embedded view';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_1']['id'] = 'field_title_1';
+  $handler->display->display_options['fields']['field_title_1']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title_1']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title_1']['relationship'] = 'field_activity_component_type_tid';
+  $handler->display->display_options['fields']['field_title_1']['label'] = 'Default Title';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['relationship'] = 'field_activity_components_value';
+  /* Field: Field: Description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_activity_components_value';
+  $handler->display->display_options['fields']['field_description']['label'] = 'Block content';
+  /* Sort criterion: Content: Components (field_activity_components:delta) */
+  $handler->display->display_options['sorts']['delta']['id'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_activity_components';
+  $handler->display->display_options['sorts']['delta']['field'] = 'delta';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'activity' => 'activity',
+  );
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'activity' => 'activity',
+  );
+  /* Filter criterion: Field: Highlight location (field_highlight_location) */
+  $handler->display->display_options['filters']['field_highlight_location_tid']['id'] = 'field_highlight_location_tid';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['table'] = 'field_data_field_highlight_location';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['field'] = 'field_highlight_location_tid';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_highlight_location_tid']['expose']['operator_id'] = 'field_highlight_location_tid_op';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['expose']['operator'] = 'field_highlight_location_tid_op';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['expose']['identifier'] = 'field_highlight_location_tid';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_highlight_location_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_highlight_location_tid']['vocabulary'] = 'banner';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_activity_components'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('All'),
+    t('National activity contents'),
+    t('Component'),
+    t('Type'),
+    t('Nid'),
+    t('Embedded view'),
+    t('Default Title'),
+    t('Title'),
+    t('Block content'),
+    t('Block'),
+  );
+  $export['cbf2019_activity_components'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_activity_logo';
   $view->description = 'The logo and subtitle of the Activity';
   $view->tag = 'default';
