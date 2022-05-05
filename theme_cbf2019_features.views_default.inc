@@ -7616,9 +7616,12 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['label'] = '';
   $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact [field_order_url]';
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['settings'] = array(
+    'custom_title' => '',
+  );
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
@@ -7785,9 +7788,12 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['label'] = '';
   $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact [field_order_url]';
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['settings'] = array(
+    'custom_title' => '',
+  );
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
   /* Field: Domains: Machine name */
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
@@ -7939,9 +7945,12 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['label'] = '';
   $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact [field_order_url]';
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['settings'] = array(
+    'custom_title' => '',
+  );
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
   /* Field: Entityform Submission: Entityform submission ID */
   $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
@@ -8138,9 +8147,12 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['label'] = '';
   $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>';
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact [field_order_url]';
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['settings'] = array(
+    'custom_title' => '',
+  );
   $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
   /* Field: Domains: Machine name */
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
@@ -8349,7 +8361,7 @@ To create a new CiviCRM Event
     t('Asc'),
     t('Desc'),
     t('Location'),
-    t('Contact <a href="[field_order_url-url]" target="_blank" rel="noopener noreferrer">[field_order_url-title]</a>'),
+    t('Contact [field_order_url]'),
     t('      <div class="marker"
         data-lat="[latitude]"
         data-long="[longitude]"
@@ -19877,7 +19889,7 @@ Notes ...
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">With</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Relationship: Paragraphs item: Speaker (field_speaker) */
+  /* Relationship: Paragraphs item: Person (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_tid']['id'] = 'field_speaker_tid';
   $handler->display->display_options['relationships']['field_speaker_tid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_tid']['field'] = 'field_speaker_tid';
