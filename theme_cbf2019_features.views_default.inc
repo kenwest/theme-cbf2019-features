@@ -4316,10 +4316,13 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
+  <a href="/domain/[machine_name]/instagram" class=""><i class=" fab fa-instagram"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
+</span>
+<span class="footer-social-links">
+  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 ';
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
@@ -4366,10 +4369,13 @@ function theme_cbf2019_features_views_default_views() {
   <a href="/domain/[machine_name]/facebook" class=""><i class=" fab fa-facebook-f"></i></a>
 </span>
 <span class="footer-social-links">
-  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
+  <a href="/domain/[machine_name]/instagram" class=""><i class=" fab fa-instagram"></i></a>
 </span>
 <span class="footer-social-links">
   <a href="/domain/[machine_name]/youtube" class=""><i class=" fab fa-youtube"></i></a>
+</span>
+<span class="footer-social-links">
+  <a href="/domain/[machine_name]/linkedin" class=""><i class=" fab fa-linkedin-in"></i></a>
 </span>
 '),
     t('Email signature'),
