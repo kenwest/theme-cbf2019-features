@@ -6027,7 +6027,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'REGISTER NOW';
   $handler->display->display_options['fields']['field_order_url']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['path'] = '[field_order_url-url]';
+  $handler->display->display_options['fields']['field_order_url']['alter']['path'] = '[field_order_url]';
   $handler->display->display_options['fields']['field_order_url']['alter']['rel'] = 'nofollow';
   $handler->display->display_options['fields']['field_order_url']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
