@@ -4045,7 +4045,7 @@ function theme_cbf2019_features_views_default_views() {
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Content: With */
+  /* Field: Field: With */
   $handler->display->display_options['fields']['field_with']['id'] = 'field_with';
   $handler->display->display_options['fields']['field_with']['table'] = 'field_data_field_with';
   $handler->display->display_options['fields']['field_with']['field'] = 'field_with';
@@ -20055,6 +20055,46 @@ Notes ...
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: For CiviCRM Event */
+  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_2');
+  $handler->display->display_options['display_description'] = 'The personnel With a CiviCRM Event';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: View (Views field view) */
+  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
+  $handler->display->display_options['empty']['view_field']['table'] = 'views';
+  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
+  $handler->display->display_options['empty']['view_field']['label'] = '';
+  $handler->display->display_options['empty']['view_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_speakers';
+  $handler->display->display_options['empty']['view_field']['display'] = 'block_1';
+  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Paragraphs item: Person (field_speaker) */
+  $handler->display->display_options['relationships']['field_speaker_tid']['id'] = 'field_speaker_tid';
+  $handler->display->display_options['relationships']['field_speaker_tid']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['relationships']['field_speaker_tid']['field'] = 'field_speaker_tid';
+  $handler->display->display_options['relationships']['field_speaker_tid']['label'] = 'Speaker';
+  $handler->display->display_options['relationships']['field_speaker_tid']['required'] = TRUE;
+  /* Relationship: Event */
+  $handler->display->display_options['relationships']['field_with_civicrm_event']['id'] = 'field_with_civicrm_event';
+  $handler->display->display_options['relationships']['field_with_civicrm_event']['table'] = 'paragraphs_item';
+  $handler->display->display_options['relationships']['field_with_civicrm_event']['field'] = 'field_with_civicrm_event';
+  $handler->display->display_options['relationships']['field_with_civicrm_event']['ui_name'] = 'Event';
+  $handler->display->display_options['relationships']['field_with_civicrm_event']['label'] = 'Event';
+  $handler->display->display_options['relationships']['field_with_civicrm_event']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: CiviCRM Events: Event ID */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['relationship'] = 'field_with_civicrm_event';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_with'] = array(
     t('Master'),
     t('more'),
@@ -20076,6 +20116,9 @@ Notes ...
     t('For node'),
     t('Shows the "with speaker" for nodes'),
     t('All'),
+    t('For CiviCRM Event'),
+    t('The personnel With a CiviCRM Event'),
+    t('Event'),
   );
   $export['cbf2019_with'] = $view;
 
