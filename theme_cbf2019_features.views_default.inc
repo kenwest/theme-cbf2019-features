@@ -120,6 +120,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['relationship'] = 'field_activity_components_value';
   $handler->display->display_options['fields']['field_description']['label'] = 'Block content';
+  /* Field: Paragraphs item: Fixed width container */
+  $handler->display->display_options['fields']['field_fixed_width_container']['id'] = 'field_fixed_width_container';
+  $handler->display->display_options['fields']['field_fixed_width_container']['table'] = 'field_data_field_fixed_width_container';
+  $handler->display->display_options['fields']['field_fixed_width_container']['field'] = 'field_fixed_width_container';
+  $handler->display->display_options['fields']['field_fixed_width_container']['relationship'] = 'field_activity_components_value';
+  $handler->display->display_options['fields']['field_fixed_width_container']['label'] = '';
+  $handler->display->display_options['fields']['field_fixed_width_container']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Components (field_activity_components:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
   $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_activity_components';
