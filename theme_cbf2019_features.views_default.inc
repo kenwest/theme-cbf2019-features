@@ -3432,15 +3432,15 @@ function theme_cbf2019_features_views_default_views() {
     'cbf_library_collections_slider' => 0,
   );
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_3');
-  $handler->display->display_options['display_description'] = 'Shows the Activity\'s collections in the order specified';
+  /* Display: Referred by Node */
+  $handler = $view->new_display('block', 'Referred by Node', 'block_3');
+  $handler->display->display_options['display_description'] = 'Shows the Node\'s collections in the order specified';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_collections_node']['id'] = 'reverse_field_collections_node';
   $handler->display->display_options['relationships']['reverse_field_collections_node']['table'] = 'entityform';
   $handler->display->display_options['relationships']['reverse_field_collections_node']['field'] = 'reverse_field_collections_node';
-  $handler->display->display_options['relationships']['reverse_field_collections_node']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['reverse_field_collections_node']['label'] = 'Node';
   $handler->display->display_options['relationships']['reverse_field_collections_node']['required'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -3476,9 +3476,9 @@ function theme_cbf2019_features_views_default_views() {
     t('For Christian library'),
     t('For Christian library for topic'),
     t('This is a duplicate of \'For Christian library\' so block location can be different'),
-    t('For Activity'),
-    t('Shows the Activity\'s collections in the order specified'),
-    t('Activity'),
+    t('Referred by Node'),
+    t('Shows the Node\'s collections in the order specified'),
+    t('Node'),
     t('All'),
   );
   $export['cbf2019_collections_slider'] = $view;
