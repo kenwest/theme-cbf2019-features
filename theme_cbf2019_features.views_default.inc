@@ -2971,7 +2971,7 @@ function theme_cbf2019_features_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'h4 align-center';
-  /* Field: Field: Activity sidebar */
+  /* Field: Field: Promotional insert */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3116,10 +3116,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Activity sidebar */
+  /* Field: Field: Promotional insert */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
+  $handler->display->display_options['fields']['field_short_form']['label'] = 'Short description';
   $handler->display->display_options['fields']['field_short_form']['alter']['max_length'] = '128';
   $handler->display->display_options['fields']['field_short_form']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_short_form']['type'] = 'text_plain';
@@ -3196,7 +3197,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Activity sidebar (field_short_form) */
+  /* Filter criterion: Field: Promotional insert (field_short_form) */
   $handler->display->display_options['filters']['field_short_form_value']['id'] = 'field_short_form_value';
   $handler->display->display_options['filters']['field_short_form_value']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['filters']['field_short_form_value']['field'] = 'field_short_form_value';
@@ -3254,7 +3255,7 @@ function theme_cbf2019_features_views_default_views() {
     t('- Choose an operation -'),
     t('Title'),
     t('Audience'),
-    t('Activity sidebar'),
+    t('Short description'),
     t('Title image'),
     t('Blogs'),
     t('Episodes'),
