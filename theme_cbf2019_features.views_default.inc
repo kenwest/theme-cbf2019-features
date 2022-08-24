@@ -3456,6 +3456,56 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+
+  /* Display: Refers to Blog */
+  $handler = $view->new_display('block', 'Refers to Blog', 'block_6');
+  $handler->display->display_options['display_description'] = 'Shows the collections that refer to this Blog';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_related_blogs_target_id']['id'] = 'field_related_blogs_target_id';
+  $handler->display->display_options['relationships']['field_related_blogs_target_id']['table'] = 'field_data_field_related_blogs';
+  $handler->display->display_options['relationships']['field_related_blogs_target_id']['field'] = 'field_related_blogs_target_id';
+  $handler->display->display_options['relationships']['field_related_blogs_target_id']['label'] = 'Blog';
+  $handler->display->display_options['relationships']['field_related_blogs_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_related_blogs_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+
+  /* Display: Refers to Episode */
+  $handler = $view->new_display('block', 'Refers to Episode', 'block_7');
+  $handler->display->display_options['display_description'] = 'Shows the collections that refer to this Episode';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_related_episodes_target_id']['id'] = 'field_related_episodes_target_id';
+  $handler->display->display_options['relationships']['field_related_episodes_target_id']['table'] = 'field_data_field_related_episodes';
+  $handler->display->display_options['relationships']['field_related_episodes_target_id']['field'] = 'field_related_episodes_target_id';
+  $handler->display->display_options['relationships']['field_related_episodes_target_id']['label'] = 'Episode';
+  $handler->display->display_options['relationships']['field_related_episodes_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_related_episodes_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
   $translatables['cbf2019_collections_slider'] = array(
     t('Master'),
     t('more'),
@@ -3480,6 +3530,12 @@ function theme_cbf2019_features_views_default_views() {
     t('Shows the Node\'s collections in the order specified'),
     t('Node'),
     t('All'),
+    t('Refers to Blog'),
+    t('Shows the collections that refer to this Blog'),
+    t('Blog'),
+    t('Refers to Episode'),
+    t('Shows the collections that refer to this Episode'),
+    t('Episode'),
   );
   $export['cbf2019_collections_slider'] = $view;
 
