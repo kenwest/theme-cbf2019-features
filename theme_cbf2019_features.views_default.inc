@@ -4475,6 +4475,30 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_training_pathway_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_training_pathway_tid']['vocabulary'] = 'training_pathway';
   $handler->display->display_options['path'] = 'courses';
+
+  /* Display: Recent courses */
+  $handler = $view->new_display('block', 'Recent courses', 'block_1');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More courses';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_1';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-courses-view-header">Recent courses</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $translatables['cbf2019_courses'] = array(
     t('Master'),
     t('more'),
@@ -4502,6 +4526,9 @@ function theme_cbf2019_features_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Summary'),
+    t('Recent courses'),
+    t('More courses'),
+    t('<span id="cbf2019-courses-view-header">Recent courses</span>'),
   );
   $export['cbf2019_courses'] = $view;
 
