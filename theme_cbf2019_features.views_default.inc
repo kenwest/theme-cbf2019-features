@@ -13308,6 +13308,14 @@ else {
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-recent-library-view-header">Resources</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
@@ -13748,6 +13756,7 @@ else {
     t('Node referencing Activity'),
     t('For Collection'),
     t('This display shows the recent library resources for a Collection'),
+    t('<span id="cbf2019-recent-library-view-header">Resources</span>'),
     t('Collection'),
     t('For National Activity'),
     t('Recent library resources for a national activity'),
@@ -18228,7 +18237,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Field: Icon name */
+  /* Field: Field: Second title */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
@@ -19447,7 +19456,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_title_image']['group_column'] = 'entity_id';
-  /* Field: Field: Icon name */
+  /* Field: Field: Second title */
   $handler->display->display_options['fields']['field_second_title']['id'] = 'field_second_title';
   $handler->display->display_options['fields']['field_second_title']['table'] = 'field_data_field_second_title';
   $handler->display->display_options['fields']['field_second_title']['field'] = 'field_second_title';
