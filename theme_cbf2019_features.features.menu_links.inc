@@ -423,7 +423,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => -50,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
   );
@@ -450,7 +450,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
   );
@@ -500,9 +500,57 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_courses:courses.
+  $menu_links['menu-cbf-2019-plus-menu_courses:courses'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'courses',
+    'router_path' => 'courses',
+    'link_title' => 'Courses',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_courses:courses',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-plus-menu_training:node/6194',
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_evq:node/5857.
+  $menu_links['menu-cbf-2019-plus-menu_evq:node/5857'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/5857',
+    'router_path' => 'node/%',
+    'link_title' => 'EvQ',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_evq:node/5857',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-plus-menu_training:node/6194',
   );
   // Exported menu link: menu-cbf-2019-plus-menu_jesus:library/topic.
   $menu_links['menu-cbf-2019-plus-menu_jesus:library/topic'] = array(
@@ -527,9 +575,33 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -49,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_lifework-conference:node/1283.
+  $menu_links['menu-cbf-2019-plus-menu_lifework-conference:node/1283'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/1283',
+    'router_path' => 'node/%',
+    'link_title' => 'Life@Work conference',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_lifework-conference:node/1283',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-plus-menu_training:node/6194',
   );
   // Exported menu link: menu-cbf-2019-plus-menu_networks:networks.
   $menu_links['menu-cbf-2019-plus-menu_networks:networks'] = array(
@@ -553,6 +625,30 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
     'customized' => 1,
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_overview:node/6194.
+  $menu_links['menu-cbf-2019-plus-menu_overview:node/6194'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/6194',
+    'router_path' => 'node/%',
+    'link_title' => 'Overview',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_overview:node/6194',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-plus-menu_training:node/6194',
   );
   // Exported menu link: menu-cbf-2019-plus-menu_resources:library.
   $menu_links['menu-cbf-2019-plus-menu_resources:library'] = array(
@@ -600,7 +696,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -46,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
   );
@@ -627,9 +723,33 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -43,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
+  );
+  // Exported menu link: menu-cbf-2019-plus-menu_the-word-one-to-one:node/3044.
+  $menu_links['menu-cbf-2019-plus-menu_the-word-one-to-one:node/3044'] = array(
+    'menu_name' => 'menu-cbf-2019-plus-menu',
+    'link_path' => 'node/3044',
+    'router_path' => 'node/%',
+    'link_title' => 'The Word One to One',
+    'options' => array(
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-cbf-2019-plus-menu_the-word-one-to-one:node/3044',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'parent_identifier' => 'menu-cbf-2019-plus-menu_training:node/6194',
   );
   // Exported menu link: menu-cbf-2019-plus-menu_third-space:https://thirdspace.org.au.
   $menu_links['menu-cbf-2019-plus-menu_third-space:https://thirdspace.org.au'] = array(
@@ -654,14 +774,14 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_training:courses.
-  $menu_links['menu-cbf-2019-plus-menu_training:courses'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_training:node/6194.
+  $menu_links['menu-cbf-2019-plus-menu_training:node/6194'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'courses',
-    'router_path' => 'courses',
+    'link_path' => 'node/6194',
+    'router_path' => 'node/%',
     'link_title' => 'Training',
     'options' => array(
-      'identifier' => 'menu-cbf-2019-plus-menu_training:courses',
+      'identifier' => 'menu-cbf-2019-plus-menu_training:node/6194',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
@@ -672,8 +792,8 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
     'weight' => -48,
     'customized' => 1,
   );
@@ -723,7 +843,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
   );
@@ -750,7 +870,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => -44,
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
   );
@@ -1192,15 +1312,19 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Blog');
   t('Christianity');
   t('Collections');
+  t('Courses');
   t('Entertainment');
   t('Environment and science');
+  t('EvQ');
   t('Explore topics');
   t('Food');
   t('Health and wellbeing');
   t('Jesus');
   t('Learning');
+  t('Life@Work conference');
   t('Listen');
   t('Networks');
+  t('Overview');
   t('Panic room - COVID-19');
   t('Politics and society');
   t('Read');
@@ -1212,6 +1336,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
   t('Science + faith');
   t('Society');
   t('Sport');
+  t('The Word One to One');
   t('Third Space');
   t('Training');
   t('Watch');
