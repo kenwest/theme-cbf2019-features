@@ -579,20 +579,20 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'menu-cbf-2019-plus-menu_resources:library',
   );
-  // Exported menu link: menu-cbf-2019-plus-menu_lifework-conference:node/1283.
-  $menu_links['menu-cbf-2019-plus-menu_lifework-conference:node/1283'] = array(
+  // Exported menu link: menu-cbf-2019-plus-menu_lifework-conference:node/5523.
+  $menu_links['menu-cbf-2019-plus-menu_lifework-conference:node/5523'] = array(
     'menu_name' => 'menu-cbf-2019-plus-menu',
-    'link_path' => 'node/1283',
+    'link_path' => 'node/5523',
     'router_path' => 'node/%',
     'link_title' => 'Life@Work conference',
     'options' => array(
+      'identifier' => 'menu-cbf-2019-plus-menu_lifework-conference:node/5523',
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-cbf-2019-plus-menu_lifework-conference:node/1283',
     ),
     'module' => 'menu',
     'hidden' => 0,
