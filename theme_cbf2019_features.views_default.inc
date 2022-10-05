@@ -4610,7 +4610,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['machine_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['machine_name']['alter']['text'] = '<div class="footer-logo">
   <a href="/" class="embed-responsive embed-responsive-16by9">
-    <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png">
+    <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png" alt="Our logo">
   </a>
 </div>
 <span class="footer-social-links">
@@ -4663,7 +4663,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Footer logo'),
     t('<div class="footer-logo">
   <a href="/" class="embed-responsive embed-responsive-16by9">
-    <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png">
+    <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png" alt="Our logo">
   </a>
 </div>
 <span class="footer-social-links">
