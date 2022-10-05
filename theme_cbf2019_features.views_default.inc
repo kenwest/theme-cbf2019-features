@@ -833,6 +833,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
@@ -864,6 +865,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_comment'] = 'Tick \'Skip default argument for view URL\' on the Domain Id contextual filter. This prevents the argument polluting the canonical URL, which affects SEO.';
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'articles';
 
@@ -1089,6 +1091,10 @@ function theme_cbf2019_features_views_default_views() {
         'value' => '',
         'default' => '',
       ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
       'robots' => array(
         'value' => array(
           'index' => 0,
@@ -1180,6 +1186,9 @@ function theme_cbf2019_features_views_default_views() {
       'expires' => array(
         'value' => '',
       ),
+      'google' => array(
+        'value' => '',
+      ),
       'og:type' => array(
         'value' => '',
       ),
@@ -1208,6 +1217,9 @@ function theme_cbf2019_features_views_default_views() {
         'value' => '',
       ),
       'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:alt' => array(
         'value' => '',
       ),
       'og:image:type' => array(
@@ -11740,6 +11752,7 @@ else {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
@@ -11771,6 +11784,7 @@ else {
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_comment'] = 'Tick \'Skip default argument for view URL\' on the Domain Id contextual filter. This prevents the argument polluting the canonical URL, which affects SEO.';
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'library';
 
