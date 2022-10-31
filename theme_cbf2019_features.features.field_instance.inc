@@ -305,7 +305,7 @@ function theme_cbf2019_features_field_default_field_instances() {
     'label' => 'Title image',
     'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'images/content/[current-date:custom:Y]',
       'file_extensions' => 'png gif jpg jpeg',
@@ -466,7 +466,7 @@ function theme_cbf2019_features_field_default_field_instances() {
     'label' => 'Title image',
     'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'images/content/[current-date:custom:Y]',
       'file_extensions' => 'png gif jpg jpeg',
@@ -599,7 +599,7 @@ function theme_cbf2019_features_field_default_field_instances() {
     'label' => 'Title image',
     'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'images/content/[current-date:custom:Y]',
       'file_extensions' => 'png gif jpg jpeg',
@@ -635,7 +635,7 @@ function theme_cbf2019_features_field_default_field_instances() {
             'search_all_fields' => 0,
           ),
         ),
-        'preview_image_style' => 'title',
+        'preview_image_style' => 'title-preview',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
