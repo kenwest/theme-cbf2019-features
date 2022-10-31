@@ -6247,6 +6247,12 @@ To create a new CiviCRM Event
   $handler->display->display_options['filters']['active_on']['relationship'] = 'civicrm_price_field';
   $handler->display->display_options['filters']['active_on']['operator'] = 'empty';
   $handler->display->display_options['filters']['active_on']['group'] = 2;
+  /* Filter criterion: CiviCRM Price Field Values: Price Field Option Visibility */
+  $handler->display->display_options['filters']['visibility_id']['id'] = 'visibility_id';
+  $handler->display->display_options['filters']['visibility_id']['table'] = 'civicrm_price_field_value';
+  $handler->display->display_options['filters']['visibility_id']['field'] = 'visibility_id';
+  $handler->display->display_options['filters']['visibility_id']['relationship'] = 'civicrm_price_field_value';
+  $handler->display->display_options['filters']['visibility_id']['value']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
