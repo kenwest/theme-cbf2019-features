@@ -694,6 +694,264 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_activity_regular_venue_list'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_article_ratings_admin';
+  $view->description = 'An admin page for reviewing article ratings';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 article ratings admin';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'cbf2019 article ratings admin';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 1,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Article Rating */
+  $handler->display->display_options['fields']['field_article_rating']['id'] = 'field_article_rating';
+  $handler->display->display_options['fields']['field_article_rating']['table'] = 'field_data_field_article_rating';
+  $handler->display->display_options['fields']['field_article_rating']['field'] = 'field_article_rating';
+  $handler->display->display_options['fields']['field_article_rating']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_rating']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
+  $handler->display->display_options['fields']['field_episode_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_episode_date']['settings'] = array(
+    'format_type' => 'short',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Article Topics */
+  $handler->display->display_options['fields']['field_article_topics']['id'] = 'field_article_topics';
+  $handler->display->display_options['fields']['field_article_topics']['table'] = 'field_data_field_article_topics';
+  $handler->display->display_options['fields']['field_article_topics']['field'] = 'field_article_topics';
+  $handler->display->display_options['fields']['field_article_topics']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_article_topics']['delta_offset'] = '0';
+  /* Field: Field: Speaker(s) */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Content: Published status */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Published';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Field: Audience */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['id'] = 'taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'Edit content';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]/edit';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Article Rating (field_article_rating) */
+  $handler->display->display_options['sorts']['field_article_rating_value']['id'] = 'field_article_rating_value';
+  $handler->display->display_options['sorts']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
+  $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
+  $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
+  /* Filter criterion: Content: Article Topics (field_article_topics) */
+  $handler->display->display_options['filters']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
+  $handler->display->display_options['filters']['field_article_topics_tid']['table'] = 'field_data_field_article_topics';
+  $handler->display->display_options['filters']['field_article_topics_tid']['field'] = 'field_article_topics_tid';
+  $handler->display->display_options['filters']['field_article_topics_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_article_topics_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_article_topics_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['operator_id'] = 'field_article_topics_tid_op';
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['label'] = 'Article Topics';
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['operator'] = 'field_article_topics_tid_op';
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['identifier'] = 'field_article_topics_tid';
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_article_topics_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_article_topics_tid']['vocabulary'] = 'article_topic';
+  /* Filter criterion: Field: Speaker(s) (field_speakers) */
+  $handler->display->display_options['filters']['field_speakers_tid']['id'] = 'field_speakers_tid';
+  $handler->display->display_options['filters']['field_speakers_tid']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['filters']['field_speakers_tid']['field'] = 'field_speakers_tid';
+  $handler->display->display_options['filters']['field_speakers_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_speakers_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_speakers_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['operator_id'] = 'field_speakers_tid_op';
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['label'] = 'Speaker(s)';
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['operator'] = 'field_speakers_tid_op';
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['identifier'] = 'field_speakers_tid';
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_speakers_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_speakers_tid']['vocabulary'] = 'speaker';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Article Rating (field_article_rating) */
+  $handler->display->display_options['filters']['field_article_rating_value']['id'] = 'field_article_rating_value';
+  $handler->display->display_options['filters']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
+  $handler->display->display_options['filters']['field_article_rating_value']['field'] = 'field_article_rating_value';
+  $handler->display->display_options['filters']['field_article_rating_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_article_rating_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_article_rating_value']['expose']['operator_id'] = 'field_article_rating_value_op';
+  $handler->display->display_options['filters']['field_article_rating_value']['expose']['label'] = 'Article Rating';
+  $handler->display->display_options['filters']['field_article_rating_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_article_rating_value']['expose']['operator'] = 'field_article_rating_value_op';
+  $handler->display->display_options['filters']['field_article_rating_value']['expose']['identifier'] = 'field_article_rating_value';
+  $handler->display->display_options['filters']['field_article_rating_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = '';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_3_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['label'] = 'Audience';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['operator'] = 'taxonomy_vocabulary_3_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['identifier'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/cbf/article-ratings';
+  $translatables['cbf2019_article_ratings_admin'] = array(
+    t('Master'),
+    t('cbf2019 article ratings admin'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Content'),
+    t('- Choose an operation -'),
+    t('Title'),
+    t('Article Rating'),
+    t('Date'),
+    t('Article Topics'),
+    t('Speaker(s)'),
+    t('Published'),
+    t('Audience'),
+    t('Edit content'),
+    t('Page'),
+  );
+  $export['cbf2019_article_ratings_admin'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_blog';
   $view->description = 'Blog view for the cbf2019 theme';
   $view->tag = 'default';
@@ -2983,7 +3241,7 @@ function theme_cbf2019_features_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'h4 align-center';
-  /* Field: Field: Promotional insert */
+  /* Field: Field: Short description */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3128,7 +3386,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Promotional insert */
+  /* Field: Field: Short description */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3208,7 +3466,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Promotional insert (field_short_form) */
+  /* Filter criterion: Field: Short description (field_short_form) */
   $handler->display->display_options['filters']['field_short_form_value']['id'] = 'field_short_form_value';
   $handler->display->display_options['filters']['field_short_form_value']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['filters']['field_short_form_value']['field'] = 'field_short_form_value';
@@ -3266,7 +3524,7 @@ function theme_cbf2019_features_views_default_views() {
     t('- Choose an operation -'),
     t('Title'),
     t('Audience'),
-    t('Promotional insert'),
+    t('Short description'),
     t('Title image'),
     t('Blogs'),
     t('Episodes'),
@@ -19701,7 +19959,7 @@ Notes ...
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Synopsis */
+  /* Field: Field: Path */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -19787,7 +20045,7 @@ Notes ...
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Synopsis (field_synopsis) */
+  /* Filter criterion: Field: Path (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -19886,7 +20144,7 @@ Notes ...
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Synopsis'),
+    t('Path'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
