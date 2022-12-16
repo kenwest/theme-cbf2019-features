@@ -12067,6 +12067,126 @@ else {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['path'] = 'rated-articles';
+
+  /* Display: Articles by topic page */
+  $handler = $view->new_display('page', 'Articles by topic page', 'page_2');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More articles';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">%1</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no articles for this topic';
+  $handler->display->display_options['empty']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Article Topics (field_article_topics) */
+  $handler->display->display_options['arguments']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['table'] = 'field_data_field_article_topics';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['field'] = 'field_article_topics_tid';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['vocabularies'] = array(
+    'article_topic' => 'article_topic',
+  );
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['transform'] = TRUE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'articles/topic/%';
+
+  /* Display: Articles by speaker page */
+  $handler = $view->new_display('page', 'Articles by speaker page', 'page_3');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More articles';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">%1</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no articles by this person';
+  $handler->display->display_options['empty']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field: Speaker(s) (field_speakers) */
+  $handler->display->display_options['arguments']['field_speakers_tid']['id'] = 'field_speakers_tid';
+  $handler->display->display_options['arguments']['field_speakers_tid']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['arguments']['field_speakers_tid']['field'] = 'field_speakers_tid';
+  $handler->display->display_options['arguments']['field_speakers_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_speakers_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_speakers_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_speakers_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_speakers_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_speakers_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_speakers_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_speakers_tid']['validate_options']['vocabularies'] = array(
+    'speaker' => 'speaker',
+  );
+  $handler->display->display_options['arguments']['field_speakers_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_speakers_tid']['validate_options']['transform'] = TRUE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'articles/speaker/%';
   $translatables['cbf2019_rated_content'] = array(
     t('Master'),
     t('<none>'),
@@ -12091,6 +12211,11 @@ else {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Articles by topic page'),
+    t('<span id="cbf2019-rated-content-view-header">%1</span>'),
+    t('There are no articles for this topic'),
+    t('Articles by speaker page'),
+    t('There are no articles by this person'),
   );
   $export['cbf2019_rated_content'] = $view;
 
