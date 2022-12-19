@@ -3241,7 +3241,7 @@ function theme_cbf2019_features_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'h4 align-center';
-  /* Field: Field: Short description */
+  /* Field: Field: Promotional insert */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3386,7 +3386,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Short description */
+  /* Field: Field: Promotional insert */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3466,7 +3466,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Short description (field_short_form) */
+  /* Filter criterion: Field: Promotional insert (field_short_form) */
   $handler->display->display_options['filters']['field_short_form_value']['id'] = 'field_short_form_value';
   $handler->display->display_options['filters']['field_short_form_value']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['filters']['field_short_form_value']['field'] = 'field_short_form_value';
@@ -3524,7 +3524,7 @@ function theme_cbf2019_features_views_default_views() {
     t('- Choose an operation -'),
     t('Title'),
     t('Audience'),
-    t('Short description'),
+    t('Promotional insert'),
     t('Title image'),
     t('Blogs'),
     t('Episodes'),
@@ -20486,7 +20486,7 @@ Notes ...
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Path */
+  /* Field: Field: Synopsis */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -20572,7 +20572,7 @@ Notes ...
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Path (field_synopsis) */
+  /* Filter criterion: Field: Synopsis (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -20671,7 +20671,7 @@ Notes ...
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Path'),
+    t('Synopsis'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
