@@ -12259,6 +12259,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['field_speakers']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speakers']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
@@ -12336,6 +12337,7 @@ else {
   $handler->display->display_options['fields']['field_article_topics']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['field_article_topics']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['field_article_topics']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_topics']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_article_topics']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_article_topics']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_topics']['delta_offset'] = '0';
