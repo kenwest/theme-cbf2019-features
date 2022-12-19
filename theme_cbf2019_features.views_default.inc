@@ -12170,6 +12170,9 @@ else {
 
   /* Display: Articles page with topic contextual filter */
   $handler = $view->new_display('page', 'Articles page with topic contextual filter', 'page_5');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
