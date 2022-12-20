@@ -954,8 +954,8 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_article_topics';
-  $view->description = 'Slider showing speakers for Activities, CiviCRM Events and Resources';
-  $view->tag = 'slider, autoplay, unique';
+  $view->description = '';
+  $view->tag = '';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 article topics';
   $view->core = 7;
@@ -975,14 +975,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">With</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -1007,12 +1001,6 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Article Topics links */
   $handler = $view->new_display('block', 'Article Topics links', 'block_6');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -1058,7 +1046,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<span id="cbf2019-speakers-view-header">With</span>'),
     t('Defaults'),
     t('Article Topics links'),
     t('<span id="cbf2019-article-topics-view-header">More on ...</span>'),
