@@ -1038,6 +1038,73 @@ function theme_cbf2019_features_views_default_views() {
     'blog' => 'blog',
     'episode' => 'episode',
   );
+
+  /* Display: Article hierarchy */
+  $handler = $view->new_display('block', 'Article hierarchy', 'block_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'name_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Parent */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['ui_name'] = 'Parent';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/topic?topic=[name]';
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'parent';
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight_1']['id'] = 'weight_1';
+  $handler->display->display_options['sorts']['weight_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight_1']['field'] = 'weight';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'article_topic' => 'article_topic',
+  );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Parent term */
+  $handler->display->display_options['filters']['parent']['id'] = 'parent';
+  $handler->display->display_options['filters']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['filters']['parent']['field'] = 'parent';
+  $handler->display->display_options['filters']['parent']['operator'] = '!=';
+  $handler->display->display_options['filters']['parent']['value']['value'] = '0';
   $translatables['cbf2019_article_topics'] = array(
     t('Master'),
     t('more'),
@@ -1051,6 +1118,8 @@ function theme_cbf2019_features_views_default_views() {
     t('<span id="cbf2019-article-topics-view-header">More on ...</span>'),
     t('Article'),
     t('All'),
+    t('Article hierarchy'),
+    t('Parent'),
   );
   $export['cbf2019_article_topics'] = $view;
 
