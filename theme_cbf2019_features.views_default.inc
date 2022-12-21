@@ -977,6 +977,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-article-topics-view-header">Topics</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -1154,6 +1160,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<span id="cbf2019-article-topics-view-header">Topics</span>'),
     t('[name]'),
     t('Defaults'),
     t('Article Topics links'),
