@@ -16596,6 +16596,184 @@ Notes ...
   $export['cbf2019_speaker_admin_view'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_speaker_listings';
+  $view->description = 'Listings of speakers';
+  $view->tag = '';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'cbf2019 speaker listings';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '1800';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '1800';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/speaker/[name]';
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'speaker' => 'speaker',
+  );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+
+  /* Display: Article Speaker links */
+  $handler = $view->new_display('block', 'Article Speaker links', 'block_6');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speaker-listings-header">More by ...</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Article */
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['ui_name'] = 'Article';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Article';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'blog' => 'blog',
+    'episode' => 'episode',
+  );
+
+  /* Display: Top 10 rated Speakers */
+  $handler = $view->new_display('block', 'Top 10 rated Speakers', 'block_7');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speaker-listings-header">Top 10 speakers</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Article */
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['ui_name'] = 'Article';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Article';
+  $handler->display->display_options['relationships']['reverse_field_speakers_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Article Rating (field_article_rating) */
+  $handler->display->display_options['sorts']['field_article_rating_value']['id'] = 'field_article_rating_value';
+  $handler->display->display_options['sorts']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
+  $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
+  $handler->display->display_options['sorts']['field_article_rating_value']['relationship'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['sorts']['field_article_rating_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'speaker' => 'speaker',
+  );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_speakers_node';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    0 => '1957',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  $translatables['cbf2019_speaker_listings'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Defaults'),
+    t('Article Speaker links'),
+    t('<span id="cbf2019-speaker-listings-header">More by ...</span>'),
+    t('Article'),
+    t('All'),
+    t('Top 10 rated Speakers'),
+    t('<span id="cbf2019-speaker-listings-header">Top 10 speakers</span>'),
+  );
+  $export['cbf2019_speaker_listings'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_speakers';
   $view->description = 'Slider showing speakers for Activities, CiviCRM Events and Resources';
   $view->tag = 'slider, autoplay, unique';
@@ -16972,152 +17150,6 @@ Notes ...
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
-
-  /* Display: Article Speaker links */
-  $handler = $view->new_display('block', 'Article Speaker links', 'block_6');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">More by ...</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Article */
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['ui_name'] = 'Article';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Article';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['required'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/speaker/[name]';
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Taxonomy term: Name */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
-    'blog' => 'blog',
-    'episode' => 'episode',
-  );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'speaker' => 'speaker',
-  );
-  $handler->display->display_options['filters']['machine_name']['group'] = 1;
-
-  /* Display: Top 10 rated Speakers */
-  $handler = $view->new_display('block', 'Top 10 rated Speakers', 'block_7');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speakers-view-header">Top 10 speakers</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Article */
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['ui_name'] = 'Article';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Article';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['required'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/speaker/[name]';
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Article Rating (field_article_rating) */
-  $handler->display->display_options['sorts']['field_article_rating_value']['id'] = 'field_article_rating_value';
-  $handler->display->display_options['sorts']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
-  $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
-  $handler->display->display_options['sorts']['field_article_rating_value']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['sorts']['field_article_rating_value']['group_type'] = 'sum';
-  $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
-  /* Sort criterion: Taxonomy term: Name */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'speaker' => 'speaker',
-  );
-  $handler->display->display_options['filters']['machine_name']['group'] = 1;
-  /* Filter criterion: Content: Published status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
-    0 => '1957',
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_speakers'] = array(
     t('Master'),
     t('more'),
@@ -17139,11 +17171,6 @@ Notes ...
     t('Content'),
     t('Deprecated - for Blog articles'),
     t('For National Activity by Ministry Centre'),
-    t('Article Speaker links'),
-    t('<span id="cbf2019-speakers-view-header">More by ...</span>'),
-    t('Article'),
-    t('Top 10 rated Speakers'),
-    t('<span id="cbf2019-speakers-view-header">Top 10 speakers</span>'),
   );
   $export['cbf2019_speakers'] = $view;
 
