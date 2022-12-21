@@ -1066,10 +1066,10 @@ function theme_cbf2019_features_views_default_views() {
     'episode' => 'episode',
   );
 
-  /* Display: Article hierarchy */
-  $handler = $view->new_display('block', 'Article hierarchy', 'block_1');
+  /* Display: Article topic hierarchy */
+  $handler = $view->new_display('block', 'Article topic hierarchy', 'block_1');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
       'field' => 'name_1',
@@ -1167,7 +1167,7 @@ function theme_cbf2019_features_views_default_views() {
     t('<span id="cbf2019-article-topics-view-header">More on ...</span>'),
     t('Article'),
     t('All'),
-    t('Article hierarchy'),
+    t('Article topic hierarchy'),
     t('Parent'),
   );
   $export['cbf2019_article_topics'] = $view;
