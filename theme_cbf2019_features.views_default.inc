@@ -12265,14 +12265,65 @@ else {
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'library';
 
-  /* Display: Articles page */
-  $handler = $view->new_display('page', 'Articles page', 'page_1');
+  /* Display: Articles page with topic contextual filter */
+  $handler = $view->new_display('page', 'Articles page with topic contextual filter', 'page_5');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['path'] = 'rated-articles';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">%1</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no articles for this topic';
+  $handler->display->display_options['empty']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Article Topics (field_article_topics) */
+  $handler->display->display_options['arguments']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['table'] = 'field_data_field_article_topics';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['field'] = 'field_article_topics_tid';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['default_argument_options']['code'] = 'return cbf_convert_article_topics_to_tids_with_depth();';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['vocabularies'] = array(
+    'article_topic' => 'article_topic',
+  );
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_article_topics_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_article_topics_tid']['break_phrase'] = TRUE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'articles/topic';
 
   /* Display: Articles by topic page */
   $handler = $view->new_display('page', 'Articles by topic page', 'page_2');
@@ -12381,66 +12432,6 @@ else {
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['path'] = 'articles/speaker/%';
-
-  /* Display: Articles page with topic contextual filter */
-  $handler = $view->new_display('page', 'Articles page with topic contextual filter', 'page_5');
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">%1</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'There are no articles for this topic';
-  $handler->display->display_options['empty']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Article Topics (field_article_topics) */
-  $handler->display->display_options['arguments']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['table'] = 'field_data_field_article_topics';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['field'] = 'field_article_topics_tid';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['default_argument_options']['code'] = 'return cbf_convert_article_topics_to_tids_with_depth();';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['vocabularies'] = array(
-    'article_topic' => 'article_topic',
-  );
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['type'] = 'tids';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate']['fail'] = 'ignore';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['break_phrase'] = TRUE;
-  /* Contextual filter: Domain Access: Domain ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'articles/topic';
 
   /* Display: More by Speaker block */
   $handler = $view->new_display('block', 'More by Speaker block', 'block_1');
@@ -12571,7 +12562,7 @@ else {
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('more'),
-    t('Articles page'),
+    t('Articles page with topic contextual filter'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -12579,12 +12570,11 @@ else {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Articles by topic page'),
     t('<span id="cbf2019-rated-content-view-header">%1</span>'),
     t('There are no articles for this topic'),
+    t('Articles by topic page'),
     t('Articles by speaker page'),
     t('There are no articles by this person'),
-    t('Articles page with topic contextual filter'),
     t('More by Speaker block'),
     t('<span id="cbf2019-rated-content-view-header">More by ...</span>'),
     t('Speaker'),
