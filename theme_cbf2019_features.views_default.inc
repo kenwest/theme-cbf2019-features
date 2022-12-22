@@ -12473,6 +12473,7 @@ else {
 
   /* Display: More by Speaker block */
   $handler = $view->new_display('block', 'More by Speaker block', 'block_1');
+  $handler->display->display_options['display_comment'] = 'Exclude the current article from the results using cbf_views_query_alter() to add node.nid != <Content Nid>';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -12530,6 +12531,7 @@ else {
 
   /* Display: More on Topic block */
   $handler = $view->new_display('block', 'More on Topic block', 'block_2');
+  $handler->display->display_options['display_comment'] = 'Exclude the current article from the results using cbf_views_query_alter() to add node.nid != <Content Nid>';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
