@@ -1003,10 +1003,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['alter']['path'] = 'articles/topic?topic=[field_title]';
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title']['empty'] = '[name]';
-  /* Field: Global: Custom text */
+  /* Field: Link to Article topic page */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Link to Article topic page';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
@@ -1022,12 +1023,23 @@ function theme_cbf2019_features_views_default_views() {
     'article_topic' => 'article_topic',
   );
   $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    0 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
 
   /* Display: Article Topics links */
   $handler = $view->new_display('block', 'Article Topics links', 'block_6');
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -1068,6 +1080,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Article topic hierarchy */
   $handler = $view->new_display('block', 'Article topic hierarchy', 'block_1');
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -1115,10 +1128,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title']['empty'] = '[name]';
-  /* Field: Global: Custom text */
+  /* Field: Link to Article topic page */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Link to Article topic page';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
@@ -1152,6 +1166,23 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['parent']['field'] = 'parent';
   $handler->display->display_options['filters']['parent']['operator'] = '!=';
   $handler->display->display_options['filters']['parent']['value']['value'] = '0';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    0 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['id'] = 'taxonomy_vocabulary_3_tid_1';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['relationship'] = 'parent';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['value'] = array(
+    0 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid_1']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_article_topics'] = array(
     t('Master'),
     t('more'),
