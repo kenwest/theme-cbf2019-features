@@ -12585,14 +12585,20 @@ else {
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '12';
+  $handler->display->display_options['style_options']['columns_md'] = '12';
+  $handler->display->display_options['style_options']['columns_lg'] = '12';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">More by ...</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Speaker */
   $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
@@ -12643,14 +12649,20 @@ else {
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '12';
+  $handler->display->display_options['style_options']['columns_md'] = '12';
+  $handler->display->display_options['style_options']['columns_lg'] = '12';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">More on ...</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article topic */
   $handler->display->display_options['relationships']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
@@ -12727,11 +12739,9 @@ else {
     t('Articles by speaker page'),
     t('There are no articles by this person'),
     t('More by Speaker block'),
-    t('<span id="cbf2019-rated-content-view-header">More by ...</span>'),
     t('Speaker'),
     t('Current article'),
     t('More on Topic block'),
-    t('<span id="cbf2019-rated-content-view-header">More on ...</span>'),
     t('Article topic'),
   );
   $export['cbf2019_rated_content'] = $view;
