@@ -1142,6 +1142,28 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title']['empty'] = '[name]';
+  /* Field: Parent URL */
+  $handler->display->display_options['fields']['field_title_1']['id'] = 'field_title_1';
+  $handler->display->display_options['fields']['field_title_1']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title_1']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['field_title_1']['ui_name'] = 'Parent URL';
+  $handler->display->display_options['fields']['field_title_1']['label'] = '';
+  $handler->display->display_options['fields']['field_title_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_1']['empty'] = '[name_1]';
+  /* Field: Link to Parent Article topic page */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Link to Parent Article topic page';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'articles/topic?topic=[field_title_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Field: Link to Article topic page */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1214,6 +1236,7 @@ function theme_cbf2019_features_views_default_views() {
     t('All'),
     t('Article topic hierarchy'),
     t('Parent'),
+    t('[name_1]'),
   );
   $export['cbf2019_article_topics'] = $view;
 
