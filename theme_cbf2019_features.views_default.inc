@@ -16914,6 +16914,7 @@ Notes ...
 
   /* Display: Top 10 rated Speakers */
   $handler = $view->new_display('block', 'Top 10 rated Speakers', 'block_7');
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -16974,9 +16975,8 @@ Notes ...
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
-    0 => '1957',
+    0 => '48',
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
   $translatables['cbf2019_speaker_listings'] = array(
