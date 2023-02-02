@@ -12446,7 +12446,7 @@ else {
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Header text';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '%2';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '%3';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['empty'] = 'All topics';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -12755,7 +12755,7 @@ else {
     t('last »'),
     t('<span id="cbf2019-rated-content-view-header">[nothing]</span>'),
     t('There are no articles for this topic'),
-    t('%2'),
+    t('%3'),
     t('All topics'),
     t('Articles by topic page'),
     t('<span id="cbf2019-rated-content-view-header">%1</span>'),
