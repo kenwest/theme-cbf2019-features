@@ -16980,7 +16980,6 @@ Notes ...
   /* Display: Article Speaker links */
   $handler = $view->new_display('block', 'Article Speaker links', 'block_6');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'content-min-height-100';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
