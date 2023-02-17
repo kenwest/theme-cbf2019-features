@@ -16828,6 +16828,7 @@ Notes ...
   $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/speaker/[name]';
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['name']['alter']['alt'] = 'Articles by [name]';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
@@ -16844,25 +16845,6 @@ Notes ...
   /* Display: Article Speaker links */
   $handler = $view->new_display('block', 'Article Speaker links', 'block_6');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
-  $handler->display->display_options['style_options']['columns_vertical'] = '4';
-  $handler->display->display_options['style_options']['columns_xs'] = '12';
-  $handler->display->display_options['style_options']['columns_sm'] = '12';
-  $handler->display->display_options['style_options']['columns_md'] = '12';
-  $handler->display->display_options['style_options']['columns_lg'] = '6';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speaker-listings-header">More by ...</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
@@ -16971,9 +16953,9 @@ Notes ...
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Articles by [name]'),
     t('Defaults'),
     t('Article Speaker links'),
-    t('<span id="cbf2019-speaker-listings-header">More by ...</span>'),
     t('Article'),
     t('All'),
     t('Top 10 rated Speakers'),
