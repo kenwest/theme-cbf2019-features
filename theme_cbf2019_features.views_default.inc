@@ -12580,6 +12580,7 @@ else {
 
   /* Display: More by Speaker block */
   $handler = $view->new_display('block', 'More by Speaker block', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_comment'] = 'Exclude the current article from the results using cbf_views_query_alter() to add node.nid != <Content Nid>';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -12662,6 +12663,12 @@ else {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">More like this ...</span>';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article topic */
   $handler->display->display_options['relationships']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
