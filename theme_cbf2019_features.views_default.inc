@@ -17560,10 +17560,27 @@ Notes ...
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Staff members ...
 
-<ol>
-<li>Can be put in Staff groups that are listed on the About Us page</li>
-<li>Can be associated with an Activity (eg Third Space)</li>
-</ol>
+<ul>
+<li>
+Have the following attributes that appear on the <em>About Us</em> page ...
+  <ul>
+  <li>Name</li>
+  <li>Position</li>
+  <li>Image</li>
+  <li>Summary - one or two sentences that appear when the mouse hovers over the Image</li>
+  <li>Staff Groups - when a user clicks on a Staff Group filter only staff in that group are shown. Staff must be in a Staff Group but can be in multiple.</li>
+  <li>Staff Contact - when a user clicks on the Image they are taken to the contact form for this Staff Member. This field is the link to the staff member\'s CiviCRM record. If this is not set then there is no link to a contact form.</li>
+  <li>Weight - staff are shown in descending Weight order</li>
+  </ul>
+</li>
+<li>
+Have the following attributes that affect the <em>Our Team</em> block on an Activity page ...
+  <ul>
+  <li>Activities - optionally a Staff member can be associated with Activities. If they are they will appear in the <em>Our Team</em> block.</li>
+  <li>Activities Ministry Centre - the <em>Our Team</em> block is filtered by Ministry Centre. If this is set it affects all the Activities with which this Staff member is affiliated.</li>
+  </ul>
+</li>
+</ul>
 
 You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existing ones below.';
   $handler->display->display_options['header']['area']['format'] = '2';
@@ -17800,10 +17817,27 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('last »'),
     t('Staff members ...
 
-<ol>
-<li>Can be put in Staff groups that are listed on the About Us page</li>
-<li>Can be associated with an Activity (eg Third Space)</li>
-</ol>
+<ul>
+<li>
+Have the following attributes that appear on the <em>About Us</em> page ...
+  <ul>
+  <li>Name</li>
+  <li>Position</li>
+  <li>Image</li>
+  <li>Summary - one or two sentences that appear when the mouse hovers over the Image</li>
+  <li>Staff Groups - when a user clicks on a Staff Group filter only staff in that group are shown. Staff must be in a Staff Group but can be in multiple.</li>
+  <li>Staff Contact - when a user clicks on the Image they are taken to the contact form for this Staff Member. This field is the link to the staff member\'s CiviCRM record. If this is not set then there is no link to a contact form.</li>
+  <li>Weight - staff are shown in descending Weight order</li>
+  </ul>
+</li>
+<li>
+Have the following attributes that affect the <em>Our Team</em> block on an Activity page ...
+  <ul>
+  <li>Activities - optionally a Staff member can be associated with Activities. If they are they will appear in the <em>Our Team</em> block.</li>
+  <li>Activities Ministry Centre - the <em>Our Team</em> block is filtered by Ministry Centre. If this is set it affects all the Activities with which this Staff member is affiliated.</li>
+  </ul>
+</li>
+</ul>
 
 You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existing ones below.'),
     t('Activities'),
