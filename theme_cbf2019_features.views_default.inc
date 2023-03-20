@@ -12545,6 +12545,7 @@ else {
 
   /* Display: Articles by topic page */
   $handler = $view->new_display('page', 'Articles by topic page', 'page_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
