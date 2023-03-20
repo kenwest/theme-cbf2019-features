@@ -16898,7 +16898,7 @@ Notes ...
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speaker-listings-header">Top 10 contributors</span>';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-speaker-listings-header">Contributors</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article */
@@ -16959,7 +16959,7 @@ Notes ...
     t('Article'),
     t('All'),
     t('Top 10 rated Speakers'),
-    t('<span id="cbf2019-speaker-listings-header">Top 10 contributors</span>'),
+    t('<span id="cbf2019-speaker-listings-header">Contributors</span>'),
   );
   $export['cbf2019_speaker_listings'] = $view;
 
