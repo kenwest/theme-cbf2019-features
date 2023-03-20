@@ -12600,6 +12600,8 @@ else {
 
   /* Display: Articles by speaker page */
   $handler = $view->new_display('page', 'Articles by speaker page', 'page_3');
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
