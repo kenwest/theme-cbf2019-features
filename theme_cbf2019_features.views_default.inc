@@ -12311,6 +12311,8 @@ else {
 
   /* Display: Articles page with topic contextual filter */
   $handler = $view->new_display('page', 'Articles page with topic contextual filter', 'page_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Resources';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['query'] = FALSE;
@@ -12870,6 +12872,7 @@ else {
     t('This display contains the defaults - don\'t use'),
     t('more'),
     t('Articles page with topic contextual filter'),
+    t('Resources'),
     t('Search'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
@@ -12887,6 +12890,7 @@ else {
     t('Articles by topic page'),
     t('<span id="cbf2019-rated-content-view-header">%1</span>'),
     t('Articles by speaker page'),
+    t('Resources by %1'),
     t('There are no articles by this person'),
     t('More by Speaker block'),
     t('Speaker'),
