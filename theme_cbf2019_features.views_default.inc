@@ -989,9 +989,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/topic?topic=[name]';
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: URL */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
@@ -1000,7 +997,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['ui_name'] = 'URL';
   $handler->display->display_options['fields']['field_title']['label'] = '';
   $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_title']['alter']['path'] = 'articles/topic?topic=[field_title]';
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title']['empty'] = '[name]';
   /* Field: Link to Article topic page */
@@ -1011,7 +1007,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'articles/topic?topic=[field_title]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'resources?topic=[field_title]#featured';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -1110,9 +1106,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/topic?topic=[name]';
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
@@ -1149,7 +1142,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'articles/topic?topic=[field_title]&focus=[field_title_1]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'resources?topic=[field_title]&focus=[field_title_1]#featured';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -12541,7 +12534,7 @@ else {
   $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
   );
-  $handler->display->display_options['path'] = 'articles/topic';
+  $handler->display->display_options['path'] = 'resources';
 
   /* Display: Articles by topic page */
   $handler = $view->new_display('page', 'Articles by topic page', 'page_2');
@@ -12596,7 +12589,7 @@ else {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'articles/topic/%';
+  $handler->display->display_options['path'] = 'resources/topic/%';
 
   /* Display: Articles by speaker page */
   $handler = $view->new_display('page', 'Articles by speaker page', 'page_3');
@@ -12724,7 +12717,7 @@ else {
   $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
   );
-  $handler->display->display_options['path'] = 'articles/speaker/%';
+  $handler->display->display_options['path'] = 'resources/speaker/%';
 
   /* Display: More by Speaker block */
   $handler = $view->new_display('block', 'More by Speaker block', 'block_1');
@@ -16977,7 +16970,7 @@ Notes ...
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'articles/speaker/[name]';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'resources/speaker/[name]';
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['name']['alter']['alt'] = 'Articles by [name]';
