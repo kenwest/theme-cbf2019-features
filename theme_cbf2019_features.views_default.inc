@@ -1007,7 +1007,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'resources?topic=[field_title]#featured';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'resources/topic?topic=[field_title]';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -1142,7 +1142,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'resources?topic=[field_title]&focus=[field_title_1]#featured';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'resources/topic?topic=[field_title]&focus=[field_title_1]';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -12187,7 +12187,7 @@ else {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">Articles</span>';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">Resources</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -12309,8 +12309,20 @@ else {
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
   $handler->display->display_options['link_url'] = 'library';
 
-  /* Display: Articles page with topic contextual filter */
-  $handler = $view->new_display('page', 'Articles page with topic contextual filter', 'page_5');
+  /* Display: Resources page */
+  $handler = $view->new_display('page', 'Resources page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Resources';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['path'] = 'resources';
+
+  /* Display: Resources by topic page */
+  $handler = $view->new_display('page', 'Resources by topic page', 'page_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Resources';
   $handler->display->display_options['display_comment'] = 'The \'Header text\' field is modified by cbf_views_post_execute() to contain the text from cbf_convert_article_topics_to_title()';
@@ -12524,65 +12536,10 @@ else {
   $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
   );
-  $handler->display->display_options['path'] = 'resources';
+  $handler->display->display_options['path'] = 'resources/topic';
 
-  /* Display: Articles by topic page */
-  $handler = $view->new_display('page', 'Articles by topic page', 'page_2');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-rated-content-view-header">%1</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'There are no articles for this topic';
-  $handler->display->display_options['empty']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Article Topics (field_article_topics) */
-  $handler->display->display_options['arguments']['field_article_topics_tid']['id'] = 'field_article_topics_tid';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['table'] = 'field_data_field_article_topics';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['field'] = 'field_article_topics_tid';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['vocabularies'] = array(
-    'article_topic' => 'article_topic',
-  );
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_article_topics_tid']['validate_options']['transform'] = TRUE;
-  /* Contextual filter: Domain Access: Domain ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'resources/topic/%';
-
-  /* Display: Articles by speaker page */
-  $handler = $view->new_display('page', 'Articles by speaker page', 'page_3');
+  /* Display: Resources by speaker page */
+  $handler = $view->new_display('page', 'Resources by speaker page', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Resources by %1';
   $handler->display->display_options['display_comment'] = 'The \'Header text\' field is modified by cbf_views_post_execute() to contain the text from the \'search\' query parameter (ie the Search Terms filter) if supplied';
@@ -12791,6 +12748,43 @@ else {
   );
   $handler->display->display_options['path'] = 'resources/speaker/%';
 
+  /* Display: Unrated Recent block */
+  $handler = $view->new_display('block', 'Unrated Recent block', 'block_3');
+  $handler->display->display_options['display_comment'] = 'Reverse the priority of the sort criteria for this block: by date then by rating';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '6';
+  $handler->display->display_options['style_options']['columns_md'] = '3';
+  $handler->display->display_options['style_options']['columns_lg'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Date (field_episode_date) */
+  $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
+  $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
+  $handler->display->display_options['sorts']['field_episode_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Article Rating (field_article_rating) */
+  $handler->display->display_options['sorts']['field_article_rating_value']['id'] = 'field_article_rating_value';
+  $handler->display->display_options['sorts']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
+  $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
+  $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
+
   /* Display: More by Speaker block */
   $handler = $view->new_display('block', 'More by Speaker block', 'block_1');
   $handler->display->display_options['enabled'] = FALSE;
@@ -12935,17 +12929,14 @@ else {
     t('Asc'),
     t('Desc'),
     t('Title'),
-    t('<span id="cbf2019-rated-content-view-header">Articles</span>'),
+    t('<span id="cbf2019-rated-content-view-header">Resources</span>'),
     t('[field_speakers] | [field_episode_date]'),
     t('All'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('more'),
-    t('Articles page with topic contextual filter'),
+    t('Resources page'),
     t('Resources'),
-    t('Search'),
-    t('Select any filter and click on Apply to see results'),
-    t('Advanced options'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -12953,15 +12944,18 @@ else {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Resources by topic page'),
+    t('Search'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
     t('<span id="cbf2019-rated-content-view-header">[nothing]</span>'),
     t('There are no articles for this topic'),
     t('All topics'),
-    t('Articles by topic page'),
-    t('<span id="cbf2019-rated-content-view-header">%1</span>'),
-    t('Articles by speaker page'),
+    t('Resources by speaker page'),
     t('Resources by %1'),
     t('There are no articles by this person'),
     t('%1'),
+    t('Unrated Recent block'),
     t('More by Speaker block'),
     t('Speaker'),
     t('Current article'),
