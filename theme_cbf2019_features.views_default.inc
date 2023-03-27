@@ -1037,12 +1037,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Article Topics links', 'block_6');
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article */
   $handler->display->display_options['relationships']['reverse_field_article_topics_node']['id'] = 'reverse_field_article_topics_node';
