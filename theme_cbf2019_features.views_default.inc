@@ -21682,6 +21682,13 @@ Notes ...
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'field_speaker_tid';
   $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '[name]';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'resources/speaker/[name]';
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['name']['alter']['alt'] = 'Articles by [name]';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Role */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
@@ -21825,6 +21832,8 @@ Notes ...
     t('[field_image_1]'),
     t('[field_highlight_1]'),
     t('[field_image]'),
+    t('[name]'),
+    t('Articles by [name]'),
     t('[description]'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
