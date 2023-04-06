@@ -1231,7 +1231,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['use_more_text'] = 'All news in our blog';
+  $handler->display->display_options['use_more_text'] = 'More resources';
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'time_per_domain';
@@ -1390,11 +1390,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_comment'] = 'Tick \'Skip default argument for view URL\' on the Domain Id contextual filter. This prevents the argument polluting the canonical URL, which affects SEO.';
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['link_url'] = 'resources';
 
   /* Display: For home page */
   $handler = $view->new_display('block', 'For home page', 'block_1');
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Highlight */
   $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
@@ -2000,8 +2000,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'All news in our blog';
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -2188,7 +2188,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'All news in our blog';
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
@@ -2286,8 +2286,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'All news in our blog';
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -2475,8 +2475,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'All news in our blog';
-  $handler->display->display_options['link_url'] = 'articles';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -2629,7 +2629,7 @@ function theme_cbf2019_features_views_default_views() {
   $translatables['cbf2019_blog'] = array(
     t('Master'),
     t('<none>'),
-    t('All news in our blog'),
+    t('More resources'),
     t('Search'),
     t('Reset'),
     t('Sort by'),
@@ -2645,6 +2645,7 @@ function theme_cbf2019_features_views_default_views() {
     t('more'),
     t('For home page'),
     t('Blog'),
+    t('All news in our blog'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -12835,7 +12836,7 @@ else {
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['use_more_text'] = 'Our library';
+  $handler->display->display_options['use_more_text'] = 'More resources';
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'time_per_domain';
@@ -12982,12 +12983,12 @@ else {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_comment'] = 'Tick \'Skip default argument for view URL\' on the Domain Id contextual filter. This prevents the argument polluting the canonical URL, which affects SEO.';
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['link_url'] = 'resources';
 
   /* Display: For home page */
   $handler = $view->new_display('block', 'For home page', 'block_1');
   $handler->display->display_options['display_description'] = 'Recent library resources for the home page';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['link_url'] = 'resources';
 
   /* Display: For Local Activity */
   $handler = $view->new_display('block', 'For Local Activity', 'block_2');
@@ -13000,8 +13001,8 @@ else {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Our library';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -14460,8 +14461,8 @@ else {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Our library';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -14539,7 +14540,7 @@ else {
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Our library';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
@@ -14645,8 +14646,8 @@ else {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Our library';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -14790,7 +14791,7 @@ else {
   /* Display: For speaker */
   $handler = $view->new_display('block', 'For speaker', 'block_6');
   $handler->display->display_options['display_description'] = 'Show recent library content for a speaker';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
@@ -14845,8 +14846,8 @@ else {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Our library';
-  $handler->display->display_options['link_url'] = 'library';
+  $handler->display->display_options['use_more_text'] = 'More resources';
+  $handler->display->display_options['link_url'] = 'resources';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -14954,7 +14955,7 @@ else {
   $translatables['cbf2019_recent_library'] = array(
     t('Master'),
     t('<none>'),
-    t('Our library'),
+    t('More resources'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
@@ -14980,6 +14981,7 @@ else {
     t('next ›'),
     t('last »'),
     t('Resource library'),
+    t('Our library'),
     t('Search'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
@@ -15953,16 +15955,6 @@ You can <a href="/eform/submit/regular-venue">add a new Regular venue</a>, or ed
   $handler->display->display_options['link_url'] = 'library';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: View (Views field view) */
-  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['table'] = 'views';
-  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['label'] = '';
-  $handler->display->display_options['empty']['view_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_recent_library';
-  $handler->display->display_options['empty']['view_field']['display'] = 'block_3';
-  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
