@@ -7100,6 +7100,97 @@ To create a new CiviCRM Event
   $export['cbf2019_home_page_slider'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_hubspot_form';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'paragraphs_item';
+  $view->human_name = 'cbf2019 HubSpot form';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Paragraphs item: Entity with the HubSpot form (field_hubspot_form) */
+  $handler->display->display_options['relationships']['field_hubspot_form_node']['id'] = 'field_hubspot_form_node';
+  $handler->display->display_options['relationships']['field_hubspot_form_node']['table'] = 'paragraphs_item';
+  $handler->display->display_options['relationships']['field_hubspot_form_node']['field'] = 'field_hubspot_form_node';
+  $handler->display->display_options['relationships']['field_hubspot_form_node']['label'] = 'Article';
+  $handler->display->display_options['relationships']['field_hubspot_form_node']['required'] = TRUE;
+  /* Field: Form type */
+  $handler->display->display_options['fields']['field_hubspot_form_type']['id'] = 'field_hubspot_form_type';
+  $handler->display->display_options['fields']['field_hubspot_form_type']['table'] = 'field_data_field_hubspot_form_type';
+  $handler->display->display_options['fields']['field_hubspot_form_type']['field'] = 'field_hubspot_form_type';
+  $handler->display->display_options['fields']['field_hubspot_form_type']['ui_name'] = 'Form type';
+  $handler->display->display_options['fields']['field_hubspot_form_type']['label'] = '';
+  $handler->display->display_options['fields']['field_hubspot_form_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hubspot_form_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hubspot_form_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Form Id */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['ui_name'] = 'Form Id';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title']['type'] = 'text_plain';
+  /* Field: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['alter']['text'] = '<cbf-hubspot-script/>';
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_hubspot_form_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Paragraphs item: Bundle */
+  $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['table'] = 'paragraphs_item';
+  $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['value'] = array(
+    'hubspot_form' => 'hubspot_form',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_hubspot_form'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Article'),
+    t('<cbf-hubspot-script/>'),
+    t('.'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_hubspot_form'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_key_dates';
   $view->description = 'Show key dates for upcoming CviiCRM Events';
   $view->tag = 'merge-events, key-dates';
