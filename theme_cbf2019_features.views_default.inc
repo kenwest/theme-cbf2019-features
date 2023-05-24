@@ -18058,6 +18058,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-staff-slider-view-header">Our team</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
+  /* Relationship: Entityform Submission: Enquiry form (field_enquiry_form) */
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['id'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['table'] = 'field_data_field_enquiry_form';
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['field'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['label'] = 'Enquiry form';
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -18083,6 +18088,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
   $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
   $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_contact']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_staff_contact']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_staff_contact']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>';
@@ -18094,6 +18100,21 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>';
   $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['relationship'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['description']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['path'] = '[description]';
+  $handler->display->display_options['fields']['description']['alter']['rel'] = 'nofollow';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['description']['element_wrapper_class'] = 'image-plus-hover-overlay';
+  $handler->display->display_options['fields']['description']['empty'] = '[field_staff_contact]';
   /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
@@ -18213,6 +18234,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['relationships']['field_activities_target_id']['field'] = 'field_activities_target_id';
   $handler->display->display_options['relationships']['field_activities_target_id']['label'] = 'Activity';
   $handler->display->display_options['relationships']['field_activities_target_id']['required'] = TRUE;
+  /* Relationship: Entityform Submission: Enquiry form (field_enquiry_form) */
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['id'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['table'] = 'field_data_field_enquiry_form';
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['field'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['relationships']['field_enquiry_form_tid']['label'] = 'Enquiry form';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -18239,6 +18265,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
   $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
   $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_contact']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_staff_contact']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_staff_contact']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>';
@@ -18250,6 +18277,21 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>';
   $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['relationship'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
+  $handler->display->display_options['fields']['description']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['path'] = '[description]';
+  $handler->display->display_options['fields']['description']['alter']['rel'] = 'nofollow';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['description']['element_wrapper_class'] = 'image-plus-hover-overlay';
+  $handler->display->display_options['fields']['description']['empty'] = '[field_staff_contact]';
   /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
@@ -18324,9 +18366,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Asc'),
     t('Desc'),
     t('<span id="cbf2019-staff-slider-view-header">Our team</span>'),
+    t('Enquiry form'),
     t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>'),
+    t('[field_staff_contact]'),
     t('Defaults'),
     t('Not intended for display'),
     t('Staff slider for About Us'),
