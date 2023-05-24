@@ -6126,7 +6126,7 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_date_text']['label'] = '';
   $handler->display->display_options['fields']['field_date_text']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_date_text']['element_label_colon'] = FALSE;
-  /* Field: CiviCRM Event: National date text */
+  /* Field: Field: National date text */
   $handler->display->display_options['fields']['field_national_date_text']['id'] = 'field_national_date_text';
   $handler->display->display_options['fields']['field_national_date_text']['table'] = 'field_data_field_national_date_text';
   $handler->display->display_options['fields']['field_national_date_text']['field'] = 'field_national_date_text';
