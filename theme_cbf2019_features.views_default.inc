@@ -17736,7 +17736,8 @@ Have the following attributes that appear on the <em>About Us</em> page ...
   <li>Image</li>
   <li>Summary - one or two sentences that appear when the mouse hovers over the Image</li>
   <li>Staff Groups - when a user clicks on a Staff Group filter only staff in that group are shown. Staff must be in a Staff Group but can be in multiple.</li>
-  <li>Staff Contact - when a user clicks on the Image they are taken to the contact form for this Staff Member. This field is the link to the staff member\'s CiviCRM record. If this is not set then there is no link to a contact form.</li>
+  <li>Staff Contact - (<strong>being deprecated</strong>) when a user clicks on the Image they are taken to the contact form for this Staff Member. This field is the link to the staff member\'s CiviCRM record. If this is not set then there is no link to a contact form.</li>
+  <li>Enquiry form - (<strong>being introduced with HubSpot</strong>) when a user clicks on the Image they are taken to the enquiry form for this Staff Member. . If this is not set then there is no link on the image.</li>
   <li>Weight - staff are shown in descending Weight order</li>
   </ul>
 </li>
@@ -17825,6 +17826,11 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_groups']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_staff_groups']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_staff_groups']['delta_offset'] = '0';
+  /* Field: Entityform Submission: Enquiry form */
+  $handler->display->display_options['fields']['field_enquiry_form']['id'] = 'field_enquiry_form';
+  $handler->display->display_options['fields']['field_enquiry_form']['table'] = 'field_data_field_enquiry_form';
+  $handler->display->display_options['fields']['field_enquiry_form']['field'] = 'field_enquiry_form';
+  $handler->display->display_options['fields']['field_enquiry_form']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Entityform Submission: Activities */
   $handler->display->display_options['fields']['field_activities']['id'] = 'field_activities';
   $handler->display->display_options['fields']['field_activities']['table'] = 'field_data_field_activities';
@@ -17962,6 +17968,20 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Entityform Submission: Enquiry form (field_enquiry_form) */
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['id'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['table'] = 'field_data_field_enquiry_form';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['field'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['expose']['operator_id'] = 'field_enquiry_form_tid_op';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['expose']['label'] = 'Enquiry form';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['expose']['operator'] = 'field_enquiry_form_tid_op';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['expose']['identifier'] = 'field_enquiry_form_tid';
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_enquiry_form_tid']['vocabulary'] = 'hubspot_enquiry_form';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -17993,7 +18013,8 @@ Have the following attributes that appear on the <em>About Us</em> page ...
   <li>Image</li>
   <li>Summary - one or two sentences that appear when the mouse hovers over the Image</li>
   <li>Staff Groups - when a user clicks on a Staff Group filter only staff in that group are shown. Staff must be in a Staff Group but can be in multiple.</li>
-  <li>Staff Contact - when a user clicks on the Image they are taken to the contact form for this Staff Member. This field is the link to the staff member\'s CiviCRM record. If this is not set then there is no link to a contact form.</li>
+  <li>Staff Contact - (<strong>being deprecated</strong>) when a user clicks on the Image they are taken to the contact form for this Staff Member. This field is the link to the staff member\'s CiviCRM record. If this is not set then there is no link to a contact form.</li>
+  <li>Enquiry form - (<strong>being introduced with HubSpot</strong>) when a user clicks on the Image they are taken to the enquiry form for this Staff Member. . If this is not set then there is no link on the image.</li>
   <li>Weight - staff are shown in descending Weight order</li>
   </ul>
 </li>
@@ -18014,6 +18035,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Weight'),
     t('Position'),
     t('Staff groups'),
+    t('Enquiry form'),
     t('Activities Ministry Centre'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
