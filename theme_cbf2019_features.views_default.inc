@@ -4642,9 +4642,9 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'blog' => 'blog',
-    'episode' => 'episode',
+    'activity' => 'activity',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
