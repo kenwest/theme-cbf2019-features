@@ -12,6 +12,195 @@ function theme_cbf2019_features_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'cbf2019_activity_brite_event_slider';
+  $view->description = '';
+  $view->tag = 'slider, autoplay, add-christian-content';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 activity brite_event slider';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'bg-gray-view-content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['style_options']['wrap'] = '0';
+  $handler->display->display_options['style_options']['visible'] = '';
+  $handler->display->display_options['style_options']['auto'] = '6';
+  $handler->display->display_options['style_options']['autoPause'] = 1;
+  $handler->display->display_options['style_options']['easing'] = '';
+  $handler->display->display_options['style_options']['vertical'] = 0;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-activity-event-slider-view-header">Upcoming events</span>';
+  $handler->display->display_options['header']['area']['format'] = 'raw_html';
+  /* Field: Field: Highlight */
+  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
+  $handler->display->display_options['fields']['field_highlight']['label'] = '';
+  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '[field_highlight]';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Ministry Centre */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Date text */
+  $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
+  $handler->display->display_options['fields']['field_date_text']['label'] = '';
+  $handler->display->display_options['fields']['field_date_text']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_text']['element_label_colon'] = FALSE;
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['city']['alter']['text'] = '[field_date_text] | [city]';
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['empty'] = '[field_date_text]';
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['alter']['max_length'] = '128';
+  $handler->display->display_options['fields']['field_subtitle']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subtitle']['type'] = 'text_plain';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'More info';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
+  $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
+  $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
+  /* Contextual filter: Field: Activity (field_in_activity) */
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_in_activity_target_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Ministry Centre filter applied during post-execute */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre filter applied during post-execute';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'brite_event' => 'brite_event',
+  );
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    48 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
+  $translatables['cbf2019_activity_brite_event_slider'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('<span id="cbf2019-activity-event-slider-view-header">Upcoming events</span>'),
+    t('[field_highlight]'),
+    t('[field_date_text] | [city]'),
+    t('[field_date_text]'),
+    t('More info'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_activity_brite_event_slider'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_activity_component_list';
   $view->description = 'List the Activity components in order with links to their Anchors';
   $view->tag = 'default';
