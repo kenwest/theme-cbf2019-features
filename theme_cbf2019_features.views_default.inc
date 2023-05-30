@@ -968,7 +968,7 @@ function theme_cbf2019_features_views_default_views() {
   $view = new view();
   $view->name = 'cbf2019_article_topics';
   $view->description = '';
-  $view->tag = '';
+  $view->tag = 'add-christian-content';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 article topics';
   $view->core = 7;
@@ -1044,7 +1044,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
-  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
 
   /* Display: Article Topics links */
   $handler = $view->new_display('block', 'Article Topics links', 'block_6');
@@ -17029,7 +17029,7 @@ Notes ...
   $view = new view();
   $view->name = 'cbf2019_speaker_listings';
   $view->description = 'Listings of speakers';
-  $view->tag = '';
+  $view->tag = 'add-christian-content';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 speaker listings';
   $view->core = 7;
@@ -17110,7 +17110,7 @@ Notes ...
 
   /* Display: Top 10 rated Speakers */
   $handler = $view->new_display('block', 'Top 10 rated Speakers', 'block_7');
-  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'view-header-must-align-left';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
