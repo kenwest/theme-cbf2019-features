@@ -9366,6 +9366,155 @@ To create a new CiviCRM Event
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+
+  /* Display: For Brite Event */
+  $handler = $view->new_display('block', 'For Brite Event', 'block_5');
+  $handler->display->display_options['display_description'] = 'Mappables for a Brite Event';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Location: Latitude */
+  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['table'] = 'location';
+  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['latitude']['label'] = '';
+  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
+  /* Field: Location: Longitude */
+  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['table'] = 'location';
+  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['longitude']['label'] = '';
+  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['relationship'] = 'field_map_location_lid';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Field: Note */
+  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+  $handler->display->display_options['fields']['field_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
+  /* Field: Field: Order URL */
+  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
+  $handler->display->display_options['fields']['field_order_url']['label'] = '';
+  $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact [field_order_url]';
+  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_order_url']['settings'] = array(
+    'custom_title' => '',
+  );
+  $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="/sites/all/themes/cbf2019/images/!2/map/marker.png">
+        <div class="marker-content">
+          <div class="marker-item marker-activity">[field_in_activity]</div>
+          <div class="marker-item marker-title">[field_title]</div>
+          <div class="marker-item marker-summary">[field_summary]</div>
+          <div class="marker-item marker-link">[field_order_url]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
+          <div class="marker-item marker-address">[street], [city]</div>
+        </div>
+      </div>
+';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Entityform Submission: Source entity id (field_source_entity_id) */
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['id'] = 'field_source_entity_id_value';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['table'] = 'field_data_field_source_entity_id';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['field'] = 'field_source_entity_id_value';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_source_entity_id_value']['validate']['type'] = 'node';
+  /* Contextual filter: Domain machine name */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Domain machine name';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return domain_get_domain()[\'machine_name\'];';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Mappable entityforms only */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['ui_name'] = 'Mappable entityforms only';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mappable' => 'mappable',
+  );
+  /* Filter criterion: Source entity bundle */
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['id'] = 'field_source_entity_bundle_value';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['table'] = 'field_data_field_source_entity_bundle';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['field'] = 'field_source_entity_bundle_value';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['ui_name'] = 'Source entity bundle';
+  $handler->display->display_options['filters']['field_source_entity_bundle_value']['value'] = 'brite_event';
   $translatables['cbf2019_mappable'] = array(
     t('Master'),
     t('more'),
@@ -9421,6 +9570,8 @@ To create a new CiviCRM Event
     t('For What\'s On'),
     t('Mappables for the What\'s On page'),
     t('What\'s on nearby'),
+    t('For Brite Event'),
+    t('Mappables for a Brite Event'),
   );
   $export['cbf2019_mappable'] = $view;
 
