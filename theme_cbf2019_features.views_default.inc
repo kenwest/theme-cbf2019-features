@@ -8211,6 +8211,7 @@ To create a new CiviCRM Event
 
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_comment'] = 'The filter criteria are organised as two OR groups with the exposed Ministry Centre in one and the Ministry Centre IS NULL in the other. When the exposed Ministry Centre is ALL, that condition disappears from the first group, and all results are returned (whether Ministry Centre is set or not). When the exposed Ministry Centre is X that condition is set in the first group, and results are returned for all items where Ministry Centre is X or NULL.';
   $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
 
   /* Display: For What's On */
