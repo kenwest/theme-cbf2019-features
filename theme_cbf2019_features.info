@@ -65,6 +65,7 @@ features[views_view][] = cbf2019_activity_regular_venue_list
 features[views_view][] = cbf2019_article_ratings_admin
 features[views_view][] = cbf2019_article_topics
 features[views_view][] = cbf2019_blog
+features[views_view][] = cbf2019_brite_event_slider
 features[views_view][] = cbf2019_brite_events
 features[views_view][] = cbf2019_city_activities
 features[views_view][] = cbf2019_collection
