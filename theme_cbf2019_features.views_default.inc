@@ -3201,7 +3201,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_staff_member']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_member']['settings'] = array(
     'bypass_access' => 0,
-    'link' => 1,
+    'link' => 0,
   );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
