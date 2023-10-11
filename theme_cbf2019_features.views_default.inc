@@ -19339,7 +19339,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_staff_groups']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_staff_groups']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_staff_groups']['delta_offset'] = '0';
-  /* Field: Entityform Submission: Enquiry form */
+  /* Field: Entityform Submission: Hubspot enquiry form */
   $handler->display->display_options['fields']['field_enquiry_form']['id'] = 'field_enquiry_form';
   $handler->display->display_options['fields']['field_enquiry_form']['table'] = 'field_data_field_enquiry_form';
   $handler->display->display_options['fields']['field_enquiry_form']['field'] = 'field_enquiry_form';
@@ -19481,7 +19481,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Entityform Submission: Enquiry form (field_enquiry_form) */
+  /* Filter criterion: Entityform Submission: Hubspot enquiry form (field_enquiry_form) */
   $handler->display->display_options['filters']['field_enquiry_form_tid']['id'] = 'field_enquiry_form_tid';
   $handler->display->display_options['filters']['field_enquiry_form_tid']['table'] = 'field_data_field_enquiry_form';
   $handler->display->display_options['filters']['field_enquiry_form_tid']['field'] = 'field_enquiry_form_tid';
@@ -19548,7 +19548,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Weight'),
     t('Position'),
     t('Staff groups'),
-    t('Enquiry form'),
+    t('Hubspot enquiry form'),
     t('Activities Ministry Centre'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
@@ -19557,6 +19557,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Position contains'),
     t('Staff group'),
     t('Activity name contains'),
+    t('Enquiry form'),
     t('Page'),
   );
   $export['cbf2019_staff_admin_view'] = $view;
@@ -19593,7 +19594,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-staff-slider-view-header">Our team</span>';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Relationship: Entityform Submission: Enquiry form (field_enquiry_form) */
+  /* Relationship: Entityform Submission: Hubspot enquiry form (field_enquiry_form) */
   $handler->display->display_options['relationships']['field_enquiry_form_tid']['id'] = 'field_enquiry_form_tid';
   $handler->display->display_options['relationships']['field_enquiry_form_tid']['table'] = 'field_data_field_enquiry_form';
   $handler->display->display_options['relationships']['field_enquiry_form_tid']['field'] = 'field_enquiry_form_tid';
@@ -19769,7 +19770,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['relationships']['field_activities_target_id']['field'] = 'field_activities_target_id';
   $handler->display->display_options['relationships']['field_activities_target_id']['label'] = 'Activity';
   $handler->display->display_options['relationships']['field_activities_target_id']['required'] = TRUE;
-  /* Relationship: Entityform Submission: Enquiry form (field_enquiry_form) */
+  /* Relationship: Entityform Submission: Hubspot enquiry form (field_enquiry_form) */
   $handler->display->display_options['relationships']['field_enquiry_form_tid']['id'] = 'field_enquiry_form_tid';
   $handler->display->display_options['relationships']['field_enquiry_form_tid']['table'] = 'field_data_field_enquiry_form';
   $handler->display->display_options['relationships']['field_enquiry_form_tid']['field'] = 'field_enquiry_form_tid';
