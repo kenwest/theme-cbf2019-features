@@ -3174,7 +3174,15 @@ function theme_cbf2019_features_views_default_views() {
         ),
       ),
     ),
-    'action::node_save_action' => array(
+    'action::node_publish_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -3230,6 +3238,13 @@ function theme_cbf2019_features_views_default_views() {
     'bypass_access' => 0,
     'link' => 0,
   );
+  /* Field: Content: Published status */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Published';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['not'] = 0;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -3432,6 +3447,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Sort Order'),
     t('Audience'),
     t('Ministry Centre'),
+    t('Published'),
     t('Operations'),
     t('<a href="/node/[nid]/edit">Edit</a>'),
     t('Title contains ...'),
