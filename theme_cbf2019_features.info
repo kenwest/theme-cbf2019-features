@@ -98,7 +98,6 @@ features[views_view][] = cbf2019_local_activities
 features[views_view][] = cbf2019_local_events
 features[views_view][] = cbf2019_local_office
 features[views_view][] = cbf2019_mappable
-features[views_view][] = cbf2019_ministry_team_admin_view
 features[views_view][] = cbf2019_national_activity_contents
 features[views_view][] = cbf2019_national_activity_event_slider
 features[views_view][] = cbf2019_networks_activities
