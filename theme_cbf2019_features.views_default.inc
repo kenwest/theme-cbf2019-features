@@ -11237,16 +11237,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_highlight_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_location']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_highlight_location']['delta_offset'] = '0';
-  /* Field: Regular venues */
-  $handler->display->display_options['fields']['view_6']['id'] = 'view_6';
-  $handler->display->display_options['fields']['view_6']['table'] = 'views';
-  $handler->display->display_options['fields']['view_6']['field'] = 'view';
-  $handler->display->display_options['fields']['view_6']['ui_name'] = 'Regular venues';
-  $handler->display->display_options['fields']['view_6']['label'] = '';
-  $handler->display->display_options['fields']['view_6']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_6']['view'] = 'cbf2019_national_activity_regular_venues';
-  $handler->display->display_options['fields']['view_6']['display'] = 'block';
-  $handler->display->display_options['fields']['view_6']['arguments'] = '!1';
   /* Field: Upcoming events */
   $handler->display->display_options['fields']['view_5']['id'] = 'view_5';
   $handler->display->display_options['fields']['view_5']['table'] = 'views';
@@ -11525,16 +11515,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_highlight_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_location']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_highlight_location']['delta_offset'] = '0';
-  /* Field: Regular venues */
-  $handler->display->display_options['fields']['view_6']['id'] = 'view_6';
-  $handler->display->display_options['fields']['view_6']['table'] = 'views';
-  $handler->display->display_options['fields']['view_6']['field'] = 'view';
-  $handler->display->display_options['fields']['view_6']['ui_name'] = 'Regular venues';
-  $handler->display->display_options['fields']['view_6']['label'] = '';
-  $handler->display->display_options['fields']['view_6']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_6']['view'] = 'cbf2019_national_activity_regular_venues';
-  $handler->display->display_options['fields']['view_6']['display'] = 'block';
-  $handler->display->display_options['fields']['view_6']['arguments'] = '!1';
   /* Field: Upcoming events */
   $handler->display->display_options['fields']['view_5']['id'] = 'view_5';
   $handler->display->display_options['fields']['view_5']['table'] = 'views';
@@ -11697,16 +11677,6 @@ To remove a team from the maps, click the checkbox next to the team and choose o
   $handler->display->display_options['fields']['field_highlight_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_highlight_location']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_highlight_location']['delta_offset'] = '0';
-  /* Field: Regular venues */
-  $handler->display->display_options['fields']['view_6']['id'] = 'view_6';
-  $handler->display->display_options['fields']['view_6']['table'] = 'views';
-  $handler->display->display_options['fields']['view_6']['field'] = 'view';
-  $handler->display->display_options['fields']['view_6']['ui_name'] = 'Regular venues';
-  $handler->display->display_options['fields']['view_6']['label'] = '';
-  $handler->display->display_options['fields']['view_6']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_6']['view'] = 'cbf2019_national_activity_regular_venues';
-  $handler->display->display_options['fields']['view_6']['display'] = 'block';
-  $handler->display->display_options['fields']['view_6']['arguments'] = '!1';
   /* Field: Upcoming events */
   $handler->display->display_options['fields']['view_5']['id'] = 'view_5';
   $handler->display->display_options['fields']['view_5']['table'] = 'views';
