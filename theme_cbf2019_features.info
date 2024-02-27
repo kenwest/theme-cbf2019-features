@@ -97,7 +97,6 @@ features[views_view][] = cbf2019_hubspot_form
 features[views_view][] = cbf2019_key_dates
 features[views_view][] = cbf2019_local_activities
 features[views_view][] = cbf2019_local_events
-features[views_view][] = cbf2019_local_office
 features[views_view][] = cbf2019_local_offices
 features[views_view][] = cbf2019_mappable
 features[views_view][] = cbf2019_national_activity_contents
