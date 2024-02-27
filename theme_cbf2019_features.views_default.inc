@@ -470,7 +470,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['relationship'] = 'field_activity_component_type_tid';
-  $handler->display->display_options['fields']['field_summary']['label'] = 'Embedded view';
   /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title_1']['id'] = 'field_title_1';
   $handler->display->display_options['fields']['field_title_1']['table'] = 'field_data_field_title';
@@ -558,7 +557,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Component'),
     t('Type'),
     t('Nid'),
-    t('Embedded view'),
+    t('Note'),
     t('Default Title'),
     t('Title'),
     t('Block content'),
@@ -6699,7 +6698,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'office' => 'office',
   );
-  /* Filter criterion: Field: Office (field_office) */
+  /* Filter criterion: Content: Office (field_office) */
   $handler->display->display_options['filters']['field_office_tid']['id'] = 'field_office_tid';
   $handler->display->display_options['filters']['field_office_tid']['table'] = 'field_data_field_office';
   $handler->display->display_options['filters']['field_office_tid']['field'] = 'field_office_tid';
