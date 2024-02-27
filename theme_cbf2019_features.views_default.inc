@@ -9211,13 +9211,6 @@ To create a new CiviCRM Event
   $handler->display->display_options['footer']['area']['content'] = '[longitude]';
   $handler->display->display_options['footer']['area']['format'] = 'raw_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
-  /* Relationship: Office */
-  $handler->display->display_options['relationships']['field_office_tid']['id'] = 'field_office_tid';
-  $handler->display->display_options['relationships']['field_office_tid']['table'] = 'field_data_field_office';
-  $handler->display->display_options['relationships']['field_office_tid']['field'] = 'field_office_tid';
-  $handler->display->display_options['relationships']['field_office_tid']['ui_name'] = 'Office';
-  $handler->display->display_options['relationships']['field_office_tid']['label'] = 'Office';
-  $handler->display->display_options['relationships']['field_office_tid']['required'] = TRUE;
   /* Field: Phone icon */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -9335,11 +9328,11 @@ To create a new CiviCRM Event
   $handler->display->display_options['fields']['field_subtitle']['label'] = 'Address';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'views-field-email';
-  /* Sort criterion: Taxonomy term: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['relationship'] = 'field_office_tid';
+  /* Sort criterion: Field: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
   /* Contextual filter: Domain machine name */
   $handler->display->display_options['arguments']['null']['id'] = 'null';
   $handler->display->display_options['arguments']['null']['table'] = 'views';
@@ -9393,7 +9386,6 @@ To create a new CiviCRM Event
     t('Advanced options'),
     t('Find us'),
     t('[longitude]'),
-    t('Office'),
     t('<i class="fal fa-fw fa-phone"></i>'),
     t('Call us'),
     t('<i class="fal fa-fw fa-map-marker-alt"></i>'),
