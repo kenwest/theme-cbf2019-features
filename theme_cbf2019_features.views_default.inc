@@ -9140,6 +9140,284 @@ To create a new CiviCRM Event
   $export['cbf2019_local_office'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_local_offices';
+  $view->description = 'The offices of the City Bible Forum';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 local offices';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'office-view';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'field_office_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Find us';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '[longitude]';
+  $handler->display->display_options['footer']['area']['format'] = 'raw_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+  /* Relationship: Office */
+  $handler->display->display_options['relationships']['field_office_tid']['id'] = 'field_office_tid';
+  $handler->display->display_options['relationships']['field_office_tid']['table'] = 'field_data_field_office';
+  $handler->display->display_options['relationships']['field_office_tid']['field'] = 'field_office_tid';
+  $handler->display->display_options['relationships']['field_office_tid']['ui_name'] = 'Office';
+  $handler->display->display_options['relationships']['field_office_tid']['label'] = 'Office';
+  $handler->display->display_options['relationships']['field_office_tid']['required'] = TRUE;
+  /* Field: Phone icon */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Phone icon';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fal fa-fw fa-phone"></i>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'view-icon';
+  /* Field: Location: Phone */
+  $handler->display->display_options['fields']['phone']['id'] = 'phone';
+  $handler->display->display_options['fields']['phone']['table'] = 'location_phone';
+  $handler->display->display_options['fields']['phone']['field'] = 'phone';
+  $handler->display->display_options['fields']['phone']['label'] = 'Call us';
+  $handler->display->display_options['fields']['phone']['element_label_colon'] = FALSE;
+  /* Field: Map icon */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Map icon';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<i class="fal fa-fw fa-map-marker-alt"></i>';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'view-icon';
+  /* Field: Location: Additional */
+  $handler->display->display_options['fields']['additional']['id'] = 'additional';
+  $handler->display->display_options['fields']['additional']['table'] = 'location';
+  $handler->display->display_options['fields']['additional']['field'] = 'additional';
+  $handler->display->display_options['fields']['additional']['label'] = '';
+  $handler->display->display_options['fields']['additional']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['additional']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Location: Province */
+  $handler->display->display_options['fields']['province']['id'] = 'province';
+  $handler->display->display_options['fields']['province']['table'] = 'location';
+  $handler->display->display_options['fields']['province']['field'] = 'province';
+  $handler->display->display_options['fields']['province']['label'] = 'Address';
+  $handler->display->display_options['fields']['province']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['province']['alter']['text'] = '[additional]<div>[street]</div><div>[city]</div>';
+  $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['province']['style'] = 'code';
+  /* Field: Location: Latitude */
+  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['table'] = 'location';
+  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['label'] = '';
+  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
+  /* Field: Longitude rewritten into map HTML */
+  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['table'] = 'location';
+  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['ui_name'] = 'Longitude rewritten into map HTML';
+  $handler->display->display_options['fields']['longitude']['label'] = '';
+  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['alter']['text'] = '<div class = "clearfix">
+  <div  class = "google-map">
+    <div class="map-canvas-view"
+      data-zoom="14"
+      data-address="[street], [city], Australia"
+      data-type="roadmap"
+      data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+    </div>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Postal icon */
+  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
+  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Postal icon';
+  $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<i class="fal fa-fw fa-envelope-open-text"></i>';
+  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'view-icon';
+  /* Field: Postal address */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['ui_name'] = 'Postal address';
+  $handler->display->display_options['fields']['field_description']['label'] = 'Post';
+  $handler->display->display_options['fields']['field_description']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  /* Field: Email icon */
+  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
+  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Email icon';
+  $handler->display->display_options['fields']['nothing_3']['label'] = '';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '<i class="fal fa-fw fa-at"></i>';
+  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'view-icon';
+  /* Field: Email address */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['ui_name'] = 'Email address';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = 'Address';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'views-field-email';
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'field_office_tid';
+  /* Contextual filter: Domain machine name */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Domain machine name';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return domain_get_domain()[\'machine_name\'];';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'office' => 'office',
+  );
+  /* Filter criterion: Field: Office (field_office) */
+  $handler->display->display_options['filters']['field_office_tid']['id'] = 'field_office_tid';
+  $handler->display->display_options['filters']['field_office_tid']['table'] = 'field_data_field_office';
+  $handler->display->display_options['filters']['field_office_tid']['field'] = 'field_office_tid';
+  $handler->display->display_options['filters']['field_office_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_office_tid']['expose']['operator_id'] = 'field_office_tid_op';
+  $handler->display->display_options['filters']['field_office_tid']['expose']['operator'] = 'field_office_tid_op';
+  $handler->display->display_options['filters']['field_office_tid']['expose']['identifier'] = 'field_office_tid';
+  $handler->display->display_options['filters']['field_office_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_office_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_office_tid']['vocabulary'] = 'office';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['cbf2019_local_offices'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+    t('Find us'),
+    t('[longitude]'),
+    t('Office'),
+    t('<i class="fal fa-fw fa-phone"></i>'),
+    t('Call us'),
+    t('<i class="fal fa-fw fa-map-marker-alt"></i>'),
+    t('Address'),
+    t('[additional]<div>[street]</div><div>[city]</div>'),
+    t('<div class = "clearfix">
+  <div  class = "google-map">
+    <div class="map-canvas-view"
+      data-zoom="14"
+      data-address="[street], [city], Australia"
+      data-type="roadmap"
+      data-icon="/sites/all/themes/cbf2019/images/!1/map/marker.png">
+    </div>
+  </div>
+</div>'),
+    t('<i class="fal fa-fw fa-envelope-open-text"></i>'),
+    t('Post'),
+    t('<i class="fal fa-fw fa-at"></i>'),
+    t('All'),
+    t('Block'),
+  );
+  $export['cbf2019_local_offices'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_mappable';
   $view->description = '';
   $view->tag = 'default';
