@@ -14173,23 +14173,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_summary']['label'] = '';
   $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
-  /* Field: Field: Staff contact */
-  $handler->display->display_options['fields']['field_staff_contact']['id'] = 'field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
-  $handler->display->display_options['fields']['field_staff_contact']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
-<div class="image-overlay">[field_summary]</div>';
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['path'] = '/staff-contact?cid1=[field_staff_contact]';
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['rel'] = 'nofollow';
-  $handler->display->display_options['fields']['field_staff_contact']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_staff_contact']['element_wrapper_class'] = 'image-plus-hover-overlay';
-  $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
-<div class="image-overlay">[field_summary]</div>';
-  $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
@@ -14350,23 +14333,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['field_summary']['label'] = '';
   $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
-  /* Field: Field: Staff contact */
-  $handler->display->display_options['fields']['field_staff_contact']['id'] = 'field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['table'] = 'field_data_field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['field'] = 'field_staff_contact';
-  $handler->display->display_options['fields']['field_staff_contact']['label'] = '';
-  $handler->display->display_options['fields']['field_staff_contact']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['text'] = '<div class="overlaid-image">[field_image]</div>
-<div class="image-overlay">[field_summary]</div>';
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['path'] = '/staff-contact?cid1=[field_staff_contact]';
-  $handler->display->display_options['fields']['field_staff_contact']['alter']['rel'] = 'nofollow';
-  $handler->display->display_options['fields']['field_staff_contact']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_staff_contact']['element_wrapper_class'] = 'image-plus-hover-overlay';
-  $handler->display->display_options['fields']['field_staff_contact']['empty'] = '<div class="overlaid-image">[field_image]</div>
-<div class="image-overlay">[field_summary]</div>';
-  $handler->display->display_options['fields']['field_staff_contact']['type'] = 'civicrm_contact_ref_raw';
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
