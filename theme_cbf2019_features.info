@@ -104,7 +104,6 @@ features[views_view][] = cbf2019_search
 features[views_view][] = cbf2019_speaker_admin_view
 features[views_view][] = cbf2019_speaker_listings
 features[views_view][] = cbf2019_speakers
-features[views_view][] = cbf2019_speakers_summary
 features[views_view][] = cbf2019_staff_admin_view
 features[views_view][] = cbf2019_staff_slider
 features[views_view][] = cbf2019_term_promotional_slider

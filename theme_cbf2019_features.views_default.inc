@@ -711,60 +711,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-
-  /* Display: For CiviCRM Event of Activity */
-  $handler = $view->new_display('block', 'For CiviCRM Event of Activity', 'block_3');
-  $handler->display->display_options['display_description'] = 'Logo for event\'s activity, else Title and link';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['required'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '###[field_logo]###';
-  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['element_wrapper_class'] = 'small-logo';
-  $handler->display->display_options['fields']['field_logo']['empty'] = '[title]';
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['type'] = 'file_url_plain';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: CiviCRM Events: Event ID */
-  $handler->display->display_options['arguments']['id']['id'] = 'id';
-  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
-  $handler->display->display_options['arguments']['id']['field'] = 'id';
-  $handler->display->display_options['arguments']['id']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['id']['validate']['type'] = 'numeric';
   $translatables['cbf2019_activity_logo'] = array(
     t('Master'),
     t('more'),
@@ -784,9 +730,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Logo for content\'s activity, else Title and link'),
     t('Content in Activity'),
     t('[title]'),
-    t('For CiviCRM Event of Activity'),
-    t('Logo for event\'s activity, else Title and link'),
-    t('CiviCRM Event'),
   );
   $export['cbf2019_activity_logo'] = $view;
 
@@ -5052,164 +4995,6 @@ function theme_cbf2019_features_views_default_views() {
     'activity' => 'activity',
   );
 
-  /* Display: For National Activity CiviCRM Events */
-  $handler = $view->new_display('block', 'For National Activity CiviCRM Events', 'block_3');
-  $handler->display->display_options['display_description'] = 'Highlights for a National Activity\'s CiviCRM Events';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Title';
-  $handler->display->display_options['header']['area']['content'] = '<span id="cbf2019-content-promotional-slider-view-header">Promotional material</span>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: CiviCRM Event */
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['id'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['field'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['ui_name'] = 'CiviCRM Event';
-  $handler->display->display_options['relationships']['reverse_field_in_activity_civicrm_event']['label'] = 'CiviCRM Event';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: CiviCRM Events: Event ID */
-  $handler->display->display_options['fields']['id']['id'] = 'id';
-  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
-  $handler->display->display_options['fields']['id']['field'] = 'id';
-  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['id']['label'] = '';
-  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['id']['separator'] = '';
-  /* Field: Ministry Centre filtered during post-execute */
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['ui_name'] = 'Ministry Centre filtered during post-execute';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Promotional videos */
-  $handler->display->display_options['fields']['field_highlight_video_1']['id'] = 'field_highlight_video_1';
-  $handler->display->display_options['fields']['field_highlight_video_1']['table'] = 'field_data_field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video_1']['field'] = 'field_highlight_video';
-  $handler->display->display_options['fields']['field_highlight_video_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['field_highlight_video_1']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight_video_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight_video_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight_video_1']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_highlight_video_1']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_highlight_video_1']['multi_type'] = 'ul';
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Sort Order (field_sort_order) */
-  $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
-  $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
-  $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
-  $handler->display->display_options['sorts']['field_sort_order_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Ministry Centre filter applied during post-execute */
-  $handler->display->display_options['arguments']['null']['id'] = 'null';
-  $handler->display->display_options['arguments']['null']['table'] = 'views';
-  $handler->display->display_options['arguments']['null']['field'] = 'null';
-  $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre filter applied during post-execute';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
-  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['null']['validate']['type'] = 'numeric';
-  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
-  /* Contextual filter: CiviCRM Event: Domain (field_domain) */
-  $handler->display->display_options['arguments']['field_domain_domain_id']['id'] = 'field_domain_domain_id';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['table'] = 'field_data_field_domain';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['field'] = 'field_domain_domain_id';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_domain_domain_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'activity' => 'activity',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Next action (field_next_action) */
-  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
-  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
-  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
-  $handler->display->display_options['filters']['field_next_action_value']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
-  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
-  $handler->display->display_options['filters']['field_next_action_value']['group'] = 1;
-  /* Filter criterion: Field: Promotional videos (field_highlight_video:url) */
-  $handler->display->display_options['filters']['field_highlight_video_url_1']['id'] = 'field_highlight_video_url_1';
-  $handler->display->display_options['filters']['field_highlight_video_url_1']['table'] = 'field_data_field_highlight_video';
-  $handler->display->display_options['filters']['field_highlight_video_url_1']['field'] = 'field_highlight_video_url';
-  $handler->display->display_options['filters']['field_highlight_video_url_1']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['filters']['field_highlight_video_url_1']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_video_url_1']['group'] = 2;
-  /* Filter criterion: Field: Image (field_image:fid) */
-  $handler->display->display_options['filters']['field_image_fid']['id'] = 'field_image_fid';
-  $handler->display->display_options['filters']['field_image_fid']['table'] = 'field_data_field_image';
-  $handler->display->display_options['filters']['field_image_fid']['field'] = 'field_image_fid';
-  $handler->display->display_options['filters']['field_image_fid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['filters']['field_image_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
-  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['relationship'] = 'reverse_field_in_activity_civicrm_event';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
-    1957 => '1957',
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
-
   /* Display: For non-Activity */
   $handler = $view->new_display('block', 'For non-Activity', 'block_4');
   $handler->display->display_options['display_description'] = 'Slider for non-Activity nodes';
@@ -5293,10 +5078,6 @@ function theme_cbf2019_features_views_default_views() {
     t('.'),
     t('For Activity with no upcoming events'),
     t('Highlights for an Activity'),
-    t('For National Activity CiviCRM Events'),
-    t('Highlights for a National Activity\'s CiviCRM Events'),
-    t('Title'),
-    t('<span id="cbf2019-content-promotional-slider-view-header">Promotional material</span>'),
     t('For non-Activity'),
     t('Slider for non-Activity nodes'),
     t('Activity'),
@@ -7326,155 +7107,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: For CiviCRM Event */
-  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_2');
-  $handler->display->display_options['display_description'] = 'Mappables for a CiviCRM Event';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Location: Latitude */
-  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
-  $handler->display->display_options['fields']['latitude']['table'] = 'location';
-  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
-  $handler->display->display_options['fields']['latitude']['relationship'] = 'field_map_location_lid';
-  $handler->display->display_options['fields']['latitude']['label'] = '';
-  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
-  /* Field: Location: Longitude */
-  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
-  $handler->display->display_options['fields']['longitude']['table'] = 'location';
-  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
-  $handler->display->display_options['fields']['longitude']['relationship'] = 'field_map_location_lid';
-  $handler->display->display_options['fields']['longitude']['label'] = '';
-  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
-  /* Field: Field: Activity */
-  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
-  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
-  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
-    'bypass_access' => 0,
-    'link' => 1,
-  );
-  /* Field: Field: Title */
-  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
-  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
-  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
-  $handler->display->display_options['fields']['field_title']['label'] = '';
-  $handler->display->display_options['fields']['field_title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
-  /* Field: Location: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'location';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_map_location_lid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Location: Street */
-  $handler->display->display_options['fields']['street']['id'] = 'street';
-  $handler->display->display_options['fields']['street']['table'] = 'location';
-  $handler->display->display_options['fields']['street']['field'] = 'street';
-  $handler->display->display_options['fields']['street']['relationship'] = 'field_map_location_lid';
-  $handler->display->display_options['fields']['street']['label'] = '';
-  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['street']['style'] = 'street';
-  /* Field: Location: City */
-  $handler->display->display_options['fields']['city']['id'] = 'city';
-  $handler->display->display_options['fields']['city']['table'] = 'location';
-  $handler->display->display_options['fields']['city']['field'] = 'city';
-  $handler->display->display_options['fields']['city']['relationship'] = 'field_map_location_lid';
-  $handler->display->display_options['fields']['city']['label'] = '';
-  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Note */
-  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
-  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
-  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
-  $handler->display->display_options['fields']['field_summary']['label'] = '';
-  $handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_summary']['hide_empty'] = TRUE;
-  /* Field: Field: Order URL */
-  $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
-  $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
-  $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
-  $handler->display->display_options['fields']['field_order_url']['label'] = '';
-  $handler->display->display_options['fields']['field_order_url']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_order_url']['alter']['text'] = 'Contact [field_order_url]';
-  $handler->display->display_options['fields']['field_order_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_order_url']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_order_url']['settings'] = array(
-    'custom_title' => '',
-  );
-  $handler->display->display_options['fields']['field_order_url']['delta_offset'] = '0';
-  /* Field: Entityform Submission: Entityform submission ID */
-  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
-  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
-  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
-  $handler->display->display_options['fields']['entityform_id']['label'] = '';
-  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = '      <div class="marker"
-        data-lat="[latitude]"
-        data-long="[longitude]"
-        data-icon="/sites/all/themes/cbf2019/images/!2/map/marker.png">
-        <div class="marker-content">
-          <div class="marker-item marker-activity">[field_in_activity]</div>
-          <div class="marker-item marker-title">[field_title]</div>
-          <div class="marker-item marker-summary">[field_summary]</div>
-          <div class="marker-item marker-link">[field_order_url]</div>
-          <div class="marker-item marker-separator"></div>
-          <div class="marker-item marker-name">[name]</div>
-          <div class="marker-item marker-address">[street], [city]</div>
-        </div>
-      </div>
-';
-  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Entityform Submission: Source entity id (field_source_entity_id) */
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['id'] = 'field_source_entity_id_value';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['table'] = 'field_data_field_source_entity_id';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['field'] = 'field_source_entity_id_value';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_source_entity_id_value']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Domain machine name */
-  $handler->display->display_options['arguments']['null']['id'] = 'null';
-  $handler->display->display_options['arguments']['null']['table'] = 'views';
-  $handler->display->display_options['arguments']['null']['field'] = 'null';
-  $handler->display->display_options['arguments']['null']['ui_name'] = 'Domain machine name';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return domain_get_domain()[\'machine_name\'];';
-  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Mappable entityforms only */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'entityform';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['ui_name'] = 'Mappable entityforms only';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'mappable' => 'mappable',
-  );
-  /* Filter criterion: Source entity */
-  $handler->display->display_options['filters']['field_source_entity_type_value']['id'] = 'field_source_entity_type_value';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['table'] = 'field_data_field_source_entity_type';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['field'] = 'field_source_entity_type_value';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['ui_name'] = 'Source entity';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['value'] = 'civicrm_event';
-
   /* Display: For national Activity */
   $handler = $view->new_display('block', 'For national Activity', 'block_3');
   $handler->display->display_options['display_description'] = 'Mappables for an Activity which is offered in all cities';
@@ -8008,8 +7640,6 @@ function theme_cbf2019_features_views_default_views() {
         </div>
       </div>
 '),
-    t('For CiviCRM Event'),
-    t('Mappables for a CiviCRM Event'),
     t('For national Activity'),
     t('Mappables for an Activity which is offered in all cities'),
     t('Select any filter and click on Apply to see results'),
@@ -13787,29 +13417,6 @@ Notes ...
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
 
-  /* Display: For CiviCRM Event */
-  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_1');
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: CiviCRM Event */
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['field'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['ui_name'] = 'CiviCRM Event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['label'] = 'CiviCRM Event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['required'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: CiviCRM Events: Event ID */
-  $handler->display->display_options['arguments']['id']['id'] = 'id';
-  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
-  $handler->display->display_options['arguments']['id']['field'] = 'id';
-  $handler->display->display_options['arguments']['id']['relationship'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
-
   /* Display: For Local Activity */
   $handler = $view->new_display('block', 'For Local Activity', 'block_2');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -13887,27 +13494,6 @@ Notes ...
 
   /* Display: For non-Activity nodes */
   $handler = $view->new_display('block', 'For non-Activity nodes', 'block_3');
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Content using Speaker(s) */
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Content';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['required'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-
-  /* Display: Deprecated - for Blog articles */
-  $handler = $view->new_display('block', 'Deprecated - for Blog articles', 'block_4');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Content using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
@@ -14098,113 +13684,15 @@ Notes ...
     t('[name]'),
     t('Articles by [name]'),
     t('Defaults'),
-    t('For CiviCRM Event'),
-    t('CiviCRM Event'),
-    t('All'),
     t('For Local Activity'),
+    t('CiviCRM Event'),
     t('Activity'),
+    t('All'),
     t('For non-Activity nodes'),
     t('Content'),
-    t('Deprecated - for Blog articles'),
     t('For National Activity by Ministry Centre'),
   );
   $export['cbf2019_speakers'] = $view;
-
-  $view = new view();
-  $view->name = 'cbf2019_speakers_summary';
-  $view->description = 'The \'cbf2019 speakers\' view is tagged as \'slider\'. This is tagged \'default\'.';
-  $view->tag = 'default';
-  $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'cbf2019 speakers summary';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'speaker' => 'speaker',
-  );
-  /* Filter criterion: Taxonomy term: Term description */
-  $handler->display->display_options['filters']['description']['id'] = 'description';
-  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['description']['field'] = 'description';
-  $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
-  $handler->display->display_options['filters']['description']['value'] = '0';
-
-  /* Display: Defaults */
-  $handler = $view->new_display('block', 'Defaults', 'block');
-  $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
-
-  /* Display: For CiviCRM Event */
-  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_1');
-  $handler->display->display_options['display_description'] = 'List of speakers for a Civi8CRM event';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['field'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['label'] = 'CiviCRM Event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['required'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = '#cbf2019-speakers-view-header';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: CiviCRM Events: Event ID */
-  $handler->display->display_options['arguments']['id']['id'] = 'id';
-  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
-  $handler->display->display_options['arguments']['id']['field'] = 'id';
-  $handler->display->display_options['arguments']['id']['relationship'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
-  $translatables['cbf2019_speakers_summary'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Defaults'),
-    t('Don\'t display this block - for defaults only'),
-    t('For CiviCRM Event'),
-    t('List of speakers for a Civi8CRM event'),
-    t('CiviCRM Event'),
-    t('All'),
-  );
-  $export['cbf2019_speakers_summary'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_staff_admin_view';
@@ -15878,46 +15366,6 @@ Notes ...
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-
-  /* Display: For CiviCRM Event */
-  $handler = $view->new_display('block', 'For CiviCRM Event', 'block_2');
-  $handler->display->display_options['display_description'] = 'The personnel With a CiviCRM Event';
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: View (Views field view) */
-  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['table'] = 'views';
-  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['label'] = '';
-  $handler->display->display_options['empty']['view_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_speakers';
-  $handler->display->display_options['empty']['view_field']['display'] = 'block_1';
-  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Paragraphs item: Person (field_speaker) */
-  $handler->display->display_options['relationships']['field_speaker_tid']['id'] = 'field_speaker_tid';
-  $handler->display->display_options['relationships']['field_speaker_tid']['table'] = 'field_data_field_speaker';
-  $handler->display->display_options['relationships']['field_speaker_tid']['field'] = 'field_speaker_tid';
-  $handler->display->display_options['relationships']['field_speaker_tid']['label'] = 'Speaker';
-  $handler->display->display_options['relationships']['field_speaker_tid']['required'] = TRUE;
-  /* Relationship: Event */
-  $handler->display->display_options['relationships']['field_with_civicrm_event']['id'] = 'field_with_civicrm_event';
-  $handler->display->display_options['relationships']['field_with_civicrm_event']['table'] = 'paragraphs_item';
-  $handler->display->display_options['relationships']['field_with_civicrm_event']['field'] = 'field_with_civicrm_event';
-  $handler->display->display_options['relationships']['field_with_civicrm_event']['ui_name'] = 'Event';
-  $handler->display->display_options['relationships']['field_with_civicrm_event']['label'] = 'Event';
-  $handler->display->display_options['relationships']['field_with_civicrm_event']['required'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: CiviCRM Events: Event ID */
-  $handler->display->display_options['arguments']['id']['id'] = 'id';
-  $handler->display->display_options['arguments']['id']['table'] = 'civicrm_event';
-  $handler->display->display_options['arguments']['id']['field'] = 'id';
-  $handler->display->display_options['arguments']['id']['relationship'] = 'field_with_civicrm_event';
-  $handler->display->display_options['arguments']['id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['id']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
   $translatables['cbf2019_with'] = array(
     t('Master'),
     t('more'),
@@ -15941,9 +15389,6 @@ Notes ...
     t('For node'),
     t('Shows the "with speaker" for nodes'),
     t('All'),
-    t('For CiviCRM Event'),
-    t('The personnel With a CiviCRM Event'),
-    t('Event'),
   );
   $export['cbf2019_with'] = $view;
 
