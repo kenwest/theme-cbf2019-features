@@ -7073,10 +7073,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = 'What\'s on nearby';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Mappable entityforms only */
   $handler->display->display_options['filters']['type']['id'] = 'type';
@@ -7110,18 +7106,6 @@ function theme_cbf2019_features_views_default_views() {
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
-  /* Filter criterion: Entityform Submission: Source entity bundle (field_source_entity_bundle) */
-  $handler->display->display_options['filters']['field_source_entity_bundle_value']['id'] = 'field_source_entity_bundle_value';
-  $handler->display->display_options['filters']['field_source_entity_bundle_value']['table'] = 'field_data_field_source_entity_bundle';
-  $handler->display->display_options['filters']['field_source_entity_bundle_value']['field'] = 'field_source_entity_bundle_value';
-  $handler->display->display_options['filters']['field_source_entity_bundle_value']['value'] = 'regular_venue';
-  $handler->display->display_options['filters']['field_source_entity_bundle_value']['group'] = 2;
-  /* Filter criterion: Entityform Submission: Source entity type (field_source_entity_type) */
-  $handler->display->display_options['filters']['field_source_entity_type_value']['id'] = 'field_source_entity_type_value';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['table'] = 'field_data_field_source_entity_type';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['field'] = 'field_source_entity_type_value';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['value'] = 'civicrm_event';
-  $handler->display->display_options['filters']['field_source_entity_type_value']['group'] = 2;
   /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
@@ -7130,6 +7114,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
     1957 => '1957',
   );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['group'] = 1;
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
