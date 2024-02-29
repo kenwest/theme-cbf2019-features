@@ -13,7 +13,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_activity_brite_event_slider';
-  $view->description = '';
+  $view->description = 'Embedded in other views. ';
   $view->tag = 'slider, autoplay, add-christian-content';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 activity brite_event slider';
@@ -179,8 +179,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Block (embedded) */
+  $handler = $view->new_display('block', 'Block (embedded)', 'block');
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
   $translatables['cbf2019_activity_brite_event_slider'] = array(
     t('Master'),
@@ -196,13 +196,13 @@ function theme_cbf2019_features_views_default_views() {
     t('[field_date_text]'),
     t('More info'),
     t('All'),
-    t('Block'),
+    t('Block (embedded)'),
   );
   $export['cbf2019_activity_brite_event_slider'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_activity_component_list';
-  $view->description = 'List the Activity components in order with links to their Anchors';
+  $view->description = 'Embedded in other views. List the Activity components in order with links to their Anchors';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 activity component list';
@@ -355,8 +355,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_title_value']['operator'] = 'longerthan';
   $handler->display->display_options['filters']['field_title_value']['value'] = '0';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Block (embedded) */
+  $handler = $view->new_display('block', 'Block (embedded)', 'block');
   $translatables['cbf2019_activity_component_list'] = array(
     t('Master'),
     t('more'),
@@ -367,7 +367,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
-    t('National activity contents'),
     t('Component'),
     t('Type'),
     t('<a href="#[field_subtitle_1]">[field_title]</a>'),
@@ -375,7 +374,7 @@ function theme_cbf2019_features_views_default_views() {
     t('<a href="#[field_subtitle]">[field_title]</a>'),
     t('[field_subtitle_1]'),
     t('All'),
-    t('Block'),
+    t('Block (embedded)'),
   );
   $export['cbf2019_activity_component_list'] = $view;
 
@@ -1276,7 +1275,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_blog';
-  $view->description = 'Blog view for the cbf2019 theme';
+  $view->description = 'Embedded in other views. Blog view for the cbf2019 theme';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 blog';
@@ -2520,8 +2519,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_5');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_5');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Recent blog articles for an activity';
@@ -2721,7 +2720,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Collection'),
     t('For National Activity'),
     t('Recent blog articles for a national activity'),
-    t('For Activity'),
+    t('For Activity (embedded)'),
     t('Recent blog articles for an activity'),
     t('<span id="cbf2019-blog-view-header">%3</span>'),
   );
@@ -4365,7 +4364,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_collections_slider';
-  $view->description = '';
+  $view->description = 'Embedded in other views. ';
   $view->tag = 'slider, autoplay';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 collections slider';
@@ -4519,8 +4518,8 @@ function theme_cbf2019_features_views_default_views() {
     'cbf_library_collections_slider' => 0,
   );
 
-  /* Display: Referred by Node */
-  $handler = $view->new_display('block', 'Referred by Node', 'block_3');
+  /* Display: Referred by Node (embedded) */
+  $handler = $view->new_display('block', 'Referred by Node (embedded)', 'block_3');
   $handler->display->display_options['display_description'] = 'Shows the Node\'s collections in the order specified';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referencing entity */
@@ -4612,7 +4611,7 @@ function theme_cbf2019_features_views_default_views() {
     t('For Christian library'),
     t('For Christian library for topic'),
     t('This is a duplicate of \'For Christian library\' so block location can be different'),
-    t('Referred by Node'),
+    t('Referred by Node (embedded)'),
     t('Shows the Node\'s collections in the order specified'),
     t('Node'),
     t('All'),
@@ -4627,7 +4626,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_content_details_table';
-  $view->description = '';
+  $view->description = 'Embedded in other views. ';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 content details table';
@@ -4718,8 +4717,8 @@ function theme_cbf2019_features_views_default_views() {
     'activity' => 'activity',
   );
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_2');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_2');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Details table for an Activity';
@@ -4767,14 +4766,14 @@ function theme_cbf2019_features_views_default_views() {
     t('For non-Activity'),
     t('Details table for a non-Activity'),
     t('All'),
-    t('For Activity'),
+    t('For Activity (embedded)'),
     t('Details table for an Activity'),
   );
   $export['cbf2019_content_details_table'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_content_highlight_slider';
-  $view->description = 'Slider showing promotional material for nodes';
+  $view->description = 'Embedded in other views. Slider showing promotional material for nodes';
   $view->tag = 'slider, fieldwise, unique';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 content promotional slider';
@@ -4964,8 +4963,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: For Activity with no upcoming events */
-  $handler = $view->new_display('block', 'For Activity with no upcoming events', 'block_2');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_2');
   $handler->display->display_options['display_description'] = 'Highlights for an Activity';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
@@ -5075,8 +5074,7 @@ function theme_cbf2019_features_views_default_views() {
     t('For Local Activity'),
     t('Highlights for a local Activity and its CiviCRM Events'),
     t('CiviCRM Event'),
-    t('.'),
-    t('For Activity with no upcoming events'),
+    t('For Activity (embedded)'),
     t('Highlights for an Activity'),
     t('For non-Activity'),
     t('Slider for non-Activity nodes'),
@@ -6590,7 +6588,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_mappable';
-  $view->description = '';
+  $view->description = 'Embedded in other views. ';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 mappable';
@@ -6945,8 +6943,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: For national Activity */
-  $handler = $view->new_display('block', 'For national Activity', 'block_3');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_3');
   $handler->display->display_options['display_description'] = 'Mappables for an Activity which is offered in all cities';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
@@ -7478,7 +7476,7 @@ function theme_cbf2019_features_views_default_views() {
         </div>
       </div>
 '),
-    t('For national Activity'),
+    t('For Activity (embedded)'),
     t('Mappables for an Activity which is offered in all cities'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
@@ -8111,7 +8109,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_page_header_no_results_image';
-  $view->description = 'Image FID in cases where there are no results. Can\'t cache rendered output else search block will fail.';
+  $view->description = 'Embedded in other views. Image FID in cases where there are no results. Can\'t cache rendered output else search block will fail.';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 page header - no results image';
@@ -8148,10 +8146,11 @@ function theme_cbf2019_features_views_default_views() {
     'image_style' => 'title',
     'image_link' => '',
   );
-  /* Contextual filter: Field: Sidebar title (field_sidebar_title) */
+  /* Contextual filter: Content type of Title Header */
   $handler->display->display_options['arguments']['field_sidebar_title_value']['id'] = 'field_sidebar_title_value';
   $handler->display->display_options['arguments']['field_sidebar_title_value']['table'] = 'field_data_field_sidebar_title';
   $handler->display->display_options['arguments']['field_sidebar_title_value']['field'] = 'field_sidebar_title_value';
+  $handler->display->display_options['arguments']['field_sidebar_title_value']['ui_name'] = 'Content type of Title Header';
   $handler->display->display_options['arguments']['field_sidebar_title_value']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_sidebar_title_value']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_sidebar_title_value']['summary']['number_of_records'] = '0';
@@ -8166,8 +8165,8 @@ function theme_cbf2019_features_views_default_views() {
     'title_header' => 'title_header',
   );
 
-  /* Display: Content type */
-  $handler = $view->new_display('block', 'Content type', 'block_1');
+  /* Display: Content type (embedded) */
+  $handler = $view->new_display('block', 'Content type (embedded)', 'block_1');
   $handler->display->display_options['display_comment'] = 'This view is not tagged with \'page-header\' because it\'s results are used by other page-header views.';
   $translatables['cbf2019_page_header_no_results_image'] = array(
     t('Master'),
@@ -8179,7 +8178,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Desc'),
     t('[field_title_image-fid]'),
     t('All'),
-    t('Content type'),
+    t('Content type (embedded)'),
   );
   $export['cbf2019_page_header_no_results_image'] = $view;
 
@@ -9177,7 +9176,7 @@ else {
 
   $view = new view();
   $view->name = 'cbf2019_recent_library';
-  $view->description = 'Recent library view for the cbf2019 theme';
+  $view->description = 'Embedded in other views. Recent library view for the cbf2019 theme';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 recent library';
@@ -11187,8 +11186,8 @@ else {
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_7');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_7');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Recent library resources for an activity';
@@ -11356,14 +11355,14 @@ else {
     t('For speaker'),
     t('Show recent library content for a speaker'),
     t('Speaker'),
-    t('For Activity'),
+    t('For Activity (embedded)'),
     t('Recent library resources for an activity'),
   );
   $export['cbf2019_recent_library'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_recycled_content';
-  $view->description = 'Content related to the current node';
+  $view->description = 'Embedded in other views. Recycled content for an activity.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 recycled content';
@@ -11802,8 +11801,8 @@ else {
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: For Activity */
-  $handler = $view->new_display('block', 'For Activity', 'block_3');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_3');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Show recycled content for an Activity';
@@ -11874,7 +11873,7 @@ else {
     t('All'),
     t('For National Activity'),
     t('Show recycled content for a national Activity'),
-    t('For Activity'),
+    t('For Activity (embedded)'),
     t('Show recycled content for an Activity'),
     t('<span id="cbf2019-recycled-content-view-header">%2</span>'),
   );
@@ -13163,7 +13162,7 @@ Notes ...
 
   $view = new view();
   $view->name = 'cbf2019_speakers';
-  $view->description = 'Slider showing speakers for Activities, CiviCRM Events and Resources';
+  $view->description = 'Embedded in other views. Slider showing speakers for Activities, and Resources';
   $view->tag = 'slider, autoplay, unique';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 speakers';
@@ -13956,7 +13955,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
 
   $view = new view();
   $view->name = 'cbf2019_staff_slider';
-  $view->description = '';
+  $view->description = 'Embedded in other views. ';
   $view->tag = '4-items';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 staff slider';
@@ -14060,8 +14059,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Not intended for display';
 
-  /* Display: Staff slider for About Us */
-  $handler = $view->new_display('block', 'Staff slider for About Us', 'block_1');
+  /* Display: For About Us */
+  $handler = $view->new_display('block', 'For About Us', 'block_1');
   $handler->display->display_options['display_description'] = 'Staff with filtering by staff group';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
@@ -14135,8 +14134,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['filters']['field_staff_groups_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_staff_groups_tid']['vocabulary'] = 'staff_group';
 
-  /* Display: Staff slider for Activity */
-  $handler = $view->new_display('block', 'Staff slider for Activity', 'block_2');
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_2');
   $handler->display->display_options['display_description'] = 'Staff associated with an Activity';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
@@ -14267,12 +14266,12 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('[field_staff_contact]'),
     t('Defaults'),
     t('Not intended for display'),
-    t('Staff slider for About Us'),
+    t('For About Us'),
     t('Staff with filtering by staff group'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('All'),
-    t('Staff slider for Activity'),
+    t('For Activity (embedded)'),
     t('Staff associated with an Activity'),
     t('Activity'),
     t('Staff slider for Third Space'),
@@ -14975,7 +14974,7 @@ Notes ...
 
   $view = new view();
   $view->name = 'cbf2019_with';
-  $view->description = 'A view of a "with speaker" paragraph';
+  $view->description = 'Embedded in other views. A view of a "with speaker" paragraph';
   $view->tag = 'slider, autoplay, unique';
   $view->base_table = 'paragraphs_item';
   $view->human_name = 'cbf2019 with';
