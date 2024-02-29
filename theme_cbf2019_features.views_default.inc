@@ -260,14 +260,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* No results behavior: Global: View (Views field view) */
-  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['table'] = 'views';
-  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['label'] = 'National activity contents';
-  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_national_activity_contents';
-  $handler->display->display_options['empty']['view_field']['display'] = 'block_1';
-  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
   /* Relationship: Content: Components (field_activity_components) */
   $handler->display->display_options['relationships']['field_activity_components_value']['id'] = 'field_activity_components_value';
   $handler->display->display_options['relationships']['field_activity_components_value']['table'] = 'field_data_field_activity_components';
@@ -434,14 +426,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* No results behavior: Global: View (Views field view) */
-  $handler->display->display_options['empty']['view_field']['id'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['table'] = 'views';
-  $handler->display->display_options['empty']['view_field']['field'] = 'view_field';
-  $handler->display->display_options['empty']['view_field']['label'] = 'National activity contents';
-  $handler->display->display_options['empty']['view_field']['view'] = 'cbf2019_national_activity_contents';
-  $handler->display->display_options['empty']['view_field']['display'] = 'block_1';
-  $handler->display->display_options['empty']['view_field']['arguments'] = '!1';
   /* Relationship: Content: Components (field_activity_components) */
   $handler->display->display_options['relationships']['field_activity_components_value']['id'] = 'field_activity_components_value';
   $handler->display->display_options['relationships']['field_activity_components_value']['table'] = 'field_data_field_activity_components';
@@ -552,7 +536,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('All'),
-    t('National activity contents'),
     t('Component'),
     t('Type'),
     t('Nid'),
