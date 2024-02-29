@@ -12453,11 +12453,6 @@ Notes ...
 </ul>
 ';
   $handler->display->display_options['header']['area']['format'] = '2';
-  /* Relationship: Taxonomy term: CiviCRM Event using Speaker(s) */
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['id'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['field'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['relationships']['reverse_field_speakers_civicrm_event']['label'] = 'CiviCRM Event';
   /* Relationship: Taxonomy term: Content using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
@@ -12516,15 +12511,6 @@ Notes ...
   $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
   $handler->display->display_options['fields']['nid']['label'] = 'Articles';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: COUNT(DISTINCT CiviCRM Events: Event ID) */
-  $handler->display->display_options['fields']['id']['id'] = 'id';
-  $handler->display->display_options['fields']['id']['table'] = 'civicrm_event';
-  $handler->display->display_options['fields']['id']['field'] = 'id';
-  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_field_speakers_civicrm_event';
-  $handler->display->display_options['fields']['id']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['id']['label'] = 'Events';
-  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
@@ -12765,14 +12751,11 @@ Notes ...
   <li>To edit or delete a Speaker, click the Edit link and from there you can either edit and Save, or Delete the Speaker.</ii>
 </ul>
 '),
-    t('CiviCRM Event'),
     t('Content'),
     t('Select'),
     t('- Choose an operation -'),
     t('Name'),
     t('Articles'),
-    t('Events'),
-    t('.'),
     t('Description'),
     t('Landscape image'),
     t('[field_highlight-fid]'),
@@ -12780,6 +12763,7 @@ Notes ...
     t('[field_image-fid]'),
     t('Operations'),
     t('<a href="/taxonomy/term/[tid]/edit?destination=admin/cbf/speakers">Edit</a>'),
+    t('.'),
     t('Name contains'),
     t('Description contains'),
     t('Highlight (field_highlight:fid)'),
