@@ -10,14 +10,6 @@
  */
 function theme_cbf2019_features_taxonomy_default_vocabularies() {
   return array(
-    'collection' => array(
-      'name' => 'Collection',
-      'machine_name' => 'collection',
-      'description' => 'A collection of Episodes, Blogs, Third Space Categories',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-    ),
     'map_marker' => array(
       'name' => 'Map marker',
       'machine_name' => 'map_marker',

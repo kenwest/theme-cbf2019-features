@@ -32,32 +32,6 @@ function theme_cbf2019_features_field_default_field_bases() {
     'type' => 'domain_entity',
   );
 
-  // Exported field_base: 'field_collection'.
-  $field_bases['field_collection'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_collection',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'collection',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_highlight_video'.
   $field_bases['field_highlight_video'] = array(
     'active' => 1,
