@@ -34,14 +34,6 @@ function theme_cbf2019_features_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
-    'third_space_category' => array(
-      'name' => 'Third Space category',
-      'machine_name' => 'third_space_category',
-      'description' => 'Signals where content appears on Third Space',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-    ),
     'time_of_day' => array(
       'name' => 'Time of day',
       'machine_name' => 'time_of_day',
