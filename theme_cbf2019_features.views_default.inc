@@ -448,7 +448,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_activity_component_type']['table'] = 'field_data_field_activity_component_type';
   $handler->display->display_options['fields']['field_activity_component_type']['field'] = 'field_activity_component_type';
   $handler->display->display_options['fields']['field_activity_component_type']['relationship'] = 'field_activity_components_value';
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -539,7 +539,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Component'),
     t('Type'),
     t('Nid'),
-    t('Note'),
+    t('Summary'),
     t('Default Title'),
     t('Title'),
     t('Block content'),
@@ -549,7 +549,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_activity_logo';
-  $view->description = 'The logo and subtitle of the Activity';
+  $view->description = 'Embedded in node templates. The logo and subtitle of the Activity';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 activity logo';
@@ -642,8 +642,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: For content of Activity */
-  $handler = $view->new_display('block', 'For content of Activity', 'block_2');
+  /* Display: For content of Activity (embedded) */
+  $handler = $view->new_display('block', 'For content of Activity (embedded)', 'block_2');
   $handler->display->display_options['display_description'] = 'Logo for content\'s activity, else Title and link';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referencing entity */
@@ -707,7 +707,7 @@ function theme_cbf2019_features_views_default_views() {
     t('For Activity'),
     t('Logo and subtitle for an activity'),
     t('All'),
-    t('For content of Activity'),
+    t('For content of Activity (embedded)'),
     t('Logo for content\'s activity, else Title and link'),
     t('Content in Activity'),
     t('[title]'),
@@ -1007,7 +1007,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_article_topics';
-  $view->description = '';
+  $view->description = 'Embedded in node templates. ';
   $view->tag = 'add-christian-content';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 article topics';
@@ -1086,8 +1086,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
 
-  /* Display: Article Topics links */
-  $handler = $view->new_display('block', 'Article Topics links', 'block_6');
+  /* Display: Article Topics links (embedded) */
+  $handler = $view->new_display('block', 'Article Topics links (embedded)', 'block_6');
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1121,8 +1121,8 @@ function theme_cbf2019_features_views_default_views() {
     'episode' => 'episode',
   );
 
-  /* Display: Article topic hierarchy */
-  $handler = $view->new_display('block', 'Article topic hierarchy', 'block_2');
+  /* Display: Article topic hierarchy (embedded) */
+  $handler = $view->new_display('block', 'Article topic hierarchy (embedded)', 'block_2');
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, cbf_views_query_alter() changes Audience = \'general\' to Audience in [\'general\', \'christian\']';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'view-header-must-align-left';
@@ -1247,10 +1247,10 @@ function theme_cbf2019_features_views_default_views() {
     t('<span id="cbf2019-article-topics-view-header">Topics</span>'),
     t('[name]'),
     t('Defaults'),
-    t('Article Topics links'),
+    t('Article Topics links (embedded)'),
     t('Article'),
     t('All'),
-    t('Article topic hierarchy'),
+    t('Article topic hierarchy (embedded)'),
     t('Parent'),
     t('[name_1]'),
   );
@@ -2449,6 +2449,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: For Speaker */
   $handler = $view->new_display('block', 'For Speaker', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
   $handler->display->display_options['link_url'] = 'whats-on';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -2722,279 +2723,6 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_brite_events'] = $view;
 
   $view = new view();
-  $view->name = 'cbf2019_city_activities';
-  $view->description = 'This view is superceded by the \'cbf2019 what\'s on activities\' view';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'cbf2019 city activities';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['bef'] = array(
-    'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => '2',
-        ),
-      ),
-      'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
-      'secondary_collapse_override' => '0',
-    ),
-    'taxonomy_vocabulary_1_tid' => array(
-      'bef_format' => 'bef_links',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => 'All',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            1 => 'vocabulary',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-  );
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Activities';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
-  /* Field: Field: Title image */
-  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['label'] = '';
-  $handler->display->display_options['fields']['field_title_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_title_image']['empty'] = '[field_highlight]';
-  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
-  /* Field: Content: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>';
-  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['element_wrapper_class'] = 'image-plus-fixed-overlay';
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['type'] = 'file_url_plain';
-  /* Field: Field: Ministry Centre */
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['empty'] = 'All cities';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Regularity */
-  $handler->display->display_options['fields']['field_regularity']['id'] = 'field_regularity';
-  $handler->display->display_options['fields']['field_regularity']['table'] = 'field_data_field_regularity';
-  $handler->display->display_options['fields']['field_regularity']['field'] = 'field_regularity';
-  $handler->display->display_options['fields']['field_regularity']['label'] = '';
-  $handler->display->display_options['fields']['field_regularity']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_regularity']['alter']['text'] = '[taxonomy_vocabulary_1] | [field_regularity]';
-  $handler->display->display_options['fields']['field_regularity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_regularity']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Time of day */
-  $handler->display->display_options['fields']['field_time_of_day']['id'] = 'field_time_of_day';
-  $handler->display->display_options['fields']['field_time_of_day']['table'] = 'field_data_field_time_of_day';
-  $handler->display->display_options['fields']['field_time_of_day']['field'] = 'field_time_of_day';
-  $handler->display->display_options['fields']['field_time_of_day']['label'] = '';
-  $handler->display->display_options['fields']['field_time_of_day']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_time_of_day']['type'] = 'taxonomy_term_reference_plain';
-  /* Sort criterion: Field: Weight (field_weight) */
-  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Domain Access: Domain ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
-  /* Filter criterion: Content: Published status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'activity' => 'activity',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
-  /* Filter criterion: Content: Activity category (field_activity_category) */
-  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
-  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
-    1182 => '1182',
-    1183 => '1183',
-  );
-  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
-  /* Filter criterion: Field: Weight (field_weight) */
-  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
-  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
-  /* Filter criterion: Content: Logo (field_logo:fid) */
-  $handler->display->display_options['filters']['field_logo_fid']['id'] = 'field_logo_fid';
-  $handler->display->display_options['filters']['field_logo_fid']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
-  $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
-  /* Filter criterion: Field: Title image (field_title_image:fid) */
-  $handler->display->display_options['filters']['field_title_image_fid']['id'] = 'field_title_image_fid';
-  $handler->display->display_options['filters']['field_title_image_fid']['table'] = 'field_data_field_title_image';
-  $handler->display->display_options['filters']['field_title_image_fid']['field'] = 'field_title_image_fid';
-  $handler->display->display_options['filters']['field_title_image_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_title_image_fid']['group'] = 2;
-  /* Filter criterion: Field: Highlight (field_highlight:fid) */
-  $handler->display->display_options['filters']['field_highlight_fid']['id'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['filters']['field_highlight_fid']['field'] = 'field_highlight_fid';
-  $handler->display->display_options['filters']['field_highlight_fid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_highlight_fid']['group'] = 2;
-  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
-    1957 => '1957',
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['enabled'] = FALSE;
-  $translatables['cbf2019_city_activities'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Select any filter and click on Apply to see results'),
-    t('Advanced options'),
-    t('All'),
-    t('Activities'),
-    t('[field_highlight]'),
-    t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
-    t('All cities'),
-    t('[taxonomy_vocabulary_1] | [field_regularity]'),
-    t('Block'),
-  );
-  $export['cbf2019_city_activities'] = $view;
-
-  $view = new view();
   $view->name = 'cbf2019_collections';
   $view->description = 'A page showing the library resources, blogs and Third Space categories in a Collection';
   $view->tag = 'default';
@@ -3036,7 +2764,7 @@ function theme_cbf2019_features_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_class'] = 'h4 align-center';
-  /* Field: Field: Promotional insert */
+  /* Field: Field: Description */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3195,7 +2923,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Promotional insert */
+  /* Field: Field: Description */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
@@ -3268,7 +2996,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Promotional insert (field_short_form) */
+  /* Filter criterion: Field: Description (field_short_form) */
   $handler->display->display_options['filters']['field_short_form_value']['id'] = 'field_short_form_value';
   $handler->display->display_options['filters']['field_short_form_value']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['filters']['field_short_form_value']['field'] = 'field_short_form_value';
@@ -3326,7 +3054,7 @@ function theme_cbf2019_features_views_default_views() {
     t('- Choose an operation -'),
     t('Title'),
     t('Audience'),
-    t('Promotional insert'),
+    t('Description'),
     t('Title image'),
     t('Blogs'),
     t('Episodes'),
@@ -3930,7 +3658,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_content_videos';
-  $view->description = 'Shows the videos for a node in a pager';
+  $view->description = 'Embedded in node templates. Shows the videos for a node in a pager';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 content videos';
@@ -3989,8 +3717,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: For embedding in content */
-  $handler = $view->new_display('block', 'For embedding in content', 'block_1');
+  /* Display: For content (embedded) */
+  $handler = $view->new_display('block', 'For content (embedded)', 'block_1');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for embedding only';
   $translatables['cbf2019_content_videos'] = array(
     t('Master'),
@@ -4008,7 +3736,7 @@ function theme_cbf2019_features_views_default_views() {
     t('All'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('For embedding in content'),
+    t('For content (embedded)'),
     t('Don\'t display this block - for embedding only'),
   );
   $export['cbf2019_content_videos'] = $view;
@@ -4247,6 +3975,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Recent courses */
   $handler = $view->new_display('block', 'Recent courses', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -4304,7 +4033,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_domain';
-  $view->description = 'Domain-related view displays';
+  $view->description = 'Embedded in blocks. Domain-related view displays';
   $view->tag = 'default';
   $view->base_table = 'domain';
   $view->human_name = 'cbf2019 domain';
@@ -4356,8 +4085,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: Footer logo */
-  $handler = $view->new_display('block', 'Footer logo', 'block_1');
+  /* Display: Footer logo (embedded) */
+  $handler = $view->new_display('block', 'Footer logo (embedded)', 'block_1');
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'time_per_domain';
   $handler->display->display_options['cache']['results_lifespan'] = '518400';
@@ -4430,7 +4159,7 @@ function theme_cbf2019_features_views_default_views() {
     t('All'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('Footer logo'),
+    t('Footer logo (embedded)'),
     t('<div class="footer-logo">
   <a href="/" class="embed-responsive embed-responsive-16by9">
     <img src="/sites/all/themes/cbf2019/images/[machine_name]/brand/logo-black.png" alt="Our logo">
@@ -4620,7 +4349,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_event_location';
-  $view->description = 'Location for an EventBrite event';
+  $view->description = 'Embedded in node templates. Location for an EventBrite event';
   $view->tag = 'default';
   $view->base_table = 'location';
   $view->human_name = 'cbf2019 event location';
@@ -4681,8 +4410,8 @@ function theme_cbf2019_features_views_default_views() {
     'brite_event' => 'brite_event',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Block (embedded) */
+  $handler = $view->new_display('block', 'Block (embedded)', 'block');
   $translatables['cbf2019_event_location'] = array(
     t('Master'),
     t('more'),
@@ -4695,13 +4424,13 @@ function theme_cbf2019_features_views_default_views() {
     t('[street],'),
     t('[name] [street] [city]'),
     t('All'),
-    t('Block'),
+    t('Block (embedded)'),
   );
   $export['cbf2019_event_location'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_home_page_slider';
-  $view->description = 'Sliders showing promoted content on the Third Space and City Bible Forum home pages';
+  $view->description = 'Embedded in blocks. Sliders showing promoted content on the Third Space and City Bible Forum home pages';
   $view->tag = 'default';
   $view->base_table = 'entityform';
   $view->human_name = 'cbf2019 home page slider';
@@ -4780,8 +4509,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: For Third Space home page */
-  $handler = $view->new_display('block', 'For Third Space home page', 'block_1');
+  /* Display: For Third Space home page (embedded) */
+  $handler = $view->new_display('block', 'For Third Space home page (embedded)', 'block_1');
   $handler->display->display_options['display_description'] = 'General audience';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
@@ -4795,8 +4524,8 @@ function theme_cbf2019_features_views_default_views() {
     'cbf_plus_home_page_slider' => 0,
   );
 
-  /* Display: For City Bible Forum home page */
-  $handler = $view->new_display('block', 'For City Bible Forum home page', 'block_2');
+  /* Display: For City Bible Forum home page (embedded) */
+  $handler = $view->new_display('block', 'For City Bible Forum home page (embedded)', 'block_2');
   $handler->display->display_options['display_description'] = 'Christian audience';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
@@ -4822,9 +4551,9 @@ function theme_cbf2019_features_views_default_views() {
     t('Entityform Submission Queue'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('For Third Space home page'),
+    t('For Third Space home page (embedded)'),
     t('General audience'),
-    t('For City Bible Forum home page'),
+    t('For City Bible Forum home page (embedded)'),
     t('Christian audience'),
   );
   $export['cbf2019_home_page_slider'] = $view;
@@ -4904,6 +4633,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['enabled'] = FALSE;
   $translatables['cbf2019_hubspot_form'] = array(
     t('Master'),
     t('more'),
@@ -4919,248 +4649,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Block'),
   );
   $export['cbf2019_hubspot_form'] = $view;
-
-  $view = new view();
-  $view->name = 'cbf2019_local_activities';
-  $view->description = 'This view is superceded by the \'cbf2019 what\'s on activities\' view';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'cbf2019 local activities';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['bef'] = array(
-    'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => '2',
-        ),
-      ),
-      'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
-      'secondary_collapse_override' => '0',
-    ),
-    'taxonomy_vocabulary_1_tid' => array(
-      'bef_format' => 'bef_links',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => 'All',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            1 => 'vocabulary',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-  );
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Highlight */
-  $handler->display->display_options['fields']['field_highlight']['id'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['table'] = 'field_data_field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['field'] = 'field_highlight';
-  $handler->display->display_options['fields']['field_highlight']['label'] = '';
-  $handler->display->display_options['fields']['field_highlight']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_highlight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_highlight']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highlight']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => 'content',
-  );
-  /* Field: Field: Title image */
-  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['label'] = '';
-  $handler->display->display_options['fields']['field_title_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_title_image']['empty'] = '[field_highlight]';
-  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'portfolio_653x368',
-    'image_link' => '',
-  );
-  /* Field: Content: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>';
-  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['element_wrapper_class'] = 'image-plus-fixed-overlay';
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['type'] = 'file_url_plain';
-  /* Field: Field: Ministry Centre */
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['empty'] = 'All cities';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Regularity */
-  $handler->display->display_options['fields']['field_regularity']['id'] = 'field_regularity';
-  $handler->display->display_options['fields']['field_regularity']['table'] = 'field_data_field_regularity';
-  $handler->display->display_options['fields']['field_regularity']['field'] = 'field_regularity';
-  $handler->display->display_options['fields']['field_regularity']['label'] = '';
-  $handler->display->display_options['fields']['field_regularity']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_regularity']['alter']['text'] = '[taxonomy_vocabulary_1] | [field_regularity]';
-  $handler->display->display_options['fields']['field_regularity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_regularity']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Time of day */
-  $handler->display->display_options['fields']['field_time_of_day']['id'] = 'field_time_of_day';
-  $handler->display->display_options['fields']['field_time_of_day']['table'] = 'field_data_field_time_of_day';
-  $handler->display->display_options['fields']['field_time_of_day']['field'] = 'field_time_of_day';
-  $handler->display->display_options['fields']['field_time_of_day']['label'] = '';
-  $handler->display->display_options['fields']['field_time_of_day']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_time_of_day']['type'] = 'taxonomy_term_reference_plain';
-  /* Sort criterion: Field: Weight (field_weight) */
-  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Domain Access: Domain ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'activity' => 'activity',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Ministry Centre (taxonomy_vocabulary_1) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['group'] = 1;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['operator'] = 'taxonomy_vocabulary_1_tid_op';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['identifier'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    3 => 0,
-    4 => 0,
-    8 => 0,
-    10 => 0,
-    9 => 0,
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['vocabulary'] = 'vocabulary_1';
-  /* Filter criterion: Content: Activity category (field_activity_category) */
-  $handler->display->display_options['filters']['field_activity_category_tid']['id'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['table'] = 'field_data_field_activity_category';
-  $handler->display->display_options['filters']['field_activity_category_tid']['field'] = 'field_activity_category_tid';
-  $handler->display->display_options['filters']['field_activity_category_tid']['value'] = array(
-    1182 => '1182',
-    1183 => '1183',
-  );
-  $handler->display->display_options['filters']['field_activity_category_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_activity_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_activity_category_tid']['vocabulary'] = 'activity_category';
-  /* Filter criterion: Field: Weight (field_weight) */
-  $handler->display->display_options['filters']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['filters']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['filters']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['filters']['field_weight_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_weight_value']['value']['value'] = '0';
-  $handler->display->display_options['filters']['field_weight_value']['group'] = 1;
-  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
-    1957 => '1957',
-  );
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['enabled'] = FALSE;
-  $translatables['cbf2019_local_activities'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Select any filter and click on Apply to see results'),
-    t('Advanced options'),
-    t('All'),
-    t('[field_highlight]'),
-    t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
-    t('All cities'),
-    t('[taxonomy_vocabulary_1] | [field_regularity]'),
-    t('Block'),
-  );
-  $export['cbf2019_local_activities'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_local_offices';
@@ -5525,7 +5013,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -5621,6 +5109,7 @@ function theme_cbf2019_features_views_default_views() {
 
   /* Display: For Activity */
   $handler = $view->new_display('block', 'For Activity', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Mappables for an Activity';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityform Submission: Map location (field_map_location) */
@@ -5697,7 +5186,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -5907,7 +5396,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -6178,7 +5667,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -7173,7 +6662,7 @@ else {
 
   $view = new view();
   $view->name = 'cbf2019_rated_content';
-  $view->description = 'Recent library view for the cbf2019 theme';
+  $view->description = 'Embedded in node templates. Rated content view for the cbf2019 theme';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 rated content';
@@ -7627,6 +7116,7 @@ else {
 
   /* Display: Unrated Recent block */
   $handler = $view->new_display('block', 'Unrated Recent block', 'block_3');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_comment'] = 'Reverse the priority of the sort criteria for this block: by date then by rating';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
@@ -7666,73 +7156,8 @@ else {
   $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
   $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
 
-  /* Display: More by Speaker block */
-  $handler = $view->new_display('block', 'More by Speaker block', 'block_1');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['display_comment'] = 'Exclude the current article from the results using cbf_views_query_alter() to add node.nid != <Content Nid>';
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
-  $handler->display->display_options['style_options']['columns_vertical'] = '4';
-  $handler->display->display_options['style_options']['columns_xs'] = '12';
-  $handler->display->display_options['style_options']['columns_sm'] = '6';
-  $handler->display->display_options['style_options']['columns_md'] = '3';
-  $handler->display->display_options['style_options']['columns_lg'] = '3';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Speaker */
-  $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
-  $handler->display->display_options['relationships']['field_speakers_tid']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['relationships']['field_speakers_tid']['field'] = 'field_speakers_tid';
-  $handler->display->display_options['relationships']['field_speakers_tid']['ui_name'] = 'Speaker';
-  $handler->display->display_options['relationships']['field_speakers_tid']['label'] = 'Speaker';
-  $handler->display->display_options['relationships']['field_speakers_tid']['required'] = TRUE;
-  /* Relationship: Current article */
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['relationship'] = 'field_speakers_tid';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['ui_name'] = 'Current article';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['label'] = 'Current article';
-  $handler->display->display_options['relationships']['reverse_field_speakers_node']['required'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_speakers_node';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
-    'blog' => 'blog',
-    'episode' => 'episode',
-  );
-  /* Contextual filter: Domain Access: Domain ID */
-  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
-  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
-  $handler->display->display_options['arguments']['gid']['default_argument_skip_url'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
-
-  /* Display: More on Topic block */
-  $handler = $view->new_display('block', 'More on Topic block', 'block_2');
+  /* Display: More on Topic block (embedded) */
+  $handler = $view->new_display('block', 'More on Topic block (embedded)', 'block_2');
   $handler->display->display_options['display_comment'] = 'Exclude the current article from the results using cbf_views_query_alter() to add node.nid != <Content Nid>';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -7836,12 +7261,10 @@ else {
     t('<span id="cbf2019-rated-content-view-header">%1</span>'),
     t('There are no resources by %1'),
     t('Unrated Recent block'),
-    t('More by Speaker block'),
-    t('Speaker'),
-    t('Current article'),
-    t('More on Topic block'),
+    t('More on Topic block (embedded)'),
     t('<span id="cbf2019-rated-content-view-header">More like this ...</span>'),
     t('Article topic'),
+    t('Current article'),
   );
   $export['cbf2019_rated_content'] = $view;
 
@@ -8011,11 +7434,13 @@ else {
 
   /* Display: For home page */
   $handler = $view->new_display('block', 'For home page', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Recent library resources for the home page';
   $handler->display->display_options['link_url'] = 'resources';
 
   /* Display: For Local Activity */
   $handler = $view->new_display('block', 'For Local Activity', 'block_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Recent library resources for a local activity';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
@@ -8171,6 +7596,7 @@ else {
   $handler = $view->new_display('page', 'Resource library', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Resource library';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -8825,6 +8251,7 @@ else {
   $handler = $view->new_display('page', 'Resource library for topic', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Resource library';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'This is a duplicate of \'Resource library\' with a different path so block ordering can be different';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
@@ -9476,8 +8903,9 @@ else {
   );
   $handler->display->display_options['path'] = 'library/topic';
 
-  /* Display: For Node's activity */
-  $handler = $view->new_display('block', 'For Node\'s activity', 'block_3');
+  /* Display: For Activity of node */
+  $handler = $view->new_display('block', 'For Activity of node', 'block_3');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Recent library resources for a node\'s activity';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -9659,6 +9087,7 @@ else {
 
   /* Display: For National Activity */
   $handler = $view->new_display('block', 'For National Activity', 'block_5');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Recent library resources for a national activity';
@@ -10014,7 +9443,7 @@ else {
     t('Resource type'),
     t('Resource library for topic'),
     t('This is a duplicate of \'Resource library\' with a different path so block ordering can be different'),
-    t('For Node\'s activity'),
+    t('For Activity of node'),
     t('Recent library resources for a node\'s activity'),
     t('Node referencing Activity'),
     t('For Collection'),
@@ -10174,6 +9603,7 @@ else {
 
   /* Display: For Local Activity */
   $handler = $view->new_display('block', 'For Local Activity', 'block_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Show recycled content for a local Activity';
   $handler->display->display_options['link_url'] = 'library';
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -10323,6 +9753,7 @@ else {
 
   /* Display: For National Activity */
   $handler = $view->new_display('block', 'For National Activity', 'block_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['display_description'] = 'Show recycled content for a national Activity';
@@ -11611,7 +11042,7 @@ Notes ...
 
   $view = new view();
   $view->name = 'cbf2019_speaker_listings';
-  $view->description = 'Listings of speakers';
+  $view->description = 'Embedded in node templates. Listings of speakers';
   $view->tag = 'add-christian-content';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'cbf2019 speaker listings';
@@ -11657,8 +11088,8 @@ Notes ...
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
 
-  /* Display: Article Speaker links */
-  $handler = $view->new_display('block', 'Article Speaker links', 'block_6');
+  /* Display: Article Speaker links (embedded) */
+  $handler = $view->new_display('block', 'Article Speaker links (embedded)', 'block_6');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article */
@@ -11693,6 +11124,7 @@ Notes ...
 
   /* Display: Top 10 rated Speakers */
   $handler = $view->new_display('block', 'Top 10 rated Speakers', 'block_7');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'view-header-must-align-left';
@@ -11761,8 +11193,8 @@ Notes ...
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
 
-  /* Display: Event Speaker links */
-  $handler = $view->new_display('block', 'Event Speaker links', 'block_1');
+  /* Display: Event Speaker links (embedded) */
+  $handler = $view->new_display('block', 'Event Speaker links (embedded)', 'block_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Article */
@@ -11806,12 +11238,12 @@ Notes ...
     t('Desc'),
     t('Articles by [name]'),
     t('Defaults'),
-    t('Article Speaker links'),
+    t('Article Speaker links (embedded)'),
     t('Article'),
     t('All'),
     t('Top 10 rated Speakers'),
     t('<span id="cbf2019-speaker-listings-header">Contributors</span>'),
-    t('Event Speaker links'),
+    t('Event Speaker links (embedded)'),
   );
   $export['cbf2019_speaker_listings'] = $view;
 
@@ -11909,8 +11341,8 @@ Notes ...
   /* Display: Defaults */
   $handler = $view->new_display('block', 'Defaults', 'block');
 
-  /* Display: For non-Activity nodes */
-  $handler = $view->new_display('block', 'For non-Activity nodes', 'block_3');
+  /* Display: For nodes (embedded) */
+  $handler = $view->new_display('block', 'For nodes (embedded)', 'block_3');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Content using Speaker(s) */
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['id'] = 'reverse_field_speakers_node';
@@ -11943,7 +11375,7 @@ Notes ...
     t('[name]'),
     t('Articles by [name]'),
     t('Defaults'),
-    t('For non-Activity nodes'),
+    t('For nodes (embedded)'),
     t('Content'),
     t('All'),
   );
@@ -12421,7 +11853,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -12581,7 +12013,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Field: Note */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -12648,25 +12080,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['null']['validate']['type'] = 'numeric';
   $handler->display->display_options['arguments']['null']['validate']['fail'] = 'ignore';
-
-  /* Display: Staff slider for Third Space */
-  $handler = $view->new_display('block', 'Staff slider for Third Space', 'block_3');
-  $handler->display->display_options['display_description'] = 'Staff associated with Third Space (this activity is node 3977 and the activity is for Christians so it can\'t appear in TS)';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Entityform Submission: Entityform Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'entityform';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'staff' => 'staff',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Entityform Submission: Activities (field_activities) */
-  $handler->display->display_options['filters']['field_activities_target_id']['id'] = 'field_activities_target_id';
-  $handler->display->display_options['filters']['field_activities_target_id']['table'] = 'field_data_field_activities';
-  $handler->display->display_options['filters']['field_activities_target_id']['field'] = 'field_activities_target_id';
-  $handler->display->display_options['filters']['field_activities_target_id']['value']['value'] = '3977';
   $translatables['cbf2019_staff_slider'] = array(
     t('Master'),
     t('<none>'),
@@ -12692,8 +12105,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('For Activity (embedded)'),
     t('Staff associated with an Activity'),
     t('Activity'),
-    t('Staff slider for Third Space'),
-    t('Staff associated with Third Space (this activity is node 3977 and the activity is for Christians so it can\'t appear in TS)'),
   );
   $export['cbf2019_staff_slider'] = $view;
 
@@ -12810,7 +12221,7 @@ Notes ...
   $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Synopsis */
+  /* Field: Field: Path */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -12896,7 +12307,7 @@ Notes ...
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Synopsis (field_synopsis) */
+  /* Filter criterion: Field: Path (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -12995,7 +12406,7 @@ Notes ...
     t('Title image'),
     t('Name'),
     t('Content type'),
-    t('Synopsis'),
+    t('Path'),
     t('Subtitle'),
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
