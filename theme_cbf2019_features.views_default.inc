@@ -4560,7 +4560,7 @@ function theme_cbf2019_features_views_default_views() {
 
   $view = new view();
   $view->name = 'cbf2019_hubspot_form';
-  $view->description = '';
+  $view->description = 'Embedded in pages at the point the form is required. ';
   $view->tag = 'default';
   $view->base_table = 'paragraphs_item';
   $view->human_name = 'cbf2019 HubSpot form';
@@ -4631,9 +4631,8 @@ function theme_cbf2019_features_views_default_views() {
     'hubspot_form' => 'hubspot_form',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['enabled'] = FALSE;
+  /* Display: Block (embedded) */
+  $handler = $view->new_display('block', 'Block (embedded)', 'block');
   $translatables['cbf2019_hubspot_form'] = array(
     t('Master'),
     t('more'),
@@ -4646,7 +4645,7 @@ function theme_cbf2019_features_views_default_views() {
     t('<cbf-hubspot-script/>'),
     t('.'),
     t('All'),
-    t('Block'),
+    t('Block (embedded)'),
   );
   $export['cbf2019_hubspot_form'] = $view;
 
