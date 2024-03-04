@@ -1634,15 +1634,6 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Blog label */
-  $handler->display->display_options['fields']['field_blog_label']['id'] = 'field_blog_label';
-  $handler->display->display_options['fields']['field_blog_label']['table'] = 'field_data_field_blog_label';
-  $handler->display->display_options['fields']['field_blog_label']['field'] = 'field_blog_label';
-  $handler->display->display_options['fields']['field_blog_label']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['fields']['field_blog_label']['label'] = '';
-  $handler->display->display_options['fields']['field_blog_label']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_blog_label']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_blog_label']['empty'] = 'Blog';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1706,7 +1697,6 @@ function theme_cbf2019_features_views_default_views() {
     t('Recent blog articles for an activity'),
     t('<span id="cbf2019-blog-view-header">%3</span>'),
     t('Activity'),
-    t('Blog'),
   );
   $export['cbf2019_blog'] = $view;
 
@@ -9687,15 +9677,6 @@ else {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Recycle label */
-  $handler->display->display_options['fields']['field_recycle_label']['id'] = 'field_recycle_label';
-  $handler->display->display_options['fields']['field_recycle_label']['table'] = 'field_data_field_recycle_label';
-  $handler->display->display_options['fields']['field_recycle_label']['field'] = 'field_recycle_label';
-  $handler->display->display_options['fields']['field_recycle_label']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['fields']['field_recycle_label']['label'] = '';
-  $handler->display->display_options['fields']['field_recycle_label']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_recycle_label']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_recycle_label']['empty'] = 'Recycled content';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -9839,15 +9820,6 @@ else {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Content: Recycle label */
-  $handler->display->display_options['fields']['field_recycle_label']['id'] = 'field_recycle_label';
-  $handler->display->display_options['fields']['field_recycle_label']['table'] = 'field_data_field_recycle_label';
-  $handler->display->display_options['fields']['field_recycle_label']['field'] = 'field_recycle_label';
-  $handler->display->display_options['fields']['field_recycle_label']['relationship'] = 'field_in_activity_target_id';
-  $handler->display->display_options['fields']['field_recycle_label']['label'] = '';
-  $handler->display->display_options['fields']['field_recycle_label']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_recycle_label']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_recycle_label']['empty'] = 'Recycled content';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -9966,7 +9938,6 @@ else {
     t('Show recycled content for a local Activity'),
     t('<span id="cbf2019-recycled-content-view-header">[field_recycle_label]</span>'),
     t('Activity'),
-    t('Recycled content'),
     t('All'),
     t('For National Activity'),
     t('Show recycled content for a national Activity'),
