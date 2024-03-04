@@ -6647,7 +6647,7 @@ else {
 
   $view = new view();
   $view->name = 'cbf2019_rated_content';
-  $view->description = 'Embedded in node templates. Rated content view for the cbf2019 theme';
+  $view->description = 'Embedded in node templates and blocks. Rated content view for the cbf2019 theme';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 rated content';
@@ -7099,9 +7099,8 @@ else {
   );
   $handler->display->display_options['path'] = 'resources/speaker/%';
 
-  /* Display: Unrated Recent block */
-  $handler = $view->new_display('block', 'Unrated Recent block', 'block_3');
-  $handler->display->display_options['enabled'] = FALSE;
+  /* Display: Unrated Recent block (embedded) */
+  $handler = $view->new_display('block', 'Unrated Recent block (embedded)', 'block_3');
   $handler->display->display_options['display_comment'] = 'Reverse the priority of the sort criteria for this block: by date then by rating';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
@@ -7245,7 +7244,7 @@ else {
     t('Resources by %1'),
     t('<span id="cbf2019-rated-content-view-header">%1</span>'),
     t('There are no resources by %1'),
-    t('Unrated Recent block'),
+    t('Unrated Recent block (embedded)'),
     t('More on Topic block (embedded)'),
     t('<span id="cbf2019-rated-content-view-header">More like this ...</span>'),
     t('Article topic'),
