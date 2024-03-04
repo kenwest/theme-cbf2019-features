@@ -140,9 +140,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['null']['table'] = 'views';
   $handler->display->display_options['arguments']['null']['field'] = 'null';
   $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre filter applied during post-execute';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
   $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
   $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
@@ -448,7 +446,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_activity_component_type']['table'] = 'field_data_field_activity_component_type';
   $handler->display->display_options['fields']['field_activity_component_type']['field'] = 'field_activity_component_type';
   $handler->display->display_options['fields']['field_activity_component_type']['relationship'] = 'field_activity_components_value';
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -539,7 +537,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Component'),
     t('Type'),
     t('Nid'),
-    t('Summary'),
+    t('Embedded view'),
     t('Default Title'),
     t('Title'),
     t('Block content'),
@@ -5012,7 +5010,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -5185,7 +5183,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -5395,7 +5393,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -5462,9 +5460,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['taxonomy_vocabulary_1_tid']['summary_options']['items_per_page'] = '25';
@@ -5666,7 +5662,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -11852,7 +11848,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -12012,7 +12008,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Field: Summary */
+  /* Field: Field: Embedded view */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -12070,9 +12066,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['arguments']['null']['table'] = 'views';
   $handler->display->display_options['arguments']['null']['field'] = 'null';
   $handler->display->display_options['arguments']['null']['ui_name'] = 'Ministry Centre filter applied during post-execute';
-  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
   $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = 'return cbf_convert_banner_to_city_tid();';
   $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
