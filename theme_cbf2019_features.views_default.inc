@@ -11839,7 +11839,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
   $handler->display->display_options['fields']['description']['alter']['rel'] = 'nofollow';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['description']['element_wrapper_class'] = 'image-plus-hover-overlay';
-  $handler->display->display_options['fields']['description']['empty'] = '[field_staff_contact]';
+  $handler->display->display_options['fields']['description']['empty'] = '<div class="overlaid-image">[field_image]</div>
+<div class="image-overlay">[field_summary]</div>';
   /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
@@ -12057,7 +12058,6 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('<div class="portrait-image-placeholder"><i class="fal fa-user"></i></div>'),
     t('<div class="overlaid-image">[field_image]</div>
 <div class="image-overlay">[field_summary]</div>'),
-    t('[field_staff_contact]'),
     t('Defaults'),
     t('Not intended for display'),
     t('For About Us'),
@@ -12068,6 +12068,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('For Activity (embedded)'),
     t('Staff associated with an Activity'),
     t('Activity'),
+    t('[field_staff_contact]'),
   );
   $export['cbf2019_staff_slider'] = $view;
 
