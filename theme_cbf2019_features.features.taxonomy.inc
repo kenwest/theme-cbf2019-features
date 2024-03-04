@@ -10,22 +10,6 @@
  */
 function theme_cbf2019_features_taxonomy_default_vocabularies() {
   return array(
-    'map_marker' => array(
-      'name' => 'Map marker',
-      'machine_name' => 'map_marker',
-      'description' => 'Choose which marker to use on Gmaps',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-    ),
-    'region' => array(
-      'name' => 'Region',
-      'machine_name' => 'region',
-      'description' => 'A geographic area in a Ministry Centre',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-    ),
     'regularity' => array(
       'name' => 'Regularity',
       'machine_name' => 'regularity',
