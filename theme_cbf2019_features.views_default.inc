@@ -2283,6 +2283,361 @@ function theme_cbf2019_features_views_default_views() {
   $export['cbf2019_brite_event_admin'] = $view;
 
   $view = new view();
+  $view->name = 'cbf2019_brite_event_map';
+  $view->description = 'Embedded in other views. Map of brite_event locations';
+  $view->tag = 'add-christian-content';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 brite_event map';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'map-canvas-view-multiple';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Location: Latitude */
+  $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['table'] = 'location';
+  $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['fields']['latitude']['label'] = '';
+  $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['latitude']['style'] = 'dd';
+  /* Field: Location: Longitude */
+  $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['table'] = 'location';
+  $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['fields']['longitude']['label'] = '';
+  $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['longitude']['style'] = 'dd';
+  /* Field: Field: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 1,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location HTML */
+  $handler->display->display_options['fields']['lid']['id'] = 'lid';
+  $handler->display->display_options['fields']['lid']['table'] = 'location';
+  $handler->display->display_options['fields']['lid']['field'] = 'lid';
+  $handler->display->display_options['fields']['lid']['ui_name'] = 'Location HTML';
+  $handler->display->display_options['fields']['lid']['label'] = '';
+  $handler->display->display_options['fields']['lid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['lid']['alter']['text'] = '      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="/sites/all/themes/cbf2019/images/!3/map/marker.png">
+        <div class="marker-content">
+          <div class="marker-item marker-activity">[field_in_activity]</div>
+          <div class="marker-item marker-title">[title]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
+          <div class="marker-item marker-address">[street], [city]</div>
+        </div>
+      </div>';
+  $handler->display->display_options['fields']['lid']['element_label_colon'] = FALSE;
+  /* Sort criterion: Location: Lid */
+  $handler->display->display_options['sorts']['lid']['id'] = 'lid';
+  $handler->display->display_options['sorts']['lid']['table'] = 'location';
+  $handler->display->display_options['sorts']['lid']['field'] = 'lid';
+  $handler->display->display_options['sorts']['lid']['order'] = 'DESC';
+  /* Contextual filter: Placemarker for Node Id */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Placemarker for Node Id';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['argument'] = '1';
+  $handler->display->display_options['arguments']['null']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Placemarker for Ministry Centre */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['ui_name'] = 'Placemarker for Ministry Centre';
+  $handler->display->display_options['arguments']['null_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null_1']['default_argument_options']['argument'] = '1';
+  $handler->display->display_options['arguments']['null_1']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain machine name */
+  $handler->display->display_options['arguments']['null_2']['id'] = 'null_2';
+  $handler->display->display_options['arguments']['null_2']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_2']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_2']['ui_name'] = 'Domain machine name';
+  $handler->display->display_options['arguments']['null_2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_2']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null_2']['default_argument_options']['code'] = 'return domain_lookup(domain_get_domain()[\'domain_id\'])[\'machine_name\'];';
+  $handler->display->display_options['arguments']['null_2']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['null_2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_2']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'brite_event' => 'brite_event',
+  );
+  /* Filter criterion: Field: Audience (taxonomy_vocabulary_3) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['id'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['table'] = 'field_data_taxonomy_vocabulary_3';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['field'] = 'taxonomy_vocabulary_3_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['value'] = array(
+    48 => '48',
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
+  /* Filter criterion: Field: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+
+  /* Display: Defaults */
+  $handler = $view->new_display('block', 'Defaults', 'block');
+  $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].
+Caching is Off for displays that are subject to AJAX calls (either directly or because they are embedded in another view which uses AJAX).
+arg[0] is the NId of the brite_event or the activity.
+arg[1] is a placemarker for the Ministry Centre - this is a convention for the views embedded in the cbf2019 activity components view.
+arg[2] is the Domain machine name that is used in selecting the right mam marker.
+The placemarkers for args must have a non-empty value - if arg[1] is (say) \'show all content\', views won\'t add arg[2] even if is has a default.';
+  $handler->display->display_options['display_description'] = 'This display contains the defaults - don\'t use';
+
+  /* Display: For Brite Event */
+  $handler = $view->new_display('block', 'For Brite Event', 'block_1');
+  $handler->display->display_options['display_comment'] = 'Cache this display to minimise unnecessary calls to the Google API. Event locations change rarely.';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time_per_domain';
+  $handler->display->display_options['cache']['results_lifespan'] = '1800';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '1800';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'brite_event' => 'brite_event',
+  );
+  /* Contextual filter: Placemarker for Ministry Centre */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['ui_name'] = 'Placemarker for Ministry Centre';
+  $handler->display->display_options['arguments']['null_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null_1']['default_argument_options']['argument'] = '1';
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain machine name */
+  $handler->display->display_options['arguments']['null_2']['id'] = 'null_2';
+  $handler->display->display_options['arguments']['null_2']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_2']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_2']['ui_name'] = 'Domain machine name';
+  $handler->display->display_options['arguments']['null_2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_2']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null_2']['default_argument_options']['code'] = 'return domain_lookup(domain_get_domain()[\'domain_id\'])[\'machine_name\'];';
+  $handler->display->display_options['arguments']['null_2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_2']['summary_options']['items_per_page'] = '25';
+
+  /* Display: For Activity (embedded) */
+  $handler = $view->new_display('block', 'For Activity (embedded)', 'block_2');
+  $handler->display->display_options['display_comment'] = 'Defect: the Ministry Centre contextual argument is ignored. Consider a national event with a location in Adelaide - the Adelaide location will be hidden is the Adelaide Ministry Centre is selected. This is because the Ministry Centre\'s description (\'SA\') needs to be used to join with the location\'s Province.';
+  $handler->display->display_options['display_description'] = 'Used by view cbf2019 activity components';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
+  $handler->display->display_options['relationships']['field_in_activity_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_in_activity_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'activity' => 'activity',
+  );
+  /* Contextual filter: Placemarker for Ministry Centre */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['ui_name'] = 'Placemarker for Ministry Centre';
+  $handler->display->display_options['arguments']['null_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null_1']['default_argument_options']['argument'] = '1';
+  $handler->display->display_options['arguments']['null_1']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Domain machine name */
+  $handler->display->display_options['arguments']['null_2']['id'] = 'null_2';
+  $handler->display->display_options['arguments']['null_2']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_2']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_2']['ui_name'] = 'Domain machine name';
+  $handler->display->display_options['arguments']['null_2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_2']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null_2']['default_argument_options']['code'] = 'return domain_lookup(domain_get_domain()[\'domain_id\'])[\'machine_name\'];';
+  $handler->display->display_options['arguments']['null_2']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['null_2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_2']['summary_options']['items_per_page'] = '25';
+
+  /* Display: For Whats On */
+  $handler = $view->new_display('block', 'For Whats On', 'block_3');
+  $handler->display->display_options['display_comment'] = 'Defect: the Ministry Centre contextual argument is ignored. Consider a national event with a location in Adelaide - the Adelaide location will be hidden is the Adelaide Ministry Centre is selected. This is because the Ministry Centre\'s description (\'SA\') needs to be used to join with the location\'s Province.';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => '2',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'taxonomy_vocabulary_1_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => 'All',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $translatables['cbf2019_brite_event_map'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('      <div class="marker"
+        data-lat="[latitude]"
+        data-long="[longitude]"
+        data-icon="/sites/all/themes/cbf2019/images/!3/map/marker.png">
+        <div class="marker-content">
+          <div class="marker-item marker-activity">[field_in_activity]</div>
+          <div class="marker-item marker-title">[title]</div>
+          <div class="marker-item marker-separator"></div>
+          <div class="marker-item marker-name">[name]</div>
+          <div class="marker-item marker-address">[street], [city]</div>
+        </div>
+      </div>'),
+    t('All'),
+    t('Defaults'),
+    t('This display contains the defaults - don\'t use'),
+    t('For Brite Event'),
+    t('For Activity (embedded)'),
+    t('Used by view cbf2019 activity components'),
+    t('Activity'),
+    t('For Whats On'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
+  );
+  $export['cbf2019_brite_event_map'] = $view;
+
+  $view = new view();
   $view->name = 'cbf2019_brite_event_slider';
   $view->description = '';
   $view->tag = 'slider, autoplay, add-christian-content';
