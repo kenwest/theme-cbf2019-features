@@ -74,7 +74,6 @@ features[views_view][] = cbf2019_event_location
 features[views_view][] = cbf2019_home_page_slider
 features[views_view][] = cbf2019_hubspot_form
 features[views_view][] = cbf2019_local_offices
-features[views_view][] = cbf2019_mappable
 features[views_view][] = cbf2019_networks_activities
 features[views_view][] = cbf2019_page_header_collections
 features[views_view][] = cbf2019_page_header_no_results_image
