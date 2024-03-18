@@ -86,7 +86,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -122,11 +122,11 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
-  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  /* Sort criterion: Content: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
   $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
-  /* Contextual filter: Field: Activity (field_in_activity) */
+  /* Contextual filter: Content: Activity (field_in_activity) */
   $handler->display->display_options['arguments']['field_in_activity_target_id']['id'] = 'field_in_activity_target_id';
   $handler->display->display_options['arguments']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['arguments']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
@@ -161,7 +161,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'brite_event' => 'brite_event',
   );
-  /* Filter criterion: Field: Next action (field_next_action) */
+  /* Filter criterion: Content: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
   $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
   $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
@@ -446,7 +446,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_activity_component_type']['table'] = 'field_data_field_activity_component_type';
   $handler->display->display_options['fields']['field_activity_component_type']['field'] = 'field_activity_component_type';
   $handler->display->display_options['fields']['field_activity_component_type']['relationship'] = 'field_activity_components_value';
-  /* Field: Field: Embedded view */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -507,7 +507,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'activity' => 'activity',
   );
-  /* Filter criterion: Field: Highlight location (field_highlight_location) */
+  /* Filter criterion: Content: What&#039;s on visibility (field_highlight_location) */
   $handler->display->display_options['filters']['field_highlight_location_tid']['id'] = 'field_highlight_location_tid';
   $handler->display->display_options['filters']['field_highlight_location_tid']['table'] = 'field_data_field_highlight_location';
   $handler->display->display_options['filters']['field_highlight_location_tid']['field'] = 'field_highlight_location_tid';
@@ -537,7 +537,7 @@ function theme_cbf2019_features_views_default_views() {
     t('Component'),
     t('Type'),
     t('Nid'),
-    t('Embedded view'),
+    t('Summary'),
     t('Default Title'),
     t('Title'),
     t('Block content'),
@@ -797,7 +797,7 @@ function theme_cbf2019_features_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -818,7 +818,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_article_topics']['field'] = 'field_article_topics';
   $handler->display->display_options['fields']['field_article_topics']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_article_topics']['delta_offset'] = '0';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -853,7 +853,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['sorts']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
   $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
   $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -875,7 +875,7 @@ function theme_cbf2019_features_views_default_views() {
     2 => '2',
   );
   $handler->display->display_options['filters']['field_article_topics_tid']['vocabulary'] = 'article_topic';
-  /* Filter criterion: Field: Speaker(s) (field_speakers) */
+  /* Filter criterion: Content: Speaker(s) (field_speakers) */
   $handler->display->display_options['filters']['field_speakers_tid']['id'] = 'field_speakers_tid';
   $handler->display->display_options['filters']['field_speakers_tid']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['filters']['field_speakers_tid']['field'] = 'field_speakers_tid';
@@ -1321,7 +1321,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -1341,7 +1341,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -1351,7 +1351,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -1375,7 +1375,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -1600,7 +1600,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -1610,7 +1610,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_speakers']['empty'] = '[name]';
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -2020,13 +2020,13 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date_text']['element_label_colon'] = FALSE;
-  /* Field: Field: Sort Order */
+  /* Field: Content: Sort Order */
   $handler->display->display_options['fields']['field_sort_order']['id'] = 'field_sort_order';
   $handler->display->display_options['fields']['field_sort_order']['table'] = 'field_data_field_sort_order';
   $handler->display->display_options['fields']['field_sort_order']['field'] = 'field_sort_order';
@@ -2037,7 +2037,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['field'] = 'taxonomy_vocabulary_3';
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_3']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -2081,7 +2081,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  /* Sort criterion: Content: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
   $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
@@ -2120,7 +2120,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title_1']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Date text (field_date_text) */
+  /* Filter criterion: Content: Date text (field_date_text) */
   $handler->display->display_options['filters']['field_date_text_value']['id'] = 'field_date_text_value';
   $handler->display->display_options['filters']['field_date_text_value']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['filters']['field_date_text_value']['field'] = 'field_date_text_value';
@@ -2140,7 +2140,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['filters']['field_date_text_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_date_text_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_date_text_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Sort Order (field_sort_order) */
+  /* Filter criterion: Content: Sort Order (field_sort_order) */
   $handler->display->display_options['filters']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['filters']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
   $handler->display->display_options['filters']['field_sort_order_value']['field'] = 'field_sort_order_value';
@@ -2320,7 +2320,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
   $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['longitude']['style'] = 'dd';
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -2447,7 +2447,7 @@ function theme_cbf2019_features_views_default_views() {
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['type'] = 'select';
   $handler->display->display_options['filters']['taxonomy_vocabulary_3_tid']['vocabulary'] = 'vocabulary_3';
-  /* Filter criterion: Field: Next action (field_next_action) */
+  /* Filter criterion: Content: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
   $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
   $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
@@ -2727,7 +2727,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -2763,7 +2763,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
-  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  /* Sort criterion: Content: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
   $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
@@ -2781,7 +2781,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['filters']['type']['value'] = array(
     'brite_event' => 'brite_event',
   );
-  /* Filter criterion: Field: Next action (field_next_action) */
+  /* Filter criterion: Content: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
   $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
   $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
@@ -2808,7 +2808,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['display_comment'] = 'When on the \'christian\' site, the add-christian-content tag tells cbf_views_query_alter() to change Audience = \'general\' to Audience in [\'general\', \'christian\'].';
   $handler->display->display_options['link_url'] = 'whats-on';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Speaker(s) (field_speakers) */
+  /* Relationship: Content: Speaker(s) (field_speakers) */
   $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
   $handler->display->display_options['relationships']['field_speakers_tid']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['relationships']['field_speakers_tid']['field'] = 'field_speakers_tid';
@@ -2942,7 +2942,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -2952,7 +2952,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -2985,7 +2985,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Sort criterion: Field: Sort Order (field_sort_order) */
+  /* Sort criterion: Content: Sort Order (field_sort_order) */
   $handler->display->display_options['sorts']['field_sort_order_value']['id'] = 'field_sort_order_value';
   $handler->display->display_options['sorts']['field_sort_order_value']['table'] = 'field_data_field_sort_order';
   $handler->display->display_options['sorts']['field_sort_order_value']['field'] = 'field_sort_order_value';
@@ -3008,7 +3008,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     'brite_event' => 'brite_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Next action (field_next_action) */
+  /* Filter criterion: Content: Next action (field_next_action) */
   $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
   $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
   $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
@@ -3071,6 +3071,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('[field_date_text] | [city]'),
     t('[field_date_text]'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
     t('For What\'s On'),
@@ -3417,6 +3419,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('<a href="/collection/[entityform_id]">View</a>&nbsp;&nbsp;
 <a href="/entityform/[entityform_id]/edit?destination=admin/cbf/collections">Edit</a>'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Title contains'),
     t('Description contains'),
     t('Page'),
@@ -3664,6 +3668,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('Entityform Submission Queue'),
     t('More info'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
     t('For general library'),
@@ -3705,7 +3711,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Details */
+  /* Field: Content: Details */
   $handler->display->display_options['fields']['field_details']['id'] = 'field_details';
   $handler->display->display_options['fields']['field_details']['table'] = 'field_data_field_details';
   $handler->display->display_options['fields']['field_details']['field'] = 'field_details';
@@ -3732,7 +3738,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Details (field_details) */
+  /* Filter criterion: Content: Details (field_details) */
   $handler->display->display_options['filters']['field_details_value']['id'] = 'field_details_value';
   $handler->display->display_options['filters']['field_details_value']['table'] = 'field_data_field_details';
   $handler->display->display_options['filters']['field_details_value']['field'] = 'field_details_value';
@@ -3764,7 +3770,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Details (field_details) */
+  /* Filter criterion: Content: Details (field_details) */
   $handler->display->display_options['filters']['field_details_value']['id'] = 'field_details_value';
   $handler->display->display_options['filters']['field_details_value']['table'] = 'field_data_field_details';
   $handler->display->display_options['filters']['field_details_value']['field'] = 'field_details_value';
@@ -3802,7 +3808,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Details (field_details) */
+  /* Filter criterion: Content: Details (field_details) */
   $handler->display->display_options['filters']['field_details_value']['id'] = 'field_details_value';
   $handler->display->display_options['filters']['field_details_value']['table'] = 'field_data_field_details';
   $handler->display->display_options['filters']['field_details_value']['field'] = 'field_details_value';
@@ -4157,7 +4163,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['field_training_pathway']['alter']['text'] = '<em>[field_training_pathway]</em>';
   $handler->display->display_options['fields']['field_training_pathway']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_training_pathway']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -4170,7 +4176,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     'bypass_access' => 0,
     'link' => 1,
   );
-  /* Field: Field: With */
+  /* Field: Content: With */
   $handler->display->display_options['fields']['field_with']['id'] = 'field_with';
   $handler->display->display_options['fields']['field_with']['table'] = 'field_data_field_with';
   $handler->display->display_options['fields']['field_with']['field'] = 'field_with';
@@ -4840,7 +4846,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Field: Order URL */
+  /* Field: Field: Link to content */
   $handler->display->display_options['fields']['field_order_url']['id'] = 'field_order_url';
   $handler->display->display_options['fields']['field_order_url']['table'] = 'field_data_field_order_url';
   $handler->display->display_options['fields']['field_order_url']['field'] = 'field_order_url';
@@ -4999,6 +5005,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('Article'),
     t('<cbf-hubspot-script/>'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('All'),
     t('Block (embedded)'),
   );
@@ -6187,7 +6195,7 @@ else {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -6204,7 +6212,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -6213,7 +6221,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -6242,7 +6250,7 @@ else {
   $handler->display->display_options['sorts']['field_article_rating_value']['table'] = 'field_data_field_article_rating';
   $handler->display->display_options['sorts']['field_article_rating_value']['field'] = 'field_article_rating_value';
   $handler->display->display_options['sorts']['field_article_rating_value']['order'] = 'DESC';
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -6514,7 +6522,7 @@ else {
   $handler->display->display_options['empty']['area']['format'] = '2';
   $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Speaker(s) (field_speakers) */
+  /* Contextual filter: Content: Speaker(s) (field_speakers) */
   $handler->display->display_options['arguments']['field_speakers_tid']['id'] = 'field_speakers_tid';
   $handler->display->display_options['arguments']['field_speakers_tid']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['arguments']['field_speakers_tid']['field'] = 'field_speakers_tid';
@@ -6610,7 +6618,7 @@ else {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -6800,7 +6808,7 @@ else {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -6817,7 +6825,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -6826,7 +6834,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -6850,7 +6858,7 @@ else {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -6968,7 +6976,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -6977,7 +6985,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -7223,7 +7231,7 @@ else {
   $handler->display->display_options['sorts']['score']['table'] = 'search_index';
   $handler->display->display_options['sorts']['score']['field'] = 'score';
   $handler->display->display_options['sorts']['score']['order'] = 'DESC';
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -7879,7 +7887,7 @@ else {
   $handler->display->display_options['sorts']['score']['table'] = 'search_index';
   $handler->display->display_options['sorts']['score']['field'] = 'score';
   $handler->display->display_options['sorts']['score']['order'] = 'DESC';
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -8617,7 +8625,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -8626,7 +8634,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -8716,7 +8724,7 @@ else {
   $handler->display->display_options['relationships']['field_in_activity_target_id']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['field'] = 'field_in_activity_target_id';
   $handler->display->display_options['relationships']['field_in_activity_target_id']['label'] = 'Activity';
-  /* Relationship: Field: Speaker(s) (field_speakers) */
+  /* Relationship: Content: Speaker(s) (field_speakers) */
   $handler->display->display_options['relationships']['field_speakers_tid']['id'] = 'field_speakers_tid';
   $handler->display->display_options['relationships']['field_speakers_tid']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['relationships']['field_speakers_tid']['field'] = 'field_speakers_tid';
@@ -8817,7 +8825,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -8826,7 +8834,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -8990,7 +8998,7 @@ else {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -9007,7 +9015,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -9018,7 +9026,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -9114,7 +9122,7 @@ else {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -9132,7 +9140,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -9143,7 +9151,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -9257,7 +9265,7 @@ else {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -9275,7 +9283,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -9286,7 +9294,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -9502,7 +9510,7 @@ else {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Activity */
+  /* Field: Content: Activity */
   $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
   $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
@@ -9519,7 +9527,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['label'] = '';
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -9530,7 +9538,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date text */
+  /* Field: Content: Date text */
   $handler->display->display_options['fields']['field_date_text']['id'] = 'field_date_text';
   $handler->display->display_options['fields']['field_date_text']['table'] = 'field_data_field_date_text';
   $handler->display->display_options['fields']['field_date_text']['field'] = 'field_date_text';
@@ -9544,7 +9552,7 @@ else {
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -9785,7 +9793,7 @@ else {
   $handler->display->display_options['fields']['field_resource_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_resource_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_resource_type']['type'] = 'computed_field_unsanitized';
-  /* Field: Field: Speaker(s) */
+  /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
@@ -9796,7 +9804,7 @@ else {
   $handler->display->display_options['fields']['field_speakers']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speakers']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_episode_date']['id'] = 'field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['fields']['field_episode_date']['field'] = 'field_episode_date';
@@ -9839,7 +9847,7 @@ else {
   $handler->display->display_options['sorts']['score']['table'] = 'search_index';
   $handler->display->display_options['sorts']['score']['field'] = 'score';
   $handler->display->display_options['sorts']['score']['order'] = 'DESC';
-  /* Sort criterion: Field: Date (field_episode_date) */
+  /* Sort criterion: Content: Date (field_episode_date) */
   $handler->display->display_options['sorts']['field_episode_date_value']['id'] = 'field_episode_date_value';
   $handler->display->display_options['sorts']['field_episode_date_value']['table'] = 'field_data_field_episode_date';
   $handler->display->display_options['sorts']['field_episode_date_value']['field'] = 'field_episode_date_value';
@@ -10476,6 +10484,8 @@ Notes ...
     t('Operations'),
     t('<a href="/taxonomy/term/[tid]/edit?destination=admin/cbf/speakers">Edit</a>'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Name contains'),
     t('Description contains'),
     t('Highlight (field_highlight:fid)'),
@@ -11240,6 +11250,8 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Name contains'),
     t('Position contains'),
     t('Staff group'),
@@ -11299,7 +11311,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Field: Embedded view */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -11460,7 +11472,7 @@ You can <a href="/eform/submit/staff">add a new Staff member</a>, or edit existi
     'image_style' => 'person_360x438',
     'image_link' => '',
   );
-  /* Field: Field: Embedded view */
+  /* Field: Field: Summary */
   $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
   $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
   $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
@@ -11659,14 +11671,13 @@ Notes ...
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['label'] = 'Name';
   $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
-  /* Field: Field: Sidebar title */
+  /* Field: Entityform Submission: Content type */
   $handler->display->display_options['fields']['field_sidebar_title']['id'] = 'field_sidebar_title';
   $handler->display->display_options['fields']['field_sidebar_title']['table'] = 'field_data_field_sidebar_title';
   $handler->display->display_options['fields']['field_sidebar_title']['field'] = 'field_sidebar_title';
-  $handler->display->display_options['fields']['field_sidebar_title']['label'] = 'Content type';
   $handler->display->display_options['fields']['field_sidebar_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidebar_title']['delta_offset'] = '0';
-  /* Field: Field: Path */
+  /* Field: Entityform Submission: Path */
   $handler->display->display_options['fields']['field_synopsis']['id'] = 'field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['fields']['field_synopsis']['field'] = 'field_synopsis';
@@ -11723,7 +11734,7 @@ Notes ...
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Sidebar title (field_sidebar_title) */
+  /* Filter criterion: Entityform Submission: Content type (field_sidebar_title) */
   $handler->display->display_options['filters']['field_sidebar_title_value']['id'] = 'field_sidebar_title_value';
   $handler->display->display_options['filters']['field_sidebar_title_value']['table'] = 'field_data_field_sidebar_title';
   $handler->display->display_options['filters']['field_sidebar_title_value']['field'] = 'field_sidebar_title_value';
@@ -11752,7 +11763,7 @@ Notes ...
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sidebar_title_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field: Path (field_synopsis) */
+  /* Filter criterion: Entityform Submission: Path (field_synopsis) */
   $handler->display->display_options['filters']['field_synopsis_value']['id'] = 'field_synopsis_value';
   $handler->display->display_options['filters']['field_synopsis_value']['table'] = 'field_data_field_synopsis';
   $handler->display->display_options['filters']['field_synopsis_value']['field'] = 'field_synopsis_value';
@@ -11856,6 +11867,8 @@ Notes ...
     t('Operations'),
     t('<a href="/entityform/[entityform_id]/edit">Edit</a>'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Name contains'),
     t('Content type contains'),
     t('Path contains'),
@@ -12073,7 +12086,7 @@ Notes ...
   $handler->display->display_options['filters']['field_logo_fid']['field'] = 'field_logo_fid';
   $handler->display->display_options['filters']['field_logo_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_logo_fid']['group'] = 1;
-  /* Filter criterion: Field: Highlight location (field_highlight_location) */
+  /* Filter criterion: Content: What&#039;s on visibility (field_highlight_location) */
   $handler->display->display_options['filters']['field_highlight_location_tid_1']['id'] = 'field_highlight_location_tid_1';
   $handler->display->display_options['filters']['field_highlight_location_tid_1']['table'] = 'field_data_field_highlight_location';
   $handler->display->display_options['filters']['field_highlight_location_tid_1']['field'] = 'field_highlight_location_tid';
@@ -12081,7 +12094,7 @@ Notes ...
   $handler->display->display_options['filters']['field_highlight_location_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_highlight_location_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_highlight_location_tid_1']['vocabulary'] = 'banner';
-  /* Filter criterion: Field: Highlight location (field_highlight_location) */
+  /* Filter criterion: Content: What&#039;s on visibility (field_highlight_location) */
   $handler->display->display_options['filters']['field_highlight_location_tid']['id'] = 'field_highlight_location_tid';
   $handler->display->display_options['filters']['field_highlight_location_tid']['table'] = 'field_data_field_highlight_location';
   $handler->display->display_options['filters']['field_highlight_location_tid']['field'] = 'field_highlight_location_tid';

@@ -25,7 +25,7 @@ function theme_cbf2019_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
     'parent_identifier' => 'management_content:admin/content',
   );
