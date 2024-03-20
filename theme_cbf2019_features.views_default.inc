@@ -6136,7 +6136,7 @@ else {
 
   $view = new view();
   $view->name = 'cbf2019_rated_content';
-  $view->description = 'Embedded in node templates and blocks. Rated content view for the cbf2019 theme';
+  $view->description = 'Embedded in pages, node templates and blocks. Rated content view for the cbf2019 theme';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'cbf2019 rated content';
@@ -6698,6 +6698,22 @@ else {
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Resources block (embedded) */
+  $handler = $view->new_display('block', 'Resources block (embedded)', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Resource library';
+  $handler->display->display_options['display_description'] = 'Embedded in pages';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $translatables['cbf2019_rated_content'] = array(
     t('Master'),
     t('<none>'),
@@ -6738,6 +6754,8 @@ else {
     t('<span id="cbf2019-rated-content-view-header">More like this ...</span>'),
     t('Article topic'),
     t('Current article'),
+    t('Resources block (embedded)'),
+    t('Embedded in pages'),
   );
   $export['cbf2019_rated_content'] = $view;
 
