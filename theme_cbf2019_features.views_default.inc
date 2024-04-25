@@ -2477,7 +2477,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
 
   /* Display: For Brite Event */
   $handler = $view->new_display('block', 'For Brite Event', 'block_1');
-  $handler->display->display_options['display_comment'] = 'Cache this display to minimise unnecessary calls to the Google API. Event locations change rarely.';
+  $handler->display->display_options['display_comment'] = 'Cache this display to minimise unnecessary calls to the Google API. Event locations change rarely. Remove Audience from the filter for this display so Unlisted events show a map.';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'time_per_domain';
   $handler->display->display_options['cache']['results_lifespan'] = '1800';
@@ -2521,6 +2521,40 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['arguments']['null_2']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['null_2']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['null_2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'brite_event' => 'brite_event',
+  );
+  /* Filter criterion: Content: Next action (field_next_action) */
+  $handler->display->display_options['filters']['field_next_action_value']['id'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['table'] = 'field_data_field_next_action';
+  $handler->display->display_options['filters']['field_next_action_value']['field'] = 'field_next_action_value';
+  $handler->display->display_options['filters']['field_next_action_value']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_next_action_value']['value'] = '0';
+  /* Filter criterion: Location: Latitude */
+  $handler->display->display_options['filters']['latitude']['id'] = 'latitude';
+  $handler->display->display_options['filters']['latitude']['table'] = 'location';
+  $handler->display->display_options['filters']['latitude']['field'] = 'latitude';
+  $handler->display->display_options['filters']['latitude']['operator'] = '!=';
+  $handler->display->display_options['filters']['latitude']['value']['value'] = '0';
+  /* Filter criterion: Location: Longitude */
+  $handler->display->display_options['filters']['longitude']['id'] = 'longitude';
+  $handler->display->display_options['filters']['longitude']['table'] = 'location';
+  $handler->display->display_options['filters']['longitude']['field'] = 'longitude';
+  $handler->display->display_options['filters']['longitude']['operator'] = '!=';
+  $handler->display->display_options['filters']['longitude']['value']['value'] = '0';
 
   /* Display: For Activity (embedded) */
   $handler = $view->new_display('block', 'For Activity (embedded)', 'block_2');
