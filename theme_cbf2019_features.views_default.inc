@@ -462,11 +462,12 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['relationship'] = 'field_activity_components_value';
-  /* Field: Field: Block content */
+  /* Field: Field: Promotional insert */
   $handler->display->display_options['fields']['field_short_form']['id'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['table'] = 'field_data_field_short_form';
   $handler->display->display_options['fields']['field_short_form']['field'] = 'field_short_form';
   $handler->display->display_options['fields']['field_short_form']['relationship'] = 'field_activity_components_value';
+  $handler->display->display_options['fields']['field_short_form']['label'] = 'Block content';
   /* Field: Paragraphs item: Fixed width container */
   $handler->display->display_options['fields']['field_fixed_width_container']['id'] = 'field_fixed_width_container';
   $handler->display->display_options['fields']['field_fixed_width_container']['table'] = 'field_data_field_fixed_width_container';
@@ -483,6 +484,7 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
