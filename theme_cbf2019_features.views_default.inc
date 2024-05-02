@@ -5380,13 +5380,6 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['style_options']['columns_md'] = '4';
   $handler->display->display_options['style_options']['columns_lg'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Networks';
-  $handler->display->display_options['header']['area']['format'] = '2';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -5760,13 +5753,13 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
     t('All'),
-    t('Networks'),
     t('[field_highlight]'),
     t('<div class="overlaid-image">[field_title_image]</div><div class="image-overlay">###[field_logo]###</div>'),
     t('All cities'),
     t('[taxonomy_vocabulary_1] | [field_regularity]'),
     t('Defaults'),
     t('This display contains the defaults - don\'t use'),
+    t('Networks'),
     t('All networks visible from this domain'),
     t('Christian Networks'),
     t('Christian networks'),
