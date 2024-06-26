@@ -3552,8 +3552,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler = $view->new_display('block', 'Defaults', 'block');
   $handler->display->display_options['display_description'] = 'Don\'t display this block - for defaults only';
 
-  /* Display: For general library */
-  $handler = $view->new_display('block', 'For general library', 'block_1');
+  /* Display: For general library - embedded */
+  $handler = $view->new_display('block', 'For general library - embedded', 'block_1');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -3567,6 +3567,45 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     'cbf_plus_home_page_slider' => 0,
     'cbf_plus_library_collections_slider' => 0,
   );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['field_title']['element_class'] = 'font-alt uppercase';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title']['element_default_classes'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = 'More info';
+  $handler->display->display_options['fields']['entityform_id']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['path'] = 'collection/[entityform_id]';
+  $handler->display->display_options['fields']['entityform_id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
 
   /* Display: For general library for topic */
   $handler = $view->new_display('block', 'For general library for topic', 'block_4');
@@ -3585,8 +3624,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     'cbf_plus_library_collections_slider' => 0,
   );
 
-  /* Display: For Christian library */
-  $handler = $view->new_display('block', 'For Christian library', 'block_2');
+  /* Display: For Christian library - embedded */
+  $handler = $view->new_display('block', 'For Christian library - embedded', 'block_2');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entityqueue: Entityform Submission Queue */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
@@ -3600,6 +3639,45 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     'cbf_plus_home_page_slider' => 0,
     'cbf_library_collections_slider' => 0,
   );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Title image */
+  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
+  $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+    'image_style' => 'portfolio_653x368',
+    'image_link' => '',
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['field_title']['element_class'] = 'font-alt uppercase';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title']['element_default_classes'] = FALSE;
+  /* Field: Field: Subtitle */
+  $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
+  $handler->display->display_options['fields']['field_subtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['text'] = 'More info';
+  $handler->display->display_options['fields']['entityform_id']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['alter']['path'] = 'collection/[entityform_id]';
+  $handler->display->display_options['fields']['entityform_id']['alter']['link_class'] = 'btn btn-mod btn-border btn-medium btn-round';
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
 
   /* Display: For Christian library for topic */
   $handler = $view->new_display('block', 'For Christian library for topic', 'block_5');
@@ -3707,10 +3785,10 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('@count'),
     t('Defaults'),
     t('Don\'t display this block - for defaults only'),
-    t('For general library'),
+    t('For general library - embedded'),
     t('For general library for topic'),
     t('This is a duplicate of \'For general library\' so block location can be different'),
-    t('For Christian library'),
+    t('For Christian library - embedded'),
     t('For Christian library for topic'),
     t('This is a duplicate of \'For Christian library\' so block location can be different'),
     t('Referred by Node (embedded)'),
