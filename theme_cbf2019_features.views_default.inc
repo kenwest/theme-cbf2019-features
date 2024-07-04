@@ -2075,7 +2075,8 @@ function theme_cbf2019_features_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = 'Operations';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<a href="/node/[nid]/edit">Edit</a>';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<a href="/node/[nid]/edit">Edit</a>
+<a href="/node/[nid]/email">Email</a>';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -2273,7 +2274,8 @@ function theme_cbf2019_features_views_default_views() {
     t('Ministry Centre'),
     t('Published'),
     t('Operations'),
-    t('<a href="/node/[nid]/edit">Edit</a>'),
+    t('<a href="/node/[nid]/edit">Edit</a>
+<a href="/node/[nid]/email">Email</a>'),
     t('Title contains ...'),
     t('Date contains ...'),
     t('Sort Order contains ...'),
@@ -5142,6 +5144,191 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('For all types'),
   );
   $export['cbf2019_entityform_promotional_slider'] = $view;
+
+  $view = new view();
+  $view->name = 'cbf2019_event_html';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'cbf2019 event html';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'cbf2019 event html';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Activity */
+  $handler->display->display_options['fields']['field_in_activity']['id'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['table'] = 'field_data_field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['field'] = 'field_in_activity';
+  $handler->display->display_options['fields']['field_in_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_in_activity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_in_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_in_activity']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  /* Field: Location: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'location';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '[name],';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Location: Street */
+  $handler->display->display_options['fields']['street']['id'] = 'street';
+  $handler->display->display_options['fields']['street']['table'] = 'location';
+  $handler->display->display_options['fields']['street']['field'] = 'street';
+  $handler->display->display_options['fields']['street']['label'] = '';
+  $handler->display->display_options['fields']['street']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['street']['style'] = 'street';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'custom',
+    'custom_date_format' => 'g:sa T',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'hybrid event - don\'t forget to edit the Zoom link, meeting number and passcode';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<xmp>
+<p>Thank you for registering for the next [field_in_activity] meeting.<br /><br /><span style="color: #cf2e4f;"><strong>ATTEND IN PERSON</strong></span><br />If you have registered to attend in person we look forward to seeing you at <strong>[field_event_date]</strong> at <strong>[name] [street] [city]</strong>.</p>
+<p>If you are unable to make it in person, please join us online using the link below.<br /><br /><span style="color: #cf2e4f;"><strong>JOIN ONLINE</strong></span><br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
+<p><span style="color: #0000ff;"><a href="[zoom meeting link]"><span style="color: #0000ff;"><strong>JOIN ZOOM MEETING</strong></span></a></span></p>
+<p>Meeting ID: [zoom meeting ID]</p>
+<p>Passcode: [zoom meeting password]</p>
+<p>We look forward to seeing you there!</p>
+</xmp>
+';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'online event - don\'t forget to edit the Zoom link, meeting number and passcode';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<xmp>
+<p>Thank you for registering for this meeting.</p>
+<p>Please join us using the link below:</p>
+<p><a href="[zoom meeting link]" target="_blank"><strong>JOIN ZOOM MEETING</strong></a></p>
+<p>Meeting ID: [zoom meeting ID]<br />Passcode: [zoom meeting password]</p>
+<p>We look forward to seeing you there!</p>
+</xmp>';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'brite_event' => 'brite_event',
+  );
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'brite_event' => 'brite_event',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'node/%/email';
+  $translatables['cbf2019_event_html'] = array(
+    t('Master'),
+    t('cbf2019 event html'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('[name],'),
+    t('hybrid event - don\'t forget to edit the Zoom link, meeting number and passcode'),
+    t('<xmp>
+<p>Thank you for registering for the next [field_in_activity] meeting.<br /><br /><span style="color: #cf2e4f;"><strong>ATTEND IN PERSON</strong></span><br />If you have registered to attend in person we look forward to seeing you at <strong>[field_event_date]</strong> at <strong>[name] [street] [city]</strong>.</p>
+<p>If you are unable to make it in person, please join us online using the link below.<br /><br /><span style="color: #cf2e4f;"><strong>JOIN ONLINE</strong></span><br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
+<p><span style="color: #0000ff;"><a href="[zoom meeting link]"><span style="color: #0000ff;"><strong>JOIN ZOOM MEETING</strong></span></a></span></p>
+<p>Meeting ID: [zoom meeting ID]</p>
+<p>Passcode: [zoom meeting password]</p>
+<p>We look forward to seeing you there!</p>
+</xmp>
+'),
+    t('online event - don\'t forget to edit the Zoom link, meeting number and passcode'),
+    t('<xmp>
+<p>Thank you for registering for this meeting.</p>
+<p>Please join us using the link below:</p>
+<p><a href="[zoom meeting link]" target="_blank"><strong>JOIN ZOOM MEETING</strong></a></p>
+<p>Meeting ID: [zoom meeting ID]<br />Passcode: [zoom meeting password]</p>
+<p>We look forward to seeing you there!</p>
+</xmp>'),
+    t('All'),
+    t('Page'),
+  );
+  $export['cbf2019_event_html'] = $view;
 
   $view = new view();
   $view->name = 'cbf2019_event_location';
