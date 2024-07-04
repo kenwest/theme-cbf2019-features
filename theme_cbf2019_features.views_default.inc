@@ -5157,7 +5157,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'cbf2019 event html';
+  $handler->display->display_options['title'] = '[title] - html for emails';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -5299,7 +5299,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['path'] = 'node/%/email';
   $translatables['cbf2019_event_html'] = array(
     t('Master'),
-    t('cbf2019 event html'),
+    t('[title] - html for emails'),
     t('more'),
     t('Apply'),
     t('Reset'),
