@@ -5239,9 +5239,13 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'hybrid event - don\'t forget to edit the Zoom link, meeting number and passcode';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<xmp>
-<p>Thank you for registering for the next [field_in_activity] meeting.<br /><br /><span style="color: #cf2e4f;"><strong>ATTEND IN PERSON</strong></span><br />If you have registered to attend in person we look forward to seeing you at <strong>[field_event_date]</strong> at <strong>[name] [street] [city]</strong>.</p>
-<p>If you are unable to make it in person, please join us online using the link below.<br /><br /><span style="color: #cf2e4f;"><strong>JOIN ONLINE</strong></span><br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
-<p><span style="color: #0000ff;"><a href="[zoom meeting link]"><span style="color: #0000ff;"><strong>JOIN ZOOM MEETING</strong></span></a></span></p>
+<p>Thank you for registering for the next [field_in_activity] meeting.</p>
+<p><span style="color: #f05537;"><strong>ATTEND IN PERSON</strong></span>
+<br />If you have registered to attend in person we look forward to seeing you at <strong>[field_event_date]</strong> at <strong>[name] [street] [city]</strong>.</p>
+<p>If you are unable to make it in person, please join us online using the link below.</p>
+<p><span style="color: #f05537;"><strong>JOIN ONLINE</strong></span>
+<br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
+<p><a href="[zoom meeting link]" style="color: #0956b5;"><strong>JOIN ZOOM MEETING</strong></a></p>
 <p>Meeting ID: [zoom meeting ID]</p>
 <p>Passcode: [zoom meeting password]</p>
 <p>We look forward to seeing you there!</p>
@@ -5309,9 +5313,13 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('[name],'),
     t('hybrid event - don\'t forget to edit the Zoom link, meeting number and passcode'),
     t('<xmp>
-<p>Thank you for registering for the next [field_in_activity] meeting.<br /><br /><span style="color: #cf2e4f;"><strong>ATTEND IN PERSON</strong></span><br />If you have registered to attend in person we look forward to seeing you at <strong>[field_event_date]</strong> at <strong>[name] [street] [city]</strong>.</p>
-<p>If you are unable to make it in person, please join us online using the link below.<br /><br /><span style="color: #cf2e4f;"><strong>JOIN ONLINE</strong></span><br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
-<p><span style="color: #0000ff;"><a href="[zoom meeting link]"><span style="color: #0000ff;"><strong>JOIN ZOOM MEETING</strong></span></a></span></p>
+<p>Thank you for registering for the next [field_in_activity] meeting.</p>
+<p><span style="color: #f05537;"><strong>ATTEND IN PERSON</strong></span>
+<br />If you have registered to attend in person we look forward to seeing you at <strong>[field_event_date]</strong> at <strong>[name] [street] [city]</strong>.</p>
+<p>If you are unable to make it in person, please join us online using the link below.</p>
+<p><span style="color: #f05537;"><strong>JOIN ONLINE</strong></span>
+<br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
+<p><a href="[zoom meeting link]" style="color: #0956b5;"><strong>JOIN ZOOM MEETING</strong></a></p>
 <p>Meeting ID: [zoom meeting ID]</p>
 <p>Passcode: [zoom meeting password]</p>
 <p>We look forward to seeing you there!</p>
