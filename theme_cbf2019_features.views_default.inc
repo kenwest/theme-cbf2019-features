@@ -5224,7 +5224,7 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
     'format_type' => 'custom',
-    'custom_date_format' => 'g:sa T',
+    'custom_date_format' => 'g:ia T',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
