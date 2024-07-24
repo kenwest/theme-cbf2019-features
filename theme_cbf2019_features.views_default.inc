@@ -5246,8 +5246,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
 <p><span style="color: #f05537;"><strong>JOIN ONLINE</strong></span>
 <br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
 <p><a href="[zoom meeting link]" style="color: #0956b5;"><strong>JOIN ZOOM MEETING</strong></a></p>
-<p>Meeting ID: [zoom meeting ID]</p>
-<p>Passcode: [zoom meeting password]</p>
+<p>Meeting ID: [zoom meeting ID]
+<br />Passcode: [zoom meeting password]</p>
 <p>We look forward to seeing you there!</p>
 </xmp>
 ';
@@ -5259,8 +5259,9 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<xmp>
 <p>Thank you for registering for this meeting.</p>
 <p>Please join us using the link below:</p>
-<p><a href="[zoom meeting link]" target="_blank"><strong>JOIN ZOOM MEETING</strong></a></p>
-<p>Meeting ID: [zoom meeting ID]<br />Passcode: [zoom meeting password]</p>
+<p><a href="[zoom meeting link]" style="color: #0956b5;"><strong>JOIN ZOOM MEETING</strong></a></p>
+<p>Meeting ID: [zoom meeting ID]
+<br />Passcode: [zoom meeting password]</p>
 <p>We look forward to seeing you there!</p>
 </xmp>';
   /* Sort criterion: Content: Post date */
@@ -5320,8 +5321,8 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
 <p><span style="color: #f05537;"><strong>JOIN ONLINE</strong></span>
 <br />Please join us <strong>10 minutes prior to the meeting</strong> for a <strong>[field_event_date] start </strong>using the the link below:</p>
 <p><a href="[zoom meeting link]" style="color: #0956b5;"><strong>JOIN ZOOM MEETING</strong></a></p>
-<p>Meeting ID: [zoom meeting ID]</p>
-<p>Passcode: [zoom meeting password]</p>
+<p>Meeting ID: [zoom meeting ID]
+<br />Passcode: [zoom meeting password]</p>
 <p>We look forward to seeing you there!</p>
 </xmp>
 '),
@@ -5329,8 +5330,9 @@ The placemarkers for args must have a non-empty value - if arg[1] is (say) \'sho
     t('<xmp>
 <p>Thank you for registering for this meeting.</p>
 <p>Please join us using the link below:</p>
-<p><a href="[zoom meeting link]" target="_blank"><strong>JOIN ZOOM MEETING</strong></a></p>
-<p>Meeting ID: [zoom meeting ID]<br />Passcode: [zoom meeting password]</p>
+<p><a href="[zoom meeting link]" style="color: #0956b5;"><strong>JOIN ZOOM MEETING</strong></a></p>
+<p>Meeting ID: [zoom meeting ID]
+<br />Passcode: [zoom meeting password]</p>
 <p>We look forward to seeing you there!</p>
 </xmp>'),
     t('All'),
